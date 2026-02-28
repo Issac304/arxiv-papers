@@ -2,7 +2,7 @@ name: Daily Papers
 
 on:
   schedule:
-    - cron: '0 19 * * *'  # UTC 19:00 = 北京时间 03:00
+    - cron: '30 18 * * *'  # UTC 18:30 = 北京时间 02:30
   workflow_dispatch:
     inputs:
       date:
