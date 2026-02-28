@@ -158,7 +158,6 @@ def gen_daily_page(date_str):
     arxiv = data["arxiv"]
     hf = data["huggingface"]
 
-    arxiv_cards = "".join(gen_paper_card(p, i+1) for i, p in enumerate(arxiv))
     hf_cards = "".join(gen_paper_card(p, i+1, True) for i, p in enumerate(hf))
 
     cats = {}
@@ -166,44 +165,69 @@ def gen_daily_page(date_str):
         for c in (p.get("listed_in") or p.get("categories") or []):
             if c in CAT_NAMES: cats[c] = cats.get(c, 0) + 1
 
+    arxiv_cat_btns = ""
+    arxiv_cat_btns += f'<button class="fbtn on" data-cat="all" onclick="showCat(this)">全部 <span class="fc">{len(arxiv)}</span></button>'
     cat_sections = {}
     for cat in CAT_NAMES:
         if cat not in cats: continue
+        col = CAT_COLORS.get(cat, "#888")
+        arxiv_cat_btns += f'<button class="fbtn" data-cat="{cat}" onclick="showCat(this)"><span class="cdot" style="background:{col}"></span>{cat} <span class="fc">{cats[cat]}</span></button>'
         cp = [p for p in arxiv if cat in (p.get("listed_in") or p.get("categories") or [])]
         cat_sections[cat] = "".join(gen_paper_card(p, i+1) for i, p in enumerate(cp))
 
-    filter_btns = ""
-    if hf:
-        filter_btns += f'<button class="fbtn" data-src="hf" onclick="show(this)">&#x1F917; HF 热门 <span class="fc">{len(hf)}</span></button><div class="fsep"></div>'
-    if arxiv:
-        filter_btns += f'<button class="fbtn on" data-src="all" onclick="show(this)">全部 <span class="fc">{len(arxiv)}</span></button>'
-        for cat, cnt in cats.items():
-            col = CAT_COLORS.get(cat, "#888")
-            filter_btns += f'<button class="fbtn" data-src="{cat}" onclick="show(this)"><span class="cdot" style="background:{col}"></span>{cat} <span class="fc">{cnt}</span></button>'
+    all_arxiv_cards = "".join(gen_paper_card(p, i+1) for i, p in enumerate(arxiv))
 
-    default_src = "all" if arxiv else "hf"
-    default_active = "on" if arxiv else "on-hf"
+    hf_section = ""
+    if hf:
+        hf_section = f"""<div class="sec-block">
+<div class="sec-head"><span class="sec-icon" style="background:var(--hf)">HF</span><span class="sec-title">HuggingFace 热门</span><span class="sec-cnt">{len(hf)} 篇</span></div>
+<div id="hf-list">{hf_cards}</div></div>"""
+
+    arxiv_section = ""
+    if arxiv:
+        arxiv_section = f"""<div class="sec-block">
+<div class="sec-head"><span class="sec-icon" style="background:var(--ac)">Ax</span><span class="sec-title">arXiv 论文</span><span class="sec-cnt">{len(arxiv)} 篇</span></div>
+<div class="arxiv-filters">{arxiv_cat_btns}</div>
+<div id="arxiv-list"></div></div>"""
 
     return f"""<!DOCTYPE html>
 <html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
 <meta name="theme-color" content="#0a0e1a"><meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <link rel="manifest" href="manifest.json"><link rel="apple-touch-icon" href="icon-192.png">
-<title>{date_str} - arXiv Papers</title><style>{CSS}</style></head><body>
+<title>{date_str} - arXiv Papers</title><style>{CSS}
+.sec-block{{margin-bottom:28px}}
+.sec-head{{display:flex;align-items:center;gap:10px;padding:14px 0 10px;border-bottom:1px solid var(--gb);margin-bottom:12px}}
+.sec-icon{{width:28px;height:28px;border-radius:7px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:.7rem;font-weight:800}}
+.sec-title{{font-size:1.1rem;font-weight:700}}
+.sec-cnt{{font-size:.8rem;color:var(--t3);margin-left:auto}}
+.arxiv-filters{{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:10px}}
+</style></head><body>
 <div class="topbar"><div class="topbar-in">
 <a class="back" href="index.html">&#8592; 首页</a>
 <h2>{date_str}</h2><span class="spacer"></span>
 <div class="search"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>
 <input id="si" type="text" placeholder="搜索标题、作者..." oninput="filter()"></div>
 <span class="cnt" id="cnt"></span></div></div>
-<div class="filters" id="fl">{filter_btns}</div>
-<div class="list" id="pl"></div>
+<div class="list">
+{hf_section}
+{arxiv_section}
+</div>
 <button class="stop" id="st" onclick="window.scrollTo({{top:0,behavior:'smooth'}})">&#8593;</button>
 <script>
-const S={{"all":`{_js_escape(arxiv_cards)}`,"hf":`{_js_escape(hf_cards)}`{_cat_entries(cat_sections)}}};
-let cur="{default_src}";
-function show(b){{document.querySelectorAll('.fbtn').forEach(x=>x.classList.remove('on','on-hf'));b.classList.add(b.dataset.src==='hf'?'on-hf':'on');cur=b.dataset.src;filter()}}
-function filter(){{const q=document.getElementById('si').value.toLowerCase();const el=document.getElementById('pl');const d=document.createElement('div');d.innerHTML=S[cur]||S['all'];const cards=[...d.querySelectorAll('.card')];let n=0;let h='';cards.forEach(c=>{{const t=c.textContent.toLowerCase();if(!q||q.split(/\\s+/).every(w=>t.includes(w))){{h+=c.outerHTML;n++}}}});el.innerHTML=h||'<div class="nr">没有匹配的论文</div>';document.getElementById('cnt').textContent=n+' 篇'}}
+const AX={{"all":`{_js_escape(all_arxiv_cards)}`{_cat_entries(cat_sections)}}};
+const HF=`{_js_escape(hf_cards)}`;
+let curCat="all";
+function showCat(b){{document.querySelectorAll('.arxiv-filters .fbtn').forEach(x=>x.classList.remove('on'));b.classList.add('on');curCat=b.dataset.cat;filter()}}
+function filter(){{
+const q=document.getElementById('si').value.toLowerCase();
+let total=0;
+const ae=document.getElementById('arxiv-list');
+if(ae){{const d=document.createElement('div');d.innerHTML=AX[curCat]||AX['all'];const cards=[...d.querySelectorAll('.card')];let h='';cards.forEach(c=>{{const t=c.textContent.toLowerCase();if(!q||q.split(/\\s+/).every(w=>t.includes(w))){{h+=c.outerHTML;total++}}}});ae.innerHTML=h||'<div class="nr">没有匹配的论文</div>'}}
+const he=document.getElementById('hf-list');
+if(he){{const d=document.createElement('div');d.innerHTML=HF;const cards=[...d.querySelectorAll('.card')];let h='';cards.forEach(c=>{{const t=c.textContent.toLowerCase();if(!q||q.split(/\\s+/).every(w=>t.includes(w))){{h+=c.outerHTML;total++}}}});he.innerHTML=h||'<div class="nr">没有匹配的论文</div>'}}
+document.getElementById('cnt').textContent=total+' 篇';
+}}
 window.addEventListener('scroll',()=>document.getElementById('st').classList.toggle('v',window.scrollY>400));
 filter();
 </script></body></html>"""
