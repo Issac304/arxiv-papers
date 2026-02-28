@@ -259,7 +259,7 @@ sb.style.display='inline-flex';
 try{{
 const r=await fetch(`https://api.github.com/repos/${{REPO}}/actions/workflows/daily.yml/dispatches`,{{
 method:'POST',headers:{{'Authorization':`token ${{token}}`,'Accept':'application/vnd.github.v3+json'}},
-body:JSON.stringify({{ref:'master',inputs:{{date:dateVal}}}}}})
+body:JSON.stringify({{ref:'master',inputs:{{date:dateVal}}}})
 }});
 if(r.status===204){{fs.textContent=`已触发抓取 ${{dateVal}}，约1-2分钟后刷新页面查看`;fs.style.color='var(--ac2)';pollRun(token,dateVal)}}
 else if(r.status===401){{localStorage.removeItem('gh_token');fs.textContent='Token 无效，请重新输入';fs.style.color='#ff6b6b';sb.style.display='none'}}
