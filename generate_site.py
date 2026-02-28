@@ -222,7 +222,7 @@ def gen_index():
 <link rel="manifest" href="manifest.json"><link rel="apple-touch-icon" href="icon-192.png">
 <title>arXiv Papers</title><style>{CSS}</style></head><body>
 <div class="c">
-<h1>探索人类智能边界 · 每日arXiv计划</h1>
+<h1>探索智能边界 · 每天掌握10000篇最新arXiv论文</h1>
 <p class="sub">成为地球上前 0.000000001% 的顶尖人工智能科学家</p>
 <div class="pills"><span class="pill">cs.CV</span><span class="pill">cs.CL</span><span class="pill">cs.LG</span><span class="pill">cs.MM</span><span class="pill" style="color:var(--hf)">HuggingFace</span><a href="favorites.html" class="pill" style="color:#ff4d6a;border-color:rgba(255,77,106,.3)">&#9829; 收藏夹</a></div>
 <div class="section">
