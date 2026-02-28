@@ -360,7 +360,7 @@ def gen_paper_card(p, i, is_hf=False):
 <button class="abtn del-btn" onclick="delPaper(this,'{pid}')" title="删除">&times;</button>
 </div>
 <div class="links">{hf_link}<a href="{link}" target="_blank">arXiv</a><a href="{p.get('pdf','')}" target="_blank">PDF</a></div>
-</div><div class="abs" style="display:none">{summary}</div><div class="toggle" onclick="var a=this.previousElementSibling;if(a.style.display==='none'){{a.style.display='block';this.textContent='▲ 收起摘要'}}else{{a.style.display='none';this.textContent='▼ 查看摘要'}}">&#9660; 查看摘要</div></div>"""
+</div></div>"""
 
 def gen_daily_page(date_str):
     data = load_data(date_str)
