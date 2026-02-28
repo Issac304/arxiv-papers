@@ -16,9 +16,8 @@ CSS = """
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 :root{--bg:#070a13;--surface:rgba(255,255,255,0.03);--surface-hover:rgba(255,255,255,0.06);--border:rgba(255,255,255,0.08);--border-hover:rgba(255,255,255,0.15);--t:#f1f4f9;--t2:#9ba1b0;--t3:#656a7a;--ac:#6382ff;--ac-hover:#829aff;--ac2:#38d9c9;--hf:#ff9d00}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--t);min-height:100vh;line-height:1.5}
-body::before{content:"";position:fixed;top:-30%;left:-10%;width:70%;height:70%;background:radial-gradient(circle,rgba(99,130,255,0.08) 0%,transparent 60%);pointer-events:none;z-index:0}
-body::after{content:"";position:fixed;bottom:-30%;right:-10%;width:60%;height:60%;background:radial-gradient(circle,rgba(56,217,201,0.06) 0%,transparent 60%);pointer-events:none;z-index:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--t);min-height:100vh;line-height:1.5;background-image:url('bg.png');background-size:cover;background-position:center;background-attachment:fixed;background-repeat:no-repeat}
+body::before{content:"";position:fixed;inset:0;background:rgba(7,10,19,0.85);pointer-events:none;z-index:0}
 .c{max-width:1040px;margin:0 auto;padding:60px 20px;position:relative;z-index:1}
 a{color:var(--ac);text-decoration:none;transition:color .2s}a:hover{color:var(--ac-hover)}
 h1{font-size:3rem;font-weight:800;letter-spacing:-0.03em;background:linear-gradient(135deg,#fff 30%,#a5b4fc 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;text-align:center;margin-bottom:16px}
