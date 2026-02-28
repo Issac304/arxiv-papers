@@ -357,15 +357,16 @@ if(ae){{const d=document.createElement('div');d.innerHTML=AX[curCat]||AX['all'];
 const he=document.getElementById('hf-list');
 if(he){{const d=document.createElement('div');d.innerHTML=HF;const cards=[...d.querySelectorAll('.card')];let h='';cards.forEach(c=>{{const t=c.textContent.toLowerCase();if(!q||q.split(/\\s+/).every(w=>t.includes(w))){{h+=c.outerHTML;total++}}}});he.innerHTML=h||'<div class="nr">没有匹配的论文</div>'}}
 document.getElementById('cnt').textContent=total+' 篇';
+initCards();
 }}
 window.addEventListener('scroll',()=>document.getElementById('st').classList.toggle('v',window.scrollY>400));
 
 function getDeleted(){{try{{return JSON.parse(localStorage.getItem('del_papers')||'[]')}}catch{{return[]}}}}
 function getFavs(){{try{{return JSON.parse(localStorage.getItem('fav_papers')||'{{}}')}}catch{{return{{}}}}}}
-function delPaper(btn,pid){{const dels=getDeleted();if(!dels.includes(pid))dels.push(pid);localStorage.setItem('del_papers',JSON.stringify(dels));const card=btn.closest('.card');if(card)card.classList.add('deleted');setTimeout(()=>{{if(card)card.remove()}},300)}}
+function delPaper(btn,pid){{const dels=getDeleted();if(!dels.includes(pid))dels.push(pid);localStorage.setItem('del_papers',JSON.stringify(dels));const card=btn.closest('.card');if(card){{card.style.transition='all .3s';card.style.opacity='0';card.style.transform='scale(.97)';setTimeout(()=>card.remove(),300)}}}}
 function toggleFav(btn,pid,title,link,pdf){{const favs=getFavs();if(favs[pid]){{delete favs[pid];btn.innerHTML='&#9825;';btn.classList.remove('on')}}else{{favs[pid]={{title,link,pdf,t:Date.now()}};btn.innerHTML='&#9829;';btn.classList.add('on')}}localStorage.setItem('fav_papers',JSON.stringify(favs))}}
-function initCards(){{const dels=getDeleted();const favs=getFavs();document.querySelectorAll('.card[data-pid]').forEach(c=>{{const pid=c.dataset.pid;if(dels.includes(pid)){{c.remove();return}}const fb=c.querySelector('.fav-btn');if(fb&&favs[pid]){{fb.innerHTML='&#9829;';fb.classList.add('on')}}}})}}
-filter();initCards();
+function initCards(){{const dels=getDeleted();const favs=getFavs();document.querySelectorAll('.card[data-pid]').forEach(c=>{{const pid=c.dataset.pid;if(dels.includes(pid)){{c.remove();return}}const fb=c.querySelector('.fav-btn');if(fb&&favs[pid]){{fb.innerHTML='&#9829;';fb.classList.add('on')}}}})}};
+filter();
 </script></body></html>"""
 
 def _js_escape(s):
