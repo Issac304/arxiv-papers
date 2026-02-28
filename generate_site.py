@@ -1,0 +1,235 @@
+# 从 data/*.json 生成静态 HTML 网站到 site/ 目录
+import json
+import os
+import glob
+import html
+import sys
+
+BASE = os.path.dirname(os.path.abspath(__file__))
+DATA_DIR = os.path.join(BASE, "data")
+SITE_DIR = os.path.join(BASE, "site")
+
+CAT_NAMES = {"cs.CV": "计算机视觉", "cs.CL": "计算与语言", "cs.LG": "机器学习", "cs.MM": "多媒体"}
+CAT_COLORS = {"cs.CV": "#7b93ff", "cs.CL": "#ff8c6b", "cs.LG": "#45d4c8", "cs.MM": "#c06cff"}
+
+CSS = """
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+:root{--bg:#0a0e1a;--glass:rgba(255,255,255,0.07);--gb:rgba(255,255,255,0.12);--t:#fff;--t2:#b0b8d0;--t3:#7880a0;--ac:#7b93ff;--ac2:#45d4c8;--hf:#ff9d00}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',-apple-system,'PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:var(--t);min-height:100vh}
+body::before{content:"";position:fixed;top:-200px;right:-200px;width:600px;height:600px;background:radial-gradient(circle,rgba(123,147,255,0.07)0%,transparent 70%);pointer-events:none}
+.c{max-width:1000px;margin:0 auto;padding:40px 20px;position:relative;z-index:1}
+a{color:var(--ac);text-decoration:none}a:hover{color:#9db4ff}
+h1{font-size:2.4rem;font-weight:800;background:linear-gradient(135deg,#7b93ff,#45d4c8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;text-align:center;margin-bottom:8px}
+.sub{text-align:center;color:var(--t2);margin-bottom:10px;font-size:0.95rem}
+.pills{display:flex;justify-content:center;gap:6px;margin-bottom:40px;flex-wrap:wrap}
+.pill{font-size:.72rem;padding:3px 11px;border-radius:16px;background:var(--glass);border:1px solid var(--gb);color:var(--t2)}
+.section{margin-bottom:40px}
+.label{font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:2px;color:var(--t3);margin-bottom:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
+.dcard{display:flex;align-items:center;justify-content:space-between;background:var(--glass);border:1px solid var(--gb);border-radius:12px;padding:14px 18px;color:var(--t);transition:all .2s}
+.dcard:hover{border-color:rgba(255,255,255,.18);transform:translateY(-1px);box-shadow:0 6px 20px rgba(0,0,0,.3)}
+.dcard .dt{font-weight:700;font-size:1rem}
+.badges{display:flex;gap:5px}
+.badge{font-size:.82rem;font-weight:700;padding:3px 10px;border-radius:7px;background:rgba(255,255,255,.06);border:1px solid var(--gb)}
+.b-a{color:#9db4ff}.b-h{color:#ffb840}
+.topbar{position:sticky;top:0;z-index:100;background:rgba(10,14,26,.9);backdrop-filter:blur(16px);border-bottom:1px solid var(--gb);padding:12px 20px}
+.topbar-in{max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.back{color:var(--t3);font-size:.85rem;font-weight:500}
+.back:hover{color:var(--ac)}
+.topbar h2{font-size:1.05rem;font-weight:700}
+.spacer{flex:1}
+.search{position:relative;width:280px}
+.search input{width:100%;background:rgba(255,255,255,.08);border:1px solid var(--gb);border-radius:9px;padding:8px 12px 8px 36px;color:var(--t);font-size:.88rem;font-family:inherit;outline:0}
+.search input:focus{border-color:var(--ac)}
+.search input::placeholder{color:var(--t3)}
+.search svg{position:absolute;left:10px;top:50%;transform:translateY(-50%);color:var(--t3)}
+.cnt{font-size:.8rem;color:var(--t3);white-space:nowrap}
+.filters{max-width:1100px;margin:0 auto;padding:12px 20px 0;display:flex;gap:7px;flex-wrap:wrap;align-items:center}
+.fbtn{background:var(--glass);border:1px solid var(--gb);border-radius:9px;padding:6px 14px;color:var(--t2);font-size:.8rem;font-weight:500;cursor:pointer;font-family:inherit;white-space:nowrap;display:inline-flex;align-items:center;gap:5px;transition:all .15s}
+.fbtn:hover{border-color:rgba(255,255,255,.18);color:var(--t);background:rgba(255,255,255,.1)}
+.fbtn.on{background:var(--ac);border-color:var(--ac);color:#fff}
+.fbtn.on-hf{background:var(--hf);border-color:var(--hf);color:#fff}
+.fc{opacity:.7;font-size:.73rem}
+.cdot{width:6px;height:6px;border-radius:50%;display:inline-block}
+.fsep{width:1px;height:18px;background:var(--gb);margin:0 3px}
+.list{max-width:1100px;margin:0 auto;padding:12px 20px 60px}
+.card{background:var(--glass);border:1px solid var(--gb);border-radius:12px;padding:18px 22px;margin-bottom:9px;transition:all .2s}
+.card:hover{border-color:rgba(255,255,255,.16);background:rgba(255,255,255,.1)}
+.ch{display:flex;align-items:flex-start;gap:12px}
+.ci{font-size:.72rem;color:var(--t3);min-width:26px;padding-top:3px;font-weight:600}
+.cb{flex:1;min-width:0}
+.ct{font-size:1rem;font-weight:700;line-height:1.4;margin-bottom:4px}
+.ct a{color:var(--t)}.ct a:hover{color:var(--ac)}
+.ca{font-size:.86rem;color:var(--t2);margin-bottom:7px;line-height:1.4}
+.tags{display:flex;gap:5px;flex-wrap:wrap;align-items:center}
+.tag{font-size:.72rem;font-weight:500;padding:2px 8px;border-radius:5px;background:rgba(255,255,255,.06);border:1px solid var(--gb);color:var(--t2)}
+.links{display:flex;gap:5px;flex-shrink:0;margin-left:auto}
+.links a{font-size:.78rem;font-weight:500;color:var(--ac);padding:4px 10px;border:1px solid rgba(123,147,255,.2);border-radius:7px}
+.links a:hover{background:rgba(123,147,255,.1)}
+.abs{margin-top:8px;margin-left:38px;font-size:.86rem;line-height:1.6;color:var(--t2)}
+.nr{text-align:center;padding:60px;color:var(--t3)}
+.stop{position:fixed;bottom:24px;right:24px;width:40px;height:40px;background:var(--ac);border:none;border-radius:10px;color:#fff;font-size:1.1rem;cursor:pointer;opacity:0;transition:all .2s;z-index:99;box-shadow:0 4px 16px rgba(123,147,255,.15)}
+.stop.v{opacity:1}.stop:hover{transform:translateY(-2px)}
+footer{text-align:center;padding:28px 0;color:var(--t3);font-size:.75rem;margin-top:30px}
+@media(max-width:700px){.search{width:100%;order:10}.links{display:none}.ci{display:none}.abs{margin-left:0}.ch{gap:6px}}
+"""
+
+def esc(s):
+    return html.escape(str(s))
+
+def get_dates():
+    files = glob.glob(os.path.join(DATA_DIR, "????-??-??.json"))
+    return sorted([os.path.basename(f).replace(".json", "") for f in files], reverse=True)
+
+def load_data(date_str):
+    path = os.path.join(DATA_DIR, f"{date_str}.json")
+    if not os.path.exists(path):
+        return {"arxiv": [], "huggingface": []}
+    with open(path, "r", encoding="utf-8") as f:
+        d = json.load(f)
+    if isinstance(d, list):
+        return {"arxiv": d, "huggingface": []}
+    return d
+
+def gen_index():
+    dates = get_dates()
+    date_cards = ""
+    for d in dates:
+        data = load_data(d)
+        ac = len(data["arxiv"])
+        hc = len(data["huggingface"])
+        hf_badge = f'<span class="badge b-h">HF {hc}</span>' if hc else ""
+        a_badge = f'<span class="badge b-a">{ac}</span>' if ac else ""
+        date_cards += f'<a class="dcard" href="{d}.html"><span class="dt">{d}</span><div class="badges">{a_badge}{hf_badge}</div></a>\n'
+
+    return f"""<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="theme-color" content="#0a0e1a"><meta name="apple-mobile-web-app-capable" content="yes">
+<title>arXiv Papers</title><style>{CSS}</style></head><body>
+<div class="c">
+<h1>arXiv Papers</h1>
+<p class="sub">AI 论文每日追踪与发现</p>
+<div class="pills"><span class="pill">cs.CV</span><span class="pill">cs.CL</span><span class="pill">cs.LG</span><span class="pill">cs.MM</span><span class="pill" style="color:var(--hf)">HuggingFace</span></div>
+<div class="section"><div class="label">Daily Papers</div>
+{f'<div class="grid">{date_cards}</div>' if date_cards else '<div class="nr">暂无数据</div>'}
+</div>
+<footer>arXiv Papers &bull; <a href="https://arxiv.org">arXiv.org</a> &bull; <a href="https://huggingface.co/papers">HuggingFace</a></footer>
+</div></body></html>"""
+
+def gen_paper_card(p, i, is_hf=False):
+    au = p.get("authors", [])
+    au_str = esc(", ".join(au[:6]) + (f" 等({len(au)}位)" if len(au) > 6 else ""))
+
+    tags = ""
+    if is_hf:
+        up = p.get("upvotes", 0)
+        if up: tags += f'<span class="tag" style="color:var(--hf);border-color:rgba(255,157,0,.25);font-weight:600">&#9650; {up}</span>'
+        org = p.get("organization", "")
+        if org: tags += f'<span class="tag" style="color:var(--ac);border-color:rgba(123,147,255,.2)">{esc(org)}</span>'
+    else:
+        for c in (p.get("categories") or [])[:5]:
+            col = CAT_COLORS.get(c, "")
+            style = f'color:{col};border-color:{col}33' if col else ""
+            tags += f'<span class="tag" style="{style}">{c}</span>'
+        cm = p.get("comment", "")
+        if cm:
+            cm_short = esc(cm[:55] + "..." if len(cm) > 55 else cm)
+            tags += f'<span class="tag" style="color:var(--ac2);border-color:rgba(69,212,200,.2);font-style:italic;font-size:.7rem">{cm_short}</span>'
+
+    link = f"http://arxiv.org/abs/{p['id']}" if is_hf else p.get("link", "")
+    hf_link = f'<a href="{p.get("link","")}" target="_blank">HF</a>' if is_hf else ""
+    summary = esc(p.get("summary", ""))
+
+    return f"""<div class="card"><div class="ch">
+<span class="ci">{i}</span><div class="cb">
+<div class="ct"><a href="{link}" target="_blank">{esc(p["title"])}</a></div>
+<div class="ca">{au_str}</div>
+<div class="tags">{tags}</div></div>
+<div class="links">{hf_link}<a href="{link}" target="_blank">arXiv</a><a href="{p.get('pdf','')}" target="_blank">PDF</a></div>
+</div><div class="abs">{summary}</div></div>"""
+
+def gen_daily_page(date_str):
+    data = load_data(date_str)
+    arxiv = data["arxiv"]
+    hf = data["huggingface"]
+
+    arxiv_cards = "".join(gen_paper_card(p, i+1) for i, p in enumerate(arxiv))
+    hf_cards = "".join(gen_paper_card(p, i+1, True) for i, p in enumerate(hf))
+
+    cats = {}
+    for p in arxiv:
+        for c in (p.get("listed_in") or p.get("categories") or []):
+            if c in CAT_NAMES: cats[c] = cats.get(c, 0) + 1
+
+    cat_sections = {}
+    for cat in CAT_NAMES:
+        if cat not in cats: continue
+        cp = [p for p in arxiv if cat in (p.get("listed_in") or p.get("categories") or [])]
+        cat_sections[cat] = "".join(gen_paper_card(p, i+1) for i, p in enumerate(cp))
+
+    filter_btns = ""
+    if hf:
+        filter_btns += f'<button class="fbtn" data-src="hf" onclick="show(this)">&#x1F917; HF 热门 <span class="fc">{len(hf)}</span></button><div class="fsep"></div>'
+    if arxiv:
+        filter_btns += f'<button class="fbtn on" data-src="all" onclick="show(this)">全部 <span class="fc">{len(arxiv)}</span></button>'
+        for cat, cnt in cats.items():
+            col = CAT_COLORS.get(cat, "#888")
+            filter_btns += f'<button class="fbtn" data-src="{cat}" onclick="show(this)"><span class="cdot" style="background:{col}"></span>{cat} <span class="fc">{cnt}</span></button>'
+
+    default_src = "all" if arxiv else "hf"
+    default_active = "on" if arxiv else "on-hf"
+
+    return f"""<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="theme-color" content="#0a0e1a"><meta name="apple-mobile-web-app-capable" content="yes">
+<title>{date_str} - arXiv Papers</title><style>{CSS}</style></head><body>
+<div class="topbar"><div class="topbar-in">
+<a class="back" href="index.html">&#8592; 首页</a>
+<h2>{date_str}</h2><span class="spacer"></span>
+<div class="search"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>
+<input id="si" type="text" placeholder="搜索标题、作者..." oninput="filter()"></div>
+<span class="cnt" id="cnt"></span></div></div>
+<div class="filters" id="fl">{filter_btns}</div>
+<div class="list" id="pl"></div>
+<button class="stop" id="st" onclick="window.scrollTo({{top:0,behavior:'smooth'}})">&#8593;</button>
+<script>
+const S={{"all":`{_js_escape(arxiv_cards)}`,"hf":`{_js_escape(hf_cards)}`{_cat_entries(cat_sections)}}};
+let cur="{default_src}";
+function show(b){{document.querySelectorAll('.fbtn').forEach(x=>x.classList.remove('on','on-hf'));b.classList.add(b.dataset.src==='hf'?'on-hf':'on');cur=b.dataset.src;filter()}}
+function filter(){{const q=document.getElementById('si').value.toLowerCase();const el=document.getElementById('pl');const d=document.createElement('div');d.innerHTML=S[cur]||S['all'];const cards=[...d.querySelectorAll('.card')];let n=0;let h='';cards.forEach(c=>{{const t=c.textContent.toLowerCase();if(!q||q.split(/\\s+/).every(w=>t.includes(w))){{h+=c.outerHTML;n++}}}});el.innerHTML=h||'<div class="nr">没有匹配的论文</div>';document.getElementById('cnt').textContent=n+' 篇'}}
+window.addEventListener('scroll',()=>document.getElementById('st').classList.toggle('v',window.scrollY>400));
+filter();
+</script></body></html>"""
+
+def _js_escape(s):
+    return s.replace("\\", "\\\\").replace("`", "\\`").replace("${", "\\${")
+
+def _cat_entries(cat_sections):
+    parts = ""
+    for cat, html_str in cat_sections.items():
+        parts += f',"{cat}":`{_js_escape(html_str)}`'
+    return parts
+
+
+def main():
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8")
+
+    os.makedirs(SITE_DIR, exist_ok=True)
+
+    print("Generating index.html...")
+    with open(os.path.join(SITE_DIR, "index.html"), "w", encoding="utf-8") as f:
+        f.write(gen_index())
+
+    dates = get_dates()
+    for d in dates:
+        print(f"Generating {d}.html...")
+        with open(os.path.join(SITE_DIR, f"{d}.html"), "w", encoding="utf-8") as f:
+            f.write(gen_daily_page(d))
+
+    print(f"Done! {len(dates)} pages generated in site/")
+
+
+if __name__ == "__main__":
+    main()
