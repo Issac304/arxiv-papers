@@ -219,7 +219,7 @@ def _gen_cvpr_section():
         return ""
     return f"""<div class="section">
 <div class="label" style="display:flex;align-items:center;gap:12px">CVPR 2026</div>
-<a class="dcard" href="cvpr26.html" style="max-width:320px"><span class="dt">CVPR 2026 Papers</span><div class="badges"><span class="badge b-a">{len(papers)}</span></div></a>
+<div class="dcard" style="max-width:320px"><a href="cvpr26.html" style="text-decoration:none;color:var(--t);flex:1;display:flex;align-items:center;justify-content:space-between"><span class="dt">CVPR 2026 Papers</span><div class="badges"><span class="badge b-a">{len(papers)}</span></div></a><button class="dcard-refresh" onclick="refreshCvpr(event)" style="position:relative;top:0;right:0;margin-left:12px" title="重新抓取">&#x21bb;</button></div>
 </div>"""
 
 def gen_cvpr_page():
@@ -337,6 +337,19 @@ try{{
 const r=await fetch(`https://api.github.com/repos/${{REPO}}/actions/workflows/daily.yml/dispatches`,{{
 method:'POST',headers:{{'Authorization':`token ${{token}}`,'Accept':'application/vnd.github.v3+json'}},
 body:JSON.stringify({{ref:'master',inputs:{{date:d}}}})
+}});
+if(r.status===204){{btn.style.color='var(--ac2)';setTimeout(()=>{{btn.style.animation='';btn.title='已触发，2分钟后刷新'}},2000)}}
+else{{btn.style.animation='';btn.style.color='#ff6b6b'}}
+}}catch{{btn.style.animation='';btn.style.color='#ff6b6b'}}
+}}
+async function refreshCvpr(e){{
+e.preventDefault();
+const token=getToken();if(!token)return;
+const btn=e.target;btn.style.animation='spin 1s linear infinite';
+try{{
+const r=await fetch(`https://api.github.com/repos/${{REPO}}/actions/workflows/daily.yml/dispatches`,{{
+method:'POST',headers:{{'Authorization':`token ${{token}}`,'Accept':'application/vnd.github.v3+json'}},
+body:JSON.stringify({{ref:'master',inputs:{{date:''}}}})
 }});
 if(r.status===204){{btn.style.color='var(--ac2)';setTimeout(()=>{{btn.style.animation='';btn.title='已触发，2分钟后刷新'}},2000)}}
 else{{btn.style.animation='';btn.style.color='#ff6b6b'}}
