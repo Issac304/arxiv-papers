@@ -16,8 +16,8 @@ CSS = """
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 :root{--bg:#0a0e1a;--glass:rgba(255,255,255,0.07);--gb:rgba(255,255,255,0.12);--t:#fff;--t2:#b0b8d0;--t3:#7880a0;--ac:#7b93ff;--ac2:#45d4c8;--hf:#ff9d00}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Inter',-apple-system,'PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:var(--t);min-height:100vh;background-image:url('bg.png');background-size:cover;background-position:center;background-attachment:fixed;background-repeat:no-repeat}
-body::before{content:"";position:fixed;inset:0;background:rgba(10,14,26,0.75);pointer-events:none;z-index:0}
+body{font-family:'Inter',-apple-system,'PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:var(--t);min-height:100vh}
+body::before{content:"";position:fixed;top:-200px;right:-200px;width:600px;height:600px;background:radial-gradient(circle,rgba(123,147,255,0.07)0%,transparent 70%);pointer-events:none}
 .c{max-width:1000px;margin:0 auto;padding:40px 20px;position:relative;z-index:1}
 a{color:var(--ac);text-decoration:none}a:hover{color:#9db4ff}
 h1{font-size:2.4rem;font-weight:800;background:linear-gradient(135deg,#7b93ff,#45d4c8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;text-align:center;margin-bottom:8px}
