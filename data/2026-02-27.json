@@ -35,7 +35,8 @@
       "pdf": "http://arxiv.org/pdf/2602.23152",
       "upvotes": 180,
       "comments": 4,
-      "organization": "opendatalab"
+      "organization": "opendatalab",
+      "summary_cn": "研究问题：构建能够学习、模拟和推理客观物理定律的世界模型是通用人工智能追求中的基础挑战。方法：通过视频生成模型如Sora展示潜力。创新点：提出基于视频生成模型的世界模型构建方法。结果：模型在模拟和推理物理定律方面表现出色。"
     },
     {
       "id": "2602.22859",
@@ -51,7 +52,8 @@
       "pdf": "http://arxiv.org/pdf/2602.22859",
       "upvotes": 143,
       "comments": 3,
-      "organization": ""
+      "organization": "",
+      "summary_cn": "研究问题：大型多模态模型（LMMs）在复杂推理和决策方面取得显著进展，但训练仍依赖于静态数据和固定食谱。方法：提出动态诊断能力盲点和提供动态训练方法。创新点：引入动态训练和诊断方法。结果：模型在复杂推理和决策方面表现更优。"
     },
     {
       "id": "2602.22638",
@@ -72,7 +74,8 @@
       "pdf": "http://arxiv.org/pdf/2602.22638",
       "upvotes": 94,
       "comments": 3,
-      "organization": "alibaba-inc"
+      "organization": "alibaba-inc",
+      "summary_cn": "研究问题：基于大型语言模型（LLMs）的路线规划代理在支持日常人类移动性方面具有潜力，但现实世界移动性设置中的系统评估受到多样化路线选择的影响。方法：提出一种新的评估方法。创新点：提出针对现实世界移动性设置的评估方法。结果：模型在路线规划方面表现更优。"
     },
     {
       "id": "2602.22897",
@@ -95,7 +98,8 @@
       "pdf": "http://arxiv.org/pdf/2602.22897",
       "upvotes": 46,
       "comments": 3,
-      "organization": ""
+      "organization": "",
+      "summary_cn": "研究问题：当前多模态LLMs主要限于双模态交互，缺乏统一的跨模态交互。方法：提出一种跨模态交互方法。创新点：实现跨模态交互。结果：模型在多模态交互方面表现更优。"
     },
     {
       "id": "2602.22766",
@@ -114,7 +118,8 @@
       "pdf": "http://arxiv.org/pdf/2602.22766",
       "upvotes": 34,
       "comments": 3,
-      "organization": "Tsinghua"
+      "organization": "Tsinghua",
+      "summary_cn": "研究问题：潜在视觉推理的有效性机制尚不清楚。方法：通过研究潜在视觉推理的机制。创新点：揭示潜在视觉推理的机制。结果：模型在视觉推理方面表现更优。"
     },
     {
       "id": "2602.23008",
@@ -131,7 +136,8 @@
       "pdf": "http://arxiv.org/pdf/2602.23008",
       "upvotes": 27,
       "comments": 3,
-      "organization": "microsoft"
+      "organization": "microsoft",
+      "summary_cn": "研究问题：探索是大型语言模型代理训练中的关键瓶颈。方法：提出探索性记忆增强的在线和离线策略优化方法。创新点：引入探索性记忆增强策略。结果：模型在探索性任务中表现更优。"
     },
     {
       "id": "2602.23258",
@@ -150,7 +156,8 @@
       "pdf": "http://arxiv.org/pdf/2602.23258",
       "upvotes": 24,
       "comments": 3,
-      "organization": "HarbinInstituteofTechnologyHIT"
+      "organization": "HarbinInstituteofTechnologyHIT",
+      "summary_cn": "研究问题：多智能体系统（MAS）在复杂推理方面表现出色，但易受个体参与者错误信息的影响。方法：提出一种基于结构工程和微调的解决方案。创新点：提出新的解决方案。结果：模型在复杂推理方面表现更优。"
     },
     {
       "id": "2602.22675",
@@ -184,9 +191,10 @@
       "summary": "Recent deep research agents primarily improve performance by scaling reasoning depth, but this leads to high inference cost and latency in search-intensive scenarios. Moreover, generalization across heterogeneous research settings remains challenging. In this work, we propose Search More, Think Less (SMTL), a framework for long-horizon agentic search that targets both efficiency and generalization. SMTL replaces sequential reasoning with parallel evidence acquisition, enabling efficient context management under constrained context budgets. To support generalization across task types, we further introduce a unified data synthesis pipeline that constructs search tasks spanning both deterministic question answering and open-ended research scenarios with task appropriate evaluation metrics. We train an end-to-end agent using supervised fine-tuning and reinforcement learning, achieving strong and often state of the art performance across benchmarks including BrowseComp (48.6\\%), GAIA (75.7\\%), Xbench (82.0\\%), and DeepResearch Bench (45.9\\%). Compared to Mirothinker-v1.0, SMTL with maximum 100 interaction steps reduces the average number of reasoning steps on BrowseComp by 70.7\\%, while improving accuracy.",
       "link": "https://huggingface.co/papers/2602.22675",
       "pdf": "http://arxiv.org/pdf/2602.22675",
-      "upvotes": 16,
+      "upvotes": 17,
       "comments": 3,
-      "organization": "OPPOer"
+      "organization": "OPPOer",
+      "summary_cn": "研究问题：深度研究代理通过扩展推理深度来提高性能，但导致搜索密集场景中的高推理成本和延迟。方法：提出“搜索更多，思考更少”的方法。创新点：提出新的推理方法。结果：模型在搜索密集场景中表现更优。"
     },
     {
       "id": "2602.23363",
@@ -204,9 +212,10 @@
       "summary": "We introduce MediX-R1, an open-ended Reinforcement Learning (RL) framework for medical multimodal large language models (MLLMs) that enables clinically grounded, free-form answers beyond multiple-choice formats. MediX-R1 fine-tunes a baseline vision-language backbone with Group Based RL and a composite reward tailored for medical reasoning: an LLM-based accuracy reward that judges semantic correctness with a strict YES/NO decision, a medical embedding-based semantic reward to capture paraphrases and terminology variants, and lightweight format and modality rewards that enforce interpretable reasoning and modality recognition. This multi-signal design provides stable, informative feedback for open-ended outputs where traditional verifiable or MCQ-only rewards fall short. To measure progress, we propose a unified evaluation framework for both text-only and image+text tasks that uses a Reference-based LLM-as-judge in place of brittle string-overlap metrics, capturing semantic correctness, reasoning, and contextual alignment. Despite using only sim51K instruction examples, MediX-R1 achieves excellent results across standard medical LLM (text-only) and VLM (image + text) benchmarks, outperforming strong open-source baselines and delivering particularly large gains on open-ended clinical tasks. Our results demonstrate that open-ended RL with comprehensive reward signals and LLM-based evaluation is a practical path toward reliable medical reasoning in multimodal models. Our trained models, curated datasets and source code are available at https://medix.cvmbzuai.com",
       "link": "https://huggingface.co/papers/2602.23363",
       "pdf": "http://arxiv.org/pdf/2602.23363",
-      "upvotes": 14,
+      "upvotes": 15,
       "comments": 2,
-      "organization": "MBZUAI"
+      "organization": "MBZUAI",
+      "summary_cn": "研究问题：提出MediX-R1，一个用于医疗多模态大型语言模型（MLLMs）的开源强化学习（RL）框架。方法：通过微调和组合策略优化。创新点：提出新的框架和优化方法。结果：模型在医疗领域表现更优。"
     },
     {
       "id": "2602.23361",
@@ -225,7 +234,8 @@
       "pdf": "http://arxiv.org/pdf/2602.23361",
       "upvotes": 11,
       "comments": 2,
-      "organization": "nvidia"
+      "organization": "nvidia",
+      "summary_cn": "研究问题：离线前馈方法在计算和内存需求方面存在关键限制。方法：基于关键洞察提出新的方法。创新点：提出新的3D重建模型。结果：模型在3D重建方面表现更优。"
     },
     {
       "id": "2602.21760",
@@ -242,7 +252,8 @@
       "pdf": "http://arxiv.org/pdf/2602.21760",
       "upvotes": 11,
       "comments": 2,
-      "organization": ""
+      "organization": "",
+      "summary_cn": "研究问题：扩散模型在生成高保真图像、视频和音频方面取得显著进展，但推理计算成本高。方法：提出基于分布式并行性的扩散加速方法。创新点：显著减少生成伪影，提高生成效率。实验结果：加速方法有效降低计算成本，提高生成质量。"
     },
     {
       "id": "2602.23205",
@@ -265,7 +276,8 @@
       "pdf": "http://arxiv.org/pdf/2602.23205",
       "upvotes": 9,
       "comments": 2,
-      "organization": ""
+      "organization": "",
+      "summary_cn": "研究问题：现实世界中的人类行为编码了丰富的长期上下文信息，但现有捕获系统成本高，限制了大规模应用。方法：提出一种低成本的人行行为捕获系统。创新点：无需昂贵布景和穿戴设备。实验结果：系统有效捕获行为数据，支持大规模训练。"
     },
     {
       "id": "2602.17594",
@@ -289,7 +301,8 @@
       "pdf": "http://arxiv.org/pdf/2602.17594",
       "upvotes": 8,
       "comments": 3,
-      "organization": "MIT"
+      "organization": "MIT",
+      "summary_cn": "研究问题：严格评估机器智能与人类通用智能的差距日益重要和具有挑战性。方法：提出一种新的评估方法，评估机器智能的广泛能力。创新点：评估范围更广，更贴近人类活动。实验结果：新方法有效评估机器智能水平。"
     },
     {
       "id": "2602.22953",
@@ -316,7 +329,8 @@
       "pdf": "http://arxiv.org/pdf/2602.22953",
       "upvotes": 5,
       "comments": 2,
-      "organization": "ibm-research"
+      "organization": "ibm-research",
+      "summary_cn": "研究问题：通用智能体在未知环境中执行任务的能力尚未实现。方法：提出一种新的通用智能体框架。创新点：实现跨领域任务执行。实验结果：智能体在多个领域表现出色。"
     },
     {
       "id": "2602.22594",
@@ -331,40 +345,8 @@
       "pdf": "http://arxiv.org/pdf/2602.22594",
       "upvotes": 5,
       "comments": 2,
-      "organization": ""
-    },
-    {
-      "id": "2602.23339",
-      "title": "Retrieve and Segment: Are a Few Examples Enough to Bridge the Supervision Gap in Open-Vocabulary Segmentation?",
-      "authors": [
-        "Tilemachos Aravanis",
-        "Vladan Stojnić",
-        "Bill Psomas",
-        "Nikos Komodakis",
-        "Giorgos Tolias"
-      ],
-      "summary": "Open-vocabulary segmentation (OVS) extends the zero-shot recognition capabilities of vision-language models (VLMs) to pixel-level prediction, enabling segmentation of arbitrary categories specified by text prompts. Despite recent progress, OVS lags behind fully supervised approaches due to two challenges: the coarse image-level supervision used to train VLMs and the semantic ambiguity of natural language. We address these limitations by introducing a few-shot setting that augments textual prompts with a support set of pixel-annotated images. Building on this, we propose a retrieval-augmented test-time adapter that learns a lightweight, per-image classifier by fusing textual and visual support features. Unlike prior methods relying on late, hand-crafted fusion, our approach performs learned, per-query fusion, achieving stronger synergy between modalities. The method supports continually expanding support sets, and applies to fine-grained tasks such as personalized segmentation. Experiments show that we significantly narrow the gap between zero-shot and supervised segmentation while preserving open-vocabulary ability.",
-      "link": "https://huggingface.co/papers/2602.23339",
-      "pdf": "http://arxiv.org/pdf/2602.23339",
-      "upvotes": 4,
-      "comments": 2,
-      "organization": "vrg-prague"
-    },
-    {
-      "id": "2602.23058",
-      "title": "GeoWorld: Geometric World Models",
-      "authors": [
-        "Zeyu Zhang",
-        "Danning Li",
-        "Ian Reid",
-        "Richard Hartley"
-      ],
-      "summary": "Energy-based predictive world models provide a powerful approach for multi-step visual planning by reasoning over latent energy landscapes rather than generating pixels. However, existing approaches face two major challenges: (i) their latent representations are typically learned in Euclidean space, neglecting the underlying geometric and hierarchical structure among states, and (ii) they struggle with long-horizon prediction, which leads to rapid degradation across extended rollouts. To address these challenges, we introduce GeoWorld, a geometric world model that preserves geometric structure and hierarchical relations through a Hyperbolic JEPA, which maps latent representations from Euclidean space onto hyperbolic manifolds. We further introduce Geometric Reinforcement Learning for energy-based optimization, enabling stable multi-step planning in hyperbolic latent space. Extensive experiments on CrossTask and COIN demonstrate around 3% SR improvement in 3-step planning and 2% SR improvement in 4-step planning compared to the state-of-the-art V-JEPA 2. Project website: https://steve-zeyu-zhang.github.io/GeoWorld.",
-      "link": "https://huggingface.co/papers/2602.23058",
-      "pdf": "http://arxiv.org/pdf/2602.23058",
-      "upvotes": 4,
-      "comments": 4,
-      "organization": ""
+      "organization": "",
+      "summary_cn": "研究问题：运动扩散模型在合成人类运动方面取得进展，但现有方法存在局限性。方法：提出一种新的运动扩散模型。创新点：结合双向生成和自回归模型。实验结果：模型提高运动合成真实感，适用于实时应用。"
     },
     {
       "id": "2602.22437",
@@ -386,9 +368,45 @@
       "summary": "Fully Sharded Data Parallel (FSDP), also known as ZeRO, is widely used for training large-scale models, featuring its flexibility and minimal intrusion on model code. However, current FSDP systems struggle with structure-aware training methods (e.g., block-wise quantized training) and with non-element-wise optimizers (e.g., Shampoo and Muon) used in cutting-edge models (e.g., Gemini, Kimi K2). FSDP's fixed element- or row-wise sharding formats conflict with the block-structured computations. In addition, today's implementations fall short in communication and memory efficiency, limiting scaling to tens of thousands of GPUs. We introduce veScale-FSDP, a redesigned FSDP system that couples a flexible sharding format, RaggedShard, with a structure-aware planning algorithm to deliver both flexibility and performance at scale. veScale-FSDP natively supports efficient data placement required by FSDP, empowering block-wise quantization and non-element-wise optimizers. As a result, veScale-FSDP achieves 5~66% higher throughput and 16~30% lower memory usage than existing FSDP systems, while scaling efficiently to tens of thousands of GPUs.",
       "link": "https://huggingface.co/papers/2602.22437",
       "pdf": "http://arxiv.org/pdf/2602.22437",
+      "upvotes": 5,
+      "comments": 2,
+      "organization": "",
+      "summary_cn": "研究问题：FSDP在训练大规模模型中广泛应用，但存在局限性。方法：提出一种改进的FSDP系统。创新点：支持结构感知训练方法。实验结果：系统提高训练效率，降低计算成本。"
+    },
+    {
+      "id": "2602.23339",
+      "title": "Retrieve and Segment: Are a Few Examples Enough to Bridge the Supervision Gap in Open-Vocabulary Segmentation?",
+      "authors": [
+        "Tilemachos Aravanis",
+        "Vladan Stojnić",
+        "Bill Psomas",
+        "Nikos Komodakis",
+        "Giorgos Tolias"
+      ],
+      "summary": "Open-vocabulary segmentation (OVS) extends the zero-shot recognition capabilities of vision-language models (VLMs) to pixel-level prediction, enabling segmentation of arbitrary categories specified by text prompts. Despite recent progress, OVS lags behind fully supervised approaches due to two challenges: the coarse image-level supervision used to train VLMs and the semantic ambiguity of natural language. We address these limitations by introducing a few-shot setting that augments textual prompts with a support set of pixel-annotated images. Building on this, we propose a retrieval-augmented test-time adapter that learns a lightweight, per-image classifier by fusing textual and visual support features. Unlike prior methods relying on late, hand-crafted fusion, our approach performs learned, per-query fusion, achieving stronger synergy between modalities. The method supports continually expanding support sets, and applies to fine-grained tasks such as personalized segmentation. Experiments show that we significantly narrow the gap between zero-shot and supervised segmentation while preserving open-vocabulary ability.",
+      "link": "https://huggingface.co/papers/2602.23339",
+      "pdf": "http://arxiv.org/pdf/2602.23339",
       "upvotes": 4,
       "comments": 2,
-      "organization": ""
+      "organization": "vrg-prague",
+      "summary_cn": "研究问题：开放词汇分割（OVS）在像素级预测方面存在局限性。方法：提出一种改进的OVS方法。创新点：提高分割精度。实验结果：模型在像素级预测方面取得显著进步。"
+    },
+    {
+      "id": "2602.23058",
+      "title": "GeoWorld: Geometric World Models",
+      "authors": [
+        "Zeyu Zhang",
+        "Danning Li",
+        "Ian Reid",
+        "Richard Hartley"
+      ],
+      "summary": "Energy-based predictive world models provide a powerful approach for multi-step visual planning by reasoning over latent energy landscapes rather than generating pixels. However, existing approaches face two major challenges: (i) their latent representations are typically learned in Euclidean space, neglecting the underlying geometric and hierarchical structure among states, and (ii) they struggle with long-horizon prediction, which leads to rapid degradation across extended rollouts. To address these challenges, we introduce GeoWorld, a geometric world model that preserves geometric structure and hierarchical relations through a Hyperbolic JEPA, which maps latent representations from Euclidean space onto hyperbolic manifolds. We further introduce Geometric Reinforcement Learning for energy-based optimization, enabling stable multi-step planning in hyperbolic latent space. Extensive experiments on CrossTask and COIN demonstrate around 3% SR improvement in 3-step planning and 2% SR improvement in 4-step planning compared to the state-of-the-art V-JEPA 2. Project website: https://steve-zeyu-zhang.github.io/GeoWorld.",
+      "link": "https://huggingface.co/papers/2602.23058",
+      "pdf": "http://arxiv.org/pdf/2602.23058",
+      "upvotes": 4,
+      "comments": 4,
+      "organization": "",
+      "summary_cn": "研究问题：基于能量的预测世界模型在多步视觉规划方面具有潜力，但存在挑战。方法：提出一种新的方法，学习非欧几里得空间中的潜在表示。创新点：提高预测准确性。实验结果：模型在多步视觉规划方面表现出色。"
     },
     {
       "id": "2602.23259",
@@ -407,7 +425,8 @@
       "pdf": "http://arxiv.org/pdf/2602.23259",
       "upvotes": 2,
       "comments": 1,
-      "organization": ""
+      "organization": "",
+      "summary_cn": "研究问题：基于模仿学习的端到端自动驾驶（E2E-AD）方法存在局限性。方法：提出一种新的方法，结合专家驾驶行为和强化学习。创新点：提高自动驾驶性能。实验结果：模型在自动驾驶任务中表现出色。"
     },
     {
       "id": "2602.22045",
@@ -424,7 +443,8 @@
       "pdf": "http://arxiv.org/pdf/2602.22045",
       "upvotes": 2,
       "comments": 2,
-      "organization": "ExponentialScience"
+      "organization": "ExponentialScience",
+      "summary_cn": "研究问题：分布式账本技术（DLT）研究缺乏大规模文本数据。方法：构建DLT-Corpus，一个包含2.98亿个标记的文本集合。创新点：为DLT研究提供丰富数据资源。实验结果：DLT-Corpus为DLT研究提供有力支持。"
     },
     {
       "id": "2602.21420",
@@ -441,7 +461,8 @@
       "pdf": "http://arxiv.org/pdf/2602.21420",
       "upvotes": 2,
       "comments": 2,
-      "organization": "LinkedIn"
+      "organization": "LinkedIn",
+      "summary_cn": "研究问题：标准RLVR算法在提高LLMs推理能力的同时，导致Pass@1准确率提升与模型幻觉问题并存。方法：提出一种新的RLVR算法。创新点：通过优化奖励验证机制，减少模型幻觉。实验结果：新算法在提高准确率的同时，显著降低了幻觉率。"
     },
     {
       "id": "2602.20423",
@@ -459,7 +480,8 @@
       "pdf": "http://arxiv.org/pdf/2602.20423",
       "upvotes": 2,
       "comments": 2,
-      "organization": ""
+      "organization": "",
+      "summary_cn": "研究问题：医学图像分割因标注有限、解剖特征模糊和领域差异而具挑战性。方法：结合视觉-语言模型CLIP进行密集文本引导的医学图像分割。创新点：提出一种新的分割方法，有效利用跨模态信息。实验结果：新方法在分割任务上取得了显著性能提升。"
     },
     {
       "id": "2602.20332",
@@ -476,7 +498,8 @@
       "pdf": "http://arxiv.org/pdf/2602.20332",
       "upvotes": 2,
       "comments": 2,
-      "organization": ""
+      "organization": "",
+      "summary_cn": "研究问题：LLMs推理能力提升导致幻觉问题，现有研究多集中于开源模型。方法：针对封闭源模型，提出一种新的幻觉检测和参数编辑方法。创新点：首次关注封闭源模型中的幻觉问题。实验结果：新方法有效降低了封闭源模型的幻觉率。"
     },
     {
       "id": "2602.20300",
@@ -492,7 +515,8 @@
       "pdf": "http://arxiv.org/pdf/2602.20300",
       "upvotes": 2,
       "comments": 2,
-      "organization": ""
+      "organization": "",
+      "summary_cn": "研究问题：LLMs幻觉问题通常被视为模型缺陷。方法：从经典语言学角度，提出查询形式对模型响应的影响。创新点：构建22维查询特征，以影响模型响应。实验结果：新方法有效降低了模型幻觉。"
     },
     {
       "id": "2602.23165",
@@ -514,7 +538,8 @@
       "pdf": "http://arxiv.org/pdf/2602.23165",
       "upvotes": 1,
       "comments": 1,
-      "organization": ""
+      "organization": "",
+      "summary_cn": "研究问题：生成逼真的对话手势对数字人交互至关重要。方法：提出一种新的手势生成方法，考虑社交语境和动态。创新点：结合社交语境和动态，生成更自然的手势。实验结果：新方法在生成逼真手势方面取得了显著效果。"
     },
     {
       "id": "2602.18253",
@@ -532,7 +557,8 @@
       "pdf": "http://arxiv.org/pdf/2602.18253",
       "upvotes": 1,
       "comments": 2,
-      "organization": "HiTZ"
+      "organization": "HiTZ",
+      "summary_cn": "研究问题：数据高效神经解码是语音脑机接口的关键挑战。方法：提出基于迁移学习和跨任务解码的MEG语音模型。创新点：首次实现跨任务解码。实验结果：新方法在解码任务上取得了显著性能提升。"
     },
     {
       "id": "2602.22479",
@@ -545,7 +571,8 @@
       "pdf": "http://arxiv.org/pdf/2602.22479",
       "upvotes": 0,
       "comments": 2,
-      "organization": ""
+      "organization": "",
+      "summary_cn": "研究问题：连续学习对部署的LLMs至关重要，但现有方法在非平稳数据下表现脆弱。方法：提出一种新的在线更新方法，平衡稳定性和延迟。创新点：降低遗忘风险，提高模型稳定性。实验结果：新方法在非平稳数据下表现良好。"
     },
     {
       "id": "2602.20981",
@@ -568,7 +595,8 @@
       "pdf": "http://arxiv.org/pdf/2602.20981",
       "upvotes": 0,
       "comments": 2,
-      "organization": "Sony"
+      "organization": "Sony",
+      "summary_cn": "研究问题：视频与音频的多模态对齐在数据有限和描述与视频信息不匹配的情况下具挑战性。方法：针对多模态到音频生成，提出一种新的模型训练方法。创新点：有效利用有限数据，提高生成质量。实验结果：新方法在音频生成任务上取得了显著性能提升。"
     }
   ]
 }
