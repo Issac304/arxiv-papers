@@ -40,6 +40,10 @@ h1{font-size:3rem;font-weight:800;letter-spacing:-0.03em;background:linear-gradi
 .src-btn.hf:hover{background:rgba(255,157,0,0.15);border-color:rgba(255,157,0,0.3);color:#ffc860;transform:translateY(-1px)}
 .src-btn.ax{background:rgba(99,130,255,0.08);border:1px solid rgba(99,130,255,0.2);color:#9db4ff}
 .src-btn.ax:hover{background:rgba(99,130,255,0.15);border-color:rgba(99,130,255,0.3);color:#b0c4ff;transform:translateY(-1px)}
+.dcard-refresh{position:absolute;top:10px;right:38px;width:24px;height:24px;border:none;border-radius:8px;background:transparent;color:var(--t3);font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;transition:all .2s;z-index:2}
+.dcard:hover .dcard-refresh{opacity:1}
+.dcard-refresh:hover{color:var(--ac);background:rgba(99,130,255,0.15)}
+@keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
 .dcard-del{position:absolute;top:10px;right:10px;width:24px;height:24px;border:none;border-radius:8px;background:transparent;color:var(--t3);font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;transition:all .2s;z-index:2}
 .dcard:hover .dcard-del{opacity:1}
 .dcard-del:hover{color:#ff6b6b;background:rgba(255,107,107,0.15)}
@@ -297,7 +301,7 @@ def gen_index():
         hc = len(data["huggingface"])
         hf_link = f'<a class="src-btn hf" href="{d}.html#hf">HF 热门 <span>{hc}</span></a>' if hc else ""
         ax_link = f'<a class="src-btn ax" href="{d}.html#arxiv">arXiv <span>{ac}</span></a>' if ac else ""
-        date_cards += f'<div class="dcard" id="dc-{d}"><span class="dt">{d}</span><div class="src-links">{hf_link}{ax_link}</div><button class="dcard-del" onclick="delDate(\'{d}\')" title="隐藏">&times;</button></div>\n'
+        date_cards += f'<div class="dcard" id="dc-{d}"><span class="dt">{d}</span><div class="src-links">{hf_link}{ax_link}</div><button class="dcard-refresh" onclick="refreshDate(\'{d}\')" title="重新抓取">&#x21bb;</button><button class="dcard-del" onclick="delDate(\'{d}\')" title="隐藏">&times;</button></div>\n'
 
     return f"""<!DOCTYPE html>
 <html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
@@ -326,6 +330,18 @@ def gen_index():
 if('serviceWorker' in navigator)navigator.serviceWorker.register('sw.js').catch(()=>{{}});
 var now=new Date();document.getElementById('fd').value=now.getFullYear()+'-'+String(now.getMonth()+1).padStart(2,'0')+'-'+String(now.getDate()).padStart(2,'0');
 
+async function refreshDate(d){{
+const token=getToken();if(!token)return;
+const btn=event.target;btn.style.animation='spin 1s linear infinite';
+try{{
+const r=await fetch(`https://api.github.com/repos/${{REPO}}/actions/workflows/daily.yml/dispatches`,{{
+method:'POST',headers:{{'Authorization':`token ${{token}}`,'Accept':'application/vnd.github.v3+json'}},
+body:JSON.stringify({{ref:'master',inputs:{{date:d}}}})
+}});
+if(r.status===204){{btn.style.color='var(--ac2)';setTimeout(()=>{{btn.style.animation='';btn.title='已触发，2分钟后刷新'}},2000)}}
+else{{btn.style.animation='';btn.style.color='#ff6b6b'}}
+}}catch{{btn.style.animation='';btn.style.color='#ff6b6b'}}
+}}
 function delDate(d){{const el=document.getElementById('dc-'+d);if(el){{el.style.transition='all .3s';el.style.opacity='0';el.style.transform='scale(.95)';setTimeout(()=>el.remove(),300)}}
 const hd=JSON.parse(localStorage.getItem('hidden_dates')||'[]');if(!hd.includes(d))hd.push(d);localStorage.setItem('hidden_dates',JSON.stringify(hd))}}
 (function(){{const hd=JSON.parse(localStorage.getItem('hidden_dates')||'[]');hd.forEach(d=>{{const el=document.getElementById('dc-'+d);if(el)el.remove()}})}})()
