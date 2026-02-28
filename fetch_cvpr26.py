@@ -105,7 +105,32 @@ print(f'\n=== Total unique papers (excluding workshops): {len(results_all)} ===\
 results_all.sort(key=lambda x: x['published'], reverse=True)
 
 import sys
+import urllib.parse as _up
 sys.stdout.reconfigure(encoding='utf-8')
+
+api_key = os.environ.get("ZHIPU_API_KEY", "")
+if api_key:
+    print("Translating CVPR papers...")
+    for i in range(0, len(results_all), 10):
+        batch = results_all[i:i+10]
+        items = [f"{j+1}. {p['summary'][:300]}" for j, p in enumerate(batch)]
+        prompt = "以下是AI论文摘要，请为每篇用2-3句中文概括论文的研究问题、方法和主要贡献（50-80字），每篇占一行，保持编号格式，只输出结果：\n" + "\n".join(items)
+        try:
+            body = json.dumps({"model": "glm-4-flash", "messages": [{"role": "user", "content": prompt}], "temperature": 0.1, "max_tokens": 2000})
+            req = urllib.request.Request("https://open.bigmodel.cn/api/paas/v4/chat/completions", data=body.encode("utf-8"), headers={"Authorization": f"Bearer {api_key}", "Content-Type": "application/json"})
+            with urllib.request.urlopen(req, timeout=30) as resp:
+                result = json.loads(resp.read().decode("utf-8"))
+            lines = [l.strip() for l in result["choices"][0]["message"]["content"].strip().split("\n") if l.strip()]
+            for j, p in enumerate(batch):
+                if j < len(lines):
+                    cn = lines[j]
+                    for prefix in [f"{j+1}.", f"{j+1}、", f"{j+1} "]:
+                        if cn.startswith(prefix): cn = cn[len(prefix):].strip()
+                    p["summary_cn"] = cn
+            print(f"  Translated {i+1}-{i+len(batch)} / {len(results_all)}")
+        except Exception as e:
+            print(f"  [WARN] Translation failed: {e}")
+        time.sleep(0.5)
 
 output_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'data')
 os.makedirs(output_dir, exist_ok=True)

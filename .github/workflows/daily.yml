@@ -45,6 +45,8 @@ jobs:
 
       - name: Fetch CVPR 2026 papers
         run: python fetch_cvpr26.py
+        env:
+          ZHIPU_API_KEY: ${{ secrets.ZHIPU_API_KEY }}
 
       - name: Generate static site
         run: python generate_site.py
