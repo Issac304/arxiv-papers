@@ -33,10 +33,10 @@
       "summary": "The construction of World Models capable of learning, simulating, and reasoning about objective physical laws constitutes a foundational challenge in the pursuit of Artificial General Intelligence. Recent advancements represented by video generation models like Sora have demonstrated the potential of data-driven scaling laws to approximate physical dynamics, while the emerging Unified Multimodal Model (UMM) offers a promising architectural paradigm for integrating perception, language, and reasoning. Despite these advances, the field still lacks a principled theoretical framework that defines the essential properties requisite for a General World Model. In this paper, we propose that a World Model must be grounded in the Trinity of Consistency: Modal Consistency as the semantic interface, Spatial Consistency as the geometric basis, and Temporal Consistency as the causal engine. Through this tripartite lens, we systematically review the evolution of multimodal learning, revealing a trajectory from loosely coupled specialized modules toward unified architectures that enable the synergistic emergence of internal world simulators. To complement this conceptual framework, we introduce CoW-Bench, a benchmark centered on multi-frame reasoning and generation scenarios. CoW-Bench evaluates both video generation models and UMMs under a unified evaluation protocol. Our work establishes a principled pathway toward general world models, clarifying both the limitations of current systems and the architectural requirements for future progress.",
       "link": "https://huggingface.co/papers/2602.23152",
       "pdf": "http://arxiv.org/pdf/2602.23152",
-      "upvotes": 180,
+      "upvotes": 184,
       "comments": 4,
       "organization": "opendatalab",
-      "summary_cn": "研究问题：构建能够学习、模拟和推理客观物理定律的世界模型是通用人工智能追求中的基础挑战。方法：通过视频生成模型如Sora展示潜力。创新点：提出基于视频生成模型的世界模型构建方法。结果：模型在模拟和推理物理定律方面表现出色。"
+      "summary_cn": "研究问题：构建能够学习、模拟和推理客观物理定律的世界模型是通用人工智能追求中的基础挑战。方法：通过视频生成模型如Sora展示潜力。创新点：提出视频生成模型。结果：视频生成模型在模拟和推理物理定律方面展现出潜力。"
     },
     {
       "id": "2602.22859",
@@ -53,7 +53,7 @@
       "upvotes": 143,
       "comments": 3,
       "organization": "",
-      "summary_cn": "研究问题：大型多模态模型（LMMs）在复杂推理和决策方面取得显著进展，但训练仍依赖于静态数据和固定食谱。方法：提出动态诊断能力盲点和提供动态训练方法。创新点：引入动态训练和诊断方法。结果：模型在复杂推理和决策方面表现更优。"
+      "summary_cn": "研究问题：大型多模态模型（LMMs）在复杂推理和决策方面取得显著进展，但训练仍依赖于静态数据和固定食谱。方法：提出动态诊断和提供动态训练方法。创新点：动态诊断和动态训练方法。结果：提高LMMs的训练效率和诊断能力。"
     },
     {
       "id": "2602.22638",
@@ -75,7 +75,7 @@
       "upvotes": 94,
       "comments": 3,
       "organization": "alibaba-inc",
-      "summary_cn": "研究问题：基于大型语言模型（LLMs）的路线规划代理在支持日常人类移动性方面具有潜力，但现实世界移动性设置中的系统评估受到多样化路线选择的影响。方法：提出一种新的评估方法。创新点：提出针对现实世界移动性设置的评估方法。结果：模型在路线规划方面表现更优。"
+      "summary_cn": "研究问题：基于大型语言模型（LLMs）的路线规划代理在支持日常人类移动性方面展现出潜力，但现实世界移动性设置中的系统评估受到多种路线选择的影响。方法：提出一种新的评估方法。创新点：新的评估方法。结果：提高路线规划代理的评估效率。"
     },
     {
       "id": "2602.22897",
@@ -96,10 +96,10 @@
       "summary": "Human intelligence naturally intertwines omni-modal perception -- spanning vision, audio, and language -- with complex reasoning and tool usage to interact with the world. However, current multi-modal LLMs are primarily confined to bi-modal interactions (e.g., vision-language), lacking the unified cognitive capabilities required for general AI assistants. To bridge this gap, we introduce OmniGAIA, a comprehensive benchmark designed to evaluate omni-modal agents on tasks necessitating deep reasoning and multi-turn tool execution across video, audio, and image modalities. Constructed via a novel omni-modal event graph approach, OmniGAIA synthesizes complex, multi-hop queries derived from real-world data that require cross-modal reasoning and external tool integration. Furthermore, we propose OmniAtlas, a native omni-modal foundation agent under tool-integrated reasoning paradigm with active omni-modal perception. Trained on trajectories synthesized via a hindsight-guided tree exploration strategy and OmniDPO for fine-grained error correction, OmniAtlas effectively enhances the tool-use capabilities of existing open-source models. This work marks a step towards next-generation native omni-modal AI assistants for real-world scenarios.",
       "link": "https://huggingface.co/papers/2602.22897",
       "pdf": "http://arxiv.org/pdf/2602.22897",
-      "upvotes": 46,
+      "upvotes": 48,
       "comments": 3,
       "organization": "",
-      "summary_cn": "研究问题：当前多模态LLMs主要限于双模态交互，缺乏统一的跨模态交互。方法：提出一种跨模态交互方法。创新点：实现跨模态交互。结果：模型在多模态交互方面表现更优。"
+      "summary_cn": "研究问题：人类智能自然地将全模态感知（包括视觉、音频和语言）与复杂推理和工具使用相结合。方法：提出一种新的多模态LLMs。创新点：全模态交互。结果：提高多模态LLMs的交互能力。"
     },
     {
       "id": "2602.22766",
@@ -119,7 +119,7 @@
       "upvotes": 34,
       "comments": 3,
       "organization": "Tsinghua",
-      "summary_cn": "研究问题：潜在视觉推理的有效性机制尚不清楚。方法：通过研究潜在视觉推理的机制。创新点：揭示潜在视觉推理的机制。结果：模型在视觉推理方面表现更优。"
+      "summary_cn": "研究问题：潜在视觉推理旨在通过模拟多模态大型语言模型的隐藏状态来模仿人类的想象过程。方法：提出一种新的推理方法。创新点：新的推理方法。结果：提高潜在视觉推理的有效性。"
     },
     {
       "id": "2602.23008",
@@ -137,7 +137,7 @@
       "upvotes": 27,
       "comments": 3,
       "organization": "microsoft",
-      "summary_cn": "研究问题：探索是大型语言模型代理训练中的关键瓶颈。方法：提出探索性记忆增强的在线和离线策略优化方法。创新点：引入探索性记忆增强策略。结果：模型在探索性任务中表现更优。"
+      "summary_cn": "研究问题：探索是大型语言模型代理训练中的关键瓶颈。方法：提出一种新的探索性记忆增强的在线和离线策略优化方法。创新点：探索性记忆增强的在线和离线策略优化方法。结果：提高代理的探索能力。"
     },
     {
       "id": "2602.23258",
@@ -157,7 +157,7 @@
       "upvotes": 24,
       "comments": 3,
       "organization": "HarbinInstituteofTechnologyHIT",
-      "summary_cn": "研究问题：多智能体系统（MAS）在复杂推理方面表现出色，但易受个体参与者错误信息的影响。方法：提出一种基于结构工程和微调的解决方案。创新点：提出新的解决方案。结果：模型在复杂推理方面表现更优。"
+      "summary_cn": "研究问题：多智能体系统（MAS）在复杂推理方面表现出色，但受单个参与者生成的错误信息的影响。方法：提出一种新的解决方案。创新点：新的解决方案。结果：提高MAS的稳定性和适应性。"
     },
     {
       "id": "2602.22675",
@@ -194,7 +194,7 @@
       "upvotes": 17,
       "comments": 3,
       "organization": "OPPOer",
-      "summary_cn": "研究问题：深度研究代理通过扩展推理深度来提高性能，但导致搜索密集场景中的高推理成本和延迟。方法：提出“搜索更多，思考更少”的方法。创新点：提出新的推理方法。结果：模型在搜索密集场景中表现更优。"
+      "summary_cn": "研究问题：深度研究代理主要通过扩展推理深度来提高性能，但这导致搜索密集场景中的高推理成本和延迟。方法：提出一种新的搜索和推理方法。创新点：新的搜索和推理方法。结果：提高搜索和推理效率。"
     },
     {
       "id": "2602.23363",
@@ -212,10 +212,28 @@
       "summary": "We introduce MediX-R1, an open-ended Reinforcement Learning (RL) framework for medical multimodal large language models (MLLMs) that enables clinically grounded, free-form answers beyond multiple-choice formats. MediX-R1 fine-tunes a baseline vision-language backbone with Group Based RL and a composite reward tailored for medical reasoning: an LLM-based accuracy reward that judges semantic correctness with a strict YES/NO decision, a medical embedding-based semantic reward to capture paraphrases and terminology variants, and lightweight format and modality rewards that enforce interpretable reasoning and modality recognition. This multi-signal design provides stable, informative feedback for open-ended outputs where traditional verifiable or MCQ-only rewards fall short. To measure progress, we propose a unified evaluation framework for both text-only and image+text tasks that uses a Reference-based LLM-as-judge in place of brittle string-overlap metrics, capturing semantic correctness, reasoning, and contextual alignment. Despite using only sim51K instruction examples, MediX-R1 achieves excellent results across standard medical LLM (text-only) and VLM (image + text) benchmarks, outperforming strong open-source baselines and delivering particularly large gains on open-ended clinical tasks. Our results demonstrate that open-ended RL with comprehensive reward signals and LLM-based evaluation is a practical path toward reliable medical reasoning in multimodal models. Our trained models, curated datasets and source code are available at https://medix.cvmbzuai.com",
       "link": "https://huggingface.co/papers/2602.23363",
       "pdf": "http://arxiv.org/pdf/2602.23363",
-      "upvotes": 15,
+      "upvotes": 16,
       "comments": 2,
       "organization": "MBZUAI",
-      "summary_cn": "研究问题：提出MediX-R1，一个用于医疗多模态大型语言模型（MLLMs）的开源强化学习（RL）框架。方法：通过微调和组合策略优化。创新点：提出新的框架和优化方法。结果：模型在医疗领域表现更优。"
+      "summary_cn": "研究问题：提出MediX-R1，一个开放式的强化学习（RL）框架，用于医疗多模态大型语言模型（MLLMs），使其能够提供基于临床的、自由形式的答案。方法：提出一种新的框架。创新点：新的框架。结果：提高医疗MLLMs的性能。"
+    },
+    {
+      "id": "2602.21760",
+      "title": "Accelerating Diffusion via Hybrid Data-Pipeline Parallelism Based on Conditional Guidance Scheduling",
+      "authors": [
+        "Euisoo Jung",
+        "Byunghyun Kim",
+        "Hyunjin Kim",
+        "Seonghye Cho",
+        "Jae-Gil Lee"
+      ],
+      "summary": "Diffusion models have achieved remarkable progress in high-fidelity image, video, and audio generation, yet inference remains computationally expensive. Nevertheless, current diffusion acceleration methods based on distributed parallelism suffer from noticeable generation artifacts and fail to achieve substantial acceleration proportional to the number of GPUs. Therefore, we propose a hybrid parallelism framework that combines a novel data parallel strategy, condition-based partitioning, with an optimal pipeline scheduling method, adaptive parallelism switching, to reduce generation latency and achieve high generation quality in conditional diffusion models. The key ideas are to (i) leverage the conditional and unconditional denoising paths as a new data-partitioning perspective and (ii) adaptively enable optimal pipeline parallelism according to the denoising discrepancy between these two paths. Our framework achieves 2.31times and 2.07times latency reductions on SDXL and SD3, respectively, using two NVIDIA RTX~3090 GPUs, while preserving image quality. This result confirms the generality of our approach across U-Net-based diffusion models and DiT-based flow-matching architectures. Our approach also outperforms existing methods in acceleration under high-resolution synthesis settings. Code is available at https://github.com/kaist-dmlab/Hybridiff.",
+      "link": "https://huggingface.co/papers/2602.21760",
+      "pdf": "http://arxiv.org/pdf/2602.21760",
+      "upvotes": 12,
+      "comments": 2,
+      "organization": "",
+      "summary_cn": "研究问题：扩散模型在高保真图像、视频和音频生成方面取得了显著进展，但推理仍然计算成本高昂。方法：提出一种新的加速方法。创新点：新的加速方法。结果：提高扩散模型的推理效率。"
     },
     {
       "id": "2602.23361",
@@ -232,28 +250,10 @@
       "summary": "We present a scalable 3D reconstruction model that addresses a critical limitation in offline feed-forward methods: their computational and memory requirements grow quadratically w.r.t. the number of input images. Our approach is built on the key insight that this bottleneck stems from the varying-length Key-Value (KV) space representation of scene geometry, which we distill into a fixed-size Multi-Layer Perceptron (MLP) via test-time training. VGG-T^3 (Visual Geometry Grounded Test Time Training) scales linearly w.r.t. the number of input views, similar to online models, and reconstructs a 1k image collection in just 54 seconds, achieving a 11.6times speed-up over baselines that rely on softmax attention. Since our method retains global scene aggregation capability, our point map reconstruction error outperforming other linear-time methods by large margins. Finally, we demonstrate visual localization capabilities of our model by querying the scene representation with unseen images.",
       "link": "https://huggingface.co/papers/2602.23361",
       "pdf": "http://arxiv.org/pdf/2602.23361",
-      "upvotes": 11,
+      "upvotes": 10,
       "comments": 2,
       "organization": "nvidia",
-      "summary_cn": "研究问题：离线前馈方法在计算和内存需求方面存在关键限制。方法：基于关键洞察提出新的方法。创新点：提出新的3D重建模型。结果：模型在3D重建方面表现更优。"
-    },
-    {
-      "id": "2602.21760",
-      "title": "Accelerating Diffusion via Hybrid Data-Pipeline Parallelism Based on Conditional Guidance Scheduling",
-      "authors": [
-        "Euisoo Jung",
-        "Byunghyun Kim",
-        "Hyunjin Kim",
-        "Seonghye Cho",
-        "Jae-Gil Lee"
-      ],
-      "summary": "Diffusion models have achieved remarkable progress in high-fidelity image, video, and audio generation, yet inference remains computationally expensive. Nevertheless, current diffusion acceleration methods based on distributed parallelism suffer from noticeable generation artifacts and fail to achieve substantial acceleration proportional to the number of GPUs. Therefore, we propose a hybrid parallelism framework that combines a novel data parallel strategy, condition-based partitioning, with an optimal pipeline scheduling method, adaptive parallelism switching, to reduce generation latency and achieve high generation quality in conditional diffusion models. The key ideas are to (i) leverage the conditional and unconditional denoising paths as a new data-partitioning perspective and (ii) adaptively enable optimal pipeline parallelism according to the denoising discrepancy between these two paths. Our framework achieves 2.31times and 2.07times latency reductions on SDXL and SD3, respectively, using two NVIDIA RTX~3090 GPUs, while preserving image quality. This result confirms the generality of our approach across U-Net-based diffusion models and DiT-based flow-matching architectures. Our approach also outperforms existing methods in acceleration under high-resolution synthesis settings. Code is available at https://github.com/kaist-dmlab/Hybridiff.",
-      "link": "https://huggingface.co/papers/2602.21760",
-      "pdf": "http://arxiv.org/pdf/2602.21760",
-      "upvotes": 11,
-      "comments": 2,
-      "organization": "",
-      "summary_cn": "研究问题：扩散模型在生成高保真图像、视频和音频方面取得显著进展，但推理计算成本高。方法：提出基于分布式并行性的扩散加速方法。创新点：显著减少生成伪影，提高生成效率。实验结果：加速方法有效降低计算成本，提高生成质量。"
+      "summary_cn": "研究问题：解决离线前馈方法在计算和内存需求上随输入图像数量呈平方增长的问题。方法：基于关键洞察，即瓶颈源于变化的输入图像。核心创新点：提出可扩展的3D重建模型。实验结果：显著降低计算和内存需求。"
     },
     {
       "id": "2602.23205",
@@ -277,7 +277,7 @@
       "upvotes": 9,
       "comments": 2,
       "organization": "",
-      "summary_cn": "研究问题：现实世界中的人类行为编码了丰富的长期上下文信息，但现有捕获系统成本高，限制了大规模应用。方法：提出一种低成本的人行行为捕获系统。创新点：无需昂贵布景和穿戴设备。实验结果：系统有效捕获行为数据，支持大规模训练。"
+      "summary_cn": "研究问题：如何利用现实世界中人类行为编码的丰富长期上下文信息来训练具身智能体。方法：利用低成本捕获系统。核心创新点：提出一种新的捕获系统。实验结果：提高大规模训练的可行性。"
     },
     {
       "id": "2602.17594",
@@ -302,7 +302,7 @@
       "upvotes": 8,
       "comments": 3,
       "organization": "MIT",
-      "summary_cn": "研究问题：严格评估机器智能与人类通用智能的差距日益重要和具有挑战性。方法：提出一种新的评估方法，评估机器智能的广泛能力。创新点：评估范围更广，更贴近人类活动。实验结果：新方法有效评估机器智能水平。"
+      "summary_cn": "研究问题：如何严格评估机器智能与人类通用智能的广泛范围。方法：提出新的评估方法。核心创新点：评估机器智能的广泛能力。实验结果：提高评估的准确性和全面性。"
     },
     {
       "id": "2602.22953",
@@ -327,10 +327,10 @@
       "summary": "The promise of general-purpose agents - systems that perform tasks in unfamiliar environments without domain-specific engineering - remains largely unrealized. Existing agents are predominantly specialized, and while emerging implementations like OpenAI SDK Agent and Claude Code hint at broader capabilities, no systematic evaluation of their general performance has been pursued. Current agentic benchmarks assume domain-specific integration, encoding task information in ways that preclude fair evaluation of general agents. This paper frames general-agent evaluation as a first-class research objective. We propose conceptual principles for such evaluation, a Unified Protocol enabling agent-benchmark integration, and Exgentic - a practical framework for general agent evaluation. We benchmark five prominent agent implementations across six environments as the first Open General Agent Leaderboard. Our experiments show that general agents generalize across diverse environments, achieving performance comparable to domain-specific agents without any environment-specific tuning. We release our evaluation protocol, framework, and leaderboard to establish a foundation for systematic research on general-purpose agents.",
       "link": "https://huggingface.co/papers/2602.22953",
       "pdf": "http://arxiv.org/pdf/2602.22953",
-      "upvotes": 5,
+      "upvotes": 7,
       "comments": 2,
       "organization": "ibm-research",
-      "summary_cn": "研究问题：通用智能体在未知环境中执行任务的能力尚未实现。方法：提出一种新的通用智能体框架。创新点：实现跨领域任务执行。实验结果：智能体在多个领域表现出色。"
+      "summary_cn": "研究问题：通用智能体在未知环境中执行任务的能力。方法：提出新的智能体设计。核心创新点：实现更广泛的任务执行能力。实验结果：提高智能体的通用性。"
     },
     {
       "id": "2602.22594",
@@ -343,10 +343,27 @@
       "summary": "Recent advances in motion diffusion models have substantially improved the realism of human motion synthesis. However, existing approaches either rely on full-sequence diffusion models with bidirectional generation, which limits temporal causality and real-time applicability, or autoregressive models that suffer from instability and cumulative errors. In this work, we present Causal Motion Diffusion Models (CMDM), a unified framework for autoregressive motion generation based on a causal diffusion transformer that operates in a semantically aligned latent space. CMDM builds upon a Motion-Language-Aligned Causal VAE (MAC-VAE), which encodes motion sequences into temporally causal latent representations. On top of this latent representation, an autoregressive diffusion transformer is trained using causal diffusion forcing to perform temporally ordered denoising across motion frames. To achieve fast inference, we introduce a frame-wise sampling schedule with causal uncertainty, where each subsequent frame is predicted from partially denoised previous frames. The resulting framework supports high-quality text-to-motion generation, streaming synthesis, and long-horizon motion generation at interactive rates. Experiments on HumanML3D and SnapMoGen demonstrate that CMDM outperforms existing diffusion and autoregressive models in both semantic fidelity and temporal smoothness, while substantially reducing inference latency.",
       "link": "https://huggingface.co/papers/2602.22594",
       "pdf": "http://arxiv.org/pdf/2602.22594",
-      "upvotes": 5,
+      "upvotes": 6,
       "comments": 2,
       "organization": "",
-      "summary_cn": "研究问题：运动扩散模型在合成人类运动方面取得进展，但现有方法存在局限性。方法：提出一种新的运动扩散模型。创新点：结合双向生成和自回归模型。实验结果：模型提高运动合成真实感，适用于实时应用。"
+      "summary_cn": "研究问题：提高人类运动合成的真实感。方法：提出新的运动扩散模型。核心创新点：解决双向生成限制。实验结果：提高运动合成的真实感。"
+    },
+    {
+      "id": "2602.23058",
+      "title": "GeoWorld: Geometric World Models",
+      "authors": [
+        "Zeyu Zhang",
+        "Danning Li",
+        "Ian Reid",
+        "Richard Hartley"
+      ],
+      "summary": "Energy-based predictive world models provide a powerful approach for multi-step visual planning by reasoning over latent energy landscapes rather than generating pixels. However, existing approaches face two major challenges: (i) their latent representations are typically learned in Euclidean space, neglecting the underlying geometric and hierarchical structure among states, and (ii) they struggle with long-horizon prediction, which leads to rapid degradation across extended rollouts. To address these challenges, we introduce GeoWorld, a geometric world model that preserves geometric structure and hierarchical relations through a Hyperbolic JEPA, which maps latent representations from Euclidean space onto hyperbolic manifolds. We further introduce Geometric Reinforcement Learning for energy-based optimization, enabling stable multi-step planning in hyperbolic latent space. Extensive experiments on CrossTask and COIN demonstrate around 3% SR improvement in 3-step planning and 2% SR improvement in 4-step planning compared to the state-of-the-art V-JEPA 2. Project website: https://steve-zeyu-zhang.github.io/GeoWorld.",
+      "link": "https://huggingface.co/papers/2602.23058",
+      "pdf": "http://arxiv.org/pdf/2602.23058",
+      "upvotes": 5,
+      "comments": 4,
+      "organization": "",
+      "summary_cn": "研究问题：多步视觉规划中的能量预测世界模型。方法：提出新的能量预测模型。核心创新点：解决潜在表示学习问题。实验结果：提高视觉规划的准确性。"
     },
     {
       "id": "2602.22437",
@@ -371,7 +388,7 @@
       "upvotes": 5,
       "comments": 2,
       "organization": "",
-      "summary_cn": "研究问题：FSDP在训练大规模模型中广泛应用，但存在局限性。方法：提出一种改进的FSDP系统。创新点：支持结构感知训练方法。实验结果：系统提高训练效率，降低计算成本。"
+      "summary_cn": "研究问题：解决FSDP在结构感知训练方法和非元素级操作中的挑战。方法：提出新的FSDP系统。核心创新点：提高系统灵活性。实验结果：提高训练效率。"
     },
     {
       "id": "2602.23339",
@@ -389,24 +406,25 @@
       "upvotes": 4,
       "comments": 2,
       "organization": "vrg-prague",
-      "summary_cn": "研究问题：开放词汇分割（OVS）在像素级预测方面存在局限性。方法：提出一种改进的OVS方法。创新点：提高分割精度。实验结果：模型在像素级预测方面取得显著进步。"
+      "summary_cn": "研究问题：提高开放词汇分割（OVS）的性能。方法：提出新的OVS方法。核心创新点：解决OVS与全监督方法的差距。实验结果：提高分割性能。"
     },
     {
-      "id": "2602.23058",
-      "title": "GeoWorld: Geometric World Models",
+      "id": "2602.21420",
+      "title": "Overconfident Errors Need Stronger Correction: Asymmetric Confidence Penalties for Reinforcement Learning",
       "authors": [
-        "Zeyu Zhang",
-        "Danning Li",
-        "Ian Reid",
-        "Richard Hartley"
+        "Yuanda Xu",
+        "Hejian Sang",
+        "Zhengze Zhou",
+        "Ran He",
+        "Zhipeng Wang"
       ],
-      "summary": "Energy-based predictive world models provide a powerful approach for multi-step visual planning by reasoning over latent energy landscapes rather than generating pixels. However, existing approaches face two major challenges: (i) their latent representations are typically learned in Euclidean space, neglecting the underlying geometric and hierarchical structure among states, and (ii) they struggle with long-horizon prediction, which leads to rapid degradation across extended rollouts. To address these challenges, we introduce GeoWorld, a geometric world model that preserves geometric structure and hierarchical relations through a Hyperbolic JEPA, which maps latent representations from Euclidean space onto hyperbolic manifolds. We further introduce Geometric Reinforcement Learning for energy-based optimization, enabling stable multi-step planning in hyperbolic latent space. Extensive experiments on CrossTask and COIN demonstrate around 3% SR improvement in 3-step planning and 2% SR improvement in 4-step planning compared to the state-of-the-art V-JEPA 2. Project website: https://steve-zeyu-zhang.github.io/GeoWorld.",
-      "link": "https://huggingface.co/papers/2602.23058",
-      "pdf": "http://arxiv.org/pdf/2602.23058",
-      "upvotes": 4,
-      "comments": 4,
-      "organization": "",
-      "summary_cn": "研究问题：基于能量的预测世界模型在多步视觉规划方面具有潜力，但存在挑战。方法：提出一种新的方法，学习非欧几里得空间中的潜在表示。创新点：提高预测准确性。实验结果：模型在多步视觉规划方面表现出色。"
+      "summary": "Reinforcement Learning with Verifiable Rewards (RLVR) has become the leading paradigm for enhancing reasoning in Large Language Models (LLMs). However, standard RLVR algorithms suffer from a well-documented pathology: while they improve Pass@1 accuracy through sharpened sampling, they simultaneously narrow the model's reasoning boundary and reduce generation diversity. We identify a root cause that existing methods overlook: the uniform penalization of errors. Current approaches -- whether data-filtering methods that select prompts by difficulty, or advantage normalization schemes -- treat all incorrect rollouts within a group identically. We show that this uniformity allows overconfident errors (incorrect reasoning paths that the RL process has spuriously reinforced) to persist and monopolize probability mass, ultimately suppressing valid exploratory trajectories. To address this, we propose the Asymmetric Confidence-aware Error Penalty (ACE). ACE introduces a per-rollout confidence shift metric, c_i = log(pi_theta(y_i|x) / pi_ref(y_i|x)), to dynamically modulate negative advantages. Theoretically, we demonstrate that ACE's gradient can be decomposed into the gradient of a selective regularizer restricted to overconfident errors, plus a well-characterized residual that partially moderates the regularizer's strength. We conduct extensive experiments fine-tuning Qwen2.5-Math-7B, Qwen3-8B-Base, and Llama-3.1-8B-Instruct on the DAPO-Math-17K dataset using GRPO and DAPO within the VERL framework. Evaluated on MATH-500 and AIME 2025, ACE composes seamlessly with existing methods and consistently improves the full Pass@k spectrum across all three model families and benchmarks.",
+      "link": "https://huggingface.co/papers/2602.21420",
+      "pdf": "http://arxiv.org/pdf/2602.21420",
+      "upvotes": 3,
+      "comments": 2,
+      "organization": "LinkedIn",
+      "summary_cn": "研究问题：解决RLVR算法在提高Pass@1准确率的同时，导致采样变窄的问题。方法：提出新的RLVR算法。核心创新点：平衡准确率和采样。实验结果：提高推理能力。"
     },
     {
       "id": "2602.23259",
@@ -426,7 +444,7 @@
       "upvotes": 2,
       "comments": 1,
       "organization": "",
-      "summary_cn": "研究问题：基于模仿学习的端到端自动驾驶（E2E-AD）方法存在局限性。方法：提出一种新的方法，结合专家驾驶行为和强化学习。创新点：提高自动驾驶性能。实验结果：模型在自动驾驶任务中表现出色。"
+      "summary_cn": "研究问题：提高基于模仿学习的端到端自动驾驶（E2E-AD）性能。方法：提出新的E2E-AD方法。核心创新点：利用专家驾驶行为。实验结果：提高自动驾驶性能。"
     },
     {
       "id": "2602.22045",
@@ -444,25 +462,7 @@
       "upvotes": 2,
       "comments": 2,
       "organization": "ExponentialScience",
-      "summary_cn": "研究问题：分布式账本技术（DLT）研究缺乏大规模文本数据。方法：构建DLT-Corpus，一个包含2.98亿个标记的文本集合。创新点：为DLT研究提供丰富数据资源。实验结果：DLT-Corpus为DLT研究提供有力支持。"
-    },
-    {
-      "id": "2602.21420",
-      "title": "Overconfident Errors Need Stronger Correction: Asymmetric Confidence Penalties for Reinforcement Learning",
-      "authors": [
-        "Yuanda Xu",
-        "Hejian Sang",
-        "Zhengze Zhou",
-        "Ran He",
-        "Zhipeng Wang"
-      ],
-      "summary": "Reinforcement Learning with Verifiable Rewards (RLVR) has become the leading paradigm for enhancing reasoning in Large Language Models (LLMs). However, standard RLVR algorithms suffer from a well-documented pathology: while they improve Pass@1 accuracy through sharpened sampling, they simultaneously narrow the model's reasoning boundary and reduce generation diversity. We identify a root cause that existing methods overlook: the uniform penalization of errors. Current approaches -- whether data-filtering methods that select prompts by difficulty, or advantage normalization schemes -- treat all incorrect rollouts within a group identically. We show that this uniformity allows overconfident errors (incorrect reasoning paths that the RL process has spuriously reinforced) to persist and monopolize probability mass, ultimately suppressing valid exploratory trajectories. To address this, we propose the Asymmetric Confidence-aware Error Penalty (ACE). ACE introduces a per-rollout confidence shift metric, c_i = log(pi_theta(y_i|x) / pi_ref(y_i|x)), to dynamically modulate negative advantages. Theoretically, we demonstrate that ACE's gradient can be decomposed into the gradient of a selective regularizer restricted to overconfident errors, plus a well-characterized residual that partially moderates the regularizer's strength. We conduct extensive experiments fine-tuning Qwen2.5-Math-7B, Qwen3-8B-Base, and Llama-3.1-8B-Instruct on the DAPO-Math-17K dataset using GRPO and DAPO within the VERL framework. Evaluated on MATH-500 and AIME 2025, ACE composes seamlessly with existing methods and consistently improves the full Pass@k spectrum across all three model families and benchmarks.",
-      "link": "https://huggingface.co/papers/2602.21420",
-      "pdf": "http://arxiv.org/pdf/2602.21420",
-      "upvotes": 2,
-      "comments": 2,
-      "organization": "LinkedIn",
-      "summary_cn": "研究问题：标准RLVR算法在提高LLMs推理能力的同时，导致Pass@1准确率提升与模型幻觉问题并存。方法：提出一种新的RLVR算法。创新点：通过优化奖励验证机制，减少模型幻觉。实验结果：新算法在提高准确率的同时，显著降低了幻觉率。"
+      "summary_cn": "研究问题：构建分布式账本技术（DLT）领域最大文本集合DLT-Corpus。方法：收集科学文献和专利数据。创新点：提供2.98亿个token的文本数据。结果：为DLT研究提供丰富资源。"
     },
     {
       "id": "2602.20423",
@@ -481,7 +481,7 @@
       "upvotes": 2,
       "comments": 2,
       "organization": "",
-      "summary_cn": "研究问题：医学图像分割因标注有限、解剖特征模糊和领域差异而具挑战性。方法：结合视觉-语言模型CLIP进行密集文本引导的医学图像分割。创新点：提出一种新的分割方法，有效利用跨模态信息。实验结果：新方法在分割任务上取得了显著性能提升。"
+      "summary_cn": "研究问题：解决医学图像分割的挑战。方法：利用CLIP模型进行文本引导的分割。创新点：探索视觉语言模型在医学图像分割中的应用。结果：提高分割效果。"
     },
     {
       "id": "2602.20332",
@@ -499,7 +499,7 @@
       "upvotes": 2,
       "comments": 2,
       "organization": "",
-      "summary_cn": "研究问题：LLMs推理能力提升导致幻觉问题，现有研究多集中于开源模型。方法：针对封闭源模型，提出一种新的幻觉检测和参数编辑方法。创新点：首次关注封闭源模型中的幻觉问题。实验结果：新方法有效降低了封闭源模型的幻觉率。"
+      "summary_cn": "研究问题：LLM中幻觉问题。方法：关注封闭源模型中的幻觉。创新点：研究封闭源模型中的幻觉问题。结果：揭示幻觉问题在封闭源模型中的存在。"
     },
     {
       "id": "2602.20300",
@@ -516,7 +516,7 @@
       "upvotes": 2,
       "comments": 2,
       "organization": "",
-      "summary_cn": "研究问题：LLMs幻觉问题通常被视为模型缺陷。方法：从经典语言学角度，提出查询形式对模型响应的影响。创新点：构建22维查询特征，以影响模型响应。实验结果：新方法有效降低了模型幻觉。"
+      "summary_cn": "研究问题：LLM幻觉与查询形式的关系。方法：构建22维查询特征。创新点：从语言学角度分析查询形式对响应的影响。结果：揭示查询形式对LLM响应的影响。"
     },
     {
       "id": "2602.23165",
@@ -539,7 +539,7 @@
       "upvotes": 1,
       "comments": 1,
       "organization": "",
-      "summary_cn": "研究问题：生成逼真的对话手势对数字人交互至关重要。方法：提出一种新的手势生成方法，考虑社交语境和动态。创新点：结合社交语境和动态，生成更自然的手势。实验结果：新方法在生成逼真手势方面取得了显著效果。"
+      "summary_cn": "研究问题：生成逼真的对话手势。方法：考虑社交背景和动态。创新点：结合音频流和运动模型。结果：提高数字人类交互的自然性和社交性。"
     },
     {
       "id": "2602.18253",
@@ -558,7 +558,7 @@
       "upvotes": 1,
       "comments": 2,
       "organization": "HiTZ",
-      "summary_cn": "研究问题：数据高效神经解码是语音脑机接口的关键挑战。方法：提出基于迁移学习和跨任务解码的MEG语音模型。创新点：首次实现跨任务解码。实验结果：新方法在解码任务上取得了显著性能提升。"
+      "summary_cn": "研究问题：数据高效的神经解码。方法：应用迁移学习和跨任务解码。创新点：在MEG语音模型中实现。结果：提高解码效率和准确性。"
     },
     {
       "id": "2602.22479",
@@ -572,7 +572,7 @@
       "upvotes": 0,
       "comments": 2,
       "organization": "",
-      "summary_cn": "研究问题：连续学习对部署的LLMs至关重要，但现有方法在非平稳数据下表现脆弱。方法：提出一种新的在线更新方法，平衡稳定性和延迟。创新点：降低遗忘风险，提高模型稳定性。实验结果：新方法在非平稳数据下表现良好。"
+      "summary_cn": "研究问题：非平稳数据下的语言模型持续学习。方法：优化训练和微调流程。创新点：减少遗忘和延迟。结果：提高模型稳定性和效率。"
     },
     {
       "id": "2602.20981",
@@ -596,7 +596,7 @@
       "upvotes": 0,
       "comments": 2,
       "organization": "Sony",
-      "summary_cn": "研究问题：视频与音频的多模态对齐在数据有限和描述与视频信息不匹配的情况下具挑战性。方法：针对多模态到音频生成，提出一种新的模型训练方法。创新点：有效利用有限数据，提高生成质量。实验结果：新方法在音频生成任务上取得了显著性能提升。"
+      "summary_cn": "研究问题：视频和音频的多模态对齐。方法：解决数据限制和描述与视频信息不匹配问题。创新点：在多模态到音频生成中应用。结果：提高多模态对齐效果。"
     }
   ]
 }
