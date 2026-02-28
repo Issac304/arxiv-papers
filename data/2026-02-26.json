@@ -6990,8 +6990,7 @@
       "pdf": "http://arxiv.org/pdf/2602.18283",
       "upvotes": 53,
       "comments": 3,
-      "organization": "WuhanUniversity",
-      "submittedBy": "Yuhao Zheng"
+      "organization": "WuhanUniversity"
     },
     {
       "id": "2602.17602",
@@ -7011,8 +7010,7 @@
       "pdf": "http://arxiv.org/pdf/2602.17602",
       "upvotes": 52,
       "comments": 3,
-      "organization": "kaist-ai",
-      "submittedBy": "Jaehyeong Jo"
+      "organization": "kaist-ai"
     },
     {
       "id": "2602.21818",
@@ -7073,8 +7071,7 @@
       "pdf": "http://arxiv.org/pdf/2602.21818",
       "upvotes": 45,
       "comments": 7,
-      "organization": "Skywork",
-      "submittedBy": "taesiri"
+      "organization": "Skywork"
     },
     {
       "id": "2602.12160",
@@ -7096,30 +7093,7 @@
       "pdf": "http://arxiv.org/pdf/2602.12160",
       "upvotes": 35,
       "comments": 4,
-      "organization": "ByteDance",
-      "submittedBy": "xuguo"
-    },
-    {
-      "id": "2602.22208",
-      "title": "Solaris: Building a Multiplayer Video World Model in Minecraft",
-      "authors": [
-        "Georgy Savva",
-        "Oscar Michel",
-        "Daohan Lu",
-        "Suppakit Waiwitlikhit",
-        "Timothy Meehan",
-        "Dhairya Mishra",
-        "Srivats Poddar",
-        "Jack Lu",
-        "Saining Xie"
-      ],
-      "summary": "Existing action-conditioned video generation models (video world models) are limited to single-agent perspectives, failing to capture the multi-agent interactions of real-world environments. We introduce Solaris, a multiplayer video world model that simulates consistent multi-view observations. To enable this, we develop a multiplayer data system designed for robust, continuous, and automated data collection on video games such as Minecraft. Unlike prior platforms built for single-player settings, our system supports coordinated multi-agent interaction and synchronized videos + actions capture. Using this system, we collect 12.64 million multiplayer frames and propose an evaluation framework for multiplayer movement, memory, grounding, building, and view consistency. We train Solaris using a staged pipeline that progressively transitions from single-player to multiplayer modeling, combining bidirectional, causal, and Self Forcing training. In the final stage, we introduce Checkpointed Self Forcing, a memory-efficient Self Forcing variant that enables a longer-horizon teacher. Results show our architecture and training design outperform existing baselines. Through open-sourcing our system and models, we hope to lay the groundwork for a new generation of multi-agent world models.",
-      "link": "https://huggingface.co/papers/2602.22208",
-      "pdf": "http://arxiv.org/pdf/2602.22208",
-      "upvotes": 21,
-      "comments": 3,
-      "organization": "",
-      "submittedBy": "taesiri"
+      "organization": "ByteDance"
     },
     {
       "id": "2602.21548",
@@ -7142,10 +7116,9 @@
       "summary": "The performance of multi-turn, agentic LLM inference is increasingly dominated by KV-Cache storage I/O rather than computation. In prevalent disaggregated architectures, loading the massive KV-Cache from external storage creates a fundamental imbalance: storage NICs on prefill engines become bandwidth-saturated, while those on decoding engines remain idle. This asymmetry severely constrains overall system throughput.\n  We present DualPath, an inference system that breaks this bottleneck by introducing dual-path KV-Cache loading. Beyond the traditional storage-to-prefill path, DualPath enables a novel storage-to-decode path, in which the KV-Cache is loaded into decoding engines and then efficiently transferred to prefill engines via RDMA over the compute network. DualPath combines this optimized data path -- which inherently avoids network congestion and avoids interference with latency-critical model execution communications -- with a global scheduler that dynamically balances load across prefill and decode engines.\n  Our evaluation on three models with production agentic workloads demonstrates that DualPath improves offline inference throughput by up to 1.87times on our in-house inference system. It can also improve online serving throughput by an average factor of 1.96times without violating SLO.",
       "link": "https://huggingface.co/papers/2602.21548",
       "pdf": "http://arxiv.org/pdf/2602.21548",
-      "upvotes": 21,
+      "upvotes": 22,
       "comments": 3,
-      "organization": "deepseek-ai",
-      "submittedBy": "Victor Mustar"
+      "organization": "deepseek-ai"
     },
     {
       "id": "2602.21534",
@@ -7169,10 +7142,30 @@
       "summary": "Agentic reinforcement learning (ARL) has rapidly gained attention as a promising paradigm for training agents to solve complex, multi-step interactive tasks. Despite encouraging early results, ARL remains highly unstable, often leading to training collapse. This instability limits scalability to larger environments and longer interaction horizons, and constrains systematic exploration of algorithmic design choices. In this paper, we first propose ARLArena, a stable training recipe and systematic analysis framework that examines training stability in a controlled and reproducible setting. ARLArena first constructs a clean and standardized testbed. Then, we decompose policy gradient into four core design dimensions and assess the performance and stability of each dimension. Through this fine-grained analysis, we distill a unified perspective on ARL and propose SAMPO, a stable agentic policy optimization method designed to mitigate the dominant sources of instability in ARL. Empirically, SAMPO achieves consistently stable training and strong performance across diverse agentic tasks. Overall, this study provides a unifying policy gradient perspective for ARL and offers practical guidance for building stable and reproducible LLM-based agent training pipelines.",
       "link": "https://huggingface.co/papers/2602.21534",
       "pdf": "http://arxiv.org/pdf/2602.21534",
+      "upvotes": 22,
+      "comments": 3,
+      "organization": "UCLA"
+    },
+    {
+      "id": "2602.22208",
+      "title": "Solaris: Building a Multiplayer Video World Model in Minecraft",
+      "authors": [
+        "Georgy Savva",
+        "Oscar Michel",
+        "Daohan Lu",
+        "Suppakit Waiwitlikhit",
+        "Timothy Meehan",
+        "Dhairya Mishra",
+        "Srivats Poddar",
+        "Jack Lu",
+        "Saining Xie"
+      ],
+      "summary": "Existing action-conditioned video generation models (video world models) are limited to single-agent perspectives, failing to capture the multi-agent interactions of real-world environments. We introduce Solaris, a multiplayer video world model that simulates consistent multi-view observations. To enable this, we develop a multiplayer data system designed for robust, continuous, and automated data collection on video games such as Minecraft. Unlike prior platforms built for single-player settings, our system supports coordinated multi-agent interaction and synchronized videos + actions capture. Using this system, we collect 12.64 million multiplayer frames and propose an evaluation framework for multiplayer movement, memory, grounding, building, and view consistency. We train Solaris using a staged pipeline that progressively transitions from single-player to multiplayer modeling, combining bidirectional, causal, and Self Forcing training. In the final stage, we introduce Checkpointed Self Forcing, a memory-efficient Self Forcing variant that enables a longer-horizon teacher. Results show our architecture and training design outperform existing baselines. Through open-sourcing our system and models, we hope to lay the groundwork for a new generation of multi-agent world models.",
+      "link": "https://huggingface.co/papers/2602.22208",
+      "pdf": "http://arxiv.org/pdf/2602.22208",
       "upvotes": 21,
       "comments": 3,
-      "organization": "UCLA",
-      "submittedBy": "Xiaoxuan Wang"
+      "organization": ""
     },
     {
       "id": "2602.22190",
@@ -7195,8 +7188,7 @@
       "pdf": "http://arxiv.org/pdf/2602.22190",
       "upvotes": 14,
       "comments": 3,
-      "organization": "UIUC-ScaleML",
-      "submittedBy": "Rui Yang"
+      "organization": "UIUC-ScaleML"
     },
     {
       "id": "2602.15030",
@@ -7212,8 +7204,7 @@
       "pdf": "http://arxiv.org/pdf/2602.15030",
       "upvotes": 12,
       "comments": 4,
-      "organization": "",
-      "submittedBy": "Kaiyu Yue"
+      "organization": ""
     },
     {
       "id": "2602.21461",
@@ -7240,8 +7231,7 @@
       "pdf": "http://arxiv.org/pdf/2602.21461",
       "upvotes": 11,
       "comments": 2,
-      "organization": "facebook",
-      "submittedBy": "Xiaoke Huang"
+      "organization": "facebook"
     },
     {
       "id": "2602.19163",
@@ -7263,8 +7253,7 @@
       "pdf": "http://arxiv.org/pdf/2602.19163",
       "upvotes": 11,
       "comments": 2,
-      "organization": "JavisVerse",
-      "submittedBy": "KAI LIU"
+      "organization": "JavisVerse"
     },
     {
       "id": "2602.22010",
@@ -7286,8 +7275,7 @@
       "pdf": "http://arxiv.org/pdf/2602.22010",
       "upvotes": 8,
       "comments": 1,
-      "organization": "ByteDance-Seed",
-      "submittedBy": "taesiri"
+      "organization": "ByteDance-Seed"
     },
     {
       "id": "2602.21778",
@@ -7304,8 +7292,7 @@
       "pdf": "http://arxiv.org/pdf/2602.21778",
       "upvotes": 7,
       "comments": 2,
-      "organization": "",
-      "submittedBy": "Sayak Paul"
+      "organization": ""
     },
     {
       "id": "2602.19424",
@@ -7326,8 +7313,7 @@
       "pdf": "http://arxiv.org/pdf/2602.19424",
       "upvotes": 5,
       "comments": 2,
-      "organization": "",
-      "submittedBy": "Zhonghao Yan"
+      "organization": ""
     },
     {
       "id": "2602.20122",
@@ -7342,8 +7328,7 @@
       "pdf": "http://arxiv.org/pdf/2602.20122",
       "upvotes": 4,
       "comments": 2,
-      "organization": "castorini",
-      "submittedBy": "Nour Jedidi"
+      "organization": "castorini"
     },
     {
       "id": "2602.18993",
@@ -7363,8 +7348,7 @@
       "pdf": "http://arxiv.org/pdf/2602.18993",
       "upvotes": 4,
       "comments": 2,
-      "organization": "",
-      "submittedBy": "jiwoo chung"
+      "organization": ""
     },
     {
       "id": "2602.21472",
@@ -7400,8 +7384,7 @@
       "pdf": "http://arxiv.org/pdf/2602.21472",
       "upvotes": 3,
       "comments": 1,
-      "organization": "apple",
-      "submittedBy": "taesiri"
+      "organization": "apple"
     },
     {
       "id": "2602.21456",
@@ -7417,8 +7400,7 @@
       "pdf": "http://arxiv.org/pdf/2602.21456",
       "upvotes": 3,
       "comments": 2,
-      "organization": "UniversityOfEdinburgh",
-      "submittedBy": "Litu Ou"
+      "organization": "UniversityOfEdinburgh"
     },
     {
       "id": "2602.20933",
@@ -7438,8 +7420,7 @@
       "pdf": "http://arxiv.org/pdf/2602.20933",
       "upvotes": 3,
       "comments": 2,
-      "organization": "stepfun-ai",
-      "submittedBy": "Shuangkang Fang"
+      "organization": "stepfun-ai"
     },
     {
       "id": "2602.21835",
@@ -7460,8 +7441,7 @@
       "pdf": "http://arxiv.org/pdf/2602.21835",
       "upvotes": 2,
       "comments": 1,
-      "organization": "",
-      "submittedBy": "taesiri"
+      "organization": ""
     },
     {
       "id": "2602.19594",
@@ -7477,8 +7457,7 @@
       "pdf": "http://arxiv.org/pdf/2602.19594",
       "upvotes": 2,
       "comments": 2,
-      "organization": "Lossfunk",
-      "submittedBy": "Paras Chopra"
+      "organization": "Lossfunk"
     },
     {
       "id": "2602.14878",
@@ -7495,8 +7474,7 @@
       "pdf": "http://arxiv.org/pdf/2602.14878",
       "upvotes": 2,
       "comments": 2,
-      "organization": "",
-      "submittedBy": "Leo"
+      "organization": ""
     },
     {
       "id": "2602.22144",
@@ -7512,8 +7490,7 @@
       "pdf": "http://arxiv.org/pdf/2602.22144",
       "upvotes": 1,
       "comments": 2,
-      "organization": "",
-      "submittedBy": "Weihao Yu"
+      "organization": ""
     },
     {
       "id": "2602.21374",
@@ -7532,8 +7509,7 @@
       "pdf": "http://arxiv.org/pdf/2602.21374",
       "upvotes": 1,
       "comments": 2,
-      "organization": "",
-      "submittedBy": "MoRezaGH"
+      "organization": ""
     },
     {
       "id": "2602.20857",
@@ -7546,8 +7522,7 @@
       "pdf": "http://arxiv.org/pdf/2602.20857",
       "upvotes": 1,
       "comments": 2,
-      "organization": "VilniusTech",
-      "submittedBy": "Teymur Aghayev"
+      "organization": "VilniusTech"
     },
     {
       "id": "2602.20273",
@@ -7563,8 +7538,7 @@
       "pdf": "http://arxiv.org/pdf/2602.20273",
       "upvotes": 1,
       "comments": 2,
-      "organization": "columbia",
-      "submittedBy": "Josh Ying"
+      "organization": "columbia"
     },
     {
       "id": "2602.19004",
@@ -7579,8 +7553,7 @@
       "pdf": "http://arxiv.org/pdf/2602.19004",
       "upvotes": 1,
       "comments": 2,
-      "organization": "AdelaideUniversity",
-      "submittedBy": "Nguyen Duy Duc"
+      "organization": "AdelaideUniversity"
     },
     {
       "id": "2602.18589",
@@ -7595,8 +7568,7 @@
       "pdf": "http://arxiv.org/pdf/2602.18589",
       "upvotes": 1,
       "comments": 2,
-      "organization": "",
-      "submittedBy": "Jiayang Shi"
+      "organization": ""
     },
     {
       "id": "2602.18527",
@@ -7618,8 +7590,7 @@
       "pdf": "http://arxiv.org/pdf/2602.18527",
       "upvotes": 1,
       "comments": 2,
-      "organization": "Tsinghua",
-      "submittedBy": "Jason Liu"
+      "organization": "Tsinghua"
     },
     {
       "id": "2602.16729",
@@ -7633,8 +7604,7 @@
       "pdf": "http://arxiv.org/pdf/2602.16729",
       "upvotes": 1,
       "comments": 2,
-      "organization": "Labelbox",
-      "submittedBy": "Shahriar Golchin"
+      "organization": "Labelbox"
     },
     {
       "id": "2602.18964",
@@ -7649,8 +7619,7 @@
       "pdf": "http://arxiv.org/pdf/2602.18964",
       "upvotes": 0,
       "comments": 2,
-      "organization": "ULimerick",
-      "submittedBy": "Toheeb Jimoh"
+      "organization": "ULimerick"
     }
   ]
 }
