@@ -108,9 +108,15 @@ def fetch_hf(target_date):
     return papers
 
 
-def translate_papers(papers, api_key):
+def translate_papers(papers, api_key, api_type="zhipu"):
     if not papers:
         return
+    if api_type == "zhipu":
+        api_url = "https://open.bigmodel.cn/api/paas/v4/chat/completions"
+        model = "glm-4-flash"
+    else:
+        api_url = "https://api.deepseek.com/v1/chat/completions"
+        model = "deepseek-chat"
     batch_size = 10
     for i in range(0, len(papers), batch_size):
         batch = papers[i:i+batch_size]
@@ -118,12 +124,12 @@ def translate_papers(papers, api_key):
         prompt = "将以下AI论文标题翻译成中文，每行一个，只输出翻译结果，保持编号格式：\n" + "\n".join(titles)
         try:
             body = json.dumps({
-                "model": "deepseek-chat",
+                "model": model,
                 "messages": [{"role": "user", "content": prompt}],
                 "temperature": 0.1, "max_tokens": 2000,
             })
             req = urllib.request.Request(
-                "https://api.deepseek.com/v1/chat/completions",
+                api_url,
                 data=body.encode("utf-8"),
                 headers={"Authorization": f"Bearer {api_key}", "Content-Type": "application/json"},
             )
@@ -183,13 +189,14 @@ def main():
     arxiv_papers = deduplicate(all_raw)
     hf_papers = fetch_hf(target_date)
 
-    api_key = os.environ.get("DEEPSEEK_API_KEY", "")
+    api_key = os.environ.get("ZHIPU_API_KEY", "") or os.environ.get("DEEPSEEK_API_KEY", "")
+    api_type = "zhipu" if os.environ.get("ZHIPU_API_KEY") else "deepseek"
     if api_key:
-        print("  Translating with DeepSeek...")
-        translate_papers(arxiv_papers, api_key)
-        translate_papers(hf_papers, api_key)
+        print(f"  Translating with {api_type}...")
+        translate_papers(arxiv_papers, api_key, api_type)
+        translate_papers(hf_papers, api_key, api_type)
     else:
-        print("  [SKIP] No DEEPSEEK_API_KEY, skipping translation")
+        print("  [SKIP] No API key, skipping translation")
 
     save_data = {"arxiv": arxiv_papers, "huggingface": hf_papers}
     json_path = os.path.join(DATA_DIR, f"{date_str}.json")
