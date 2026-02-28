@@ -68,6 +68,8 @@ h1{font-size:2.4rem;font-weight:800;background:linear-gradient(135deg,#7b93ff,#4
 .links a{font-size:.78rem;font-weight:500;color:var(--ac);padding:4px 10px;border:1px solid rgba(123,147,255,.2);border-radius:7px}
 .links a:hover{background:rgba(123,147,255,.1)}
 .abs{margin-top:8px;margin-left:38px;font-size:.86rem;line-height:1.6;color:var(--t2)}
+.toggle{margin-top:6px;margin-left:38px;font-size:.78rem;color:var(--ac);cursor:pointer;user-select:none;padding:2px 0;opacity:.8;transition:opacity .15s}
+.toggle:hover{opacity:1}
 .nr{text-align:center;padding:60px;color:var(--t3)}
 .stop{position:fixed;bottom:24px;right:24px;width:40px;height:40px;background:var(--ac);border:none;border-radius:10px;color:#fff;font-size:1.1rem;cursor:pointer;opacity:0;transition:all .2s;z-index:99;box-shadow:0 4px 16px rgba(123,147,255,.15)}
 .stop.v{opacity:1}.stop:hover{transform:translateY(-2px)}
@@ -151,7 +153,7 @@ def gen_paper_card(p, i, is_hf=False):
 <div class="ca">{au_str}</div>
 <div class="tags">{tags}</div></div>
 <div class="links">{hf_link}<a href="{link}" target="_blank">arXiv</a><a href="{p.get('pdf','')}" target="_blank">PDF</a></div>
-</div><div class="abs">{summary}</div></div>"""
+</div><div class="abs" style="display:none">{summary}</div><div class="toggle" onclick="var a=this.previousElementSibling;if(a.style.display==='none'){{a.style.display='block';this.textContent='▲ 收起摘要'}}else{{a.style.display='none';this.textContent='▼ 查看摘要'}}">&#9660; 查看摘要</div></div>"""
 
 def gen_daily_page(date_str):
     data = load_data(date_str)
