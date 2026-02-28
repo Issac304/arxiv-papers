@@ -75,6 +75,12 @@ h1{font-size:2.4rem;font-weight:800;background:linear-gradient(135deg,#7b93ff,#4
 .links a{font-size:.78rem;font-weight:500;color:var(--ac);padding:4px 10px;border:1px solid rgba(123,147,255,.2);border-radius:7px}
 .links a:hover{background:rgba(123,147,255,.1)}
 .abs{margin-top:8px;margin-left:38px;font-size:.86rem;line-height:1.6;color:var(--t2)}
+.actions{display:flex;gap:4px;flex-shrink:0;align-items:center}
+.abtn{width:30px;height:30px;border:1px solid var(--gb);border-radius:7px;background:transparent;color:var(--t3);font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .15s;font-family:inherit;line-height:1}
+.fav-btn:hover,.fav-btn.on{color:#ff4d6a;border-color:rgba(255,77,106,.3);background:rgba(255,77,106,.08)}
+.fav-btn.on{font-size:1rem}
+.del-btn:hover{color:#ff6b6b;border-color:rgba(255,107,107,.3);background:rgba(255,107,107,.08)}
+.card.deleted{opacity:.3;transform:scale(.97);pointer-events:none;max-height:0;padding:0;margin:0;border:0;overflow:hidden;transition:all .3s}
 .toggle{margin-top:6px;margin-left:38px;font-size:.78rem;color:var(--ac);cursor:pointer;user-select:none;padding:2px 0;opacity:.8;transition:opacity .15s}
 .toggle:hover{opacity:1}
 .nr{text-align:center;padding:60px;color:var(--t3)}
@@ -123,7 +129,7 @@ def gen_index():
 <div class="c">
 <h1>arXiv Papers</h1>
 <p class="sub">AI 论文每日追踪与发现</p>
-<div class="pills"><span class="pill">cs.CV</span><span class="pill">cs.CL</span><span class="pill">cs.LG</span><span class="pill">cs.MM</span><span class="pill" style="color:var(--hf)">HuggingFace</span></div>
+<div class="pills"><span class="pill">cs.CV</span><span class="pill">cs.CL</span><span class="pill">cs.LG</span><span class="pill">cs.MM</span><span class="pill" style="color:var(--hf)">HuggingFace</span><a href="favorites.html" class="pill" style="color:#ff4d6a;border-color:rgba(255,77,106,.3)">&#9829; 收藏夹</a></div>
 <div class="section"><div class="label" style="display:flex;align-items:center;gap:12px">Daily Papers <a href="https://github.com/Issac304/arxiv-papers/actions/workflows/daily.yml" target="_blank" class="rbtn">&#x21bb; 手动更新</a></div>
 {f'<div class="grid">{date_cards}</div>' if date_cards else '<div class="nr">暂无数据</div>'}
 </div>
@@ -153,12 +159,19 @@ def gen_paper_card(p, i, is_hf=False):
     link = f"http://arxiv.org/abs/{p['id']}" if is_hf else p.get("link", "")
     hf_link = f'<a href="{p.get("link","")}" target="_blank">HF</a>' if is_hf else ""
     summary = esc(p.get("summary", ""))
+    pid = esc(p.get("id", ""))
+    title_esc = esc(p["title"]).replace("'", "&#39;")
+    pdf = p.get("pdf", "")
 
-    return f"""<div class="card"><div class="ch">
+    return f"""<div class="card" data-pid="{pid}"><div class="ch">
 <span class="ci">{i}</span><div class="cb">
 <div class="ct"><a href="{link}" target="_blank">{esc(p["title"])}</a></div>
 <div class="ca">{au_str}</div>
 <div class="tags">{tags}</div></div>
+<div class="actions">
+<button class="abtn fav-btn" onclick="toggleFav(this,'{pid}','{title_esc}','{link}','{pdf}')" title="收藏">&#9825;</button>
+<button class="abtn del-btn" onclick="delPaper(this,'{pid}')" title="删除">&times;</button>
+</div>
 <div class="links">{hf_link}<a href="{link}" target="_blank">arXiv</a><a href="{p.get('pdf','')}" target="_blank">PDF</a></div>
 </div><div class="abs" style="display:none">{summary}</div><div class="toggle" onclick="var a=this.previousElementSibling;if(a.style.display==='none'){{a.style.display='block';this.textContent='▲ 收起摘要'}}else{{a.style.display='none';this.textContent='▼ 查看摘要'}}">&#9660; 查看摘要</div></div>"""
 
@@ -238,7 +251,13 @@ if(he){{const d=document.createElement('div');d.innerHTML=HF;const cards=[...d.q
 document.getElementById('cnt').textContent=total+' 篇';
 }}
 window.addEventListener('scroll',()=>document.getElementById('st').classList.toggle('v',window.scrollY>400));
-filter();
+
+function getDeleted(){{try{{return JSON.parse(localStorage.getItem('del_papers')||'[]')}}catch{{return[]}}}}
+function getFavs(){{try{{return JSON.parse(localStorage.getItem('fav_papers')||'{{}}')}}catch{{return{{}}}}}}
+function delPaper(btn,pid){{const dels=getDeleted();if(!dels.includes(pid))dels.push(pid);localStorage.setItem('del_papers',JSON.stringify(dels));const card=btn.closest('.card');if(card)card.classList.add('deleted');setTimeout(()=>{{if(card)card.remove()}},300)}}
+function toggleFav(btn,pid,title,link,pdf){{const favs=getFavs();if(favs[pid]){{delete favs[pid];btn.innerHTML='&#9825;';btn.classList.remove('on')}}else{{favs[pid]={{title,link,pdf,t:Date.now()}};btn.innerHTML='&#9829;';btn.classList.add('on')}}localStorage.setItem('fav_papers',JSON.stringify(favs))}}
+function initCards(){{const dels=getDeleted();const favs=getFavs();document.querySelectorAll('.card[data-pid]').forEach(c=>{{const pid=c.dataset.pid;if(dels.includes(pid)){{c.remove();return}}const fb=c.querySelector('.fav-btn');if(fb&&favs[pid]){{fb.innerHTML='&#9829;';fb.classList.add('on')}}}})}}
+filter();initCards();
 </script></body></html>"""
 
 def _js_escape(s):
@@ -317,6 +336,51 @@ def gen_icon(size):
         f.write(png)
 
 
+def gen_favorites_page():
+    return f"""<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="theme-color" content="#0a0e1a"><meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="manifest" href="manifest.json"><link rel="apple-touch-icon" href="icon-192.png">
+<title>收藏夹 - arXiv Papers</title><style>{CSS}
+.fav-card{{background:var(--glass);border:1px solid var(--gb);border-radius:12px;padding:16px 20px;margin-bottom:9px;display:flex;align-items:center;gap:14px;transition:all .2s}}
+.fav-card:hover{{border-color:rgba(255,255,255,.16);background:rgba(255,255,255,.1)}}
+.fav-heart{{color:#ff4d6a;font-size:1.1rem;flex-shrink:0}}
+.fav-info{{flex:1;min-width:0}}
+.fav-title{{font-size:1rem;font-weight:700;line-height:1.4;margin-bottom:3px}}
+.fav-title a{{color:var(--t)}}.fav-title a:hover{{color:var(--ac)}}
+.fav-links{{display:flex;gap:5px;flex-shrink:0}}
+.fav-links a{{font-size:.78rem;font-weight:500;color:var(--ac);padding:4px 10px;border:1px solid rgba(123,147,255,.2);border-radius:7px}}
+.fav-links a:hover{{background:rgba(123,147,255,.1)}}
+.rm-btn{{width:28px;height:28px;border:1px solid var(--gb);border-radius:7px;background:transparent;color:var(--t3);font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .15s;flex-shrink:0}}
+.rm-btn:hover{{color:#ff6b6b;border-color:rgba(255,107,107,.3);background:rgba(255,107,107,.08)}}
+.clear-btn{{font-size:.78rem;padding:5px 14px;border-radius:8px;background:rgba(255,107,107,.1);border:1px solid rgba(255,107,107,.2);color:#ff6b6b;cursor:pointer;font-family:inherit;transition:all .15s}}
+.clear-btn:hover{{background:rgba(255,107,107,.2)}}
+</style></head><body>
+<div class="topbar"><div class="topbar-in">
+<a class="back" href="index.html">&#8592; 首页</a>
+<h2>&#9829; 收藏夹</h2><span class="spacer"></span>
+<span class="cnt" id="cnt"></span>
+<button class="clear-btn" onclick="clearAll()">清空收藏</button>
+</div></div>
+<div class="list" id="fl" style="max-width:1100px;margin:0 auto;padding:12px 20px 60px"></div>
+<script>
+function getFavs(){{try{{return JSON.parse(localStorage.getItem('fav_papers')||'{{}}')}}catch{{return{{}}}}}}
+function render(){{
+const favs=getFavs();const keys=Object.keys(favs).sort((a,b)=>(favs[b].t||0)-(favs[a].t||0));
+const el=document.getElementById('fl');
+if(!keys.length){{el.innerHTML='<div class="nr">还没有收藏论文<br><br><a href="index.html" style="color:var(--ac)">去看看今天的论文 →</a></div>';document.getElementById('cnt').textContent='0 篇';return}}
+let h='';
+keys.forEach(pid=>{{const p=favs[pid];
+h+=`<div class="fav-card" data-pid="${{pid}}"><span class="fav-heart">&#9829;</span><div class="fav-info"><div class="fav-title"><a href="${{p.link}}" target="_blank">${{p.title}}</a></div></div><div class="fav-links"><a href="${{p.link}}" target="_blank">arXiv</a><a href="${{p.pdf}}" target="_blank">PDF</a></div><button class="rm-btn" onclick="removeFav('${{pid}}')" title="取消收藏">&times;</button></div>`;
+}});
+el.innerHTML=h;document.getElementById('cnt').textContent=keys.length+' 篇';
+}}
+function removeFav(pid){{const favs=getFavs();delete favs[pid];localStorage.setItem('fav_papers',JSON.stringify(favs));render()}}
+function clearAll(){{if(confirm('确定清空所有收藏？')){{localStorage.setItem('fav_papers','{{}}');render()}}}}
+render();
+</script></body></html>"""
+
+
 def main():
     if hasattr(sys.stdout, "reconfigure"):
         sys.stdout.reconfigure(encoding="utf-8")
@@ -330,13 +394,17 @@ def main():
     with open(os.path.join(SITE_DIR, "index.html"), "w", encoding="utf-8") as f:
         f.write(gen_index())
 
+    print("Generating favorites.html...")
+    with open(os.path.join(SITE_DIR, "favorites.html"), "w", encoding="utf-8") as f:
+        f.write(gen_favorites_page())
+
     dates = get_dates()
     for d in dates:
         print(f"Generating {d}.html...")
         with open(os.path.join(SITE_DIR, f"{d}.html"), "w", encoding="utf-8") as f:
             f.write(gen_daily_page(d))
 
-    print(f"Done! {len(dates)} pages generated in site/")
+    print(f"Done! {len(dates)+1} pages generated in site/")
 
 
 if __name__ == "__main__":
