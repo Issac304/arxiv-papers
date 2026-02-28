@@ -33,8 +33,8 @@ h1{font-size:3rem;font-weight:800;letter-spacing:-0.03em;background:linear-gradi
 .dcard:hover{border-color:var(--border-hover);transform:translateY(-2px);box-shadow:0 12px 30px rgba(0,0,0,0.3);background:var(--surface-hover)}
 .dcard:hover::before{opacity:1}
 .dcard .dt{font-weight:700;font-size:1.1rem;letter-spacing:-0.01em;position:relative;z-index:1}
-.src-links{display:flex;gap:8px;flex-wrap:wrap;position:relative;z-index:1}
-.src-btn{font-size:.75rem;font-weight:600;padding:6px 14px;border-radius:10px;display:inline-flex;align-items:center;gap:6px;transition:all .2s;text-decoration:none}
+.src-links{display:flex;flex-direction:column;gap:6px;position:relative;z-index:1;min-width:100px;align-items:flex-end}
+.src-btn{font-size:.75rem;font-weight:600;padding:6px 14px;border-radius:10px;display:inline-flex;align-items:center;gap:6px;transition:all .2s;text-decoration:none;width:110px;justify-content:center}
 .src-btn span{font-weight:800;opacity:0.9}
 .src-btn.hf{background:rgba(255,157,0,0.08);border:1px solid rgba(255,157,0,0.2);color:#ffb840}
 .src-btn.hf:hover{background:rgba(255,157,0,0.15);border-color:rgba(255,157,0,0.3);color:#ffc860;transform:translateY(-1px)}
