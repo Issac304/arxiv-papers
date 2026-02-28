@@ -121,7 +121,7 @@ def translate_papers(papers, api_key, api_type="zhipu"):
     for i in range(0, len(papers), batch_size):
         batch = papers[i:i+batch_size]
         items = [f"{j+1}. {p['summary'][:300]}" for j, p in enumerate(batch)]
-        prompt = "以下是AI论文摘要，请为每篇用2-3句中文概括论文的研究问题、方法和主要贡献（50-80字），每篇占一行，保持编号格式，只输出结果：\n" + "\n".join(items)
+        prompt = "以下是AI论文摘要，请为每篇用中文详细概括论文的研究问题、提出的方法、核心创新点和实验结果（80-120字），每篇占一行，保持编号格式，只输出结果：\n" + "\n".join(items)
         try:
             body = json.dumps({
                 "model": model,
