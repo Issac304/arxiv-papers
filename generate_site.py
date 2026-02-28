@@ -240,7 +240,7 @@ def gen_index():
 </div>
 <script>
 if('serviceWorker' in navigator)navigator.serviceWorker.register('sw.js').catch(()=>{{}});
-document.getElementById('fd').value=new Date().toISOString().slice(0,10);
+var now=new Date();document.getElementById('fd').value=now.getFullYear()+'-'+String(now.getMonth()+1).padStart(2,'0')+'-'+String(now.getDate()).padStart(2,'0');
 
 function delDate(d){{const el=document.getElementById('dc-'+d);if(el){{el.style.transition='all .3s';el.style.opacity='0';el.style.transform='scale(.95)';setTimeout(()=>el.remove(),300)}}
 const hd=JSON.parse(localStorage.getItem('hidden_dates')||'[]');if(!hd.includes(d))hd.push(d);localStorage.setItem('hidden_dates',JSON.stringify(hd))}}
