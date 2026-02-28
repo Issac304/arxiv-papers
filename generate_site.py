@@ -127,8 +127,8 @@ def gen_index():
 <link rel="manifest" href="manifest.json"><link rel="apple-touch-icon" href="icon-192.png">
 <title>arXiv Papers</title><style>{CSS}</style></head><body>
 <div class="c">
-<h1>arXiv Papers</h1>
-<p class="sub">AI 论文每日追踪与发现</p>
+<h1>FRONTIER · AI</h1>
+<p class="sub">每天比世界早一步，做地球上最懂人工智能、最具创造力的人</p>
 <div class="pills"><span class="pill">cs.CV</span><span class="pill">cs.CL</span><span class="pill">cs.LG</span><span class="pill">cs.MM</span><span class="pill" style="color:var(--hf)">HuggingFace</span><a href="favorites.html" class="pill" style="color:#ff4d6a;border-color:rgba(255,77,106,.3)">&#9829; 收藏夹</a></div>
 <div class="section"><div class="label" style="display:flex;align-items:center;gap:12px">Daily Papers <a href="https://github.com/Issac304/arxiv-papers/actions/workflows/daily.yml" target="_blank" class="rbtn">&#x21bb; 手动更新</a></div>
 {f'<div class="grid">{date_cards}</div>' if date_cards else '<div class="nr">暂无数据</div>'}
