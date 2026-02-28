@@ -71,6 +71,8 @@ h1{font-size:2.4rem;font-weight:800;background:linear-gradient(135deg,#7b93ff,#4
 .nr{text-align:center;padding:60px;color:var(--t3)}
 .stop{position:fixed;bottom:24px;right:24px;width:40px;height:40px;background:var(--ac);border:none;border-radius:10px;color:#fff;font-size:1.1rem;cursor:pointer;opacity:0;transition:all .2s;z-index:99;box-shadow:0 4px 16px rgba(123,147,255,.15)}
 .stop.v{opacity:1}.stop:hover{transform:translateY(-2px)}
+.rbtn{font-size:.7rem;font-weight:600;padding:4px 14px;border-radius:8px;background:var(--ac);color:#fff;text-transform:none;letter-spacing:0;text-decoration:none;transition:all .15s;display:inline-flex;align-items:center;gap:4px}
+.rbtn:hover{background:#6680ff;color:#fff;transform:translateY(-1px)}
 footer{text-align:center;padding:28px 0;color:var(--t3);font-size:.75rem;margin-top:30px}
 @media(max-width:700px){.search{width:100%;order:10}.links{display:none}.ci{display:none}.abs{margin-left:0}.ch{gap:6px}}
 """
@@ -113,7 +115,7 @@ def gen_index():
 <h1>arXiv Papers</h1>
 <p class="sub">AI 论文每日追踪与发现</p>
 <div class="pills"><span class="pill">cs.CV</span><span class="pill">cs.CL</span><span class="pill">cs.LG</span><span class="pill">cs.MM</span><span class="pill" style="color:var(--hf)">HuggingFace</span></div>
-<div class="section"><div class="label">Daily Papers</div>
+<div class="section"><div class="label" style="display:flex;align-items:center;gap:12px">Daily Papers <a href="https://github.com/Issac304/arxiv-papers/actions/workflows/daily.yml" target="_blank" class="rbtn">&#x21bb; 手动更新</a></div>
 {f'<div class="grid">{date_cards}</div>' if date_cards else '<div class="nr">暂无数据</div>'}
 </div>
 <footer>arXiv Papers &bull; <a href="https://arxiv.org">arXiv.org</a> &bull; <a href="https://huggingface.co/papers">HuggingFace</a></footer>
