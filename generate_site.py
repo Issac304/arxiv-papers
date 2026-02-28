@@ -33,6 +33,13 @@ h1{font-size:2.4rem;font-weight:800;background:linear-gradient(135deg,#7b93ff,#4
 .badges{display:flex;gap:5px}
 .badge{font-size:.82rem;font-weight:700;padding:3px 10px;border-radius:7px;background:rgba(255,255,255,.06);border:1px solid var(--gb)}
 .b-a{color:#9db4ff}.b-h{color:#ffb840}
+.src-links{display:flex;gap:6px;flex-wrap:wrap}
+.src-btn{font-size:.78rem;font-weight:600;padding:5px 12px;border-radius:7px;display:inline-flex;align-items:center;gap:5px;transition:all .15s;text-decoration:none}
+.src-btn span{font-weight:800}
+.src-btn.hf{background:rgba(255,157,0,.12);border:1px solid rgba(255,157,0,.25);color:#ffb840}
+.src-btn.hf:hover{background:rgba(255,157,0,.22);color:#ffc860}
+.src-btn.ax{background:rgba(123,147,255,.1);border:1px solid rgba(123,147,255,.2);color:#9db4ff}
+.src-btn.ax:hover{background:rgba(123,147,255,.2);color:#b0c4ff}
 .topbar{position:sticky;top:0;z-index:100;background:rgba(10,14,26,.9);backdrop-filter:blur(16px);border-bottom:1px solid var(--gb);padding:12px 20px}
 .topbar-in{max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
 .back{color:var(--t3);font-size:.85rem;font-weight:500}
@@ -103,9 +110,9 @@ def gen_index():
         data = load_data(d)
         ac = len(data["arxiv"])
         hc = len(data["huggingface"])
-        hf_badge = f'<span class="badge b-h">HF {hc}</span>' if hc else ""
-        a_badge = f'<span class="badge b-a">{ac}</span>' if ac else ""
-        date_cards += f'<a class="dcard" href="{d}.html"><span class="dt">{d}</span><div class="badges">{a_badge}{hf_badge}</div></a>\n'
+        hf_link = f'<a class="src-btn hf" href="{d}.html#hf">HF 热门 <span>{hc}</span></a>' if hc else ""
+        ax_link = f'<a class="src-btn ax" href="{d}.html#arxiv">arXiv <span>{ac}</span></a>' if ac else ""
+        date_cards += f'<div class="dcard"><span class="dt">{d}</span><div class="src-links">{hf_link}{ax_link}</div></div>\n'
 
     return f"""<!DOCTYPE html>
 <html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
@@ -181,13 +188,13 @@ def gen_daily_page(date_str):
 
     hf_section = ""
     if hf:
-        hf_section = f"""<div class="sec-block">
+        hf_section = f"""<div class="sec-block" id="hf">
 <div class="sec-head"><span class="sec-icon" style="background:var(--hf)">HF</span><span class="sec-title">HuggingFace 热门</span><span class="sec-cnt">{len(hf)} 篇</span></div>
 <div id="hf-list">{hf_cards}</div></div>"""
 
     arxiv_section = ""
     if arxiv:
-        arxiv_section = f"""<div class="sec-block">
+        arxiv_section = f"""<div class="sec-block" id="arxiv">
 <div class="sec-head"><span class="sec-icon" style="background:var(--ac)">Ax</span><span class="sec-title">arXiv 论文</span><span class="sec-cnt">{len(arxiv)} 篇</span></div>
 <div class="arxiv-filters">{arxiv_cat_btns}</div>
 <div id="arxiv-list"></div></div>"""
