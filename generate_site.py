@@ -116,6 +116,53 @@ def load_data(date_str):
         return {"arxiv": d, "huggingface": []}
     return d
 
+def load_cvpr():
+    path = os.path.join(DATA_DIR, "cvpr26.json")
+    if not os.path.exists(path):
+        return []
+    with open(path, "r", encoding="utf-8") as f:
+        return json.load(f)
+
+def _gen_cvpr_section():
+    papers = load_cvpr()
+    if not papers:
+        return ""
+    return f"""<div class="section">
+<div class="label" style="display:flex;align-items:center;gap:12px">CVPR 2026</div>
+<a class="dcard" href="cvpr26.html" style="max-width:320px"><span class="dt">CVPR 2026 Papers</span><div class="badges"><span class="badge b-a">{len(papers)}</span></div></a>
+</div>"""
+
+def gen_cvpr_page():
+    papers = load_cvpr()
+    if not papers:
+        return None
+    cards = "".join(gen_paper_card(p, i+1) for i, p in enumerate(papers))
+    return f"""<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="theme-color" content="#0a0e1a"><meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="manifest" href="manifest.json"><link rel="apple-touch-icon" href="icon-192.png">
+<title>CVPR 2026 - arXiv Papers</title><style>{CSS}</style></head><body>
+<div class="topbar"><div class="topbar-in">
+<a class="back" href="index.html">&#8592; 首页</a>
+<h2>CVPR 2026</h2><span class="spacer"></span>
+<div class="search"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>
+<input id="si" type="text" placeholder="搜索标题、作者..." oninput="filter()"></div>
+<span class="cnt" id="cnt"></span></div></div>
+<div class="list" id="pl"></div>
+<button class="stop" id="st" onclick="window.scrollTo({{top:0,behavior:'smooth'}})">&#8593;</button>
+<script>
+const ALL=`{_js_escape(cards)}`;
+function getDeleted(){{try{{return JSON.parse(localStorage.getItem('del_papers')||'[]')}}catch{{return[]}}}}
+function getFavs(){{try{{return JSON.parse(localStorage.getItem('fav_papers')||'{{}}')}}catch{{return{{}}}}}}
+function delPaper(btn,pid){{const dels=getDeleted();if(!dels.includes(pid))dels.push(pid);localStorage.setItem('del_papers',JSON.stringify(dels));const card=btn.closest('.card');if(card)card.classList.add('deleted');setTimeout(()=>{{if(card)card.remove()}},300)}}
+function toggleFav(btn,pid,title,link,pdf){{const favs=getFavs();if(favs[pid]){{delete favs[pid];btn.innerHTML='&#9825;';btn.classList.remove('on')}}else{{favs[pid]={{title,link,pdf,t:Date.now()}};btn.innerHTML='&#9829;';btn.classList.add('on')}}localStorage.setItem('fav_papers',JSON.stringify(favs))}}
+function initCards(){{const dels=getDeleted();const favs=getFavs();document.querySelectorAll('.card[data-pid]').forEach(c=>{{const pid=c.dataset.pid;if(dels.includes(pid)){{c.remove();return}}const fb=c.querySelector('.fav-btn');if(fb&&favs[pid]){{fb.innerHTML='&#9829;';fb.classList.add('on')}}}})}}
+function filter(){{const q=document.getElementById('si').value.toLowerCase();const el=document.getElementById('pl');const d=document.createElement('div');d.innerHTML=ALL;const cards=[...d.querySelectorAll('.card')];let n=0;let h='';cards.forEach(c=>{{const t=c.textContent.toLowerCase();if(!q||q.split(/\\s+/).every(w=>t.includes(w))){{h+=c.outerHTML;n++}}}});el.innerHTML=h||'<div class="nr">没有匹配的论文</div>';document.getElementById('cnt').textContent=n+' 篇';initCards()}}
+window.addEventListener('scroll',()=>document.getElementById('st').classList.toggle('v',window.scrollY>400));
+filter();
+</script></body></html>"""
+
 def gen_index():
     dates = get_dates()
     date_cards = ""
@@ -147,6 +194,7 @@ def gen_index():
 </div>
 {f'<div class="grid">{date_cards}</div>' if date_cards else '<div class="nr">暂无数据</div>'}
 </div>
+{_gen_cvpr_section()}
 <footer>arXiv Papers &bull; <a href="https://arxiv.org">arXiv.org</a> &bull; <a href="https://huggingface.co/papers">HuggingFace</a></footer>
 </div>
 <script>
@@ -457,6 +505,12 @@ def main():
     print("Generating favorites.html...")
     with open(os.path.join(SITE_DIR, "favorites.html"), "w", encoding="utf-8") as f:
         f.write(gen_favorites_page())
+
+    cvpr = gen_cvpr_page()
+    if cvpr:
+        print("Generating cvpr26.html...")
+        with open(os.path.join(SITE_DIR, "cvpr26.html"), "w", encoding="utf-8") as f:
+            f.write(cvpr)
 
     dates = get_dates()
     for d in dates:

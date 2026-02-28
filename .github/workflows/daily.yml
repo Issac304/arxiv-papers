@@ -37,6 +37,9 @@ jobs:
         if: ${{ github.event.inputs.date == '' }}
         run: python fetch_papers.py $(date +%Y-%m-%d)
 
+      - name: Fetch CVPR 2026 papers
+        run: python fetch_cvpr26.py
+
       - name: Generate static site
         run: python generate_site.py
 
