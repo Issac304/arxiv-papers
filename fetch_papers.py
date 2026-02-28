@@ -120,8 +120,8 @@ def translate_papers(papers, api_key, api_type="zhipu"):
     batch_size = 10
     for i in range(0, len(papers), batch_size):
         batch = papers[i:i+batch_size]
-        titles = [f"{j+1}. {p['title']}" for j, p in enumerate(batch)]
-        prompt = "将以下AI论文标题翻译成中文，每行一个，只输出翻译结果，保持编号格式：\n" + "\n".join(titles)
+        items = [f"{j+1}. {p['summary'][:300]}" for j, p in enumerate(batch)]
+        prompt = "以下是AI论文摘要，请为每篇用一句简洁的中文概括核心贡献（20-40字），每行一个，保持编号格式，只输出结果：\n" + "\n".join(items)
         try:
             body = json.dumps({
                 "model": model,
@@ -143,7 +143,7 @@ def translate_papers(papers, api_key, api_type="zhipu"):
                     for prefix in [f"{j+1}.", f"{j+1}、", f"{j+1} "]:
                         if cn.startswith(prefix):
                             cn = cn[len(prefix):].strip()
-                    p["title_cn"] = cn
+                    p["summary_cn"] = cn
             print(f"    Translated {i+1}-{i+len(batch)} / {len(papers)}")
         except Exception as e:
             print(f"    [WARN] Translation failed for batch {i}: {e}")

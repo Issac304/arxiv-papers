@@ -77,7 +77,7 @@ h1{font-size:3rem;font-weight:800;letter-spacing:-0.03em;background:linear-gradi
 .cb{flex:1;min-width:0}
 .ct{font-size:1.15rem;font-weight:700;line-height:1.4;margin-bottom:6px;letter-spacing:-0.01em}
 .ct a{color:var(--t)}.ct a:hover{color:var(--ac)}
-.ct-cn{font-size:.9rem;font-weight:500;color:var(--ac2);margin-top:2px;opacity:.85}
+.sum-cn{font-size:.9rem;font-weight:500;color:var(--ac2);margin-top:4px;margin-bottom:8px;line-height:1.5}
 .ca{font-size:.9rem;color:var(--t2);margin-bottom:12px;line-height:1.5}
 .tags{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
 .tag{font-size:.75rem;font-weight:600;padding:4px 10px;border-radius:6px;background:rgba(255,255,255,0.04);border:1px solid var(--border);color:var(--t2)}
@@ -351,8 +351,8 @@ def gen_paper_card(p, i, is_hf=False):
 
     return f"""<div class="card" data-pid="{pid}"><div class="ch">
 <span class="ci">{i}</span><div class="cb">
-<div class="ct"><a href="{link}" target="_blank">{esc(p["title"])}</a>{f'<div class="ct-cn">{esc(p["title_cn"])}</div>' if p.get("title_cn") else ""}</div>
-<div class="ca">{au_str}</div>
+<div class="ct"><a href="{link}" target="_blank">{esc(p["title"])}</a></div>
+{f'<div class="sum-cn">{esc(p["summary_cn"])}</div>' if p.get("summary_cn") else ""}
 <div class="tags">{tags}</div></div>
 <div class="actions">
 <button class="abtn chk-btn" onclick="toggleCheck(this,'{pid}')" title="已读">&#10003;</button>
