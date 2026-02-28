@@ -129,7 +129,7 @@
       "summary": "Exploration remains the key bottleneck for large language model agents trained with reinforcement learning. While prior methods exploit pretrained knowledge, they fail in environments requiring the discovery of novel states. We propose Exploratory Memory-Augmented On- and Off-Policy Optimization (EMPO^2), a hybrid RL framework that leverages memory for exploration and combines on- and off-policy updates to make LLMs perform well with memory while also ensuring robustness without it. On ScienceWorld and WebShop, EMPO^2 achieves 128.6% and 11.3% improvements over GRPO, respectively. Moreover, in out-of-distribution tests, EMPO^2 demonstrates superior adaptability to new tasks, requiring only a few trials with memory and no parameter updates. These results highlight EMPO^2 as a promising framework for building more exploratory and generalizable LLM-based agents.",
       "link": "https://huggingface.co/papers/2602.23008",
       "pdf": "http://arxiv.org/pdf/2602.23008",
-      "upvotes": 26,
+      "upvotes": 27,
       "comments": 3,
       "organization": "microsoft"
     },
@@ -292,6 +292,33 @@
       "organization": "MIT"
     },
     {
+      "id": "2602.22953",
+      "title": "General Agent Evaluation",
+      "authors": [
+        "Elron Bandel",
+        "Asaf Yehudai",
+        "Lilach Eden",
+        "Yehoshua Sagron",
+        "Yotam Perlitz",
+        "Elad Venezian",
+        "Natalia Razinkov",
+        "Natan Ergas",
+        "Shlomit Shachor Ifergan",
+        "Segev Shlomov",
+        "Michal Jacovi",
+        "Leshem Choshen",
+        "Liat Ein-Dor",
+        "Yoav Katz",
+        "Michal Shmueli-Scheuer"
+      ],
+      "summary": "The promise of general-purpose agents - systems that perform tasks in unfamiliar environments without domain-specific engineering - remains largely unrealized. Existing agents are predominantly specialized, and while emerging implementations like OpenAI SDK Agent and Claude Code hint at broader capabilities, no systematic evaluation of their general performance has been pursued. Current agentic benchmarks assume domain-specific integration, encoding task information in ways that preclude fair evaluation of general agents. This paper frames general-agent evaluation as a first-class research objective. We propose conceptual principles for such evaluation, a Unified Protocol enabling agent-benchmark integration, and Exgentic - a practical framework for general agent evaluation. We benchmark five prominent agent implementations across six environments as the first Open General Agent Leaderboard. Our experiments show that general agents generalize across diverse environments, achieving performance comparable to domain-specific agents without any environment-specific tuning. We release our evaluation protocol, framework, and leaderboard to establish a foundation for systematic research on general-purpose agents.",
+      "link": "https://huggingface.co/papers/2602.22953",
+      "pdf": "http://arxiv.org/pdf/2602.22953",
+      "upvotes": 5,
+      "comments": 2,
+      "organization": "ibm-research"
+    },
+    {
       "id": "2602.22594",
       "title": "Causal Motion Diffusion Models for Autoregressive Motion Generation",
       "authors": [
@@ -338,33 +365,6 @@
       "upvotes": 4,
       "comments": 4,
       "organization": ""
-    },
-    {
-      "id": "2602.22953",
-      "title": "General Agent Evaluation",
-      "authors": [
-        "Elron Bandel",
-        "Asaf Yehudai",
-        "Lilach Eden",
-        "Yehoshua Sagron",
-        "Yotam Perlitz",
-        "Elad Venezian",
-        "Natalia Razinkov",
-        "Natan Ergas",
-        "Shlomit Shachor Ifergan",
-        "Segev Shlomov",
-        "Michal Jacovi",
-        "Leshem Choshen",
-        "Liat Ein-Dor",
-        "Yoav Katz",
-        "Michal Shmueli-Scheuer"
-      ],
-      "summary": "The promise of general-purpose agents - systems that perform tasks in unfamiliar environments without domain-specific engineering - remains largely unrealized. Existing agents are predominantly specialized, and while emerging implementations like OpenAI SDK Agent and Claude Code hint at broader capabilities, no systematic evaluation of their general performance has been pursued. Current agentic benchmarks assume domain-specific integration, encoding task information in ways that preclude fair evaluation of general agents. This paper frames general-agent evaluation as a first-class research objective. We propose conceptual principles for such evaluation, a Unified Protocol enabling agent-benchmark integration, and Exgentic - a practical framework for general agent evaluation. We benchmark five prominent agent implementations across six environments as the first Open General Agent Leaderboard. Our experiments show that general agents generalize across diverse environments, achieving performance comparable to domain-specific agents without any environment-specific tuning. We release our evaluation protocol, framework, and leaderboard to establish a foundation for systematic research on general-purpose agents.",
-      "link": "https://huggingface.co/papers/2602.22953",
-      "pdf": "http://arxiv.org/pdf/2602.22953",
-      "upvotes": 4,
-      "comments": 2,
-      "organization": "ibm-research"
     },
     {
       "id": "2602.22437",
