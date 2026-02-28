@@ -108,6 +108,42 @@ def fetch_hf(target_date):
     return papers
 
 
+def translate_papers(papers, api_key):
+    if not papers:
+        return
+    batch_size = 10
+    for i in range(0, len(papers), batch_size):
+        batch = papers[i:i+batch_size]
+        titles = [f"{j+1}. {p['title']}" for j, p in enumerate(batch)]
+        prompt = "将以下AI论文标题翻译成中文，每行一个，只输出翻译结果，保持编号格式：\n" + "\n".join(titles)
+        try:
+            body = json.dumps({
+                "model": "deepseek-chat",
+                "messages": [{"role": "user", "content": prompt}],
+                "temperature": 0.1, "max_tokens": 2000,
+            })
+            req = urllib.request.Request(
+                "https://api.deepseek.com/v1/chat/completions",
+                data=body.encode("utf-8"),
+                headers={"Authorization": f"Bearer {api_key}", "Content-Type": "application/json"},
+            )
+            with urllib.request.urlopen(req, timeout=30) as resp:
+                result = json.loads(resp.read().decode("utf-8"))
+            text = result["choices"][0]["message"]["content"].strip()
+            lines = [l.strip() for l in text.split("\n") if l.strip()]
+            for j, p in enumerate(batch):
+                if j < len(lines):
+                    cn = lines[j]
+                    for prefix in [f"{j+1}.", f"{j+1}、", f"{j+1} "]:
+                        if cn.startswith(prefix):
+                            cn = cn[len(prefix):].strip()
+                    p["title_cn"] = cn
+            print(f"    Translated {i+1}-{i+len(batch)} / {len(papers)}")
+        except Exception as e:
+            print(f"    [WARN] Translation failed for batch {i}: {e}")
+        time.sleep(0.5)
+
+
 def deduplicate(all_papers):
     seen = {}
     for p in all_papers:
@@ -146,6 +182,14 @@ def main():
 
     arxiv_papers = deduplicate(all_raw)
     hf_papers = fetch_hf(target_date)
+
+    api_key = os.environ.get("DEEPSEEK_API_KEY", "")
+    if api_key:
+        print("  Translating with DeepSeek...")
+        translate_papers(arxiv_papers, api_key)
+        translate_papers(hf_papers, api_key)
+    else:
+        print("  [SKIP] No DEEPSEEK_API_KEY, skipping translation")
 
     save_data = {"arxiv": arxiv_papers, "huggingface": hf_papers}
     json_path = os.path.join(DATA_DIR, f"{date_str}.json")
