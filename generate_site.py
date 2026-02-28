@@ -108,6 +108,24 @@ h1{font-size:3rem;font-weight:800;letter-spacing:-0.03em;background:linear-gradi
 .stop-btn{background:var(--surface);color:var(--t2);border:1px solid var(--border);box-shadow:none}.stop-btn:hover{background:var(--surface-hover);color:var(--t);border-color:var(--border-hover)}
 .fetch-status{font-size:.85rem;color:var(--t2);font-weight:500;margin-left:4px}
 footer{text-align:center;padding:40px 0;color:var(--t3);font-size:.85rem;margin-top:40px;border-top:1px solid var(--border)}
+.chat-btn{position:fixed;bottom:30px;left:30px;width:52px;height:52px;background:var(--ac);border:1px solid rgba(255,255,255,0.1);border-radius:50%;color:#fff;font-size:1.5rem;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:200;box-shadow:0 8px 24px rgba(99,130,255,0.3);transition:all .3s}
+.chat-btn:hover{transform:scale(1.1);box-shadow:0 12px 30px rgba(99,130,255,0.4)}
+.chat-box{position:fixed;bottom:90px;left:20px;width:380px;max-width:calc(100vw - 40px);height:500px;max-height:calc(100vh - 120px);background:rgba(7,10,19,0.95);border:1px solid var(--border);border-radius:20px;z-index:200;display:none;flex-direction:column;backdrop-filter:blur(20px);box-shadow:0 20px 60px rgba(0,0,0,0.5)}
+.chat-box.open{display:flex}
+.chat-header{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
+.chat-header span{font-weight:700;font-size:1rem}
+.chat-close{background:none;border:none;color:var(--t3);font-size:1.3rem;cursor:pointer;padding:4px}
+.chat-close:hover{color:var(--t)}
+.chat-msgs{flex:1;overflow-y:auto;padding:16px 20px;display:flex;flex-direction:column;gap:12px}
+.chat-msg{max-width:85%;padding:12px 16px;border-radius:14px;font-size:.9rem;line-height:1.6;word-break:break-word}
+.chat-msg.user{align-self:flex-end;background:var(--ac);color:#fff;border-bottom-right-radius:4px}
+.chat-msg.bot{align-self:flex-start;background:var(--surface-hover);color:var(--t);border:1px solid var(--border);border-bottom-left-radius:4px}
+.chat-msg.loading{color:var(--t3);font-style:italic}
+.chat-input{display:flex;gap:8px;padding:12px 16px;border-top:1px solid var(--border);flex-shrink:0}
+.chat-input input{flex:1;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:10px 14px;color:var(--t);font-size:.9rem;font-family:inherit;outline:0}
+.chat-input input:focus{border-color:var(--ac)}
+.chat-input button{background:var(--ac);border:none;border-radius:12px;color:#fff;padding:10px 16px;cursor:pointer;font-family:inherit;font-weight:600;font-size:.9rem;transition:all .2s}
+.chat-input button:hover{background:var(--ac-hover)}
 .fav-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:20px 24px;margin-bottom:12px;display:flex;align-items:center;gap:20px;transition:all .3s cubic-bezier(0.25, 0.8, 0.25, 1);backdrop-filter:blur(12px)}
 .fav-card:hover{border-color:var(--border-hover);background:var(--surface-hover);transform:translateY(-2px);box-shadow:0 12px 30px rgba(0,0,0,0.2)}
 .fav-heart{color:#ff4d6a;font-size:1.4rem;flex-shrink:0;text-shadow:0 0 12px rgba(255,77,106,0.3)}
@@ -136,6 +154,35 @@ footer{text-align:center;padding:40px 0;color:var(--t3);font-size:.85rem;margin-
   .fav-links{width:100%}
   .rm-btn{position:absolute;top:16px;right:16px}
 }
+"""
+
+CHAT_HTML = """
+<button class="chat-btn" onclick="document.getElementById('chatbox').classList.toggle('open')" title="AI 助手">&#128172;</button>
+<div class="chat-box" id="chatbox">
+<div class="chat-header"><span>AI 助手 (GLM-4-Flash)</span><button class="chat-close" onclick="document.getElementById('chatbox').classList.remove('open')">&times;</button></div>
+<div class="chat-msgs" id="chatmsgs"><div class="chat-msg bot">你好！我是 AI 助手，可以帮你解读论文、回答 AI 相关问题。</div></div>
+<div class="chat-input"><input id="chatin" placeholder="输入问题..." onkeydown="if(event.key==='Enter')sendChat()"><button onclick="sendChat()">发送</button></div>
+</div>
+<script>
+function getZhipuKey(){let k=localStorage.getItem('zhipu_key');if(!k){k=prompt('输入智谱 API Key（GLM-4-Flash 免费）');if(k)localStorage.setItem('zhipu_key',k)}return k}
+async function sendChat(){
+const input=document.getElementById('chatin');const msg=input.value.trim();if(!msg)return;
+const key=getZhipuKey();if(!key)return;
+const msgs=document.getElementById('chatmsgs');
+msgs.innerHTML+=`<div class="chat-msg user">${msg.replace(/</g,'&lt;')}</div>`;
+msgs.innerHTML+=`<div class="chat-msg bot loading" id="botloading">思考中...</div>`;
+msgs.scrollTop=msgs.scrollHeight;input.value='';
+try{
+const r=await fetch('https://open.bigmodel.cn/api/paas/v4/chat/completions',{
+method:'POST',headers:{'Authorization':'Bearer '+key,'Content-Type':'application/json'},
+body:JSON.stringify({model:'glm-4-flash',messages:[{role:'system',content:'你是一个AI论文助手，帮助用户理解论文、解释概念、回答AI相关问题。用中文回答，简洁专业。'},{role:'user',content:msg}],temperature:0.7,max_tokens:1000})
+});
+const d=await r.json();const reply=d.choices[0].message.content;
+document.getElementById('botloading').outerHTML=`<div class="chat-msg bot">${reply.replace(/</g,'&lt;').replace(/\\n/g,'<br>')}</div>`;
+}catch(e){document.getElementById('botloading').outerHTML=`<div class="chat-msg bot" style="color:#ff6b6b">请求失败: ${e.message}</div>`}
+msgs.scrollTop=msgs.scrollHeight;
+}
+</script>
 """
 
 def esc(s):
@@ -239,7 +286,7 @@ fs.textContent='抓取中... ('+run.status+')';
 }}
 
 filter();
-</script></body></html>"""
+</script>{CHAT_HTML}</body></html>"""
 
 def gen_index():
     dates = get_dates()
@@ -320,7 +367,7 @@ fs.textContent=`抓取中... (${{run.status}})`;
 }}catch{{}}
 }}
 }}
-</script></body></html>"""
+</script>{CHAT_HTML}</body></html>"""
 
 def gen_paper_card(p, i, is_hf=False):
     au = p.get("authors", [])
@@ -448,7 +495,7 @@ function delPaper(btn,pid){{const dels=getDeleted();if(!dels.includes(pid))dels.
 function toggleFav(btn,pid,title,link,pdf){{const favs=getFavs();if(favs[pid]){{delete favs[pid];btn.innerHTML='&#9825;';btn.classList.remove('on')}}else{{favs[pid]={{title,link,pdf,t:Date.now()}};btn.innerHTML='&#9829;';btn.classList.add('on')}}localStorage.setItem('fav_papers',JSON.stringify(favs))}}
 function initCards(){{const dels=getDeleted();const favs=getFavs();const chks=getChecked();document.querySelectorAll('.card[data-pid]').forEach(c=>{{const pid=c.dataset.pid;if(dels.includes(pid)){{c.remove();return}}const fb=c.querySelector('.fav-btn');if(fb&&favs[pid]){{fb.innerHTML='&#9829;';fb.classList.add('on')}}const cb=c.querySelector('.chk-btn');if(cb&&chks.includes(pid)){{cb.classList.add('on');c.classList.add('checked')}}}});renum()}};
 filter();
-</script></body></html>"""
+</script>{CHAT_HTML}</body></html>"""
 
 def _js_escape(s):
     return s.replace("\\", "\\\\").replace("`", "\\`").replace("${", "\\${")
@@ -574,7 +621,7 @@ el.innerHTML=h;document.getElementById('cnt').textContent=keys.length+' 篇';
 function removeFav(pid){{const favs=getFavs();delete favs[pid];localStorage.setItem('fav_papers',JSON.stringify(favs));render()}}
 function clearAll(){{if(confirm('确定清空所有收藏？')){{localStorage.setItem('fav_papers','{{}}');render()}}}}
 render();
-</script></body></html>"""
+</script>{CHAT_HTML}</body></html>"""
 
 
 def main():
