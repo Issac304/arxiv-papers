@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="theme-color" content="#0a0e1a"><meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="manifest" href="manifest.json"><link rel="apple-touch-icon" href="icon-192.png">
+<title>arXiv Papers</title><style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+:root{--bg:#0a0e1a;--glass:rgba(255,255,255,0.07);--gb:rgba(255,255,255,0.12);--t:#fff;--t2:#b0b8d0;--t3:#7880a0;--ac:#7b93ff;--ac2:#45d4c8;--hf:#ff9d00}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',-apple-system,'PingFang SC','Microsoft YaHei',sans-serif;background:var(--bg);color:var(--t);min-height:100vh}
+body::before{content:"";position:fixed;top:-200px;right:-200px;width:600px;height:600px;background:radial-gradient(circle,rgba(123,147,255,0.07)0%,transparent 70%);pointer-events:none}
+.c{max-width:1000px;margin:0 auto;padding:40px 20px;position:relative;z-index:1}
+a{color:var(--ac);text-decoration:none}a:hover{color:#9db4ff}
+h1{font-size:2.4rem;font-weight:800;background:linear-gradient(135deg,#7b93ff,#45d4c8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;text-align:center;margin-bottom:8px}
+.sub{text-align:center;color:var(--t2);margin-bottom:10px;font-size:0.95rem}
+.pills{display:flex;justify-content:center;gap:6px;margin-bottom:40px;flex-wrap:wrap}
+.pill{font-size:.72rem;padding:3px 11px;border-radius:16px;background:var(--glass);border:1px solid var(--gb);color:var(--t2)}
+.section{margin-bottom:40px}
+.label{font-size:.72rem;font-weight:600;text-transform:uppercase;letter-spacing:2px;color:var(--t3);margin-bottom:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
+.dcard{display:flex;align-items:center;justify-content:space-between;background:var(--glass);border:1px solid var(--gb);border-radius:12px;padding:14px 18px;color:var(--t);transition:all .2s}
+.dcard:hover{border-color:rgba(255,255,255,.18);transform:translateY(-1px);box-shadow:0 6px 20px rgba(0,0,0,.3)}
+.dcard .dt{font-weight:700;font-size:1rem}
+.badges{display:flex;gap:5px}
+.badge{font-size:.82rem;font-weight:700;padding:3px 10px;border-radius:7px;background:rgba(255,255,255,.06);border:1px solid var(--gb)}
+.b-a{color:#9db4ff}.b-h{color:#ffb840}
+.src-links{display:flex;gap:6px;flex-wrap:wrap}
+.src-btn{font-size:.78rem;font-weight:600;padding:5px 12px;border-radius:7px;display:inline-flex;align-items:center;gap:5px;transition:all .15s;text-decoration:none}
+.src-btn span{font-weight:800}
+.src-btn.hf{background:rgba(255,157,0,.12);border:1px solid rgba(255,157,0,.25);color:#ffb840}
+.src-btn.hf:hover{background:rgba(255,157,0,.22);color:#ffc860}
+.src-btn.ax{background:rgba(123,147,255,.1);border:1px solid rgba(123,147,255,.2);color:#9db4ff}
+.src-btn.ax:hover{background:rgba(123,147,255,.2);color:#b0c4ff}
+.dcard{position:relative}.dcard-del{position:absolute;top:6px;right:6px;width:22px;height:22px;border:none;border-radius:5px;background:transparent;color:var(--t3);font-size:.9rem;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;transition:all .15s}
+.dcard:hover .dcard-del{opacity:1}.dcard-del:hover{color:#ff6b6b;background:rgba(255,107,107,.1)}
+.topbar{position:sticky;top:0;z-index:100;background:rgba(10,14,26,.9);backdrop-filter:blur(16px);border-bottom:1px solid var(--gb);padding:12px 20px}
+.topbar-in{max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.back{color:var(--t3);font-size:.85rem;font-weight:500}
+.back:hover{color:var(--ac)}
+.topbar h2{font-size:1.05rem;font-weight:700}
+.spacer{flex:1}
+.search{position:relative;width:280px}
+.search input{width:100%;background:rgba(255,255,255,.08);border:1px solid var(--gb);border-radius:9px;padding:8px 12px 8px 36px;color:var(--t);font-size:.88rem;font-family:inherit;outline:0}
+.search input:focus{border-color:var(--ac)}
+.search input::placeholder{color:var(--t3)}
+.search svg{position:absolute;left:10px;top:50%;transform:translateY(-50%);color:var(--t3)}
+.cnt{font-size:.8rem;color:var(--t3);white-space:nowrap}
+.filters{max-width:1100px;margin:0 auto;padding:12px 20px 0;display:flex;gap:7px;flex-wrap:wrap;align-items:center}
+.fbtn{background:var(--glass);border:1px solid var(--gb);border-radius:9px;padding:6px 14px;color:var(--t2);font-size:.8rem;font-weight:500;cursor:pointer;font-family:inherit;white-space:nowrap;display:inline-flex;align-items:center;gap:5px;transition:all .15s}
+.fbtn:hover{border-color:rgba(255,255,255,.18);color:var(--t);background:rgba(255,255,255,.1)}
+.fbtn.on{background:var(--ac);border-color:var(--ac);color:#fff}
+.fbtn.on-hf{background:var(--hf);border-color:var(--hf);color:#fff}
+.fc{opacity:.7;font-size:.73rem}
+.cdot{width:6px;height:6px;border-radius:50%;display:inline-block}
+.fsep{width:1px;height:18px;background:var(--gb);margin:0 3px}
+.list{max-width:1100px;margin:0 auto;padding:12px 20px 60px}
+.card{background:var(--glass);border:1px solid var(--gb);border-radius:12px;padding:18px 22px;margin-bottom:9px;transition:all .2s}
+.card:hover{border-color:rgba(255,255,255,.16);background:rgba(255,255,255,.1)}
+.ch{display:flex;align-items:flex-start;gap:12px}
+.ci{font-size:.72rem;color:var(--t3);min-width:26px;padding-top:3px;font-weight:600}
+.cb{flex:1;min-width:0}
+.ct{font-size:1rem;font-weight:700;line-height:1.4;margin-bottom:4px}
+.ct a{color:var(--t)}.ct a:hover{color:var(--ac)}
+.ca{font-size:.86rem;color:var(--t2);margin-bottom:7px;line-height:1.4}
+.tags{display:flex;gap:5px;flex-wrap:wrap;align-items:center}
+.tag{font-size:.72rem;font-weight:500;padding:2px 8px;border-radius:5px;background:rgba(255,255,255,.06);border:1px solid var(--gb);color:var(--t2)}
+.links{display:flex;gap:5px;flex-shrink:0;margin-left:auto}
+.links a{font-size:.78rem;font-weight:500;color:var(--ac);padding:4px 10px;border:1px solid rgba(123,147,255,.2);border-radius:7px}
+.links a:hover{background:rgba(123,147,255,.1)}
+.abs{margin-top:8px;margin-left:38px;font-size:.86rem;line-height:1.6;color:var(--t2)}
+.actions{display:flex;gap:4px;flex-shrink:0;align-items:center}
+.abtn{width:30px;height:30px;border:1px solid var(--gb);border-radius:7px;background:transparent;color:var(--t3);font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .15s;font-family:inherit;line-height:1}
+.chk-btn:hover,.chk-btn.on{color:#45d4c8;border-color:rgba(69,212,200,.3);background:rgba(69,212,200,.08)}
+.card.checked{border-color:rgba(69,212,200,.25);background:rgba(69,212,200,.06)}
+.fav-btn:hover,.fav-btn.on{color:#ff4d6a;border-color:rgba(255,77,106,.3);background:rgba(255,77,106,.08)}
+.fav-btn.on{font-size:1rem}
+.del-btn:hover{color:#ff6b6b;border-color:rgba(255,107,107,.3);background:rgba(255,107,107,.08)}
+.card.deleted{opacity:.3;transform:scale(.97);pointer-events:none;max-height:0;padding:0;margin:0;border:0;overflow:hidden;transition:all .3s}
+.toggle{margin-top:6px;margin-left:38px;font-size:.78rem;color:var(--ac);cursor:pointer;user-select:none;padding:2px 0;opacity:.8;transition:opacity .15s}
+.toggle:hover{opacity:1}
+.nr{text-align:center;padding:60px;color:var(--t3)}
+.stop{position:fixed;bottom:24px;right:24px;width:40px;height:40px;background:var(--ac);border:none;border-radius:10px;color:#fff;font-size:1.1rem;cursor:pointer;opacity:0;transition:all .2s;z-index:99;box-shadow:0 4px 16px rgba(123,147,255,.15)}
+.stop.v{opacity:1}.stop:hover{transform:translateY(-2px)}
+.rbtn{font-size:.78rem;font-weight:600;padding:6px 16px;border-radius:8px;background:var(--ac);color:#fff;text-transform:none;letter-spacing:0;text-decoration:none;transition:all .15s;display:inline-flex;align-items:center;gap:4px;border:none;cursor:pointer;font-family:inherit}
+.rbtn:hover{background:#6680ff;color:#fff;transform:translateY(-1px)}
+.stop-btn{background:rgba(255,255,255,.08);color:var(--t2);border:1px solid var(--gb)}.stop-btn:hover{background:rgba(255,255,255,.14);color:var(--t)}
+.fetch-panel{display:flex;align-items:center;gap:8px;margin-bottom:14px;flex-wrap:wrap}
+.fetch-date{background:rgba(255,255,255,.08);border:1px solid var(--gb);border-radius:8px;padding:6px 12px;color:var(--t);font-size:.85rem;font-family:inherit;outline:0;color-scheme:dark}
+.fetch-date:focus{border-color:var(--ac)}
+.fetch-status{font-size:.8rem;color:var(--t3)}
+footer{text-align:center;padding:28px 0;color:var(--t3);font-size:.75rem;margin-top:30px}
+@media(max-width:700px){.search{width:100%;order:10}.links{display:none}.ci{display:none}.abs{margin-left:0}.ch{gap:6px}}
+</style></head><body>
+<div class="c">
+<h1>探索智能边界 · 每天掌握10000篇最新arXiv论文</h1>
+<p class="sub">成为地球上前 0.000000001% 的顶尖人工智能科学家</p>
+<div class="pills"><span class="pill">cs.CV</span><span class="pill">cs.CL</span><span class="pill">cs.LG</span><span class="pill">cs.MM</span><span class="pill" style="color:var(--hf)">HuggingFace</span><a href="favorites.html" class="pill" style="color:#ff4d6a;border-color:rgba(255,77,106,.3)">&#9829; 收藏夹</a></div>
+<div class="section">
+<div class="label" style="display:flex;align-items:center;gap:12px">Daily Papers</div>
+<div class="fetch-panel">
+<input type="date" id="fd" class="fetch-date">
+<button class="rbtn" onclick="doFetch()">&#x21bb; 抓取</button>
+<button class="rbtn stop-btn" id="stopBtn" style="display:none" onclick="window.open('https://github.com/Issac304/arxiv-papers/actions','_blank')">查看进度</button>
+<span class="fetch-status" id="fs"></span>
+</div>
+<div class="grid"><div class="dcard" id="dc-2026-02-28"><span class="dt">2026-02-28</span><div class="src-links"></div><button class="dcard-del" onclick="delDate('2026-02-28')" title="隐藏">&times;</button></div>
+<div class="dcard" id="dc-2026-02-27"><span class="dt">2026-02-27</span><div class="src-links"><a class="src-btn hf" href="2026-02-27.html#hf">HF 热门 <span>28</span></a></div><button class="dcard-del" onclick="delDate('2026-02-27')" title="隐藏">&times;</button></div>
+<div class="dcard" id="dc-2026-02-26"><span class="dt">2026-02-26</span><div class="src-links"><a class="src-btn hf" href="2026-02-26.html#hf">HF 热门 <span>31</span></a><a class="src-btn ax" href="2026-02-26.html#arxiv">arXiv <span>284</span></a></div><button class="dcard-del" onclick="delDate('2026-02-26')" title="隐藏">&times;</button></div>
+<div class="dcard" id="dc-2026-02-25"><span class="dt">2026-02-25</span><div class="src-links"><a class="src-btn ax" href="2026-02-25.html#arxiv">arXiv <span>309</span></a></div><button class="dcard-del" onclick="delDate('2026-02-25')" title="隐藏">&times;</button></div>
+<div class="dcard" id="dc-2026-02-24"><span class="dt">2026-02-24</span><div class="src-links"><a class="src-btn ax" href="2026-02-24.html#arxiv">arXiv <span>279</span></a></div><button class="dcard-del" onclick="delDate('2026-02-24')" title="隐藏">&times;</button></div>
+</div>
+</div>
+<div class="section">
+<div class="label" style="display:flex;align-items:center;gap:12px">CVPR 2026</div>
+<a class="dcard" href="cvpr26.html" style="max-width:320px"><span class="dt">CVPR 2026 Papers</span><div class="badges"><span class="badge b-a">194</span></div></a>
+</div>
+<footer>arXiv Papers &bull; <a href="https://arxiv.org">arXiv.org</a> &bull; <a href="https://huggingface.co/papers">HuggingFace</a></footer>
+</div>
+<script>
+if('serviceWorker' in navigator)navigator.serviceWorker.register('sw.js').catch(()=>{});
+var now=new Date();document.getElementById('fd').value=now.getFullYear()+'-'+String(now.getMonth()+1).padStart(2,'0')+'-'+String(now.getDate()).padStart(2,'0');
+
+function delDate(d){const el=document.getElementById('dc-'+d);if(el){el.style.transition='all .3s';el.style.opacity='0';el.style.transform='scale(.95)';setTimeout(()=>el.remove(),300)}
+const hd=JSON.parse(localStorage.getItem('hidden_dates')||'[]');if(!hd.includes(d))hd.push(d);localStorage.setItem('hidden_dates',JSON.stringify(hd))}
+(function(){const hd=JSON.parse(localStorage.getItem('hidden_dates')||'[]');hd.forEach(d=>{const el=document.getElementById('dc-'+d);if(el)el.remove()})})()
+
+const REPO='Issac304/arxiv-papers';
+function getToken(){let t=localStorage.getItem('gh_token');if(!t){t=prompt('首次使用需输入 GitHub Token\n\n获取方法：GitHub → Settings → Developer settings → Personal access tokens → Fine-grained → Generate\n\n权限只需勾选 Actions: Read and Write');if(t)localStorage.setItem('gh_token',t)}return t}
+
+async function doFetch(){
+const token=getToken();if(!token)return;
+const dateVal=document.getElementById('fd').value;
+const fs=document.getElementById('fs');
+const sb=document.getElementById('stopBtn');
+fs.textContent='正在触发抓取...';fs.style.color='var(--ac)';
+sb.style.display='inline-flex';
+try{
+const r=await fetch(`https://api.github.com/repos/${REPO}/actions/workflows/daily.yml/dispatches`,{
+method:'POST',headers:{'Authorization':`token ${token}`,'Accept':'application/vnd.github.v3+json'},
+body:JSON.stringify({ref:'master',inputs:{date:dateVal}})
+});
+if(r.status===204){fs.textContent=`已触发抓取 ${dateVal}，约1-2分钟后刷新页面查看`;fs.style.color='var(--ac2)';pollRun(token,dateVal)}
+else if(r.status===401){localStorage.removeItem('gh_token');fs.textContent='Token 无效，请重新输入';fs.style.color='#ff6b6b';sb.style.display='none'}
+else{const j=await r.json().catch(()=>({}));fs.textContent='触发失败: '+(j.message||r.status);fs.style.color='#ff6b6b'}
+}catch(e){fs.textContent='网络错误: '+e.message;fs.style.color='#ff6b6b'}
+}
+
+async function pollRun(token,dateVal){
+const fs=document.getElementById('fs');
+for(let i=0;i<30;i++){
+await new Promise(r=>setTimeout(r,5000));
+try{
+const r=await fetch(`https://api.github.com/repos/${REPO}/actions/runs?per_page=1`,{headers:{'Authorization':`token ${token}`}});
+const d=await r.json();const run=d.workflow_runs&&d.workflow_runs[0];
+if(!run)continue;
+if(run.status==='completed'){
+if(run.conclusion==='success'){fs.textContent=`${dateVal} 抓取完成! 刷新页面查看`;fs.style.color='#45d4c8'}
+else{fs.textContent=`抓取结束 (${run.conclusion})`;fs.style.color='#ff6b6b'}
+document.getElementById('stopBtn').style.display='none';return}
+fs.textContent=`抓取中... (${run.status})`;
+}catch{}
+}
+}
+</script></body></html>
