@@ -2,7 +2,7 @@ name: Daily Papers
 
 on:
   schedule:
-    - cron: '1 16 * * *'  # UTC 16:01 = 北京时间 00:01
+    - cron: '0 19 * * *'  # UTC 19:00 = 北京时间 03:00
   workflow_dispatch:       # 支持手动触发
 
 permissions:
