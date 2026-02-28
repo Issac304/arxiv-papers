@@ -106,6 +106,8 @@ def gen_index():
     return f"""<!DOCTYPE html>
 <html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
 <meta name="theme-color" content="#0a0e1a"><meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="manifest" href="manifest.json"><link rel="apple-touch-icon" href="icon-192.png">
 <title>arXiv Papers</title><style>{CSS}</style></head><body>
 <div class="c">
 <h1>arXiv Papers</h1>
@@ -115,7 +117,7 @@ def gen_index():
 {f'<div class="grid">{date_cards}</div>' if date_cards else '<div class="nr">暂无数据</div>'}
 </div>
 <footer>arXiv Papers &bull; <a href="https://arxiv.org">arXiv.org</a> &bull; <a href="https://huggingface.co/papers">HuggingFace</a></footer>
-</div></body></html>"""
+</div><script>if('serviceWorker' in navigator)navigator.serviceWorker.register('sw.js').catch(()=>{{}})</script></body></html>"""
 
 def gen_paper_card(p, i, is_hf=False):
     au = p.get("authors", [])
@@ -183,6 +185,8 @@ def gen_daily_page(date_str):
     return f"""<!DOCTYPE html>
 <html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
 <meta name="theme-color" content="#0a0e1a"><meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="manifest" href="manifest.json"><link rel="apple-touch-icon" href="icon-192.png">
 <title>{date_str} - arXiv Papers</title><style>{CSS}</style></head><body>
 <div class="topbar"><div class="topbar-in">
 <a class="back" href="index.html">&#8592; 首页</a>
@@ -212,11 +216,80 @@ def _cat_entries(cat_sections):
     return parts
 
 
+def gen_pwa_files():
+    manifest = {
+        "name": "arXiv Papers",
+        "short_name": "Papers",
+        "description": "AI 论文每日追踪",
+        "start_url": ".",
+        "display": "standalone",
+        "background_color": "#0a0e1a",
+        "theme_color": "#0a0e1a",
+        "icons": [
+            {"src": "icon-192.png", "sizes": "192x192", "type": "image/png"},
+            {"src": "icon-512.png", "sizes": "512x512", "type": "image/png"},
+        ]
+    }
+    with open(os.path.join(SITE_DIR, "manifest.json"), "w", encoding="utf-8") as f:
+        json.dump(manifest, f, ensure_ascii=False, indent=2)
+
+    sw = """const V='v1';
+self.addEventListener('install',e=>e.waitUntil(caches.open(V).then(c=>c.addAll(['./',]))));
+self.addEventListener('fetch',e=>{e.respondWith(fetch(e.request).then(r=>{if(r&&r.status===200){const c=r.clone();caches.open(V).then(cache=>cache.put(e.request,c))}return r}).catch(()=>caches.match(e.request)))});
+self.addEventListener('activate',e=>e.waitUntil(caches.keys().then(ks=>Promise.all(ks.filter(k=>k!==V).map(k=>caches.delete(k))))));"""
+    with open(os.path.join(SITE_DIR, "sw.js"), "w", encoding="utf-8") as f:
+        f.write(sw)
+
+    gen_icon(192)
+    gen_icon(512)
+
+
+def gen_icon(size):
+    import base64, struct, zlib
+    w = h = size
+    raw = []
+    cx, cy = w // 2, h // 2
+    r1 = int(size * 0.38)
+    r2 = int(size * 0.22)
+    for y in range(h):
+        row = b'\x00'
+        for x in range(w):
+            dx, dy = x - cx, y - cy
+            dist = (dx*dx + dy*dy) ** 0.5
+            if dist <= r1:
+                t = dist / r1
+                rr = int(123 + (69 - 123) * t)
+                gg = int(147 + (212 - 147) * t)
+                bb = int(255 + (200 - 255) * t)
+                aa = 255
+            elif dist <= r1 + 2:
+                rr, gg, bb, aa = 10, 14, 26, 255
+            else:
+                rr, gg, bb, aa = 10, 14, 26, 255
+            row += struct.pack('BBBB', rr, gg, bb, aa)
+        raw.append(row)
+    raw_data = b''.join(raw)
+
+    def chunk(ctype, data):
+        c = ctype + data
+        return struct.pack('>I', len(data)) + c + struct.pack('>I', zlib.crc32(c) & 0xffffffff)
+
+    png = b'\x89PNG\r\n\x1a\n'
+    png += chunk(b'IHDR', struct.pack('>IIBBBBB', w, h, 8, 6, 0, 0, 0))
+    png += chunk(b'IDAT', zlib.compress(raw_data, 9))
+    png += chunk(b'IEND', b'')
+    with open(os.path.join(SITE_DIR, f"icon-{size}.png"), "wb") as f:
+        f.write(png)
+
+
 def main():
     if hasattr(sys.stdout, "reconfigure"):
         sys.stdout.reconfigure(encoding="utf-8")
 
     os.makedirs(SITE_DIR, exist_ok=True)
+
+    print("Generating PWA files...")
+    gen_pwa_files()
 
     print("Generating index.html...")
     with open(os.path.join(SITE_DIR, "index.html"), "w", encoding="utf-8") as f:
