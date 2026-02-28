@@ -40,6 +40,8 @@ h1{font-size:2.4rem;font-weight:800;background:linear-gradient(135deg,#7b93ff,#4
 .src-btn.hf:hover{background:rgba(255,157,0,.22);color:#ffc860}
 .src-btn.ax{background:rgba(123,147,255,.1);border:1px solid rgba(123,147,255,.2);color:#9db4ff}
 .src-btn.ax:hover{background:rgba(123,147,255,.2);color:#b0c4ff}
+.dcard{position:relative}.dcard-del{position:absolute;top:6px;right:6px;width:22px;height:22px;border:none;border-radius:5px;background:transparent;color:var(--t3);font-size:.9rem;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;transition:all .15s}
+.dcard:hover .dcard-del{opacity:1}.dcard-del:hover{color:#ff6b6b;background:rgba(255,107,107,.1)}
 .topbar{position:sticky;top:0;z-index:100;background:rgba(10,14,26,.9);backdrop-filter:blur(16px);border-bottom:1px solid var(--gb);padding:12px 20px}
 .topbar-in{max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
 .back{color:var(--t3);font-size:.85rem;font-weight:500}
@@ -123,7 +125,7 @@ def gen_index():
         hc = len(data["huggingface"])
         hf_link = f'<a class="src-btn hf" href="{d}.html#hf">HF 热门 <span>{hc}</span></a>' if hc else ""
         ax_link = f'<a class="src-btn ax" href="{d}.html#arxiv">arXiv <span>{ac}</span></a>' if ac else ""
-        date_cards += f'<div class="dcard"><span class="dt">{d}</span><div class="src-links">{hf_link}{ax_link}</div></div>\n'
+        date_cards += f'<div class="dcard" id="dc-{d}"><span class="dt">{d}</span><div class="src-links">{hf_link}{ax_link}</div><button class="dcard-del" onclick="delDate(\'{d}\')" title="隐藏">&times;</button></div>\n'
 
     return f"""<!DOCTYPE html>
 <html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
@@ -150,6 +152,10 @@ def gen_index():
 <script>
 if('serviceWorker' in navigator)navigator.serviceWorker.register('sw.js').catch(()=>{{}});
 document.getElementById('fd').value=new Date().toISOString().slice(0,10);
+
+function delDate(d){{const el=document.getElementById('dc-'+d);if(el){{el.style.transition='all .3s';el.style.opacity='0';el.style.transform='scale(.95)';setTimeout(()=>el.remove(),300)}}
+const hd=JSON.parse(localStorage.getItem('hidden_dates')||'[]');if(!hd.includes(d))hd.push(d);localStorage.setItem('hidden_dates',JSON.stringify(hd))}}
+(function(){{const hd=JSON.parse(localStorage.getItem('hidden_dates')||'[]');hd.forEach(d=>{{const el=document.getElementById('dc-'+d);if(el)el.remove()}})}})()
 
 const REPO='Issac304/arxiv-papers';
 function getToken(){{let t=localStorage.getItem('gh_token');if(!t){{t=prompt('首次使用需输入 GitHub Token\\n\\n获取方法：GitHub → Settings → Developer settings → Personal access tokens → Fine-grained → Generate\\n\\n权限只需勾选 Actions: Read and Write');if(t)localStorage.setItem('gh_token',t)}}return t}}
