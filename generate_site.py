@@ -86,8 +86,13 @@ h1{font-size:2.4rem;font-weight:800;background:linear-gradient(135deg,#7b93ff,#4
 .nr{text-align:center;padding:60px;color:var(--t3)}
 .stop{position:fixed;bottom:24px;right:24px;width:40px;height:40px;background:var(--ac);border:none;border-radius:10px;color:#fff;font-size:1.1rem;cursor:pointer;opacity:0;transition:all .2s;z-index:99;box-shadow:0 4px 16px rgba(123,147,255,.15)}
 .stop.v{opacity:1}.stop:hover{transform:translateY(-2px)}
-.rbtn{font-size:.7rem;font-weight:600;padding:4px 14px;border-radius:8px;background:var(--ac);color:#fff;text-transform:none;letter-spacing:0;text-decoration:none;transition:all .15s;display:inline-flex;align-items:center;gap:4px}
+.rbtn{font-size:.78rem;font-weight:600;padding:6px 16px;border-radius:8px;background:var(--ac);color:#fff;text-transform:none;letter-spacing:0;text-decoration:none;transition:all .15s;display:inline-flex;align-items:center;gap:4px;border:none;cursor:pointer;font-family:inherit}
 .rbtn:hover{background:#6680ff;color:#fff;transform:translateY(-1px)}
+.stop-btn{background:rgba(255,255,255,.08);color:var(--t2);border:1px solid var(--gb)}.stop-btn:hover{background:rgba(255,255,255,.14);color:var(--t)}
+.fetch-panel{display:flex;align-items:center;gap:8px;margin-bottom:14px;flex-wrap:wrap}
+.fetch-date{background:rgba(255,255,255,.08);border:1px solid var(--gb);border-radius:8px;padding:6px 12px;color:var(--t);font-size:.85rem;font-family:inherit;outline:0;color-scheme:dark}
+.fetch-date:focus{border-color:var(--ac)}
+.fetch-status{font-size:.8rem;color:var(--t3)}
 footer{text-align:center;padding:28px 0;color:var(--t3);font-size:.75rem;margin-top:30px}
 @media(max-width:700px){.search{width:100%;order:10}.links{display:none}.ci{display:none}.abs{margin-left:0}.ch{gap:6px}}
 """
@@ -130,11 +135,60 @@ def gen_index():
 <h1>探索人类智能边界 · 每日arXiv计划</h1>
 <p class="sub">成为地球上前 0.000000001% 的顶尖人工智能科学家</p>
 <div class="pills"><span class="pill">cs.CV</span><span class="pill">cs.CL</span><span class="pill">cs.LG</span><span class="pill">cs.MM</span><span class="pill" style="color:var(--hf)">HuggingFace</span><a href="favorites.html" class="pill" style="color:#ff4d6a;border-color:rgba(255,77,106,.3)">&#9829; 收藏夹</a></div>
-<div class="section"><div class="label" style="display:flex;align-items:center;gap:12px">Daily Papers <a href="https://github.com/Issac304/arxiv-papers/actions/workflows/daily.yml" target="_blank" class="rbtn">&#x21bb; 手动更新</a></div>
+<div class="section">
+<div class="label" style="display:flex;align-items:center;gap:12px">Daily Papers</div>
+<div class="fetch-panel">
+<input type="date" id="fd" class="fetch-date">
+<button class="rbtn" onclick="doFetch()">&#x21bb; 抓取</button>
+<button class="rbtn stop-btn" id="stopBtn" style="display:none" onclick="window.open('https://github.com/Issac304/arxiv-papers/actions','_blank')">查看进度</button>
+<span class="fetch-status" id="fs"></span>
+</div>
 {f'<div class="grid">{date_cards}</div>' if date_cards else '<div class="nr">暂无数据</div>'}
 </div>
 <footer>arXiv Papers &bull; <a href="https://arxiv.org">arXiv.org</a> &bull; <a href="https://huggingface.co/papers">HuggingFace</a></footer>
-</div><script>if('serviceWorker' in navigator)navigator.serviceWorker.register('sw.js').catch(()=>{{}})</script></body></html>"""
+</div>
+<script>
+if('serviceWorker' in navigator)navigator.serviceWorker.register('sw.js').catch(()=>{{}});
+document.getElementById('fd').value=new Date().toISOString().slice(0,10);
+
+const REPO='Issac304/arxiv-papers';
+function getToken(){{let t=localStorage.getItem('gh_token');if(!t){{t=prompt('首次使用需输入 GitHub Token\\n\\n获取方法：GitHub → Settings → Developer settings → Personal access tokens → Fine-grained → Generate\\n\\n权限只需勾选 Actions: Read and Write');if(t)localStorage.setItem('gh_token',t)}}return t}}
+
+async function doFetch(){{
+const token=getToken();if(!token)return;
+const dateVal=document.getElementById('fd').value;
+const fs=document.getElementById('fs');
+const sb=document.getElementById('stopBtn');
+fs.textContent='正在触发抓取...';fs.style.color='var(--ac)';
+sb.style.display='inline-flex';
+try{{
+const r=await fetch(`https://api.github.com/repos/${{REPO}}/actions/workflows/daily.yml/dispatches`,{{
+method:'POST',headers:{{'Authorization':`token ${{token}}`,'Accept':'application/vnd.github.v3+json'}},
+body:JSON.stringify({{ref:'master',inputs:{{date:dateVal}})
+}});
+if(r.status===204){{fs.textContent=`已触发抓取 ${{dateVal}}，约1-2分钟后刷新页面查看`;fs.style.color='var(--ac2)';pollRun(token,dateVal)}}
+else if(r.status===401){{localStorage.removeItem('gh_token');fs.textContent='Token 无效，请重新输入';fs.style.color='#ff6b6b';sb.style.display='none'}}
+else{{const j=await r.json().catch(()=>({{}}));fs.textContent='触发失败: '+(j.message||r.status);fs.style.color='#ff6b6b'}}
+}}catch(e){{fs.textContent='网络错误: '+e.message;fs.style.color='#ff6b6b'}}
+}}
+
+async function pollRun(token,dateVal){{
+const fs=document.getElementById('fs');
+for(let i=0;i<30;i++){{
+await new Promise(r=>setTimeout(r,5000));
+try{{
+const r=await fetch(`https://api.github.com/repos/${{REPO}}/actions/runs?per_page=1`,{{headers:{{'Authorization':`token ${{token}}`}}}});
+const d=await r.json();const run=d.workflow_runs&&d.workflow_runs[0];
+if(!run)continue;
+if(run.status==='completed'){{
+if(run.conclusion==='success'){{fs.textContent=`${{dateVal}} 抓取完成! 刷新页面查看`;fs.style.color='#45d4c8'}}
+else{{fs.textContent=`抓取结束 (${{run.conclusion}})`;fs.style.color='#ff6b6b'}}
+document.getElementById('stopBtn').style.display='none';return}}
+fs.textContent=`抓取中... (${{run.status}})`;
+}}catch{{}}
+}}
+}}
+</script></body></html>"""
 
 def gen_paper_card(p, i, is_hf=False):
     au = p.get("authors", [])
