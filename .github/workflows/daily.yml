@@ -3,7 +3,12 @@ name: Daily Papers
 on:
   schedule:
     - cron: '0 19 * * *'  # UTC 19:00 = 北京时间 03:00
-  workflow_dispatch:       # 支持手动触发
+  workflow_dispatch:
+    inputs:
+      date:
+        description: '指定日期 (格式: YYYY-MM-DD，留空则抓取昨天+今天)'
+        required: false
+        default: ''
 
 permissions:
   contents: write
@@ -20,10 +25,16 @@ jobs:
         with:
           python-version: '3.12'
 
+      - name: Fetch papers for specified date
+        if: ${{ github.event.inputs.date != '' }}
+        run: python fetch_papers.py ${{ github.event.inputs.date }}
+
       - name: Fetch yesterday papers
+        if: ${{ github.event.inputs.date == '' }}
         run: python fetch_papers.py
 
       - name: Fetch today papers
+        if: ${{ github.event.inputs.date == '' }}
         run: python fetch_papers.py $(date +%Y-%m-%d)
 
       - name: Generate static site
