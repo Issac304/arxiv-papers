@@ -299,8 +299,8 @@ def gen_index():
         data = load_data(d)
         ac = len(data["arxiv"])
         hc = len(data["huggingface"])
-        hf_link = f'<a class="src-btn hf" href="{d}.html#hf">HF 热门 <span>{hc}</span></a>' if hc else ""
-        ax_link = f'<a class="src-btn ax" href="{d}.html#arxiv">arXiv <span>{ac}</span></a>' if ac else ""
+        hf_link = f'<a class="src-btn hf" href="{d}.html#hf">HF 热门 <span>{hc}</span></a>' if hc else '<span class="src-btn hf" style="opacity:0.3;pointer-events:none">HF 热门 <span>0</span></span>'
+        ax_link = f'<a class="src-btn ax" href="{d}.html#arxiv">arXiv <span>{ac}</span></a>' if ac else '<span class="src-btn ax" style="opacity:0.3;pointer-events:none">arXiv <span>0</span></span>'
         date_cards += f'<div class="dcard" id="dc-{d}"><span class="dt">{d}</span><div class="src-links">{hf_link}{ax_link}</div><button class="dcard-refresh" onclick="refreshDate(\'{d}\')" title="重新抓取">&#x21bb;</button><button class="dcard-del" onclick="delDate(\'{d}\')" title="隐藏">&times;</button></div>\n'
 
     return f"""<!DOCTYPE html>
