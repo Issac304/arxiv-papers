@@ -148,6 +148,8 @@ def gen_cvpr_page():
 <div class="topbar"><div class="topbar-in">
 <a class="back" href="index.html">&#8592; 首页</a>
 <h2>CVPR 2026</h2><span class="spacer"></span>
+<button class="rbtn" onclick="doFetchCvpr()">&#x21bb; 更新抓取</button>
+<span class="fetch-status" id="fs" style="font-size:.8rem;color:var(--t3)"></span>
 <div class="search"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>
 <input id="si" type="text" placeholder="搜索标题、作者..." oninput="filter()"></div>
 <span class="cnt" id="cnt"></span></div></div>
@@ -165,6 +167,40 @@ function toggleFav(btn,pid,title,link,pdf){{const favs=getFavs();if(favs[pid]){{
 function initCards(){{const dels=getDeleted();const favs=getFavs();const chks=getChecked();document.querySelectorAll('.card[data-pid]').forEach(c=>{{const pid=c.dataset.pid;if(dels.includes(pid)){{c.remove();return}}const fb=c.querySelector('.fav-btn');if(fb&&favs[pid]){{fb.innerHTML='&#9829;';fb.classList.add('on')}}const cb=c.querySelector('.chk-btn');if(cb&&chks.includes(pid)){{cb.classList.add('on');c.classList.add('checked')}}}});renum()}};
 function filter(){{const q=document.getElementById('si').value.toLowerCase();const el=document.getElementById('pl');const d=document.createElement('div');d.innerHTML=ALL;const cards=[...d.querySelectorAll('.card')];let n=0;let h='';cards.forEach(c=>{{const t=c.textContent.toLowerCase();if(!q||q.split(/\\s+/).every(w=>t.includes(w))){{h+=c.outerHTML;n++}}}});el.innerHTML=h||'<div class="nr">没有匹配的论文</div>';document.getElementById('cnt').textContent=n+' 篇';initCards()}}
 window.addEventListener('scroll',()=>document.getElementById('st').classList.toggle('v',window.scrollY>400));
+
+const REPO='Issac304/arxiv-papers';
+function getToken(){{let t=localStorage.getItem('gh_token');if(!t){{t=prompt('首次使用需输入 GitHub Token\\n\\nGitHub → Settings → Developer settings → Personal access tokens → Fine-grained → Generate\\n\\n权限勾选 Actions: Read and Write');if(t)localStorage.setItem('gh_token',t)}}return t}}
+async function doFetchCvpr(){{
+const token=getToken();if(!token)return;
+const fs=document.getElementById('fs');
+fs.textContent='正在触发 CVPR 抓取...';fs.style.color='var(--ac)';
+try{{
+const r=await fetch(`https://api.github.com/repos/${{REPO}}/actions/workflows/daily.yml/dispatches`,{{
+method:'POST',headers:{{'Authorization':`token ${{token}}`,'Accept':'application/vnd.github.v3+json'}},
+body:JSON.stringify({{ref:'master',inputs:{{date:''}}}})
+}});
+if(r.status===204){{fs.textContent='已触发抓取，约2-3分钟后刷新页面查看';fs.style.color='var(--ac2)';pollCvpr(token)}}
+else if(r.status===401){{localStorage.removeItem('gh_token');fs.textContent='Token 无效，请重新输入';fs.style.color='#ff6b6b'}}
+else{{fs.textContent='触发失败';fs.style.color='#ff6b6b'}}
+}}catch(e){{fs.textContent='网络错误: '+e.message;fs.style.color='#ff6b6b'}}
+}}
+async function pollCvpr(token){{
+const fs=document.getElementById('fs');
+for(let i=0;i<30;i++){{
+await new Promise(r=>setTimeout(r,5000));
+try{{
+const r=await fetch(`https://api.github.com/repos/${{REPO}}/actions/runs?per_page=1`,{{headers:{{'Authorization':`token ${{token}}`}}}});
+const d=await r.json();const run=d.workflow_runs&&d.workflow_runs[0];
+if(!run)continue;
+if(run.status==='completed'){{
+if(run.conclusion==='success'){{fs.textContent='CVPR 抓取完成! 刷新页面查看';fs.style.color='#45d4c8'}}
+else{{fs.textContent='抓取结束 ('+run.conclusion+')';fs.style.color='#ff6b6b'}}
+return}}
+fs.textContent='抓取中... ('+run.status+')';
+}}catch{{}}
+}}
+}}
+
 filter();
 </script></body></html>"""
 
