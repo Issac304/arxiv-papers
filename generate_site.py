@@ -352,8 +352,7 @@ def gen_paper_card(p, i, is_hf=False):
     return f"""<div class="card" data-pid="{pid}"><div class="ch">
 <span class="ci">{i}</span><div class="cb">
 <div class="ct"><a href="{link}" target="_blank">{esc(p["title"])}</a></div>
-{f'<div class="sum-cn">{esc(p["summary_cn"])}</div>' if p.get("summary_cn") else ""}
-<div class="tags">{tags}</div></div>
+{f'<div class="sum-cn">{esc(p["summary_cn"])}</div>' if p.get("summary_cn") else ""}</div>
 <div class="actions">
 <button class="abtn chk-btn" onclick="toggleCheck(this,'{pid}')" title="已读">&#10003;</button>
 <button class="abtn fav-btn" onclick="toggleFav(this,'{pid}','{title_esc}','{link}','{pdf}')" title="收藏">&#9825;</button>
