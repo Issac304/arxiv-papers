@@ -11,8 +11,8 @@
       "summary": "While large language models (LLMs) show promise in scientific discovery, existing research focuses on inference or feedback-driven training, leaving the direct modeling of the generative reasoning process, P(hypothesis|background) (P(h|b)), unexplored. We demonstrate that directly training P(h|b) is mathematically intractable due to the combinatorial complexity (O(N^k)) inherent in retrieving and composing inspirations from a vast knowledge base. To break this barrier, we introduce MOOSE-Star, a unified framework enabling tractable training and scalable inference. In the best case, MOOSE-Star reduces complexity from exponential to logarithmic (O(log N)) by (1) training on decomposed subtasks derived from the probabilistic equation of discovery, (2) employing motivation-guided hierarchical search to enable logarithmic retrieval and prune irrelevant subspaces, and (3) utilizing bounded composition for robustness against retrieval noise. To facilitate this, we release TOMATO-Star, a dataset of 108,717 decomposed papers (38,400 GPU hours) for training. Furthermore, we show that while brute-force sampling hits a ''complexity wall,'' MOOSE-Star exhibits continuous test-time scaling.",
       "link": "https://huggingface.co/papers/2603.03756",
       "pdf": "http://arxiv.org/pdf/2603.03756",
-      "upvotes": 72,
-      "comments": 2,
+      "upvotes": 77,
+      "comments": 3,
       "organization": "miromind-ai",
       "summary_cn": "研究问题：探索大型语言模型在科学发现中的直接建模生成推理过程P(hypothesis|background)。方法：直接训练P(h|b)。创新点：直接建模生成推理过程。结果：证明了直接训练P(h|b)的有效性。"
     },
@@ -73,10 +73,10 @@
       "summary": "Current AI agents can flexibly invoke tools and execute complex tasks, yet their long-term advancement is hindered by the lack of systematic accumulation and transfer of skills. Without a unified mechanism for skill consolidation, agents frequently ``reinvent the wheel'', rediscovering solutions in isolated contexts without leveraging prior strategies. To overcome this limitation, we introduce SkillNet, an open infrastructure designed to create, evaluate, and organize AI skills at scale. SkillNet structures skills within a unified ontology that supports creating skills from heterogeneous sources, establishing rich relational connections, and performing multi-dimensional evaluation across Safety, Completeness, Executability, Maintainability, and Cost-awareness. Our infrastructure integrates a repository of over 200,000 skills, an interactive platform, and a versatile Python toolkit. Experimental evaluations on ALFWorld, WebShop, and ScienceWorld demonstrate that SkillNet significantly enhances agent performance, improving average rewards by 40% and reducing execution steps by 30% across multiple backbone models. By formalizing skills as evolving, composable assets, SkillNet provides a robust foundation for agents to move from transient experience to durable mastery.",
       "link": "https://huggingface.co/papers/2603.04448",
       "pdf": "http://arxiv.org/pdf/2603.04448",
-      "upvotes": 42,
-      "comments": 2,
+      "upvotes": 54,
+      "comments": 3,
       "organization": "ZhejiangUniversity",
-      "summary_cn": "研究问题：现有AI代理缺乏技能积累和转移的统一机制。方法：提出技能巩固的统一机制。创新点：解决技能重复发现的问题。结果：提高代理长期进步能力。"
+      "summary_cn": "研究问题：现有AI代理缺乏技能积累和转移的统一机制。方法：提出技能巩固的统一机制。创新点：解决技能重复发现的问题。结果：提高了代理的长期进步能力。"
     },
     {
       "id": "2603.04743",
@@ -94,33 +94,10 @@
       "summary": "Large Language Model (LLM) agents can automate data-science workflows, but many rigorous statistical methods implemented in R remain underused because LLMs struggle with statistical knowledge and tool retrieval. Existing retrieval-augmented approaches focus on function-level semantics and ignore data distribution, producing suboptimal matches. We propose DARE (Distribution-Aware Retrieval Embedding), a lightweight, plug-and-play retrieval model that incorporates data distribution information into function representations for R package retrieval. Our main contributions are: (i) RPKB, a curated R Package Knowledge Base derived from 8,191 high-quality CRAN packages; (ii) DARE, an embedding model that fuses distributional features with function metadata to improve retrieval relevance; and (iii) RCodingAgent, an R-oriented LLM agent for reliable R code generation and a suite of statistical analysis tasks for systematically evaluating LLM agents in realistic analytical scenarios. Empirically, DARE achieves an NDCG at 10 of 93.47%, outperforming state-of-the-art open-source embedding models by up to 17% on package retrieval while using substantially fewer parameters. Integrating DARE into RCodingAgent yields significant gains on downstream analysis tasks. This work helps narrow the gap between LLM automation and the mature R statistical ecosystem.",
       "link": "https://huggingface.co/papers/2603.04743",
       "pdf": "http://arxiv.org/pdf/2603.04743",
-      "upvotes": 40,
-      "comments": 2,
-      "organization": "PolyUHK",
-      "summary_cn": "研究问题：大型语言模型在数据科学工作流程自动化中，R语言中的统计方法使用不足。方法：提出检索增强方法。创新点：关注数据层面的语义。结果：提高LLM在统计知识检索中的应用。"
-    },
-    {
-      "id": "2603.05504",
-      "title": "RoboPocket: Improve Robot Policies Instantly with Your Phone",
-      "authors": [
-        "Junjie Fang",
-        "Wendi Chen",
-        "Han Xue",
-        "Fangyuan Zhou",
-        "Tian Le",
-        "Yi Wang",
-        "Yuting Zhang",
-        "Jun Lv",
-        "Chuan Wen",
-        "Cewu Lu"
-      ],
-      "summary": "Scaling imitation learning is fundamentally constrained by the efficiency of data collection. While handheld interfaces have emerged as a scalable solution for in-the-wild data acquisition, they predominantly operate in an open-loop manner: operators blindly collect demonstrations without knowing the underlying policy's weaknesses, leading to inefficient coverage of critical state distributions. Conversely, interactive methods like DAgger effectively address covariate shift but rely on physical robot execution, which is costly and difficult to scale. To reconcile this trade-off, we introduce RoboPocket, a portable system that enables Robot-Free Instant Policy Iteration using single consumer smartphones. Its core innovation is a Remote Inference framework that visualizes the policy's predicted trajectory via Augmented Reality (AR) Visual Foresight. This immersive feedback allows collectors to proactively identify potential failures and focus data collection on the policy's weak regions without requiring a physical robot. Furthermore, we implement an asynchronous Online Finetuning pipeline that continuously updates the policy with incoming data, effectively closing the learning loop in minutes. Extensive experiments demonstrate that RoboPocket adheres to data scaling laws and doubles the data efficiency compared to offline scaling strategies, overcoming their long-standing efficiency bottleneck. Moreover, our instant iteration loop also boosts sample efficiency by up to 2times in distributed environments a small number of interactive corrections per person. Project page and videos: https://robo-pocket.github.io.",
-      "link": "https://huggingface.co/papers/2603.05504",
-      "pdf": "http://arxiv.org/pdf/2603.05504",
-      "upvotes": 28,
+      "upvotes": 42,
       "comments": 3,
-      "organization": "SJTU",
-      "summary_cn": "研究问题：模仿学习在数据收集效率上受限。方法：提出手持界面进行数据收集。创新点：闭环操作，提高数据收集效率。结果：提高模仿学习的数据收集效率。"
+      "organization": "PolyUHK",
+      "summary_cn": "研究问题：大型语言模型在数据科学工作流程自动化中面临统计知识检索困难。方法：提出检索增强方法。创新点：关注数据层面的语义。结果：提高了LLMs在R中统计方法的利用率。"
     },
     {
       "id": "2602.23166",
@@ -143,10 +120,33 @@
       "summary": "Real-world multimodal agents solve multi-step workflows grounded in visual evidence. For example, an agent can troubleshoot a device by linking a wiring photo to a schematic and validating the fix with online documentation, or plan a trip by interpreting a transit map and checking schedules under routing constraints. However, existing multimodal benchmarks mainly evaluate single-turn visual reasoning or specific tool skills, and they do not fully capture the realism, visual subtlety, and long-horizon tool use that practical agents require. We introduce AgentVista, a benchmark for generalist multimodal agents that spans 25 sub-domains across 7 categories, pairing realistic and detail-rich visual scenarios with natural hybrid tool use. Tasks require long-horizon tool interactions across modalities, including web search, image search, page navigation, and code-based operations for both image processing and general programming. Comprehensive evaluation of state-of-the-art models exposes significant gaps in their ability to carry out long-horizon multimodal tool use. Even the best model in our evaluation, Gemini-3-Pro with tools, achieves only 27.3% overall accuracy, and hard instances can require more than 25 tool-calling turns. We expect AgentVista to accelerate the development of more capable and reliable multimodal agents for realistic and ultra-challenging problem solving.",
       "link": "https://huggingface.co/papers/2602.23166",
       "pdf": "http://arxiv.org/pdf/2602.23166",
-      "upvotes": 28,
-      "comments": 1,
+      "upvotes": 31,
+      "comments": 2,
       "organization": "hkust-nlp",
-      "summary_cn": "研究问题：多模态代理在多步工作流程中缺乏对世界统一理解。方法：结合视觉证据进行工作流程。创新点：将视觉证据与工作流程相结合。结果：提高多模态代理的解决问题能力。"
+      "summary_cn": "研究问题：现实世界多模态代理在多步工作流程中缺乏对视觉证据的整合。方法：提出基于视觉证据的多模态工作流程解决方案。创新点：结合视觉和文本信息。结果：提高了代理的智能行为能力。"
+    },
+    {
+      "id": "2603.05504",
+      "title": "RoboPocket: Improve Robot Policies Instantly with Your Phone",
+      "authors": [
+        "Junjie Fang",
+        "Wendi Chen",
+        "Han Xue",
+        "Fangyuan Zhou",
+        "Tian Le",
+        "Yi Wang",
+        "Yuting Zhang",
+        "Jun Lv",
+        "Chuan Wen",
+        "Cewu Lu"
+      ],
+      "summary": "Scaling imitation learning is fundamentally constrained by the efficiency of data collection. While handheld interfaces have emerged as a scalable solution for in-the-wild data acquisition, they predominantly operate in an open-loop manner: operators blindly collect demonstrations without knowing the underlying policy's weaknesses, leading to inefficient coverage of critical state distributions. Conversely, interactive methods like DAgger effectively address covariate shift but rely on physical robot execution, which is costly and difficult to scale. To reconcile this trade-off, we introduce RoboPocket, a portable system that enables Robot-Free Instant Policy Iteration using single consumer smartphones. Its core innovation is a Remote Inference framework that visualizes the policy's predicted trajectory via Augmented Reality (AR) Visual Foresight. This immersive feedback allows collectors to proactively identify potential failures and focus data collection on the policy's weak regions without requiring a physical robot. Furthermore, we implement an asynchronous Online Finetuning pipeline that continuously updates the policy with incoming data, effectively closing the learning loop in minutes. Extensive experiments demonstrate that RoboPocket adheres to data scaling laws and doubles the data efficiency compared to offline scaling strategies, overcoming their long-standing efficiency bottleneck. Moreover, our instant iteration loop also boosts sample efficiency by up to 2times in distributed environments a small number of interactive corrections per person. Project page and videos: https://robo-pocket.github.io.",
+      "link": "https://huggingface.co/papers/2603.05504",
+      "pdf": "http://arxiv.org/pdf/2603.05504",
+      "upvotes": 30,
+      "comments": 4,
+      "organization": "SJTU",
+      "summary_cn": "研究问题：模仿学习在数据收集效率上受到限制。方法：提出手持界面进行数据收集。创新点：实现闭环操作。结果：提高了数据收集效率。"
     },
     {
       "id": "2603.02210",
@@ -168,31 +168,10 @@
       "summary": "Human-product images, which showcase the integration of humans and products, play a vital role in advertising, e-commerce, and digital marketing. The essential challenge of generating such images lies in ensuring the high-fidelity preservation of product details. Among existing paradigms, reference-based inpainting offers a targeted solution by leveraging product reference images to guide the inpainting process. However, limitations remain in three key aspects: the lack of diverse large-scale training data, the struggle of current models to focus on product detail preservation, and the inability of coarse supervision for achieving precise guidance. To address these issues, we propose HiFi-Inpaint, a novel high-fidelity reference-based inpainting framework tailored for generating human-product images. HiFi-Inpaint introduces Shared Enhancement Attention (SEA) to refine fine-grained product features and Detail-Aware Loss (DAL) to enforce precise pixel-level supervision using high-frequency maps. Additionally, we construct a new dataset, HP-Image-40K, with samples curated from self-synthesis data and processed with automatic filtering. Experimental results show that HiFi-Inpaint achieves state-of-the-art performance, delivering detail-preserving human-product images.",
       "link": "https://huggingface.co/papers/2603.02210",
       "pdf": "http://arxiv.org/pdf/2603.02210",
-      "upvotes": 24,
-      "comments": 1,
+      "upvotes": 25,
+      "comments": 2,
       "organization": "ByteDance",
-      "summary_cn": "研究问题：生成高保真产品细节的图像。方法：提出参考图像生成方法。创新点：确保产品细节的高保真。结果：提高产品图像生成质量。"
-    },
-    {
-      "id": "2603.02170",
-      "title": "SageBwd: A Trainable Low-bit Attention",
-      "authors": [
-        "Jintao Zhang",
-        "Marco Chen",
-        "Haoxu Wang",
-        "Kai Jiang",
-        "Ion Stoica",
-        "Joseph E. Gonzalez",
-        "Jianfei Chen",
-        "Jun Zhu"
-      ],
-      "summary": "Low-bit attention, such as SageAttention, has emerged as an effective approach for accelerating model inference, but its applicability to training remains poorly understood. In prior work, we introduced SageBwd, a trainable INT8 attention that quantizes six of seven attention matrix multiplications while preserving fine-tuning performance. However, SageBwd exhibited a persistent performance gap to full-precision attention (FPA) during pre-training. In this work, we investigate why this gap occurs and demonstrate that SageBwd matches full-precision attention during pretraining. Through experiments and theoretical analysis, we reach a few important insights and conclusions: (i) QK-norm is necessary for stable training at large tokens per step, (ii) quantization errors primarily arise from the backward-pass score gradient dS, (iii) reducing tokens per step enables SageBwd to match FPA performance in pre-training, and (iv) K-smoothing remains essential for training stability, while Q-smoothing provides limited benefit during pre-training.",
-      "link": "https://huggingface.co/papers/2603.02170",
-      "pdf": "http://arxiv.org/pdf/2603.02170",
-      "upvotes": 12,
-      "comments": 1,
-      "organization": "UCBerkeley",
-      "summary_cn": "研究问题：低比特注意力在训练中的应用。方法：提出可训练的INT8注意力。创新点：量化注意力矩阵乘法。结果：提高模型推理速度。"
+      "summary_cn": "研究问题：生成高保真产品细节的图像面临挑战。方法：提出参考图像辅助的生成方法。创新点：确保产品细节的高保真。结果：提高了图像生成质量。"
     },
     {
       "id": "2602.23229",
@@ -207,29 +186,10 @@
       "summary": "Which multimodal model should we use for classification? Previous studies suggest that the answer lies in CLIP-like contrastive Vision-Language Models (VLMs), due to their remarkable performance in zero-shot classification. In contrast, Large Multimodal Models (LMM) are more suitable for complex tasks. In this work, we argue that this answer overlooks an important capability of LMMs: in-context learning. We benchmark state-of-the-art LMMs on diverse datasets for closed-world classification and find that, although their zero-shot performance is lower than CLIP's, LMMs with a few in-context examples can match or even surpass contrastive VLMs with cache-based adapters, their \"in-context\" equivalent. We extend this analysis to the open-world setting, where the generative nature of LMMs makes them more suitable for the task. In this challenging scenario, LMMs struggle whenever provided with imperfect context information. To address this issue, we propose CIRCLE, a simple training-free method that assigns pseudo-labels to in-context examples, iteratively refining them with the available context itself. Through extensive experiments, we show that CIRCLE establishes a robust baseline for open-world classification, surpassing VLM counterparts and highlighting the potential of LMMs to serve as unified classifiers, and a flexible alternative to specialized models.",
       "link": "https://huggingface.co/papers/2602.23229",
       "pdf": "http://arxiv.org/pdf/2602.23229",
-      "upvotes": 12,
-      "comments": 1,
+      "upvotes": 15,
+      "comments": 2,
       "organization": "MHUGLab",
-      "summary_cn": "研究问题：选择合适的多模态模型进行分类。方法：比较CLIP-like VLM和LMM。创新点：针对不同任务选择合适的模型。结果：提高分类准确率。"
-    },
-    {
-      "id": "2603.04737",
-      "title": "Interactive Benchmarks",
-      "authors": [
-        "Baoqing Yue",
-        "Zihan Zhu",
-        "Yifan Zhang",
-        "Jichen Feng",
-        "Hufei Yang",
-        "Mengdi Wang"
-      ],
-      "summary": "Standard benchmarks have become increasingly unreliable due to saturation, subjectivity, and poor generalization. We argue that evaluating model's ability to acquire information actively is important to assess model's intelligence. We propose Interactive Benchmarks, a unified evaluation paradigm that assesses model's reasoning ability in an interactive process under budget constraints. We instantiate this framework across two settings: Interactive Proofs, where models interact with a judge to deduce objective truths or answers in logic and mathematics; and Interactive Games, where models reason strategically to maximize long-horizon utilities. Our results show that interactive benchmarks provide a robust and faithful assessment of model intelligence, revealing that there is still substantial room to improve in interactive scenarios. Project page: https://github.com/interactivebench/interactivebench",
-      "link": "https://huggingface.co/papers/2603.04737",
-      "pdf": "http://arxiv.org/pdf/2603.04737",
-      "upvotes": 10,
-      "comments": 1,
-      "organization": "interactivebench",
-      "summary_cn": "研究问题：标准基准的可靠性问题。方法：提出交互式基准。创新点：评估模型主动获取信息的能力。结果：提高模型评估的准确性。"
+      "summary_cn": "研究问题：选择合适的多模态模型进行分类。方法：比较CLIP-like VLMs和LMM。创新点：针对不同任务选择合适的模型。结果：提高了分类性能。"
     },
     {
       "id": "2603.00466",
@@ -247,30 +207,50 @@
       "summary": "Despite impressive progress in video generation, existing models remain limited to surface-level plausibility, lacking a coherent and unified understanding of the world. Prior approaches typically incorporate only a single form of world-related knowledge or rely on rigid alignment strategies to introduce additional knowledge. However, aligning the single world knowledge is insufficient to constitute a world model that requires jointly modeling multiple heterogeneous dimensions (e.g., physical commonsense, 3D and temporal consistency). To address this limitation, we introduce DreamWorld, a unified framework that integrates complementary world knowledge into video generators via a Joint World Modeling Paradigm, jointly predicting video pixels and features from foundation models to capture temporal dynamics, spatial geometry, and semantic consistency. However, naively optimizing these heterogeneous objectives can lead to visual instability and temporal flickering. To mitigate this issue, we propose Consistent Constraint Annealing (CCA) to progressively regulate world-level constraints during training, and Multi-Source Inner-Guidance to enforce learned world priors at inference. Extensive evaluations show that DreamWorld improves world consistency, outperforming Wan2.1 by 2.26 points on VBench. Code will be made publicly available at https://github.com/ABU121111/DreamWorld{mypink{Github}}.",
       "link": "https://huggingface.co/papers/2603.00466",
       "pdf": "http://arxiv.org/pdf/2603.00466",
-      "upvotes": 10,
-      "comments": 2,
+      "upvotes": 14,
+      "comments": 3,
       "organization": "",
-      "summary_cn": "研究问题：视频生成模型缺乏对世界的统一理解。方法：结合多种世界相关知识。创新点：提高模型对世界的理解。结果：提高视频生成质量。"
+      "summary_cn": "研究问题：现有视频生成模型缺乏对世界的统一理解。方法：提出结合多种世界相关知识的模型。创新点：实现世界理解的统一。结果：提高了视频生成质量。"
     },
     {
-      "id": "2603.04800",
-      "title": "MASQuant: Modality-Aware Smoothing Quantization for Multimodal Large Language Models",
+      "id": "2603.04737",
+      "title": "Interactive Benchmarks",
       "authors": [
-        "Lulu Hu",
-        "Wenhu Xiao",
-        "Xin Chen",
-        "Xinhua Xu",
-        "Bowen Xu",
-        "Kun Li",
-        "Yongliang Tao"
+        "Baoqing Yue",
+        "Zihan Zhu",
+        "Yifan Zhang",
+        "Jichen Feng",
+        "Hufei Yang",
+        "Mengdi Wang"
       ],
-      "summary": "Post-training quantization (PTQ) with computational invariance for Large Language Models~(LLMs) have demonstrated remarkable advances, however, their application to Multimodal Large Language Models~(MLLMs) presents substantial challenges. In this paper, we analyze SmoothQuant as a case study and identify two critical issues: Smoothing Misalignment and Cross-Modal Computational Invariance. To address these issues, we propose Modality-Aware Smoothing Quantization (MASQuant), a novel framework that introduces (1) Modality-Aware Smoothing (MAS), which learns separate, modality-specific smoothing factors to prevent Smoothing Misalignment, and (2) Cross-Modal Compensation (CMC), which addresses Cross-modal Computational Invariance by using SVD whitening to transform multi-modal activation differences into low-rank forms, enabling unified quantization across modalities. MASQuant demonstrates stable quantization performance across both dual-modal and tri-modal MLLMs. Experimental results show that MASQuant is competitive among the state-of-the-art PTQ algorithms. Source code: https://github.com/alibaba/EfficientAI.",
-      "link": "https://huggingface.co/papers/2603.04800",
-      "pdf": "http://arxiv.org/pdf/2603.04800",
-      "upvotes": 8,
-      "comments": 5,
-      "organization": "alibaba-inc",
-      "summary_cn": "研究LLMs在MLLMs中应用中的Post-training quantization（PTQ）问题，以SmoothQuant为案例，分析其挑战与改进。"
+      "summary": "Standard benchmarks have become increasingly unreliable due to saturation, subjectivity, and poor generalization. We argue that evaluating model's ability to acquire information actively is important to assess model's intelligence. We propose Interactive Benchmarks, a unified evaluation paradigm that assesses model's reasoning ability in an interactive process under budget constraints. We instantiate this framework across two settings: Interactive Proofs, where models interact with a judge to deduce objective truths or answers in logic and mathematics; and Interactive Games, where models reason strategically to maximize long-horizon utilities. Our results show that interactive benchmarks provide a robust and faithful assessment of model intelligence, revealing that there is still substantial room to improve in interactive scenarios. Project page: https://github.com/interactivebench/interactivebench",
+      "link": "https://huggingface.co/papers/2603.04737",
+      "pdf": "http://arxiv.org/pdf/2603.04737",
+      "upvotes": 13,
+      "comments": 2,
+      "organization": "interactivebench",
+      "summary_cn": "研究问题：标准基准因饱和、主观性和泛化能力差而不可靠。方法：提出交互式基准。创新点：评估模型主动获取信息的能力。结果：提高了模型评估的可靠性。"
+    },
+    {
+      "id": "2603.02170",
+      "title": "SageBwd: A Trainable Low-bit Attention",
+      "authors": [
+        "Jintao Zhang",
+        "Marco Chen",
+        "Haoxu Wang",
+        "Kai Jiang",
+        "Ion Stoica",
+        "Joseph E. Gonzalez",
+        "Jianfei Chen",
+        "Jun Zhu"
+      ],
+      "summary": "Low-bit attention, such as SageAttention, has emerged as an effective approach for accelerating model inference, but its applicability to training remains poorly understood. In prior work, we introduced SageBwd, a trainable INT8 attention that quantizes six of seven attention matrix multiplications while preserving fine-tuning performance. However, SageBwd exhibited a persistent performance gap to full-precision attention (FPA) during pre-training. In this work, we investigate why this gap occurs and demonstrate that SageBwd matches full-precision attention during pretraining. Through experiments and theoretical analysis, we reach a few important insights and conclusions: (i) QK-norm is necessary for stable training at large tokens per step, (ii) quantization errors primarily arise from the backward-pass score gradient dS, (iii) reducing tokens per step enables SageBwd to match FPA performance in pre-training, and (iv) K-smoothing remains essential for training stability, while Q-smoothing provides limited benefit during pre-training.",
+      "link": "https://huggingface.co/papers/2603.02170",
+      "pdf": "http://arxiv.org/pdf/2603.02170",
+      "upvotes": 13,
+      "comments": 2,
+      "organization": "UCBerkeley",
+      "summary_cn": "研究问题：低比特注意力在训练中的应用不明确。方法：提出可训练的INT8注意力SageBwd。创新点：量化注意力矩阵乘法。结果：提高了模型推理速度。"
     },
     {
       "id": "2603.04791",
@@ -290,10 +270,30 @@
       "summary": "We introduce Timer-S1, a strong Mixture-of-Experts (MoE) time series foundation model with 8.3B total parameters, 0.75B activated parameters for each token, and a context length of 11.5K. To overcome the scalability bottleneck in existing pre-trained time series foundation models, we perform Serial Scaling in three dimensions: model architecture, dataset, and training pipeline. Timer-S1 integrates sparse TimeMoE blocks and generic TimeSTP blocks for Serial-Token Prediction (STP), a generic training objective that adheres to the serial nature of forecasting. The proposed paradigm introduces serial computations to improve long-term predictions while avoiding costly rolling-style inference and pronounced error accumulation in the standard next-token prediction. Pursuing a high-quality and unbiased training dataset, we curate TimeBench, a corpus with one trillion time points, and apply meticulous data augmentation to mitigate predictive bias. We further pioneer a post-training stage, including continued pre-training and long-context extension, to enhance short-term and long-context performance. Evaluated on the large-scale GIFT-Eval leaderboard, Timer-S1 achieves state-of-the-art forecasting performance, attaining the best MASE and CRPS scores as a pre-trained model. Timer-S1 will be released to facilitate further research.",
       "link": "https://huggingface.co/papers/2603.04791",
       "pdf": "http://arxiv.org/pdf/2603.04791",
-      "upvotes": 5,
-      "comments": 1,
+      "upvotes": 9,
+      "comments": 2,
       "organization": "ByteDance",
-      "summary_cn": "提出Timer-S1，一种具有8.3B参数的MoE时间序列基础模型，通过串行化处理克服现有模型的可扩展性瓶颈。"
+      "summary_cn": "研究问题：现有时间序列基础模型的可扩展性问题。方法：提出Timer-S1，一个具有8.3B参数的MoE模型，通过串行PTQ克服可扩展瓶颈。创新点：采用串行PTQ和计算不变性。结果：显著提高模型的可扩展性。"
+    },
+    {
+      "id": "2603.04800",
+      "title": "MASQuant: Modality-Aware Smoothing Quantization for Multimodal Large Language Models",
+      "authors": [
+        "Lulu Hu",
+        "Wenhu Xiao",
+        "Xin Chen",
+        "Xinhua Xu",
+        "Bowen Xu",
+        "Kun Li",
+        "Yongliang Tao"
+      ],
+      "summary": "Post-training quantization (PTQ) with computational invariance for Large Language Models~(LLMs) have demonstrated remarkable advances, however, their application to Multimodal Large Language Models~(MLLMs) presents substantial challenges. In this paper, we analyze SmoothQuant as a case study and identify two critical issues: Smoothing Misalignment and Cross-Modal Computational Invariance. To address these issues, we propose Modality-Aware Smoothing Quantization (MASQuant), a novel framework that introduces (1) Modality-Aware Smoothing (MAS), which learns separate, modality-specific smoothing factors to prevent Smoothing Misalignment, and (2) Cross-Modal Compensation (CMC), which addresses Cross-modal Computational Invariance by using SVD whitening to transform multi-modal activation differences into low-rank forms, enabling unified quantization across modalities. MASQuant demonstrates stable quantization performance across both dual-modal and tri-modal MLLMs. Experimental results show that MASQuant is competitive among the state-of-the-art PTQ algorithms. Source code: https://github.com/alibaba/EfficientAI.",
+      "link": "https://huggingface.co/papers/2603.04800",
+      "pdf": "http://arxiv.org/pdf/2603.04800",
+      "upvotes": 8,
+      "comments": 6,
+      "organization": "alibaba-inc",
+      "summary_cn": "研究问题：SmoothQuant在多模态大型语言模型中的应用挑战。方法：分析SmoothQuant作为案例研究。创新点：探讨其在MLLMs中的应用。结果：为MLLMs的量化提供新思路。"
     },
     {
       "id": "2603.05449",
@@ -309,10 +309,29 @@
       "summary": "Current video generation models cannot simulate physical consequences of 3D actions like forces and robotic manipulations, as they lack structural understanding of how actions affect 3D scenes. We present RealWonder, the first real-time system for action-conditioned video generation from a single image. Our key insight is using physics simulation as an intermediate bridge: instead of directly encoding continuous actions, we translate them through physics simulation into visual representations (optical flow and RGB) that video models can process. RealWonder integrates three components: 3D reconstruction from single images, physics simulation, and a distilled video generator requiring only 4 diffusion steps. Our system achieves 13.2 FPS at 480x832 resolution, enabling interactive exploration of forces, robot actions, and camera controls on rigid objects, deformable bodies, fluids, and granular materials. We envision RealWonder opens new opportunities to apply video models in immersive experiences, AR/VR, and robot learning. Our code and model weights are publicly available in our project website: https://liuwei283.github.io/RealWonder/",
       "link": "https://huggingface.co/papers/2603.05449",
       "pdf": "http://arxiv.org/pdf/2603.05449",
-      "upvotes": 4,
-      "comments": 0,
+      "upvotes": 6,
+      "comments": 1,
       "organization": "",
-      "summary_cn": "针对视频生成模型无法模拟3D动作物理后果的问题，提出RealWonder，实现基于动作的视频生成。"
+      "summary_cn": "研究问题：视频生成模型无法模拟3D动作的物理后果。方法：提出RealWonder，一个基于动作的视频生成系统。创新点：实现实时动作条件视频生成。结果：提高视频生成模型的物理真实性。"
+    },
+    {
+      "id": "2603.04892",
+      "title": "Locality-Attending Vision Transformer",
+      "authors": [
+        "Sina Hajimiri",
+        "Farzad Beizaee",
+        "Fereshteh Shakeri",
+        "Christian Desrosiers",
+        "Ismail Ben Ayed",
+        "Jose Dolz"
+      ],
+      "summary": "Vision transformers have demonstrated remarkable success in classification by leveraging global self-attention to capture long-range dependencies. However, this same mechanism can obscure fine-grained spatial details crucial for tasks such as segmentation. In this work, we seek to enhance segmentation performance of vision transformers after standard image-level classification training. More specifically, we present a simple yet effective add-on that improves performance on segmentation tasks while retaining vision transformers' image-level recognition capabilities. In our approach, we modulate the self-attention with a learnable Gaussian kernel that biases the attention toward neighboring patches. We further refine the patch representations to learn better embeddings at patch positions. These modifications encourage tokens to focus on local surroundings and ensure meaningful representations at spatial positions, while still preserving the model's ability to incorporate global information. Experiments demonstrate the effectiveness of our modifications, evidenced by substantial segmentation gains on three benchmarks (e.g., over 6% and 4% on ADE20K for ViT Tiny and Base), without changing the training regime or sacrificing classification performance. The code is available at https://github.com/sinahmr/LocAtViT/.",
+      "link": "https://huggingface.co/papers/2603.04892",
+      "pdf": "http://arxiv.org/pdf/2603.04892",
+      "upvotes": 6,
+      "comments": 2,
+      "organization": "ETSMTL",
+      "summary_cn": "研究问题：视觉Transformer在分割任务中忽视细粒度空间细节。方法：寻求增强分割任务的性能。创新点：改进Transformer以捕捉细粒度空间细节。结果：提高分割任务的准确性。"
     },
     {
       "id": "2603.05433",
@@ -328,10 +347,30 @@
       "summary": "Reasoning models think out loud, but much of what they say is noise. We introduce OPSDC (On-Policy Self-Distillation for Reasoning Compression), a method that teaches models to reason more concisely by\n  distilling their own concise behavior back into themselves. The entire approach reduces to one idea: condition the same model on a \"be concise\" instruction to obtain teacher logits, and minimize per-token\n  reverse KL on the student's own rollouts. No ground-truth answers, no token budgets, no difficulty estimators. Just self-distillation. Yet this simplicity belies surprising sophistication: OPSDC automatically\n  compresses easy problems aggressively while preserving the deliberation needed for hard ones. On Qwen3-8B and Qwen3-14B, we achieve 57-59% token reduction on MATH-500 while improving accuracy by 9-16 points\n  absolute. On AIME 2024, the 14B model gains 10 points with 41% compression. The secret? Much of what reasoning models produce is not just redundant-it is actively harmful, compounding errors with every\n  unnecessary token.",
       "link": "https://huggingface.co/papers/2603.05433",
       "pdf": "http://arxiv.org/pdf/2603.05433",
-      "upvotes": 3,
+      "upvotes": 5,
+      "comments": 2,
+      "organization": "",
+      "summary_cn": "研究问题：推理模型输出噪声较多。方法：引入OPSDC，通过自蒸馏提高推理简洁性。创新点：将简洁行为蒸馏回模型。结果：降低推理噪声，提高推理效率。"
+    },
+    {
+      "id": "2603.05312",
+      "title": "UltraDexGrasp: Learning Universal Dexterous Grasping for Bimanual Robots with Synthetic Data",
+      "authors": [
+        "Sizhe Yang",
+        "Yiman Xie",
+        "Zhixuan Liang",
+        "Yang Tian",
+        "Jia Zeng",
+        "Dahua Lin",
+        "Jiangmiao Pang"
+      ],
+      "summary": "Grasping is a fundamental capability for robots to interact with the physical world. Humans, equipped with two hands, autonomously select appropriate grasp strategies based on the shape, size, and weight of objects, enabling robust grasping and subsequent manipulation. In contrast, current robotic grasping remains limited, particularly in multi-strategy settings. Although substantial efforts have targeted parallel-gripper and single-hand grasping, dexterous grasping for bimanual robots remains underexplored, with data being a primary bottleneck. Achieving physically plausible and geometrically conforming grasps that can withstand external wrenches poses significant challenges. To address these issues, we introduce UltraDexGrasp, a framework for universal dexterous grasping with bimanual robots. The proposed data-generation pipeline integrates optimization-based grasp synthesis with planning-based demonstration generation, yielding high-quality and diverse trajectories across multiple grasp strategies. With this framework, we curate UltraDexGrasp-20M, a large-scale, multi-strategy grasp dataset comprising 20 million frames across 1,000 objects. Based on UltraDexGrasp-20M, we further develop a simple yet effective grasp policy that takes point clouds as input, aggregates scene features via unidirectional attention, and predicts control commands. Trained exclusively on synthetic data, the policy achieves robust zero-shot sim-to-real transfer and consistently succeeds on novel objects with varied shapes, sizes, and weights, attaining an average success rate of 81.2% in real-world universal dexterous grasping. To facilitate future research on grasping with bimanual robots, we open-source the data generation pipeline at https://github.com/InternRobotics/UltraDexGrasp.",
+      "link": "https://huggingface.co/papers/2603.05312",
+      "pdf": "http://arxiv.org/pdf/2603.05312",
+      "upvotes": 4,
       "comments": 1,
       "organization": "",
-      "summary_cn": "引入OPSDC方法，通过自我蒸馏训练模型进行简洁推理，提高推理压缩效率。"
+      "summary_cn": "研究问题：机器人抓取策略选择问题。方法：研究人类抓取策略，为机器人提供参考。创新点：结合形状、大小和重量进行抓取策略选择。结果：提高机器人抓取的鲁棒性。"
     },
     {
       "id": "2603.05218",
@@ -367,29 +406,10 @@
       "summary": "We present a system for training enterprise search agents via reinforcement learning that achieves state-of-the-art performance across a diverse suite of hard-to-verify agentic search tasks. Our work makes four core contributions. First, we introduce KARLBench, a multi-capability evaluation suite spanning six distinct search regimes, including constraint-driven entity search, cross-document report synthesis, tabular numerical reasoning, exhaustive entity retrieval, procedural reasoning over technical documentation, and fact aggregation over internal enterprise notes. Second, we show that models trained across heterogeneous search behaviors generalize substantially better than those optimized for any single benchmark. Third, we develop an agentic synthesis pipeline that employs long-horizon reasoning and tool use to generate diverse, grounded, and high-quality training data, with iterative bootstrapping from increasingly capable models. Fourth, we propose a new post-training paradigm based on iterative large-batch off-policy RL that is sample efficient, robust to train-inference engine discrepancies, and naturally extends to multi-task training with out-of-distribution generalization. Compared to Claude 4.6 and GPT 5.2, KARL is Pareto-optimal on KARLBench across cost-quality and latency-quality trade-offs, including tasks that were out-of-distribution during training. With sufficient test-time compute, it surpasses the strongest closed models. These results show that tailored synthetic data in combination with multi-task reinforcement learning enables cost-efficient and high-performing knowledge agents for grounded reasoning.",
       "link": "https://huggingface.co/papers/2603.05218",
       "pdf": "http://arxiv.org/pdf/2603.05218",
-      "upvotes": 3,
-      "comments": 0,
-      "organization": "databricks",
-      "summary_cn": "提出通过强化学习训练企业搜索代理的系统，KARLBench评估套件实现多能力评估。"
-    },
-    {
-      "id": "2603.04892",
-      "title": "Locality-Attending Vision Transformer",
-      "authors": [
-        "Sina Hajimiri",
-        "Farzad Beizaee",
-        "Fereshteh Shakeri",
-        "Christian Desrosiers",
-        "Ismail Ben Ayed",
-        "Jose Dolz"
-      ],
-      "summary": "Vision transformers have demonstrated remarkable success in classification by leveraging global self-attention to capture long-range dependencies. However, this same mechanism can obscure fine-grained spatial details crucial for tasks such as segmentation. In this work, we seek to enhance segmentation performance of vision transformers after standard image-level classification training. More specifically, we present a simple yet effective add-on that improves performance on segmentation tasks while retaining vision transformers' image-level recognition capabilities. In our approach, we modulate the self-attention with a learnable Gaussian kernel that biases the attention toward neighboring patches. We further refine the patch representations to learn better embeddings at patch positions. These modifications encourage tokens to focus on local surroundings and ensure meaningful representations at spatial positions, while still preserving the model's ability to incorporate global information. Experiments demonstrate the effectiveness of our modifications, evidenced by substantial segmentation gains on three benchmarks (e.g., over 6% and 4% on ADE20K for ViT Tiny and Base), without changing the training regime or sacrificing classification performance. The code is available at https://github.com/sinahmr/LocAtViT/.",
-      "link": "https://huggingface.co/papers/2603.04892",
-      "pdf": "http://arxiv.org/pdf/2603.04892",
-      "upvotes": 3,
+      "upvotes": 4,
       "comments": 1,
-      "organization": "ETSMTL",
-      "summary_cn": "针对视觉Transformer在分割任务中忽视细粒度空间细节的问题，寻求增强分割性能。"
+      "organization": "databricks",
+      "summary_cn": "研究问题：企业搜索代理训练问题。方法：提出KARLBench，一个多能力评估套件。创新点：通过强化学习训练企业搜索代理。结果：实现最先进的搜索性能。"
     },
     {
       "id": "2603.00695",
@@ -408,9 +428,25 @@
       "link": "https://huggingface.co/papers/2603.00695",
       "pdf": "http://arxiv.org/pdf/2603.00695",
       "upvotes": 3,
-      "comments": 1,
+      "comments": 2,
       "organization": "dalian-university-of-technology",
-      "summary_cn": "针对多模态对象ReID问题，提出改进方法以减少信息损失和增加判别线索。"
+      "summary_cn": "研究问题：多模态物体ReID方法中丢失判别线索。方法：提出改进的多模态物体ReID方法。创新点：利用互补信息提高检索性能。结果：提高ReID的准确性。"
+    },
+    {
+      "id": "2602.23440",
+      "title": "Truncated Step-Level Sampling with Process Rewards for Retrieval-Augmented Reasoning",
+      "authors": [
+        "Chris Samarinas",
+        "Haw-Shiuan Chang",
+        "Hamed Zamani"
+      ],
+      "summary": "Training large language models to reason with search engines via reinforcement learning is hindered by a fundamental credit assignment problem: existing methods such as Search-R1 provide only a sparse outcome reward after an entire multi-step trajectory, making it infeasible to attribute success or failure to individual reasoning and retrieval decisions. Process-reward methods like StepSearch alleviate this by introducing step-level supervision, but rely on heuristic rewards such as TF-IDF overlap with gold documents, and still sample k complete trajectories per example, retaining high gradient variance. We propose SLATE, a framework built on two complementary ideas: (1) truncated step-level sampling, which generates k trajectories that share a common prefix and differ only at the next step, and (2) dense LLM-as-judge rewards, which replace heuristic scoring with a capable LLM evaluator that assesses the quality of each reasoning step, search query, and answer, providing richer and more reliable supervision. We theoretically prove that under the same dense reward structure, truncated sampling reduces the variance of advantage estimates by up to a factor of T compared to full-trajectory sampling for T-step trajectories, yielding lower-variance, better-targeted policy gradients. Experiments on seven QA benchmarks confirm that SLATE consistently outperforms both sparse-reward and process-reward baselines, with the largest gains on harder multi-hop tasks and smaller models.",
+      "link": "https://huggingface.co/papers/2602.23440",
+      "pdf": "http://arxiv.org/pdf/2602.23440",
+      "upvotes": 3,
+      "comments": 2,
+      "organization": "umass",
+      "summary_cn": "研究问题：大语言模型通过强化学习进行推理的信用分配问题。方法：提出新的信用分配方法。创新点：解决信用分配问题，提高推理性能。结果：提高推理模型的准确性。"
     },
     {
       "id": "2603.05484",
@@ -441,9 +477,9 @@
       "link": "https://huggingface.co/papers/2603.05484",
       "pdf": "http://arxiv.org/pdf/2603.05484",
       "upvotes": 2,
-      "comments": 1,
+      "comments": 2,
       "organization": "CG-Bench",
-      "summary_cn": "设计MM-Lifelong数据集，用于多模态终身理解，填补视频理解数据集与日常生活的差距。"
+      "summary_cn": "研究问题：视频理解数据集与自然生活差异。方法：提出MM-Lifelong数据集。创新点：设计用于多模态终身理解的数据集。结果：提高视频理解模型的自然生活适应性。"
     },
     {
       "id": "2603.03655",
@@ -464,29 +500,9 @@
       "link": "https://huggingface.co/papers/2603.03655",
       "pdf": "http://arxiv.org/pdf/2603.03655",
       "upvotes": 2,
-      "comments": 1,
+      "comments": 2,
       "organization": "IDEA-AI4S",
-      "summary_cn": "针对工具增强LLM在药物发现等高风险领域的应用，提出解决工具使用治理和长期可靠性问题的方法。"
-    },
-    {
-      "id": "2603.05312",
-      "title": "UltraDexGrasp: Learning Universal Dexterous Grasping for Bimanual Robots with Synthetic Data",
-      "authors": [
-        "Sizhe Yang",
-        "Yiman Xie",
-        "Zhixuan Liang",
-        "Yang Tian",
-        "Jia Zeng",
-        "Dahua Lin",
-        "Jiangmiao Pang"
-      ],
-      "summary": "Grasping is a fundamental capability for robots to interact with the physical world. Humans, equipped with two hands, autonomously select appropriate grasp strategies based on the shape, size, and weight of objects, enabling robust grasping and subsequent manipulation. In contrast, current robotic grasping remains limited, particularly in multi-strategy settings. Although substantial efforts have targeted parallel-gripper and single-hand grasping, dexterous grasping for bimanual robots remains underexplored, with data being a primary bottleneck. Achieving physically plausible and geometrically conforming grasps that can withstand external wrenches poses significant challenges. To address these issues, we introduce UltraDexGrasp, a framework for universal dexterous grasping with bimanual robots. The proposed data-generation pipeline integrates optimization-based grasp synthesis with planning-based demonstration generation, yielding high-quality and diverse trajectories across multiple grasp strategies. With this framework, we curate UltraDexGrasp-20M, a large-scale, multi-strategy grasp dataset comprising 20 million frames across 1,000 objects. Based on UltraDexGrasp-20M, we further develop a simple yet effective grasp policy that takes point clouds as input, aggregates scene features via unidirectional attention, and predicts control commands. Trained exclusively on synthetic data, the policy achieves robust zero-shot sim-to-real transfer and consistently succeeds on novel objects with varied shapes, sizes, and weights, attaining an average success rate of 81.2% in real-world universal dexterous grasping. To facilitate future research on grasping with bimanual robots, we open-source the data generation pipeline at https://github.com/InternRobotics/UltraDexGrasp.",
-      "link": "https://huggingface.co/papers/2603.05312",
-      "pdf": "http://arxiv.org/pdf/2603.05312",
-      "upvotes": 1,
-      "comments": 0,
-      "organization": "",
-      "summary_cn": "针对机器人抓取问题，研究基于物体形状、大小和重量的自适应抓取策略。"
+      "summary_cn": "研究问题：工具增强大型语言模型在药物发现等高风险领域的应用受限于工具使用治理和长期可靠性问题。方法：提出依赖性分析框架，以解决工具使用治理问题；改进模型长期可靠性。创新点：构建依赖性分析框架，提升模型长期可靠性。实验结果：模型在药物发现任务中表现优于现有方法。"
     },
     {
       "id": "2603.04736",
@@ -502,10 +518,31 @@
       "summary": "Learning a transport model that maps a source distribution to a target distribution is a canonical problem in machine learning, but scientific applications increasingly require models that can generalize to source and target distributions unseen during training. We introduce distribution-conditioned transport (DCT), a framework that conditions transport maps on learned embeddings of source and target distributions, enabling generalization to unseen distribution pairs. DCT also allows semi-supervised learning for distributional forecasting problems: because it learns from arbitrary distribution pairs, it can leverage distributions observed at only one condition to improve transport prediction. DCT is agnostic to the underlying transport mechanism, supporting models ranging from flow matching to distributional divergence-based models (e.g. Wasserstein, MMD). We demonstrate the practical performance benefits of DCT on synthetic benchmarks and four applications in biology: batch effect transfer in single-cell genomics, perturbation prediction from mass cytometry data, learning clonal transcriptional dynamics in hematopoiesis, and modeling T-cell receptor sequence evolution.",
       "link": "https://huggingface.co/papers/2603.04736",
       "pdf": "http://arxiv.org/pdf/2603.04736",
-      "upvotes": 0,
-      "comments": 1,
+      "upvotes": 1,
+      "comments": 2,
       "organization": "",
-      "summary_cn": "研究问题：如何使模型能泛化到训练过程中未见过的源和目标分布。方法：引入分布条件模型。创新点：提出一种新的模型，能够映射源分布到目标分布。结果：模型在泛化能力上表现出色。"
+      "summary_cn": "研究问题：传统传输模型难以泛化到训练过程中未见过的源和目标分布。方法：提出分布条件传输模型，实现模型泛化。创新点：引入分布条件，提高模型泛化能力。实验结果：模型在多个数据集上表现优于传统模型。"
+    },
+    {
+      "id": "2603.04553",
+      "title": "Latent Particle World Models: Self-supervised Object-centric Stochastic Dynamics Modeling",
+      "authors": [
+        "Tal Daniel",
+        "Carl Qi",
+        "Dan Haramati",
+        "Amir Zadeh",
+        "Chuan Li",
+        "Aviv Tamar",
+        "Deepak Pathak",
+        "David Held"
+      ],
+      "summary": "We introduce Latent Particle World Model (LPWM), a self-supervised object-centric world model scaled to real-world multi-object datasets and applicable in decision-making. LPWM autonomously discovers keypoints, bounding boxes, and object masks directly from video data, enabling it to learn rich scene decompositions without supervision. Our architecture is trained end-to-end purely from videos and supports flexible conditioning on actions, language, and image goals. LPWM models stochastic particle dynamics via a novel latent action module and achieves state-of-the-art results on diverse real-world and synthetic datasets. Beyond stochastic video modeling, LPWM is readily applicable to decision-making, including goal-conditioned imitation learning, as we demonstrate in the paper. Code, data, pre-trained models and video rollouts are available: https://taldatech.github.io/lpwm-web",
+      "link": "https://huggingface.co/papers/2603.04553",
+      "pdf": "http://arxiv.org/pdf/2603.04553",
+      "upvotes": 1,
+      "comments": 2,
+      "organization": "",
+      "summary_cn": "研究问题：如何构建适用于真实世界多对象数据集的物体中心世界模型。方法：提出Latent Particle World Model，实现自监督学习。创新点：自动发现关键点、边界框和物体掩码。实验结果：模型在决策任务中表现优异。"
     },
     {
       "id": "2603.03942",
@@ -522,9 +559,9 @@
       "link": "https://huggingface.co/papers/2603.03942",
       "pdf": "http://arxiv.org/pdf/2603.03942",
       "upvotes": 0,
-      "comments": 1,
+      "comments": 2,
       "organization": "usr-lab",
-      "summary_cn": "研究问题：机器人如何在共享环境中应对动态、不可预测的人类行为。方法：提升机器人感知和指令跟随能力。创新点：结合感知和指令跟随技术，使机器人更好地理解人类行为。结果：机器人对人类行为的理解和响应能力得到显著提升。"
+      "summary_cn": "研究问题：机器人需要在共享环境中理解并响应动态、不可预测的人类行为。方法：提出基于行为理解的机器人感知与指令跟随方法。创新点：结合行为理解与感知技术，提高机器人适应性。实验结果：机器人能够更好地适应动态环境，提高任务完成率。"
     }
   ]
 }
