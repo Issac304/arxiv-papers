@@ -1,4 +1,124 @@
 {
   "arxiv": [],
-  "huggingface": []
+  "huggingface": [
+    {
+      "id": "2603.05706",
+      "title": "Reasoning Models Struggle to Control their Chains of Thought",
+      "authors": [
+        "Chen Yueh-Han",
+        "Robert McCarthy",
+        "Bruce W. Lee",
+        "He He",
+        "Ian Kivlichan",
+        "Bowen Baker",
+        "Micah Carroll",
+        "Tomek Korbak"
+      ],
+      "summary": "Chain-of-thought (CoT) monitoring is a promising tool for detecting misbehaviors and understanding the motivations of modern reasoning models. However, if models can control what they verbalize in their CoT, it could undermine CoT monitorability. To measure this undesirable capability -- CoT controllability -- we introduce the CoT-Control evaluation suite, which includes tasks that require models to solve problems while adhering to CoT instructions, e.g., reasoning about a genetics question without using the word 'chromosome'. We show that reasoning models possess significantly lower CoT controllability than output controllability; for instance, Claude Sonnet 4.5 can control its CoT only 2.7% of the time but 61.9% when controlling its final output. We also find that CoT controllability is higher for larger models and decreases with more RL training, test-time compute, and increased problem difficulty. CoT controllability failures extend even to situations in which models are given incentives (as opposed to direct requests) to evade CoT monitors, although models exhibit slightly higher controllability when they are told they are being monitored. Similarly, eliciting controllability by adversarially optimizing prompts does not meaningfully increase controllability. Our results leave us cautiously optimistic that CoT controllability is currently unlikely to be a failure mode of CoT monitorability. However, the mechanism behind low controllability is not well understood. Given its importance for maintaining CoT monitorability, we recommend that frontier labs track CoT controllability in future models.",
+      "link": "https://huggingface.co/papers/2603.05706",
+      "pdf": "http://arxiv.org/pdf/2603.05706",
+      "upvotes": 13,
+      "comments": 1,
+      "organization": "openai",
+      "summary_cn": "研究问题：如何测量模型对思维链（CoT）的控制能力。方法：提出CoT控制度量方法。创新点：通过监测模型在CoT中的自我控制来评估其可监控性。结果：发现CoT控制能力对模型的可监控性构成威胁。"
+    },
+    {
+      "id": "2603.04639",
+      "title": "RoboMME: Benchmarking and Understanding Memory for Robotic Generalist Policies",
+      "authors": [
+        "Yinpei Dai",
+        "Hongze Fu",
+        "Jayjun Lee",
+        "Yuejiang Liu",
+        "Haoran Zhang",
+        "Jianing Yang",
+        "Chelsea Finn",
+        "Nima Fazeli",
+        "Joyce Chai"
+      ],
+      "summary": "Memory is critical for long-horizon and history-dependent robotic manipulation. Such tasks often involve counting repeated actions or manipulating objects that become temporarily occluded. Recent vision-language-action (VLA) models have begun to incorporate memory mechanisms; however, their evaluations remain confined to narrow, non-standardized settings. This limits their systematic understanding, comparison, and progress measurement. To address these challenges, we introduce RoboMME: a large-scale standardized benchmark for evaluating and advancing VLA models in long-horizon, history-dependent scenarios. Our benchmark comprises 16 manipulation tasks constructed under a carefully designed taxonomy that evaluates temporal, spatial, object, and procedural memory. We further develop a suite of 14 memory-augmented VLA variants built on the π0.5 backbone to systematically explore different memory representations across multiple integration strategies. Experimental results show that the effectiveness of memory representations is highly task-dependent, with each design offering distinct advantages and limitations across different tasks. Videos and code can be found at our website https://robomme.github.io.",
+      "link": "https://huggingface.co/papers/2603.04639",
+      "pdf": "http://arxiv.org/pdf/2603.04639",
+      "upvotes": 13,
+      "comments": 2,
+      "organization": "",
+      "summary_cn": "研究问题：如何提高视觉-语言-动作（VLA）模型在记忆关键任务中的表现。方法：提出结合记忆机制的VLA模型。创新点：通过记忆机制处理重复动作和临时遮挡物体。结果：模型在记忆相关任务上表现提升。"
+    },
+    {
+      "id": "2603.06199",
+      "title": "FlashPrefill: Instantaneous Pattern Discovery and Thresholding for Ultra-Fast Long-Context Prefilling",
+      "authors": [
+        "Qihang Fan",
+        "Huaibo Huang",
+        "Zhiying Wu",
+        "Juqiu Wang",
+        "Bingning Wang",
+        "Ran He"
+      ],
+      "summary": "Long-context modeling is a pivotal capability for Large Language Models, yet the quadratic complexity of attention remains a critical bottleneck, particularly during the compute-intensive prefilling phase. While various sparse attention mechanisms have been explored, they typically suffer from either significant search latency or insufficient sparsity. In this paper, we propose FlashPrefill, a framework enabling ultra-fast prefilling via instantaneous pattern discovery and thresholding. FlashPrefill leverages a fast block-searching technique to simultaneously locate dynamic vertical, slash, and block-sparse attention patterns. Crucially, it introduces a dynamic thresholding mechanism that bypasses the prohibitive overhead of sorting or accumulating attention scores while effectively eliminating the long-tail distribution to enhance sparsity. Extensive evaluations demonstrate that FlashPrefill achieves a substantial leap in efficiency, delivering an unprecedented 27.78x speedup on 256K sequences. Notably, unlike existing methods that incur efficiency degradation on shorter contexts, FlashPrefill maintains a 1.71x speedup even at a 4K context length, demonstrating its robustness and practical utility across varying sequence scales.",
+      "link": "https://huggingface.co/papers/2603.06199",
+      "pdf": "http://arxiv.org/pdf/2603.06199",
+      "upvotes": 7,
+      "comments": 0,
+      "organization": "",
+      "summary_cn": "研究问题：如何解决长上下文建模中注意力机制的二次复杂度问题。方法：提出稀疏注意力机制。创新点：设计新的稀疏注意力机制以降低计算复杂度。结果：在长上下文建模中取得显著性能提升。"
+    },
+    {
+      "id": "2603.06351",
+      "title": "Dynamic Chunking Diffusion Transformer",
+      "authors": [
+        "Akash Haridas",
+        "Utkarsh Saxena",
+        "Parsa Ashrafi Fashi",
+        "Mehdi Rezagholizadeh",
+        "Vikram Appia",
+        "Emad Barsoum"
+      ],
+      "summary": "Diffusion Transformers process images as fixed-length sequences of tokens produced by a static patchify operation. While effective, this design spends uniform compute on low- and high-information regions alike, ignoring that images contain regions of varying detail and that the denoising process progresses from coarse structure at early timesteps to fine detail at late timesteps. We introduce the Dynamic Chunking Diffusion Transformer (DC-DiT), which augments the DiT backbone with a learned encoder-router-decoder scaffold that adaptively compresses the 2D input into a shorter token sequence in a data-dependent manner using a chunking mechanism learned end-to-end with diffusion training. The mechanism learns to compress uniform background regions into fewer tokens and detail-rich regions into more tokens, with meaningful visual segmentations emerging without explicit supervision. Furthermore, it also learns to adapt its compression across diffusion timesteps, using fewer tokens at noisy stages and more tokens as fine details emerge. On class-conditional ImageNet 256{times}256, DC-DiT consistently improves FID and Inception Score over both parameter-matched and FLOP-matched DiT baselines across 4{times} and 16{times} compression, showing this is a promising technique with potential further applications to pixel-space, video and 3D generation. Beyond accuracy, DC-DiT is practical: it can be upcycled from pretrained DiT checkpoints with minimal post-training compute (up to 8{times} fewer training steps) and composes with other dynamic computation methods to further reduce generation FLOPs.",
+      "link": "https://huggingface.co/papers/2603.06351",
+      "pdf": "http://arxiv.org/pdf/2603.06351",
+      "upvotes": 4,
+      "comments": 0,
+      "organization": "amd",
+      "summary_cn": "研究问题：如何优化扩散Transformer在图像处理中的计算效率。方法：提出针对不同信息区域差异化的计算分配策略。创新点：根据图像细节分配计算资源。结果：提高图像去噪效率。"
+    },
+    {
+      "id": "2603.06408",
+      "title": "Physical Simulator In-the-Loop Video Generation",
+      "authors": [
+        "Lin Geng Foo",
+        "Mark He Huang",
+        "Alexandros Lattas",
+        "Stylianos Moschoglou",
+        "Thabo Beeler",
+        "Christian Theobalt"
+      ],
+      "summary": "Recent advances in diffusion-based video generation have achieved remarkable visual realism but still struggle to obey basic physical laws such as gravity, inertia, and collision. Generated objects often move inconsistently across frames, exhibit implausible dynamics, or violate physical constraints, limiting the realism and reliability of AI-generated videos. We address this gap by introducing Physical Simulator In-the-loop Video Generation (PSIVG), a novel framework that integrates a physical simulator into the video diffusion process. Starting from a template video generated by a pre-trained diffusion model, PSIVG reconstructs the 4D scene and foreground object meshes, initializes them within a physical simulator, and generates physically consistent trajectories. These simulated trajectories are then used to guide the video generator toward spatio-temporally physically coherent motion. To further improve texture consistency during object movement, we propose a Test-Time Texture Consistency Optimization (TTCO) technique that adapts text and feature embeddings based on pixel correspondences from the simulator. Comprehensive experiments demonstrate that PSIVG produces videos that better adhere to real-world physics while preserving visual quality and diversity. Project Page: https://vcai.mpi-inf.mpg.de/projects/PSIVG/",
+      "link": "https://huggingface.co/papers/2603.06408",
+      "pdf": "http://arxiv.org/pdf/2603.06408",
+      "upvotes": 1,
+      "comments": 0,
+      "organization": "",
+      "summary_cn": "研究问题：如何使基于扩散的视频生成遵守物理定律。方法：提出改进的物理约束模型。创新点：引入物理约束以改善视频生成质量。结果：生成视频在物理行为上更加合理。"
+    },
+    {
+      "id": "2603.05888",
+      "title": "PixARMesh: Autoregressive Mesh-Native Single-View Scene Reconstruction",
+      "authors": [
+        "Xiang Zhang",
+        "Sohyun Yoo",
+        "Hongrui Wu",
+        "Chuan Li",
+        "Jianwen Xie",
+        "Zhuowen Tu"
+      ],
+      "summary": "We introduce PixARMesh, a method to autoregressively reconstruct complete 3D indoor scene meshes directly from a single RGB image. Unlike prior methods that rely on implicit signed distance fields and post-hoc layout optimization, PixARMesh jointly predicts object layout and geometry within a unified model, producing coherent and artist-ready meshes in a single forward pass. Building on recent advances in mesh generative models, we augment a point-cloud encoder with pixel-aligned image features and global scene context via cross-attention, enabling accurate spatial reasoning from a single image. Scenes are generated autoregressively from a unified token stream containing context, pose, and mesh, yielding compact meshes with high-fidelity geometry. Experiments on synthetic and real-world datasets show that PixARMesh achieves state-of-the-art reconstruction quality while producing lightweight, high-quality meshes ready for downstream applications.",
+      "link": "https://huggingface.co/papers/2603.05888",
+      "pdf": "http://arxiv.org/pdf/2603.05888",
+      "upvotes": 1,
+      "comments": 1,
+      "organization": "mlpc-lab",
+      "summary_cn": "研究问题：如何从单张RGB图像中自动重建完整的3D室内场景网格。方法：提出PixARMesh方法。创新点：联合预测物体布局和几何结构。结果：实现从单张图像到3D场景网格的高效转换。"
+    }
+  ]
 }
