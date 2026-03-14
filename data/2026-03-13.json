@@ -19,10 +19,10 @@
       "summary": "Humans perceive and understand real-world spaces through a stream of visual observations. Therefore, the ability to streamingly maintain and update spatial evidence from potentially unbounded video streams is essential for spatial intelligence. The core challenge is not simply longer context windows but how spatial information is selected, organized, and retained over time. In this paper, we propose Spatial-TTT towards streaming visual-based spatial intelligence with test-time training (TTT), which adapts a subset of parameters (fast weights) to capture and organize spatial evidence over long-horizon scene videos. Specifically, we design a hybrid architecture and adopt large-chunk updates parallel with sliding-window attention for efficient spatial video processing. To further promote spatial awareness, we introduce a spatial-predictive mechanism applied to TTT layers with 3D spatiotemporal convolution, which encourages the model to capture geometric correspondence and temporal continuity across frames. Beyond architecture design, we construct a dataset with dense 3D spatial descriptions, which guides the model to update its fast weights to memorize and organize global 3D spatial signals in a structured manner. Extensive experiments demonstrate that Spatial-TTT improves long-horizon spatial understanding and achieves state-of-the-art performance on video spatial benchmarks. Project page: https://liuff19.github.io/Spatial-TTT.",
       "link": "https://huggingface.co/papers/2603.12255",
       "pdf": "http://arxiv.org/pdf/2603.12255",
-      "upvotes": 62,
-      "comments": 1,
+      "upvotes": 68,
+      "comments": 2,
       "organization": "Tencent-Hunyuan",
-      "summary_cn": "研究问题：如何流式维护和更新来自无限视频流的空间证据。方法：提出了一种新的空间证据维护方法。创新点：解决了长上下文窗口的挑战。结果：提高了空间智能的效率。"
+      "summary_cn": "研究问题：如何从无限视频流中持续维护和更新空间证据。方法：提出了一种新的空间证据维护方法。创新点：解决了长上下文窗口的挑战。结果：提高了空间智能的效率。"
     },
     {
       "id": "2603.12180",
@@ -47,10 +47,10 @@
       "summary": "Multimodal agents offer a promising path to automating complex document-intensive workflows. Yet, a critical question remains: do these agents demonstrate genuine strategic reasoning, or merely stochastic trial-and-error search? To address this, we introduce MADQA, a benchmark of 2,250 human-authored questions grounded in 800 heterogeneous PDF documents. Guided by Classical Test Theory, we design it to maximize discriminative power across varying levels of agentic abilities. To evaluate agentic behaviour, we introduce a novel evaluation protocol measuring the accuracy-effort trade-off. Using this framework, we show that while the best agents can match human searchers in raw accuracy, they succeed on largely different questions and rely on brute-force search to compensate for weak strategic planning. They fail to close the nearly 20% gap to oracle performance, persisting in unproductive loops. We release the dataset and evaluation harness to help facilitate the transition from brute-force retrieval to calibrated, efficient reasoning.",
       "link": "https://huggingface.co/papers/2603.12180",
       "pdf": "http://arxiv.org/pdf/2603.12180",
-      "upvotes": 39,
-      "comments": 1,
+      "upvotes": 47,
+      "comments": 2,
       "organization": "Snowflake",
-      "summary_cn": "研究问题：多模态智能体是否具有真正的战略推理能力。方法：引入了MADQA基准。创新点：提供了评估多模态智能体战略推理的新方法。结果：MADQA基准有助于理解智能体的推理能力。"
+      "summary_cn": "研究问题：多模态智能体是否具有真正的战略推理能力。方法：引入了MADQA基准。创新点：通过基准测试评估智能体的推理能力。结果：验证了智能体的推理能力。"
     },
     {
       "id": "2603.12201",
@@ -68,10 +68,10 @@
       "summary": "Long-context agentic workflows have emerged as a defining use case for large language models, making attention efficiency critical for both inference speed and serving cost. Sparse attention addresses this challenge effectively, and DeepSeek Sparse Attention (DSA) is a representative production-grade solution: a lightweight lightning indexer selects the top-k most relevant tokens per query, reducing core attention from O(L^2) to O(Lk). However, the indexer itself retains O(L^2) complexity and must run independently at every layer, despite the fact that the resulting top-k selections are highly similar across consecutive layers. We present IndexCache, which exploits this cross-layer redundancy by partitioning layers into a small set of Full layers that run their own indexers and a majority of Shared layers that simply reuse the nearest Full layer's top-k indices. We propose two complementary approaches to determine and optimize this configuration. Training-free IndexCache applies a greedy search algorithm that selects which layers to retain indexers by directly minimizing language modeling loss on a calibration set, requiring no weight updates. Training-aware IndexCache introduces a multi-layer distillation loss that trains each retained indexer against the averaged attention distributions of all layers it serves, enabling even simple interleaved patterns to match full-indexer accuracy. Experimental results on a 30B DSA model show that IndexCache can remove 75% of indexer computations with negligible quality degradation, achieving up to 1.82times prefill speedup and 1.48times decode speedup compared to standard DSA. These positive results are further confirmed by our preliminary experiments on the production-scale GLM-5 model (Figure 1).",
       "link": "https://huggingface.co/papers/2603.12201",
       "pdf": "http://arxiv.org/pdf/2603.12201",
-      "upvotes": 30,
-      "comments": 2,
+      "upvotes": 35,
+      "comments": 3,
       "organization": "zai-org",
-      "summary_cn": "研究问题：如何提高长上下文智能工作流程的注意力效率。方法：提出了一种稀疏注意力机制。创新点：DeepSeek Sparse Attention (DSA) 提高了推理速度和降低服务成本。结果：DSA在多个任务上取得了显著的性能提升。"
+      "summary_cn": "研究问题：如何提高长上下文智能工作流程的注意力效率。方法：提出了一种稀疏注意力机制。创新点：DeepSeek Sparse Attention (DSA) 机制。结果：提高了推理速度和降低服务成本。"
     },
     {
       "id": "2603.10178",
@@ -90,10 +90,33 @@
       "summary": "Computer-using agents (CUAs) are becoming increasingly capable; however, it remains difficult to scale evaluation of whether a trajectory truly fulfills a user instruction. In this work, we study reward modeling from execution video: a sequence of keyframes from an agent trajectory that is independent of the agent's internal reasoning or actions. Although video-execution modeling is method-agnostic, it presents key challenges, including highly redundant layouts and subtle, localized cues that determine success. We introduce Execution Video Reward 53k (ExeVR-53k), a dataset of 53k high-quality video--task--reward triplets. We further propose adversarial instruction translation to synthesize negative samples with step-level annotations. To enable learning from long, high-resolution execution videos, we design spatiotemporal token pruning, which removes homogeneous regions and persistent tokens while preserving decisive UI changes. Building on these components, we fine-tune an Execution Video Reward Model (ExeVRM) that takes only a user instruction and a video-execution sequence to predict task success. Our ExeVRM 8B achieves 84.7% accuracy and 87.7% recall on video-execution assessment, outperforming strong proprietary models such as GPT-5.2 and Gemini-3 Pro across Ubuntu, macOS, Windows, and Android, while providing more precise temporal attribution. These results show that video-execution reward modeling can serve as a scalable, model-agnostic evaluator for CUAs.",
       "link": "https://huggingface.co/papers/2603.10178",
       "pdf": "http://arxiv.org/pdf/2603.10178",
-      "upvotes": 28,
-      "comments": 1,
+      "upvotes": 33,
+      "comments": 2,
       "organization": "lime-nlp",
-      "summary_cn": "研究问题：如何评估计算机使用智能体（CUA）的轨迹是否满足用户指令。方法：从执行视频中研究奖励建模。创新点：提出了一种基于视频的奖励建模方法。结果：提高了评估的准确性。"
+      "summary_cn": "研究问题：如何评估计算机使用智能体（CUA）的轨迹是否满足用户指令。方法：研究从执行视频中的奖励建模。创新点：独立于轨迹的关键帧序列。结果：提高了评估效率。"
+    },
+    {
+      "id": "2603.11421",
+      "title": "ShotVerse: Advancing Cinematic Camera Control for Text-Driven Multi-Shot Video Creation",
+      "authors": [
+        "Songlin Yang",
+        "Zhe Wang",
+        "Xuyi Yang",
+        "Songchun Zhang",
+        "Xianghao Kong",
+        "Taiyi Wu",
+        "Xiaotong Zhao",
+        "Ran Zhang",
+        "Alan Zhao",
+        "Anyi Rao"
+      ],
+      "summary": "Text-driven video generation has democratized film creation, but camera control in cinematic multi-shot scenarios remains a significant block. Implicit textual prompts lack precision, while explicit trajectory conditioning imposes prohibitive manual overhead and often triggers execution failures in current models. To overcome this bottleneck, we propose a data-centric paradigm shift, positing that aligned (Caption, Trajectory, Video) triplets form an inherent joint distribution that can connect automated plotting and precise execution. Guided by this insight, we present ShotVerse, a \"Plan-then-Control\" framework that decouples generation into two collaborative agents: a VLM (Vision-Language Model)-based Planner that leverages spatial priors to obtain cinematic, globally aligned trajectories from text, and a Controller that renders these trajectories into multi-shot video content via a camera adapter. Central to our approach is the construction of a data foundation: we design an automated multi-shot camera calibration pipeline aligns disjoint single-shot trajectories into a unified global coordinate system. This facilitates the curation of ShotVerse-Bench, a high-fidelity cinematic dataset with a three-track evaluation protocol that serves as the bedrock for our framework. Extensive experiments demonstrate that ShotVerse effectively bridges the gap between unreliable textual control and labor-intensive manual plotting, achieving superior cinematic aesthetics and generating multi-shot videos that are both camera-accurate and cross-shot consistent.",
+      "link": "https://huggingface.co/papers/2603.11421",
+      "pdf": "http://arxiv.org/pdf/2603.11421",
+      "upvotes": 27,
+      "comments": 2,
+      "organization": "tencent",
+      "summary_cn": "研究问题：如何提高电影多镜头场景中的摄像机控制。方法：提出了一种基于文本的摄像机控制方法。创新点：结合了隐式和显式提示。结果：提高了摄像机控制的精度。"
     },
     {
       "id": "2603.12257",
@@ -118,10 +141,10 @@
       "summary": "While large-scale diffusion models have revolutionized video synthesis, achieving precise control over both multi-subject identity and multi-granularity motion remains a significant challenge. Recent attempts to bridge this gap often suffer from limited motion granularity, control ambiguity, and identity degradation, leading to suboptimal performance on identity preservation and motion control. In this work, we present DreamVideo-Omni, a unified framework enabling harmonious multi-subject customization with omni-motion control via a progressive two-stage training paradigm. In the first stage, we integrate comprehensive control signals for joint training, encompassing subject appearances, global motion, local dynamics, and camera movements. To ensure robust and precise controllability, we introduce a condition-aware 3D rotary positional embedding to coordinate heterogeneous inputs and a hierarchical motion injection strategy to enhance global motion guidance. Furthermore, to resolve multi-subject ambiguity, we introduce group and role embeddings to explicitly anchor motion signals to specific identities, effectively disentangling complex scenes into independent controllable instances. In the second stage, to mitigate identity degradation, we design a latent identity reward feedback learning paradigm by training a latent identity reward model upon a pretrained video diffusion backbone. This provides motion-aware identity rewards in the latent space, prioritizing identity preservation aligned with human preferences. Supported by our curated large-scale dataset and the comprehensive DreamOmni Bench for multi-subject and omni-motion control evaluation, DreamVideo-Omni demonstrates superior performance in generating high-quality videos with precise controllability.",
       "link": "https://huggingface.co/papers/2603.12257",
       "pdf": "http://arxiv.org/pdf/2603.12257",
-      "upvotes": 23,
-      "comments": 1,
+      "upvotes": 26,
+      "comments": 2,
       "organization": "AlibabaTongyiLab",
-      "summary_cn": "研究问题：如何精确控制多主体身份和多粒度运动。方法：提出了一种新的视频合成框架。创新点：解决了运动粒度、控制模糊和创意限制等问题。结果：提高了视频合成的质量和控制能力。"
+      "summary_cn": "研究问题：如何精确控制视频合成中的多主体身份和多粒度运动。方法：提出了一种新的视频合成框架。创新点：解决了运动粒度、控制模糊和意识形态问题。结果：提高了视频合成的质量。"
     },
     {
       "id": "2603.12247",
@@ -141,10 +164,28 @@
       "summary": "Reinforcement learning (RL) has emerged as a promising paradigm for enhancing image editing and text-to-image (T2I) generation. However, current reward models, which act as critics during RL, often suffer from hallucinations and assign noisy scores, inherently misguiding the optimization process. In this paper, we present FIRM (Faithful Image Reward Modeling), a comprehensive framework that develops robust reward models to provide accurate and reliable guidance for faithful image generation and editing. First, we design tailored data curation pipelines to construct high-quality scoring datasets. Specifically, we evaluate editing using both execution and consistency, while generation is primarily assessed via instruction following. Using these pipelines, we collect the FIRM-Edit-370K and FIRM-Gen-293K datasets, and train specialized reward models (FIRM-Edit-8B and FIRM-Gen-8B) that accurately reflect these criteria. Second, we introduce FIRM-Bench, a comprehensive benchmark specifically designed for editing and generation critics. Evaluations demonstrate that our models achieve superior alignment with human judgment compared to existing metrics. Furthermore, to seamlessly integrate these critics into the RL pipeline, we formulate a novel \"Base-and-Bonus\" reward strategy that balances competing objectives: Consistency-Modulated Execution (CME) for editing and Quality-Modulated Alignment (QMA) for generation. Empowered by this framework, our resulting models FIRM-Qwen-Edit and FIRM-SD3.5 achieve substantial performance breakthroughs. Comprehensive experiments demonstrate that FIRM mitigates hallucinations, establishing a new standard for fidelity and instruction adherence over existing general models. All of our datasets, models, and code have been publicly available at https://firm-reward.github.io.",
       "link": "https://huggingface.co/papers/2603.12247",
       "pdf": "http://arxiv.org/pdf/2603.12247",
-      "upvotes": 21,
-      "comments": 1,
+      "upvotes": 22,
+      "comments": 2,
       "organization": "VisionXLab",
-      "summary_cn": "研究问题：如何改进图像编辑和文本到图像（T2I）生成的奖励模型。方法：提出了一种新的奖励模型。创新点：解决了奖励模型中的幻觉和噪声评分问题。结果：提高了优化过程的准确性。"
+      "summary_cn": "研究问题：如何改进图像编辑和文本到图像（T2I）生成的奖励模型。方法：提出了一种新的奖励模型。创新点：解决了幻觉和噪声评分问题。结果：提高了优化过程的准确性。"
+    },
+    {
+      "id": "2603.12056",
+      "title": "XSkill: Continual Learning from Experience and Skills in Multimodal Agents",
+      "authors": [
+        "Guanyu Jiang",
+        "Zhaochen Su",
+        "Xiaoye Qu",
+        "Yi R.",
+        "Fung"
+      ],
+      "summary": "Multimodal agents can now tackle complex reasoning tasks with diverse tools, yet they still suffer from inefficient tool use and inflexible orchestration in open-ended settings. A central challenge is enabling such agents to continually improve without parameter updates by learning from past trajectories. We identify two complementary forms of reusable knowledge essential for this goal: experiences, providing concise action-level guidance for tool selection and decision making, and skills, providing structured task-level guidance for planning and tool use. To this end, we propose XSkill, a dual-stream framework for continual learning from experience and skills in multimodal agents. XSkill grounds both knowledge extraction and retrieval in visual observations. During accumulation, XSkill distills and consolidates experiences and skills from multi-path rollouts via visually grounded summarization and cross-rollout critique. During inference, it retrieves and adapts this knowledge to the current visual context and feeds usage history back into accumulation to form a continual learning loop. Evaluated on five benchmarks across diverse domains with four backbone models, XSkill consistently and substantially outperforms both tool-only and learning-based baselines. Further analysis reveals that the two knowledge streams play complementary roles in influencing the reasoning behaviors of agents and show superior zero-shot generalization.",
+      "link": "https://huggingface.co/papers/2603.12056",
+      "pdf": "http://arxiv.org/pdf/2603.12056",
+      "upvotes": 20,
+      "comments": 2,
+      "organization": "",
+      "summary_cn": "研究问题：如何使多模态智能体在开放环境中高效使用工具和灵活编排。方法：提出了一种新的学习方法。创新点：无需参数更新即可持续改进。结果：提高了智能体的性能。"
     },
     {
       "id": "2603.12250",
@@ -170,9 +211,9 @@
       "link": "https://huggingface.co/papers/2603.12250",
       "pdf": "http://arxiv.org/pdf/2603.12250",
       "upvotes": 16,
-      "comments": 1,
+      "comments": 2,
       "organization": "",
-      "summary_cn": "研究问题：如何解决视频深度估计中的基本权衡。方法：提出了DVD框架。创新点：结合了生成模型和判别模型的优点。结果：提高了视频深度估计的准确性。"
+      "summary_cn": "研究问题：如何解决视频深度估计中的基本权衡。方法：提出了一种新的视频深度估计框架。创新点：结合了生成模型和判别模型的优势。结果：提高了视频深度估计的准确性。"
     },
     {
       "id": "2603.11593",
@@ -190,32 +231,9 @@
       "link": "https://huggingface.co/papers/2603.11593",
       "pdf": "http://arxiv.org/pdf/2603.11593",
       "upvotes": 15,
-      "comments": 0,
-      "organization": "",
-      "summary_cn": "研究问题：如何根据用户指令修改现有图像中的特定内容。方法：提出了一种基于文本的图像编辑方法。创新点：实现了文本驱动的图像编辑。结果：提高了图像编辑的灵活性和准确性。"
-    },
-    {
-      "id": "2603.11421",
-      "title": "ShotVerse: Advancing Cinematic Camera Control for Text-Driven Multi-Shot Video Creation",
-      "authors": [
-        "Songlin Yang",
-        "Zhe Wang",
-        "Xuyi Yang",
-        "Songchun Zhang",
-        "Xianghao Kong",
-        "Taiyi Wu",
-        "Xiaotong Zhao",
-        "Ran Zhang",
-        "Alan Zhao",
-        "Anyi Rao"
-      ],
-      "summary": "Text-driven video generation has democratized film creation, but camera control in cinematic multi-shot scenarios remains a significant block. Implicit textual prompts lack precision, while explicit trajectory conditioning imposes prohibitive manual overhead and often triggers execution failures in current models. To overcome this bottleneck, we propose a data-centric paradigm shift, positing that aligned (Caption, Trajectory, Video) triplets form an inherent joint distribution that can connect automated plotting and precise execution. Guided by this insight, we present ShotVerse, a \"Plan-then-Control\" framework that decouples generation into two collaborative agents: a VLM (Vision-Language Model)-based Planner that leverages spatial priors to obtain cinematic, globally aligned trajectories from text, and a Controller that renders these trajectories into multi-shot video content via a camera adapter. Central to our approach is the construction of a data foundation: we design an automated multi-shot camera calibration pipeline aligns disjoint single-shot trajectories into a unified global coordinate system. This facilitates the curation of ShotVerse-Bench, a high-fidelity cinematic dataset with a three-track evaluation protocol that serves as the bedrock for our framework. Extensive experiments demonstrate that ShotVerse effectively bridges the gap between unreliable textual control and labor-intensive manual plotting, achieving superior cinematic aesthetics and generating multi-shot videos that are both camera-accurate and cross-shot consistent.",
-      "link": "https://huggingface.co/papers/2603.11421",
-      "pdf": "http://arxiv.org/pdf/2603.11421",
-      "upvotes": 15,
       "comments": 1,
-      "organization": "tencent",
-      "summary_cn": "研究问题：如何精确控制电影多镜头场景中的摄像机控制。方法：提出了一种新的文本驱动视频生成方法。创新点：解决了摄像机控制中的精度和手动开销问题。结果：提高了视频生成的质量和控制能力。"
+      "organization": "",
+      "summary_cn": "研究问题：如何实现基于指令的图像编辑。方法：提出了一种新的文本中心图像编辑方法。创新点：关注于修改、翻译或重新排列非目标区域。结果：提高了图像编辑的灵活性。"
     },
     {
       "id": "2603.12264",
@@ -241,29 +259,10 @@
       "summary": "Unified multimodal models target joint understanding, reasoning, and generation, but current image editing benchmarks are largely confined to natural images and shallow commonsense reasoning, offering limited assessment of this capability under structured, domain-specific constraints. In this work, we introduce GRADE, the first benchmark to assess discipline-informed knowledge and reasoning in image editing. GRADE comprises 520 carefully curated samples across 10 academic domains, spanning from natural science to social science. To support rigorous evaluation, we propose a multi-dimensional evaluation protocol that jointly assesses Discipline Reasoning, Visual Consistency, and Logical Readability. Extensive experiments on 20 state-of-the-art open-source and closed-source models reveal substantial limitations in current models under implicit, knowledge-intensive editing settings, leading to large performance gaps. Beyond quantitative scores, we conduct rigorous analyses and ablations to expose model shortcomings and identify the constraints within disciplinary editing. Together, GRADE pinpoints key directions for the future development of unified multimodal models, advancing the research on discipline-informed image editing and reasoning. Our benchmark and evaluation code are publicly released.",
       "link": "https://huggingface.co/papers/2603.12264",
       "pdf": "http://arxiv.org/pdf/2603.12264",
-      "upvotes": 13,
-      "comments": 1,
-      "organization": "",
-      "summary_cn": "研究问题：如何评估统一的多模态模型在结构化、特定领域约束下的能力。方法：提出了一种新的图像编辑基准。创新点：提供了评估多模态模型在特定领域约束下的新方法。结果：提高了对多模态模型能力的评估。"
-    },
-    {
-      "id": "2603.12267",
-      "title": "EVATok: Adaptive Length Video Tokenization for Efficient Visual Autoregressive Generation",
-      "authors": [
-        "Tianwei Xiong",
-        "Jun Hao Liew",
-        "Zilong Huang",
-        "Zhijie Lin",
-        "Jiashi Feng",
-        "Xihui Liu"
-      ],
-      "summary": "Autoregressive (AR) video generative models rely on video tokenizers that compress pixels into discrete token sequences. The length of these token sequences is crucial for balancing reconstruction quality against downstream generation computational cost. Traditional video tokenizers apply a uniform token assignment across temporal blocks of different videos, often wasting tokens on simple, static, or repetitive segments while underserving dynamic or complex ones. To address this inefficiency, we introduce EVATok, a framework to produce Efficient Video Adaptive Tokenizers. Our framework estimates optimal token assignments for each video to achieve the best quality-cost trade-off, develops lightweight routers for fast prediction of these optimal assignments, and trains adaptive tokenizers that encode videos based on the assignments predicted by routers. We demonstrate that EVATok delivers substantial improvements in efficiency and overall quality for video reconstruction and downstream AR generation. Enhanced by our advanced training recipe that integrates video semantic encoders, EVATok achieves superior reconstruction and state-of-the-art class-to-video generation on UCF-101, with at least 24.4% savings in average token usage compared to the prior state-of-the-art LARP and our fixed-length baseline.",
-      "link": "https://huggingface.co/papers/2603.12267",
-      "pdf": "http://arxiv.org/pdf/2603.12267",
-      "upvotes": 9,
+      "upvotes": 14,
       "comments": 2,
-      "organization": "hkuhk",
-      "summary_cn": "研究问题：视频生成模型中，如何平衡重建质量和生成计算成本。方法：提出一种新的视频tokenizer，调整token序列长度。创新点：通过动态调整token序列长度，优化资源分配。结果：提高了重建质量，降低了计算成本。"
+      "organization": "",
+      "summary_cn": "研究问题：当前图像编辑基准主要针对自然图像和浅层常识推理，缺乏对结构化、特定领域约束下联合理解、推理和生成的评估。方法：提出统一的多模态模型。创新点：在结构化、特定领域约束下评估模型能力。结果：提高了模型在特定领域约束下的性能。"
     },
     {
       "id": "2603.12245",
@@ -282,28 +281,47 @@
       "summary": "Diffusion transformers (DiTs) achieve high generative quality but lock FLOPs to image resolution, limiting principled latency-quality trade-offs, and allocate computation uniformly across input spatial tokens, wasting resource allocation to unimportant regions. We introduce Elastic Latent Interface Transformer (ELIT), a drop-in, DiT-compatible mechanism that decouples input image size from compute. Our approach inserts a latent interface, a learnable variable-length token sequence on which standard transformer blocks can operate. Lightweight Read and Write cross-attention layers move information between spatial tokens and latents and prioritize important input regions. By training with random dropping of tail latents, ELIT learns to produce importance-ordered representations with earlier latents capturing global structure while later ones contain information to refine details. At inference, the number of latents can be dynamically adjusted to match compute constraints. ELIT is deliberately minimal, adding two cross-attention layers while leaving the rectified flow objective and the DiT stack unchanged. Across datasets and architectures (DiT, U-ViT, HDiT, MM-DiT), ELIT delivers consistent gains. On ImageNet-1K 512px, ELIT delivers an average gain of 35.3% and 39.6% in FID and FDD scores. Project page: https://snap-research.github.io/elit/",
       "link": "https://huggingface.co/papers/2603.12245",
       "pdf": "http://arxiv.org/pdf/2603.12245",
-      "upvotes": 9,
-      "comments": 2,
+      "upvotes": 12,
+      "comments": 3,
       "organization": "Snapchat",
-      "summary_cn": "研究问题：扩散变换器（DiTs）在生成图像质量高，但计算资源分配不合理。方法：引入弹性潜在接口，优化资源分配。创新点：根据输入区域重要性动态调整计算资源。结果：提高了生成质量，降低了计算资源浪费。"
+      "summary_cn": "研究问题：扩散变压器（DiTs）在生成质量上表现优异，但将FLOPs锁定在图像分辨率上，限制了延迟-质量权衡，且计算资源分配不均。方法：引入弹性潜在接口。创新点：优化资源分配，提高生成质量。结果：提高了生成质量和延迟-质量权衡。"
     },
     {
-      "id": "2603.12265",
-      "title": "OmniStream: Mastering Perception, Reconstruction and Action in Continuous Streams",
+      "id": "2603.09970",
+      "title": "CREATE: Testing LLMs for Associative Creativity",
       "authors": [
-        "Yibin Yan",
-        "Jilan Xu",
-        "Shangzhe Di",
-        "Haoning Wu",
-        "Weidi Xie"
+        "Manya Wadhwa",
+        "Tiasa Singha Roy",
+        "Harvey Lederman",
+        "Junyi Jessy Li",
+        "Greg Durrett"
       ],
-      "summary": "Modern visual agents require representations that are general, causal, and physically structured to operate in real-time streaming environments. However, current vision foundation models remain fragmented, specializing narrowly in image semantic perception, offline temporal modeling, or spatial geometry. This paper introduces OmniStream, a unified streaming visual backbone that effectively perceives, reconstructs, and acts from diverse visual inputs. By incorporating causal spatiotemporal attention and 3D rotary positional embeddings (3D-RoPE), our model supports efficient, frame-by-frame online processing of video streams via a persistent KV-cache. We pre-train OmniStream using a synergistic multi-task framework coupling static and temporal representation learning, streaming geometric reconstruction, and vision-language alignment on 29 datasets. Extensive evaluations show that, even with a strictly frozen backbone, OmniStream achieves consistently competitive performance with specialized experts across image and video probing, streaming geometric reconstruction, complex video and spatial reasoning, as well as robotic manipulation (unseen at training). Rather than pursuing benchmark-specific dominance, our work demonstrates the viability of training a single, versatile vision backbone that generalizes across semantic, spatial, and temporal reasoning, i.e., a more meaningful step toward general-purpose visual understanding for interactive and embodied agents.",
-      "link": "https://huggingface.co/papers/2603.12265",
-      "pdf": "http://arxiv.org/pdf/2603.12265",
-      "upvotes": 8,
-      "comments": 1,
-      "organization": "",
-      "summary_cn": "研究问题：现代视觉代理需要通用、因果和物理结构的表示。方法：提出一种新的视觉基础模型，融合图像语义感知、离线时间建模和空间几何。创新点：实现实时流环境中的高效操作。结果：提高了代理的实时性能。"
+      "summary": "A key component of creativity is associative reasoning: the ability to draw novel yet meaningful connections between concepts. We introduce CREATE, a benchmark designed to evaluate models' capacity for creative associative reasoning. CREATE requires models to generate sets of paths connecting concepts in a model's parametric knowledge. Paths should have high specificity (distinctiveness and closeness of the concept connection) and high diversity (dissimilarity from other paths), and models are scored more highly if they produce a larger set of strong, diverse paths. This task shares demands of real creativity tasks like hypothesis generation, including an extremely large search space, but enables collection of a sizable benchmark with objective answer grading. Evaluation of frontier models shows that the strongest models achieve higher creative utility than others, with the high multiplicity of answers and complexity of the search making benchmark saturation difficult to achieve. Furthermore, our results illustrate that thinking models are not always more effective on our task, even with high token budgets. Recent approaches for creative prompting give some but limited additional improvement. CREATE provides a sandbox for developing new methods to improve models' capacity for associative creativity.",
+      "link": "https://huggingface.co/papers/2603.09970",
+      "pdf": "http://arxiv.org/pdf/2603.09970",
+      "upvotes": 11,
+      "comments": 2,
+      "organization": "newyorkuniversity",
+      "summary_cn": "研究问题：创造力的重要组成部分是联想推理：在概念之间建立新颖且有意义联系的能力。方法：提出CREATE基准。创新点：评估模型在联想推理方面的能力。结果：CREATE基准有助于评估模型的创造力。"
+    },
+    {
+      "id": "2603.12267",
+      "title": "EVATok: Adaptive Length Video Tokenization for Efficient Visual Autoregressive Generation",
+      "authors": [
+        "Tianwei Xiong",
+        "Jun Hao Liew",
+        "Zilong Huang",
+        "Zhijie Lin",
+        "Jiashi Feng",
+        "Xihui Liu"
+      ],
+      "summary": "Autoregressive (AR) video generative models rely on video tokenizers that compress pixels into discrete token sequences. The length of these token sequences is crucial for balancing reconstruction quality against downstream generation computational cost. Traditional video tokenizers apply a uniform token assignment across temporal blocks of different videos, often wasting tokens on simple, static, or repetitive segments while underserving dynamic or complex ones. To address this inefficiency, we introduce EVATok, a framework to produce Efficient Video Adaptive Tokenizers. Our framework estimates optimal token assignments for each video to achieve the best quality-cost trade-off, develops lightweight routers for fast prediction of these optimal assignments, and trains adaptive tokenizers that encode videos based on the assignments predicted by routers. We demonstrate that EVATok delivers substantial improvements in efficiency and overall quality for video reconstruction and downstream AR generation. Enhanced by our advanced training recipe that integrates video semantic encoders, EVATok achieves superior reconstruction and state-of-the-art class-to-video generation on UCF-101, with at least 24.4% savings in average token usage compared to the prior state-of-the-art LARP and our fixed-length baseline.",
+      "link": "https://huggingface.co/papers/2603.12267",
+      "pdf": "http://arxiv.org/pdf/2603.12267",
+      "upvotes": 10,
+      "comments": 3,
+      "organization": "hkuhk",
+      "summary_cn": "研究问题：自回归（AR）视频生成模型依赖于将像素压缩成离散标记序列的视频标记器。方法：提出一种新的视频标记器。创新点：优化标记序列长度，平衡重建质量和生成成本。结果：提高了视频生成模型的性能。"
     },
     {
       "id": "2603.12252",
@@ -322,10 +340,10 @@
       "summary": "Recently, Multimodal Large Language Models (MLLMs) have been widely integrated into diffusion frameworks primarily as text encoders to tackle complex tasks such as spatial reasoning. However, this paradigm suffers from two critical limitations: (i) MLLMs text encoder exhibits insufficient reasoning depth. Single-step encoding fails to activate the Chain-of-Thought process, which is essential for MLLMs to provide accurate guidance for complex tasks. (ii) The guidance remains invariant during the decoding process. Invariant guidance during decoding prevents DiT from progressively decomposing complex instructions into actionable denoising steps, even with correct MLLM encodings. To this end, we propose Endogenous Chain-of-Thought (EndoCoT), a novel framework that first activates MLLMs' reasoning potential by iteratively refining latent thought states through an iterative thought guidance module, and then bridges these states to the DiT's denoising process. Second, a terminal thought grounding module is applied to ensure the reasoning trajectory remains grounded in textual supervision by aligning the final state with ground-truth answers. With these two components, the MLLM text encoder delivers meticulously reasoned guidance, enabling the DiT to execute it progressively and ultimately solve complex tasks in a step-by-step manner. Extensive evaluations across diverse benchmarks (e.g., Maze, TSP, VSP, and Sudoku) achieve an average accuracy of 92.1%, outperforming the strongest baseline by 8.3 percentage points.",
       "link": "https://huggingface.co/papers/2603.12252",
       "pdf": "http://arxiv.org/pdf/2603.12252",
-      "upvotes": 8,
-      "comments": 1,
+      "upvotes": 9,
+      "comments": 2,
       "organization": "internlm",
-      "summary_cn": "研究问题：多模态大型语言模型（MLLMs）在扩散框架中的应用局限性。方法：改进MLLMs文本编码器，提高推理能力。创新点：引入多模态信息融合。结果：提高了空间推理能力。"
+      "summary_cn": "研究问题：多模态大型语言模型（MLLMs）在扩散框架中主要作为文本编码器，但存在推理能力不足和计算资源分配不均的问题。方法：提出改进的MLLMs。创新点：提高推理能力和资源分配效率。结果：提高了MLLMs在复杂任务中的性能。"
     },
     {
       "id": "2603.09160",
@@ -340,28 +358,28 @@
       "summary": "Dense image captioning is critical for cross-modal alignment in vision-language pretraining and text-to-image generation, but scaling expert-quality annotations is prohibitively expensive. While synthetic captioning via strong vision-language models (VLMs) is a practical alternative, supervised distillation often yields limited output diversity and weak generalization. Reinforcement learning (RL) could overcome these limitations, but its successes have so far been concentrated in verifiable domains that rely on deterministic checkers -- a luxury not available in open-ended captioning. We address this bottleneck with RubiCap, a novel RL framework that derives fine-grained, sample-specific reward signals from LLM-written rubrics. RubiCap first assembles a diverse committee of candidate captions, then employs an LLM rubric writer to extract consensus strengths and diagnose deficiencies in the current policy. These insights are converted into explicit evaluation criteria, enabling an LLM judge to decompose holistic quality assessment and replace coarse scalar rewards with structured, multi-faceted evaluations. Across extensive benchmarks, RubiCap achieves the highest win rates on CapArena, outperforming supervised distillation, prior RL methods, human-expert annotations, and GPT-4V-augmented outputs. On CaptionQA, it demonstrates superior word efficiency: our 7B model matches Qwen2.5-VL-32B-Instruct, and our 3B model surpasses its 7B counterpart. Remarkably, using the compact RubiCap-3B as a captioner produces stronger pretrained VLMs than those trained on captions from proprietary models.",
       "link": "https://huggingface.co/papers/2603.09160",
       "pdf": "http://arxiv.org/pdf/2603.09160",
-      "upvotes": 8,
-      "comments": 1,
+      "upvotes": 9,
+      "comments": 2,
       "organization": "apple",
-      "summary_cn": "研究问题：密集图像字幕生成在跨模态对齐和文本到图像生成中的重要性。方法：提出一种基于强视觉语言模型（VLMs）的合成字幕方法。创新点：降低标注成本，提高字幕质量。结果：提高了字幕生成质量。"
+      "summary_cn": "研究问题：密集图像字幕对于视觉-语言预训练和文本到图像生成中的跨模态对齐至关重要，但专家级标注的扩展成本高昂。方法：提出一种基于强视觉-语言模型（VLMs）的合成字幕方法。创新点：降低标注成本。结果：提高了字幕生成质量。"
     },
     {
-      "id": "2603.12056",
-      "title": "XSkill: Continual Learning from Experience and Skills in Multimodal Agents",
+      "id": "2603.12265",
+      "title": "OmniStream: Mastering Perception, Reconstruction and Action in Continuous Streams",
       "authors": [
-        "Guanyu Jiang",
-        "Zhaochen Su",
-        "Xiaoye Qu",
-        "Yi R.",
-        "Fung"
+        "Yibin Yan",
+        "Jilan Xu",
+        "Shangzhe Di",
+        "Haoning Wu",
+        "Weidi Xie"
       ],
-      "summary": "Multimodal agents can now tackle complex reasoning tasks with diverse tools, yet they still suffer from inefficient tool use and inflexible orchestration in open-ended settings. A central challenge is enabling such agents to continually improve without parameter updates by learning from past trajectories. We identify two complementary forms of reusable knowledge essential for this goal: experiences, providing concise action-level guidance for tool selection and decision making, and skills, providing structured task-level guidance for planning and tool use. To this end, we propose XSkill, a dual-stream framework for continual learning from experience and skills in multimodal agents. XSkill grounds both knowledge extraction and retrieval in visual observations. During accumulation, XSkill distills and consolidates experiences and skills from multi-path rollouts via visually grounded summarization and cross-rollout critique. During inference, it retrieves and adapts this knowledge to the current visual context and feeds usage history back into accumulation to form a continual learning loop. Evaluated on five benchmarks across diverse domains with four backbone models, XSkill consistently and substantially outperforms both tool-only and learning-based baselines. Further analysis reveals that the two knowledge streams play complementary roles in influencing the reasoning behaviors of agents and show superior zero-shot generalization.",
-      "link": "https://huggingface.co/papers/2603.12056",
-      "pdf": "http://arxiv.org/pdf/2603.12056",
-      "upvotes": 7,
-      "comments": 1,
+      "summary": "Modern visual agents require representations that are general, causal, and physically structured to operate in real-time streaming environments. However, current vision foundation models remain fragmented, specializing narrowly in image semantic perception, offline temporal modeling, or spatial geometry. This paper introduces OmniStream, a unified streaming visual backbone that effectively perceives, reconstructs, and acts from diverse visual inputs. By incorporating causal spatiotemporal attention and 3D rotary positional embeddings (3D-RoPE), our model supports efficient, frame-by-frame online processing of video streams via a persistent KV-cache. We pre-train OmniStream using a synergistic multi-task framework coupling static and temporal representation learning, streaming geometric reconstruction, and vision-language alignment on 29 datasets. Extensive evaluations show that, even with a strictly frozen backbone, OmniStream achieves consistently competitive performance with specialized experts across image and video probing, streaming geometric reconstruction, complex video and spatial reasoning, as well as robotic manipulation (unseen at training). Rather than pursuing benchmark-specific dominance, our work demonstrates the viability of training a single, versatile vision backbone that generalizes across semantic, spatial, and temporal reasoning, i.e., a more meaningful step toward general-purpose visual understanding for interactive and embodied agents.",
+      "link": "https://huggingface.co/papers/2603.12265",
+      "pdf": "http://arxiv.org/pdf/2603.12265",
+      "upvotes": 8,
+      "comments": 2,
       "organization": "",
-      "summary_cn": "研究问题：多模态代理在开放场景中工具使用和编排的效率问题。方法：提出一种基于过去轨迹学习的改进方法。创新点：无需参数更新，提高代理性能。结果：提高了代理的灵活性和效率。"
+      "summary_cn": "研究问题：现代视觉代理需要通用、因果和物理结构的表示，以在实时流环境中运行。方法：提出一种新的视觉基础模型。创新点：提高模型在实时环境中的性能。结果：提高了视觉代理的实时性能。"
     },
     {
       "id": "2603.11531",
@@ -376,9 +394,9 @@
       "link": "https://huggingface.co/papers/2603.11531",
       "pdf": "http://arxiv.org/pdf/2603.11531",
       "upvotes": 6,
-      "comments": 1,
+      "comments": 2,
       "organization": "",
-      "summary_cn": "研究问题：3D高斯分层（3DGS）在移动设备上的应用挑战。方法：提出一种针对移动设备的3DGS优化方法。创新点：降低计算需求和存储成本。结果：提高了3DGS在移动设备上的应用性能。"
+      "summary_cn": "研究问题：3D高斯分层（3DGS）在高质量渲染方面表现出强大的能力，但计算需求和存储成本较高。方法：提出一种针对移动设备的3DGS优化方法。创新点：降低计算需求和存储成本。结果：提高了3DGS在移动设备上的性能。"
     },
     {
       "id": "2603.10652",
@@ -391,10 +409,63 @@
       "summary": "In real-world deployment, vision-language models often encounter disturbances such as weather, occlusion, and camera motion. Under such conditions, their understanding and reasoning degrade substantially, revealing a gap between clean, controlled (i.e., unperturbed) evaluation settings and real-world robustness. To address this limitation, we propose ROVA, a novel training framework that improves robustness by modeling a robustness-aware consistency reward under spatio-temporal corruptions. ROVA introduces a difficulty-aware online training strategy that prioritizes informative samples based on the model's evolving capability. Specifically, it continuously re-estimates sample difficulty via self-reflective evaluation, enabling adaptive training with a robustness-aware consistency reward. We also introduce PVRBench, a new benchmark that injects real-world perturbations into embodied video datasets to assess both accuracy and reasoning quality under realistic disturbances. We evaluate ROVA and baselines on PVRBench, UrbanVideo, and VisBench, where open-source and proprietary models suffer up to 35% and 28% drops in accuracy and reasoning under realistic perturbations. ROVA effectively mitigates performance degradation, boosting relative accuracy by at least 24% and reasoning by over 9% compared with baseline models (QWen2.5/3-VL, InternVL2.5, Embodied-R). These gains transfer to clean standard benchmarks, yielding consistent improvements.",
       "link": "https://huggingface.co/papers/2603.10652",
       "pdf": "http://arxiv.org/pdf/2603.10652",
-      "upvotes": 5,
-      "comments": 1,
+      "upvotes": 6,
+      "comments": 2,
       "organization": "nanyang-technological-university-singapore",
-      "summary_cn": "研究问题：视觉语言模型在真实场景中的鲁棒性问题。方法：提出一种针对真实场景的鲁棒性评估方法。创新点：考虑天气、遮挡和相机运动等因素。结果：提高了模型在真实场景中的性能。"
+      "summary_cn": "研究问题：在现实世界部署中，视觉-语言模型在天气、遮挡和相机运动等干扰条件下，理解和推理能力下降。方法：提出一种新的评估方法。创新点：评估模型在真实世界条件下的性能。结果：揭示了模型在真实世界条件下的性能差距。"
+    },
+    {
+      "id": "2603.10444",
+      "title": "The Curse and Blessing of Mean Bias in FP4-Quantized LLM Training",
+      "authors": [
+        "Hengjie Cao",
+        "Zhendong Huang",
+        "Mengyi Chen",
+        "Yifeng Yang",
+        "Fanqi Yu",
+        "Ruijun Huang",
+        "Fang Dong",
+        "Xin Zhang",
+        "Jixian Zhou",
+        "Anrui Chen",
+        "Mingzhi Dong",
+        "Yujiang Wang",
+        "Jinlong Hou",
+        "Qin Lv",
+        "Yuan Cheng",
+        "Tun Lu",
+        "Fan Yang",
+        "Li Shang"
+      ],
+      "summary": "Large language models trained on natural language exhibit pronounced anisotropy: a small number of directions concentrate disproportionate energy, while the remaining dimensions form a broad semantic tail. In low-bit training regimes, this geometry becomes numerically unstable. Because blockwise quantization scales are determined by extreme elementwise magnitudes, dominant directions stretch the dynamic range, compressing long-tail semantic variation into narrow numerical bins. We show that this instability is primarily driven by a coherent rank-one mean bias, which constitutes the dominant component of spectral anisotropy in LLM representations. This mean component emerges systematically across layers and training stages and accounts for the majority of extreme activation magnitudes, making it the principal driver of dynamic-range inflation under low precision. Crucially, because the dominant instability is rank-one, it can be eliminated through a simple source-level mean-subtraction operation. This bias-centric conditioning recovers most of the stability benefits of SVD-based spectral methods while requiring only reduction operations and standard quantization kernels. Empirical results on FP4 (W4A4G4) training show that mean removal substantially narrows the loss gap to BF16 and restores downstream performance, providing a hardware-efficient path to stable low-bit LLM training.",
+      "link": "https://huggingface.co/papers/2603.10444",
+      "pdf": "http://arxiv.org/pdf/2603.10444",
+      "upvotes": 6,
+      "comments": 2,
+      "organization": "",
+      "summary_cn": "研究问题：大型语言模型在自然语言训练中表现出明显的各向异性：少数方向集中了过多的能量，而其他维度形成了一个广泛的语义尾。方法：提出一种新的低比特训练方法。创新点：提高低比特训练的稳定性。结果：提高了低比特训练的稳定性。"
+    },
+    {
+      "id": "2603.11327",
+      "title": "Meta-Reinforcement Learning with Self-Reflection for Agentic Search",
+      "authors": [
+        "Teng Xiao",
+        "Yige Yuan",
+        "Hamish Ivison",
+        "Huaisheng Zhu",
+        "Faeze Brahman",
+        "Nathan Lambert",
+        "Pradeep Dasigi",
+        "Noah A. Smith",
+        "Hannaneh Hajishirzi"
+      ],
+      "summary": "This paper introduces MR-Search, an in-context meta reinforcement learning (RL) formulation for agentic search with self-reflection. Instead of optimizing a policy within a single independent episode with sparse rewards, MR-Search trains a policy that conditions on past episodes and adapts its search strategy across episodes. MR-Search learns to learn a search strategy with self-reflection, allowing search agents to improve in-context exploration at test-time. Specifically, MR-Search performs cross-episode exploration by generating explicit self-reflections after each episode and leveraging them as additional context to guide subsequent attempts, thereby promoting more effective exploration during test-time. We further introduce a multi-turn RL algorithm that estimates a dense relative advantage at the turn level, enabling fine-grained credit assignment on each episode. Empirical results across various benchmarks demonstrate the advantages of MR-Search over baselines based RL, showing strong generalization and relative improvements of 9.2% to 19.3% across eight benchmarks. Our code and data are available at https://github.com/tengxiao1/MR-Search.",
+      "link": "https://huggingface.co/papers/2603.11327",
+      "pdf": "http://arxiv.org/pdf/2603.11327",
+      "upvotes": 5,
+      "comments": 2,
+      "organization": "allenai",
+      "summary_cn": "研究问题：如何通过元强化学习实现具有自我反思能力的搜索。方法：提出MR-Search，通过条件化策略适应历史信息。创新点：结合历史信息优化策略。结果：提高搜索效率。"
     },
     {
       "id": "2603.11103",
@@ -419,9 +490,32 @@
       "link": "https://huggingface.co/papers/2603.11103",
       "pdf": "http://arxiv.org/pdf/2603.11103",
       "upvotes": 5,
-      "comments": 1,
+      "comments": 2,
       "organization": "ByteDance-Seed",
-      "summary_cn": "研究问题：大型语言模型（LLMs）在代码生成中的局限性。方法：提出一种基于动态软件库的改进方法。创新点：引入动态软件库，提高推理能力。结果：提高了LLMs在代码生成中的性能。"
+      "summary_cn": "研究问题：大型语言模型在复杂软件工程中的推理能力不足。方法：分析预训练数据限制。创新点：提出改进预训练数据的方法。结果：提升模型推理能力。"
+    },
+    {
+      "id": "2603.12246",
+      "title": "Examining Reasoning LLMs-as-Judges in Non-Verifiable LLM Post-Training",
+      "authors": [
+        "Yixin Liu",
+        "Yue Yu",
+        "DiJia Su",
+        "Sid Wang",
+        "Xuewei Wang",
+        "Song Jiang",
+        "Bo Liu",
+        "Arman Cohan",
+        "Yuandong Tian",
+        "Zhengxing Chen"
+      ],
+      "summary": "Reasoning LLMs-as-Judges, which can benefit from inference-time scaling, provide a promising path for extending the success of reasoning models to non-verifiable domains where the output correctness/quality cannot be directly checked. However, while reasoning judges have shown better performance on static evaluation benchmarks, their effectiveness in actual policy training has not been systematically examined. Therefore, we conduct a rigorous study to investigate the actual impact of non-reasoning and reasoning judges in reinforcement-learning-based LLM alignment. Our controlled synthetic setting, where a \"gold-standard\" judge (gpt-oss-120b) provides preference annotations to train smaller judges, reveals key differences between non-reasoning and reasoning judges: non-reasoning judges lead to reward hacking easily, while reasoning judges can lead to policies that achieve strong performance when evaluated by the gold-standard judge. Interestingly, we find that the reasoning-judge-trained policies achieve such strong performance by learning to generate highly effective adversarial outputs that can also score well on popular benchmarks such as Arena-Hard by deceiving other LLM-judges. Combined with our further analysis, our study highlights both important findings and room for improvements for applying (reasoning) LLM-judges in non-verifiable LLM post-training.",
+      "link": "https://huggingface.co/papers/2603.12246",
+      "pdf": "http://arxiv.org/pdf/2603.12246",
+      "upvotes": 4,
+      "comments": 2,
+      "organization": "facebook",
+      "summary_cn": "研究问题：推理型语言模型在非可验证领域的应用。方法：利用推理时间扩展推理模型。创新点：推理型语言模型作为裁判。结果：提高模型性能。"
     },
     {
       "id": "2603.12057",
@@ -436,9 +530,9 @@
       "link": "https://huggingface.co/papers/2603.12057",
       "pdf": "http://arxiv.org/pdf/2603.12057",
       "upvotes": 4,
-      "comments": 1,
+      "comments": 2,
       "organization": "hongkongust",
-      "summary_cn": "研究问题：粗引导视觉生成在真实场景中的应用挑战。方法：提出一种基于训练的粗引导视觉生成方法。创新点：降低训练成本，提高泛化能力。结果：提高了粗引导视觉生成的质量和效率。"
+      "summary_cn": "研究问题：粗略引导视觉生成的高成本和泛化受限问题。方法：提出基于训练的方法。创新点：降低训练成本和泛化限制。结果：提高生成质量。"
     },
     {
       "id": "2603.11076",
@@ -463,32 +557,43 @@
       "link": "https://huggingface.co/papers/2603.11076",
       "pdf": "http://arxiv.org/pdf/2603.11076",
       "upvotes": 4,
-      "comments": 1,
+      "comments": 2,
       "organization": "Fudan-University",
-      "summary_cn": "研究问题：合成任务多样性不足导致工具使用LLM泛化能力差。方法：通过增加合成任务多样性来提升泛化能力。创新点：提出了一种新的任务合成方法。结果：显著提升了LLM在任务和工具集变化下的泛化能力。"
+      "summary_cn": "研究问题：工具使用型语言模型在任务和工具集变化下的鲁棒性。方法：提高合成任务的多样性。创新点：扩展合成任务多样性。结果：提高模型鲁棒性。"
     },
     {
-      "id": "2603.12246",
-      "title": "Examining Reasoning LLMs-as-Judges in Non-Verifiable LLM Post-Training",
+      "id": "2603.07534",
+      "title": "Accent Vector: Controllable Accent Manipulation for Multilingual TTS Without Accented Data",
       "authors": [
-        "Yixin Liu",
-        "Yue Yu",
-        "DiJia Su",
-        "Sid Wang",
-        "Xuewei Wang",
-        "Song Jiang",
-        "Bo Liu",
-        "Arman Cohan",
-        "Yuandong Tian",
-        "Zhengxing Chen"
+        "Thanathai Lertpetchpun",
+        "Thanapat Trachu",
+        "Jihwan Lee",
+        "Tiantian Feng",
+        "Dani Byrd",
+        "Shrikanth Narayanan"
       ],
-      "summary": "Reasoning LLMs-as-Judges, which can benefit from inference-time scaling, provide a promising path for extending the success of reasoning models to non-verifiable domains where the output correctness/quality cannot be directly checked. However, while reasoning judges have shown better performance on static evaluation benchmarks, their effectiveness in actual policy training has not been systematically examined. Therefore, we conduct a rigorous study to investigate the actual impact of non-reasoning and reasoning judges in reinforcement-learning-based LLM alignment. Our controlled synthetic setting, where a \"gold-standard\" judge (gpt-oss-120b) provides preference annotations to train smaller judges, reveals key differences between non-reasoning and reasoning judges: non-reasoning judges lead to reward hacking easily, while reasoning judges can lead to policies that achieve strong performance when evaluated by the gold-standard judge. Interestingly, we find that the reasoning-judge-trained policies achieve such strong performance by learning to generate highly effective adversarial outputs that can also score well on popular benchmarks such as Arena-Hard by deceiving other LLM-judges. Combined with our further analysis, our study highlights both important findings and room for improvements for applying (reasoning) LLM-judges in non-verifiable LLM post-training.",
-      "link": "https://huggingface.co/papers/2603.12246",
-      "pdf": "http://arxiv.org/pdf/2603.12246",
+      "summary": "Accent is an integral part of society, reflecting multiculturalism and shaping how individuals express identity. The majority of English speakers are non-native (L2) speakers, yet current Text-To-Speech (TTS) systems primarily model American-accented English due limited accented data. We propose Accent Vector, a controllable representation that enables accent manipulation in multilingual TTS without requiring accented training data. Accent Vector is derived by fine-tuning a TTS system on native speech of a different language (i.e. non-English) and computing task vectors capturing accent characteristics (i.e. in English). By scaling and interpolating the vector, we achieve fine-grained control over accent strength and generate mixed-accent speech. In addition, it generalizes beyond English, enabling accent control across multiple languages. Objective and human evaluations confirm the effectiveness of Accent Vector for fine-grained and compositional accent control.",
+      "link": "https://huggingface.co/papers/2603.07534",
+      "pdf": "http://arxiv.org/pdf/2603.07534",
+      "upvotes": 4,
+      "comments": 2,
+      "organization": "UniversityofSouthernCalifornia",
+      "summary_cn": "研究问题：英语语音合成系统对非美式口音的建模不足。方法：提出Accent模型。创新点：针对非美式口音进行建模。结果：提高语音合成质量。"
+    },
+    {
+      "id": "2603.12228",
+      "title": "Neural Thickets: Diverse Task Experts Are Dense Around Pretrained Weights",
+      "authors": [
+        "Yulu Gan",
+        "Phillip Isola"
+      ],
+      "summary": "Pretraining produces a learned parameter vector that is typically treated as a starting point for further iterative adaptation. In this work, we instead view the outcome of pretraining as a distribution over parameter vectors, whose support already contains task-specific experts. We show that in small models such expert solutions occupy a negligible fraction of the volume of this distribution, making their discovery reliant on structured optimization methods such as gradient descent. In contrast, in large, well-pretrained models the density of task-experts increases dramatically, so that diverse, task-improving specialists populate a substantial fraction of the neighborhood around the pretrained weights. Motivated by this perspective, we explore a simple, fully parallel post-training method that samples N parameter perturbations at random, selects the top K, and ensembles predictions via majority vote. Despite its simplicity, this approach is competitive with standard post-training methods such as PPO, GRPO, and ES for contemporary large-scale models.",
+      "link": "https://huggingface.co/papers/2603.12228",
+      "pdf": "http://arxiv.org/pdf/2603.12228",
       "upvotes": 3,
-      "comments": 1,
-      "organization": "facebook",
-      "summary_cn": "研究问题：推理LLM在非可验证领域输出正确性/质量难以直接检查。方法：利用推理时间扩展推理模型的成功。创新点：提出了一种推理LLM作为裁判的方法。结果：推理裁判在非可验证领域表现出更好的性能。"
+      "comments": 2,
+      "organization": "MIT",
+      "summary_cn": "研究问题：预训练参数向量作为进一步迭代适应的起点。方法：将预训练结果视为参数向量分布。创新点：发现任务特定专家。结果：提高模型泛化能力。"
     },
     {
       "id": "2603.12145",
@@ -502,9 +607,9 @@
       "link": "https://huggingface.co/papers/2603.12145",
       "pdf": "http://arxiv.org/pdf/2603.12145",
       "upvotes": 3,
-      "comments": 1,
+      "comments": 2,
       "organization": "princetonu",
-      "summary_cn": "研究问题：将复杂强化学习环境转换为高性能实现需要大量工程。方法：提出了一种通用的提示模板、分层验证和迭代代理辅助修复的通用方法。创新点：实现了快速高效的强化学习环境转换。结果：显著缩短了环境转换时间。"
+      "summary_cn": "研究问题：将强化学习环境转换为高性能实现的高成本问题。方法：提出通用提示模板、分层验证和迭代修复。创新点：降低实现成本。结果：提高实现效率。"
     },
     {
       "id": "2603.11178",
@@ -520,9 +625,31 @@
       "link": "https://huggingface.co/papers/2603.11178",
       "pdf": "http://arxiv.org/pdf/2603.11178",
       "upvotes": 3,
-      "comments": 1,
+      "comments": 2,
       "organization": "",
-      "summary_cn": "研究问题：标准LLM蒸馏在学生已掌握的问题和超出其能力的问题上浪费计算资源。方法：提出了一种新的蒸馏方法，减少计算浪费。创新点：揭示了梯度浪费的结构性必然性。结果：显著提高了蒸馏效率。"
+      "summary_cn": "研究问题：标准语言模型蒸馏的效率问题。方法：分析梯度浪费。创新点：提出改进蒸馏方法。结果：提高蒸馏效率。"
+    },
+    {
+      "id": "2603.10420",
+      "title": "FireRedASR2S: A State-of-the-Art Industrial-Grade All-in-One Automatic Speech Recognition System",
+      "authors": [
+        "Kaituo Xu",
+        "Yan Jia",
+        "Kai Huang",
+        "Junjie Chen",
+        "Wenpeng Li",
+        "Kun Liu",
+        "Feng-Long Xie",
+        "Xu Tang",
+        "Yao Hu"
+      ],
+      "summary": "We present FireRedASR2S, a state-of-the-art industrial-grade all-in-one automatic speech recognition (ASR) system. It integrates four modules in a unified pipeline: ASR, Voice Activity Detection (VAD), Spoken Language Identification (LID), and Punctuation Prediction (Punc). All modules achieve SOTA performance on the evaluated benchmarks: FireRedASR2: An ASR module with two variants, FireRedASR2-LLM (8B+ parameters) and FireRedASR2-AED (1B+ parameters), supporting speech and singing transcription for Mandarin, Chinese dialects and accents, English, and code-switching. Compared to FireRedASR, FireRedASR2 delivers improved recognition accuracy and broader dialect and accent coverage. FireRedASR2-LLM achieves 2.89% average CER on 4 public Mandarin benchmarks and 11.55% on 19 public Chinese dialects and accents benchmarks, outperforming competitive baselines including Doubao-ASR, Qwen3-ASR, and Fun-ASR. FireRedVAD: An ultra-lightweight module (0.6M parameters) based on the Deep Feedforward Sequential Memory Network (DFSMN), supporting streaming VAD, non-streaming VAD, and multi-label VAD (mVAD). On the FLEURS-VAD-102 benchmark, it achieves 97.57% frame-level F1 and 99.60% AUC-ROC, outperforming Silero-VAD, TEN-VAD, FunASR-VAD, and WebRTC-VAD. FireRedLID: An Encoder-Decoder LID module supporting 100+ languages and 20+ Chinese dialects and accents. On FLEURS (82 languages), it achieves 97.18% utterance-level accuracy, outperforming Whisper and SpeechBrain. FireRedPunc: A BERT-style punctuation prediction module for Chinese and English. On multi-domain benchmarks, it achieves 78.90% average F1, outperforming FunASR-Punc (62.77%). To advance research in speech processing, we release model weights and code at https://github.com/FireRedTeam/FireRedASR2S.",
+      "link": "https://huggingface.co/papers/2603.10420",
+      "pdf": "http://arxiv.org/pdf/2603.10420",
+      "upvotes": 3,
+      "comments": 2,
+      "organization": "",
+      "summary_cn": "研究问题：自动语音识别系统的性能提升。方法：提出FireRedASR2S系统。创新点：集成多个模块。结果：实现SOTA性能。"
     },
     {
       "id": "2603.10365",
@@ -536,9 +663,9 @@
       "link": "https://huggingface.co/papers/2603.10365",
       "pdf": "http://arxiv.org/pdf/2603.10365",
       "upvotes": 3,
-      "comments": 1,
+      "comments": 2,
       "organization": "sii-research",
-      "summary_cn": "研究问题：现有潜在扩散模型在语义可辨性方面存在困难。方法：将Vision Foundation Model先验与潜在扩散模型结合。创新点：提出了一种新的潜在扩散模型设计。结果：提高了生成效率和语义可辨性。"
+      "summary_cn": "研究问题：如何提高高分辨率视觉生成中的生成效率，同时保持语义可区分性。方法：整合视觉基础模型先验。创新点：改进了潜在设计，提高了生成效率。结果：提高了生成效率，保持了语义可区分性。"
     },
     {
       "id": "2603.10055",
@@ -553,9 +680,9 @@
       "link": "https://huggingface.co/papers/2603.10055",
       "pdf": "http://arxiv.org/pdf/2603.10055",
       "upvotes": 3,
-      "comments": 2,
+      "comments": 3,
       "organization": "",
-      "summary_cn": "研究问题：自然语言预训练存在高质量文本有限、包含人类偏见和知识推理等问题。方法：提出了一种新的预训练方法。创新点：解决了自然语言预训练中的问题。结果：提高了LLM的预训练效果。"
+      "summary_cn": "研究问题：如何解决自然语言预训练中的问题，如文本有限、包含人类偏见和知识推理的纠缠。方法：提出新的预训练方法。创新点：解决了自然语言预训练中的问题。结果：提高了LLMs的预训练效果。"
     },
     {
       "id": "2603.11665",
@@ -572,9 +699,29 @@
       "link": "https://huggingface.co/papers/2603.11665",
       "pdf": "http://arxiv.org/pdf/2603.11665",
       "upvotes": 2,
-      "comments": 0,
+      "comments": 1,
       "organization": "facebook",
-      "summary_cn": "研究问题：现有多模态LLM作为裁判模型难以泛化到不同场景。方法：提出了一种新的多模态LLM作为裁判模型。创新点：实现了跨场景的泛化能力。结果：提高了LLM作为裁判的泛化能力。"
+      "summary_cn": "研究问题：如何使多模态大型语言模型（MLLMs）在多样化场景中泛化。方法：提出新的优化方法。创新点：优化了MLLMs的泛化能力。结果：提高了MLLMs在多样化场景中的泛化能力。"
+    },
+    {
+      "id": "2603.11653",
+      "title": "Simple Recipe Works: Vision-Language-Action Models are Natural Continual Learners with Reinforcement Learning",
+      "authors": [
+        "Jiaheng Hu",
+        "Jay Shim",
+        "Chen Tang",
+        "Yoonchang Sung",
+        "Bo Liu",
+        "Peter Stone",
+        "Roberto Martin-Martin"
+      ],
+      "summary": "Continual Reinforcement Learning (CRL) for Vision-Language-Action (VLA) models is a promising direction toward self-improving embodied agents that can adapt in openended, evolving environments. However, conventional wisdom from continual learning suggests that naive Sequential Fine-Tuning (Seq. FT) leads to catastrophic forgetting, necessitating complex CRL strategies. In this work, we take a step back and conduct a systematic study of CRL for large pretrained VLAs across three models and five challenging lifelong RL benchmarks. We find that, contrary to established belief, simple Seq. FT with low-rank adaptation (LoRA) is remarkably strong: it achieves high plasticity, exhibits little to no forgetting, and retains strong zero-shot generalization, frequently outperforming more sophisticated CRL methods. Through detailed analysis, we show that this robustness arises from a synergy between the large pretrained model, parameter-efficient adaptation, and on-policy RL. Together, these components reshape the stability-plasticity trade-off, making continual adaptation both stable and scalable. Our results position Sequential Fine-Tuning as a powerful method for continual RL with VLAs and provide new insights into lifelong learning in the large model era. Code is available at github.com/UT-Austin-RobIn/continual-vla-rl.",
+      "link": "https://huggingface.co/papers/2603.11653",
+      "pdf": "http://arxiv.org/pdf/2603.11653",
+      "upvotes": 2,
+      "comments": 2,
+      "organization": "",
+      "summary_cn": "研究问题：如何提高视觉-语言-动作（VLA）模型的持续强化学习能力。方法：提出新的CRL方法。创新点：改进了CRL方法。结果：提高了VLA模型的持续强化学习能力。"
     },
     {
       "id": "2603.11510",
@@ -611,31 +758,27 @@
       "link": "https://huggingface.co/papers/2603.11510",
       "pdf": "http://arxiv.org/pdf/2603.11510",
       "upvotes": 2,
-      "comments": 0,
+      "comments": 1,
       "organization": "CohereLabs",
-      "summary_cn": "研究问题：小型多语言LLM在翻译质量、多语言理解和目标语言生成方面存在不足。方法：提出了一种新的多语言LLM。创新点：实现了小型多语言LLM的高性能。结果：在翻译质量、多语言理解和目标语言生成方面取得了最佳性能。"
+      "summary_cn": "研究问题：如何提高小型多语言语言模型的性能。方法：训练多语言模型并优化。创新点：提高了翻译质量、多语言理解和目标语言生成。结果：在翻译质量、多语言理解和目标语言生成方面达到最佳水平。"
     },
     {
-      "id": "2603.10420",
-      "title": "FireRedASR2S: A State-of-the-Art Industrial-Grade All-in-One Automatic Speech Recognition System",
+      "id": "2603.11045",
+      "title": "Neural Field Thermal Tomography: A Differentiable Physics Framework for Non-Destructive Evaluation",
       "authors": [
-        "Kaituo Xu",
-        "Yan Jia",
-        "Kai Huang",
-        "Junjie Chen",
-        "Wenpeng Li",
-        "Kun Liu",
-        "Feng-Long Xie",
-        "Xu Tang",
-        "Yao Hu"
+        "Tao Zhong",
+        "Yixun Hu",
+        "Dongzhe Zheng",
+        "Aditya Sood",
+        "Christine Allen-Blanchette"
       ],
-      "summary": "We present FireRedASR2S, a state-of-the-art industrial-grade all-in-one automatic speech recognition (ASR) system. It integrates four modules in a unified pipeline: ASR, Voice Activity Detection (VAD), Spoken Language Identification (LID), and Punctuation Prediction (Punc). All modules achieve SOTA performance on the evaluated benchmarks: FireRedASR2: An ASR module with two variants, FireRedASR2-LLM (8B+ parameters) and FireRedASR2-AED (1B+ parameters), supporting speech and singing transcription for Mandarin, Chinese dialects and accents, English, and code-switching. Compared to FireRedASR, FireRedASR2 delivers improved recognition accuracy and broader dialect and accent coverage. FireRedASR2-LLM achieves 2.89% average CER on 4 public Mandarin benchmarks and 11.55% on 19 public Chinese dialects and accents benchmarks, outperforming competitive baselines including Doubao-ASR, Qwen3-ASR, and Fun-ASR. FireRedVAD: An ultra-lightweight module (0.6M parameters) based on the Deep Feedforward Sequential Memory Network (DFSMN), supporting streaming VAD, non-streaming VAD, and multi-label VAD (mVAD). On the FLEURS-VAD-102 benchmark, it achieves 97.57% frame-level F1 and 99.60% AUC-ROC, outperforming Silero-VAD, TEN-VAD, FunASR-VAD, and WebRTC-VAD. FireRedLID: An Encoder-Decoder LID module supporting 100+ languages and 20+ Chinese dialects and accents. On FLEURS (82 languages), it achieves 97.18% utterance-level accuracy, outperforming Whisper and SpeechBrain. FireRedPunc: A BERT-style punctuation prediction module for Chinese and English. On multi-domain benchmarks, it achieves 78.90% average F1, outperforming FunASR-Punc (62.77%). To advance research in speech processing, we release model weights and code at https://github.com/FireRedTeam/FireRedASR2S.",
-      "link": "https://huggingface.co/papers/2603.10420",
-      "pdf": "http://arxiv.org/pdf/2603.10420",
+      "summary": "We propose Neural Field Thermal Tomography (NeFTY), a differentiable physics framework for the quantitative 3D reconstruction of material properties from transient surface temperature measurements. While traditional thermography relies on pixel-wise 1D approximations that neglect lateral diffusion, and soft-constrained Physics-Informed Neural Networks (PINNs) often fail in transient diffusion scenarios due to gradient stiffness, NeFTY parameterizes the 3D diffusivity field as a continuous neural field optimized through a rigorous numerical solver. By leveraging a differentiable physics solver, our approach enforces thermodynamic laws as hard constraints while maintaining the memory efficiency required for high-resolution 3D tomography. Our discretize-then-optimize paradigm effectively mitigates the spectral bias and ill-posedness inherent in inverse heat conduction, enabling the recovery of subsurface defects at arbitrary scales. Experimental validation on synthetic data demonstrates that NeFTY significantly improves the accuracy of subsurface defect localization over baselines. Additional details at https://cab-lab-princeton.github.io/nefty/",
+      "link": "https://huggingface.co/papers/2603.11045",
+      "pdf": "http://arxiv.org/pdf/2603.11045",
       "upvotes": 2,
-      "comments": 1,
-      "organization": "",
-      "summary_cn": "研究问题：现有的自动语音识别系统在性能和功能上存在不足。方法：提出了一种新的工业级自动语音识别系统。创新点：实现了高性能和多功能。结果：在多个模块上取得了最佳性能。"
+      "comments": 2,
+      "organization": "princetonu",
+      "summary_cn": "研究问题：如何从瞬态表面温度测量中定量重建材料属性。方法：提出NeFTY框架。创新点：改进了热成像技术。结果：提高了材料属性的重建精度。"
     },
     {
       "id": "2603.07988",
@@ -648,9 +791,9 @@
       "link": "https://huggingface.co/papers/2603.07988",
       "pdf": "http://arxiv.org/pdf/2603.07988",
       "upvotes": 2,
-      "comments": 1,
+      "comments": 2,
       "organization": "sail",
-      "summary_cn": "研究问题：将物理基础人形控制扩展到合作人-物交互（HOI）存在挑战。方法：提出了一种新的框架——TeamHOI。创新点：实现了单代理的分布式HOI。结果：提高了人形控制系统的性能。"
+      "summary_cn": "研究问题：如何使物理基础的人形机器人控制扩展到合作人-物交互（HOI）。方法：提出TeamHOI框架。创新点：实现了单节点去中心化控制。结果：提高了HOI的实时性和准确性。"
     },
     {
       "id": "2603.07865",
@@ -668,28 +811,9 @@
       "link": "https://huggingface.co/papers/2603.07865",
       "pdf": "http://arxiv.org/pdf/2603.07865",
       "upvotes": 2,
-      "comments": 2,
+      "comments": 3,
       "organization": "illinois",
-      "summary_cn": "研究问题：文本到音频扩散模型计算量大，延迟高。方法：提出SoundWeaver，通过预热启动加速文本到音频扩散。创新点：无需训练，模型无关。结果：显著降低延迟，提高吞吐量。"
-    },
-    {
-      "id": "2603.07534",
-      "title": "Accent Vector: Controllable Accent Manipulation for Multilingual TTS Without Accented Data",
-      "authors": [
-        "Thanathai Lertpetchpun",
-        "Thanapat Trachu",
-        "Jihwan Lee",
-        "Tiantian Feng",
-        "Dani Byrd",
-        "Shrikanth Narayanan"
-      ],
-      "summary": "Accent is an integral part of society, reflecting multiculturalism and shaping how individuals express identity. The majority of English speakers are non-native (L2) speakers, yet current Text-To-Speech (TTS) systems primarily model American-accented English due limited accented data. We propose Accent Vector, a controllable representation that enables accent manipulation in multilingual TTS without requiring accented training data. Accent Vector is derived by fine-tuning a TTS system on native speech of a different language (i.e. non-English) and computing task vectors capturing accent characteristics (i.e. in English). By scaling and interpolating the vector, we achieve fine-grained control over accent strength and generate mixed-accent speech. In addition, it generalizes beyond English, enabling accent control across multiple languages. Objective and human evaluations confirm the effectiveness of Accent Vector for fine-grained and compositional accent control.",
-      "link": "https://huggingface.co/papers/2603.07534",
-      "pdf": "http://arxiv.org/pdf/2603.07534",
-      "upvotes": 2,
-      "comments": 1,
-      "organization": "UniversityofSouthernCalifornia",
-      "summary_cn": "研究问题：TTS系统主要模拟美式口音，缺乏其他口音数据。方法：提出Acc，针对非母语者口音进行建模。创新点：考虑多文化背景，提高口音准确性。结果：提升非母语者口音的TTS质量。"
+      "summary_cn": "研究问题：如何提高文本到音频扩散模型的效率。方法：提出SoundWeaver系统。创新点：无训练、模型无关。结果：提高了文本到音频扩散的效率。"
     },
     {
       "id": "2603.06922",
@@ -702,9 +826,9 @@
       "link": "https://huggingface.co/papers/2603.06922",
       "pdf": "http://arxiv.org/pdf/2603.06922",
       "upvotes": 2,
-      "comments": 1,
+      "comments": 2,
       "organization": "newyorkuniversity",
-      "summary_cn": "研究问题：FFNs在LLMs中信息流组织与调控机制不明确。方法：提出NerVE，分析FFNs在潜在空间中的动态。创新点：统一eigenspectral框架，揭示FFNs信息流机制。结果：揭示FFNs在潜在空间中的信息流规律。"
+      "summary_cn": "研究问题：如何理解大型语言模型（LLMs）中前馈网络（FFNs）在高维潜在空间中的信息流。方法：提出NerVE框架。创新点：统一了eigenspectral框架。结果：提高了对FFNs信息流的了解。"
     },
     {
       "id": "2603.05483",
@@ -719,9 +843,9 @@
       "link": "https://huggingface.co/papers/2603.05483",
       "pdf": "http://arxiv.org/pdf/2603.05483",
       "upvotes": 2,
-      "comments": 1,
+      "comments": 2,
       "organization": "CarnegieMellonU",
-      "summary_cn": "研究问题：从右截生存数据中估计异质处理效应（HTEs）具有挑战性。方法：提出新方法，解决截断和未观测因素问题。创新点：适用于高 stakes 应用场景。结果：提高HTEs估计的准确性。"
+      "summary_cn": "研究问题：如何从右截生存数据中估计异质处理效果（HTEs）。方法：提出新的HTE估计方法。创新点：解决了生存分析设置中的挑战。结果：提高了HTE估计的准确性。"
     },
     {
       "id": "2603.12089",
@@ -741,9 +865,9 @@
       "link": "https://huggingface.co/papers/2603.12089",
       "pdf": "http://arxiv.org/pdf/2603.12089",
       "upvotes": 1,
-      "comments": 1,
+      "comments": 2,
       "organization": "SJTU",
-      "summary_cn": "研究问题：FedLM存在模型泄露风险。方法：提出水印方案，无需白盒访问。创新点：提高FedLM安全性。结果：有效防止模型泄露。"
+      "summary_cn": "研究问题：Federated Language Model (FedLM) 的水印方案存在白盒访问和客户端泄露风险。方法：提出一种无需白盒访问的水印方案。创新点：无需客户端参与，提高安全性。结果：实验验证了方案的有效性。"
     },
     {
       "id": "2603.12046",
@@ -757,69 +881,23 @@
       "link": "https://huggingface.co/papers/2603.12046",
       "pdf": "http://arxiv.org/pdf/2603.12046",
       "upvotes": 1,
-      "comments": 1,
+      "comments": 2,
       "organization": "ImperialCollegeLondon",
-      "summary_cn": "研究问题：AVSR模型中模态平衡机制不明确。方法：提出Dr. SHAP-AV，分析模态贡献。创新点：利用Shapley值分析模态贡献。结果：揭示AVSR中模态平衡机制。"
+      "summary_cn": "研究问题：Audio-Visual Speech Recognition (AVSR) 中模型如何平衡声学和视觉信息尚不明确。方法：提出Dr. SHAP-AV框架，利用Shapley值分析模态贡献。创新点：量化模态贡献，优化模型。结果：实验表明模型性能提升。"
     },
     {
-      "id": "2603.11653",
-      "title": "Simple Recipe Works: Vision-Language-Action Models are Natural Continual Learners with Reinforcement Learning",
+      "id": "2603.11487",
+      "title": "Attention Sinks Are Provably Necessary in Softmax Transformers: Evidence from Trigger-Conditional Tasks",
       "authors": [
-        "Jiaheng Hu",
-        "Jay Shim",
-        "Chen Tang",
-        "Yoonchang Sung",
-        "Bo Liu",
-        "Peter Stone",
-        "Roberto Martin-Martin"
+        "Yuval Ran-Milo"
       ],
-      "summary": "Continual Reinforcement Learning (CRL) for Vision-Language-Action (VLA) models is a promising direction toward self-improving embodied agents that can adapt in openended, evolving environments. However, conventional wisdom from continual learning suggests that naive Sequential Fine-Tuning (Seq. FT) leads to catastrophic forgetting, necessitating complex CRL strategies. In this work, we take a step back and conduct a systematic study of CRL for large pretrained VLAs across three models and five challenging lifelong RL benchmarks. We find that, contrary to established belief, simple Seq. FT with low-rank adaptation (LoRA) is remarkably strong: it achieves high plasticity, exhibits little to no forgetting, and retains strong zero-shot generalization, frequently outperforming more sophisticated CRL methods. Through detailed analysis, we show that this robustness arises from a synergy between the large pretrained model, parameter-efficient adaptation, and on-policy RL. Together, these components reshape the stability-plasticity trade-off, making continual adaptation both stable and scalable. Our results position Sequential Fine-Tuning as a powerful method for continual RL with VLAs and provide new insights into lifelong learning in the large model era. Code is available at github.com/UT-Austin-RobIn/continual-vla-rl.",
-      "link": "https://huggingface.co/papers/2603.11653",
-      "pdf": "http://arxiv.org/pdf/2603.11653",
+      "summary": "Transformers often display an attention sink: probability mass concentrates on a fixed, content-agnostic position. We prove that computing a simple trigger-conditional behavior necessarily induces a sink in softmax self-attention models. Our results formalize a familiar intuition: normalization over a probability simplex must force attention to collapse onto a stable anchor to realize a default state (e.g., when the model needs to ignore the input). We instantiate this with a concrete task: when a designated trigger token appears, the model must return the average of all preceding token representations, and otherwise output zero, a task which mirrors the functionality of attention heads in the wild (Barbero et al., 2025; Guo et al., 2024). We also prove that non-normalized ReLU attention can solve the same task without any sink, confirming that the normalization constraint is the fundamental driver of sink behavior. Experiments validate our predictions and demonstrate they extend beyond the theoretically analyzed setting: softmax models develop strong sinks while ReLU attention eliminates them in both single-head and multi-head variants.",
+      "link": "https://huggingface.co/papers/2603.11487",
+      "pdf": "http://arxiv.org/pdf/2603.11487",
       "upvotes": 1,
-      "comments": 1,
-      "organization": "",
-      "summary_cn": "研究问题：CRL在VLA模型中的应用存在挑战。方法：提出改进的Seq. FT方法。创新点：提高VLA模型在开放环境中的适应性。结果：提升VLA模型在开放环境中的性能。"
-    },
-    {
-      "id": "2603.11327",
-      "title": "Meta-Reinforcement Learning with Self-Reflection for Agentic Search",
-      "authors": [
-        "Teng Xiao",
-        "Yige Yuan",
-        "Hamish Ivison",
-        "Huaisheng Zhu",
-        "Faeze Brahman",
-        "Nathan Lambert",
-        "Pradeep Dasigi",
-        "Noah A. Smith",
-        "Hannaneh Hajishirzi"
-      ],
-      "summary": "This paper introduces MR-Search, an in-context meta reinforcement learning (RL) formulation for agentic search with self-reflection. Instead of optimizing a policy within a single independent episode with sparse rewards, MR-Search trains a policy that conditions on past episodes and adapts its search strategy across episodes. MR-Search learns to learn a search strategy with self-reflection, allowing search agents to improve in-context exploration at test-time. Specifically, MR-Search performs cross-episode exploration by generating explicit self-reflections after each episode and leveraging them as additional context to guide subsequent attempts, thereby promoting more effective exploration during test-time. We further introduce a multi-turn RL algorithm that estimates a dense relative advantage at the turn level, enabling fine-grained credit assignment on each episode. Empirical results across various benchmarks demonstrate the advantages of MR-Search over baselines based RL, showing strong generalization and relative improvements of 9.2% to 19.3% across eight benchmarks. Our code and data are available at https://github.com/tengxiao1/MR-Search.",
-      "link": "https://huggingface.co/papers/2603.11327",
-      "pdf": "http://arxiv.org/pdf/2603.11327",
-      "upvotes": 1,
-      "comments": 1,
-      "organization": "allenai",
-      "summary_cn": "研究问题：Agentic search需要自我反思。方法：提出MR-Search，结合元强化学习。创新点：基于过去经验调整搜索策略。结果：提高搜索效率。"
-    },
-    {
-      "id": "2603.11045",
-      "title": "Neural Field Thermal Tomography: A Differentiable Physics Framework for Non-Destructive Evaluation",
-      "authors": [
-        "Tao Zhong",
-        "Yixun Hu",
-        "Dongzhe Zheng",
-        "Aditya Sood",
-        "Christine Allen-Blanchette"
-      ],
-      "summary": "We propose Neural Field Thermal Tomography (NeFTY), a differentiable physics framework for the quantitative 3D reconstruction of material properties from transient surface temperature measurements. While traditional thermography relies on pixel-wise 1D approximations that neglect lateral diffusion, and soft-constrained Physics-Informed Neural Networks (PINNs) often fail in transient diffusion scenarios due to gradient stiffness, NeFTY parameterizes the 3D diffusivity field as a continuous neural field optimized through a rigorous numerical solver. By leveraging a differentiable physics solver, our approach enforces thermodynamic laws as hard constraints while maintaining the memory efficiency required for high-resolution 3D tomography. Our discretize-then-optimize paradigm effectively mitigates the spectral bias and ill-posedness inherent in inverse heat conduction, enabling the recovery of subsurface defects at arbitrary scales. Experimental validation on synthetic data demonstrates that NeFTY significantly improves the accuracy of subsurface defect localization over baselines. Additional details at https://cab-lab-princeton.github.io/nefty/",
-      "link": "https://huggingface.co/papers/2603.11045",
-      "pdf": "http://arxiv.org/pdf/2603.11045",
-      "upvotes": 1,
-      "comments": 1,
-      "organization": "princetonu",
-      "summary_cn": "研究问题：传统热成像方法忽略横向扩散。方法：提出NeFTY，实现3D材料属性重建。创新点：基于可微物理框架。结果：提高热成像的准确性。"
+      "comments": 2,
+      "organization": "tau",
+      "summary_cn": "研究问题：Transformers存在注意力集中问题。方法：证明触发条件行为导致softmax自注意力模型出现集中。创新点：形式化注意力集中现象。结果：为注意力机制研究提供理论支持。"
     },
     {
       "id": "2602.24181",
@@ -838,23 +916,9 @@
       "link": "https://huggingface.co/papers/2602.24181",
       "pdf": "http://arxiv.org/pdf/2602.24181",
       "upvotes": 1,
-      "comments": 1,
+      "comments": 2,
       "organization": "deepmind",
-      "summary_cn": "研究问题：预训练视觉编码器在不同模态中特征表示不匹配。方法：提出方法，提高特征表示一致性。创新点：针对不同模态进行特征对齐。结果：提升跨模态任务性能。"
-    },
-    {
-      "id": "2603.11487",
-      "title": "Attention Sinks Are Provably Necessary in Softmax Transformers: Evidence from Trigger-Conditional Tasks",
-      "authors": [
-        "Yuval Ran-Milo"
-      ],
-      "summary": "Transformers often display an attention sink: probability mass concentrates on a fixed, content-agnostic position. We prove that computing a simple trigger-conditional behavior necessarily induces a sink in softmax self-attention models. Our results formalize a familiar intuition: normalization over a probability simplex must force attention to collapse onto a stable anchor to realize a default state (e.g., when the model needs to ignore the input). We instantiate this with a concrete task: when a designated trigger token appears, the model must return the average of all preceding token representations, and otherwise output zero, a task which mirrors the functionality of attention heads in the wild (Barbero et al., 2025; Guo et al., 2024). We also prove that non-normalized ReLU attention can solve the same task without any sink, confirming that the normalization constraint is the fundamental driver of sink behavior. Experiments validate our predictions and demonstrate they extend beyond the theoretically analyzed setting: softmax models develop strong sinks while ReLU attention eliminates them in both single-head and multi-head variants.",
-      "link": "https://huggingface.co/papers/2603.11487",
-      "pdf": "http://arxiv.org/pdf/2603.11487",
-      "upvotes": 0,
-      "comments": 1,
-      "organization": "tau",
-      "summary_cn": "研究问题：Transformer模型中注意力集中现象；方法：证明触发条件行为导致softmax自注意力模型中注意力集中；创新点：形式化注意力集中现象；结果：证明了触发条件行为必然导致注意力集中。"
+      "summary_cn": "研究问题：预训练视觉编码器在不同模态上的特征表示不匹配。方法：提出跨模态特征对齐方法。创新点：提高特征表示一致性。结果：实验验证了方法的有效性。"
     },
     {
       "id": "2603.10604",
@@ -867,40 +931,9 @@
       "link": "https://huggingface.co/papers/2603.10604",
       "pdf": "http://arxiv.org/pdf/2603.10604",
       "upvotes": 0,
-      "comments": 1,
+      "comments": 2,
       "organization": "",
-      "summary_cn": "研究问题：生成模型在合成数据中引入视觉伪影；方法：提出改进的生成模型；创新点：降低视觉伪影，减少计算资源需求；结果：提高了合成数据的真实感，降低了算法误差。"
-    },
-    {
-      "id": "2603.10444",
-      "title": "The Curse and Blessing of Mean Bias in FP4-Quantized LLM Training",
-      "authors": [
-        "Hengjie Cao",
-        "Zhendong Huang",
-        "Mengyi Chen",
-        "Yifeng Yang",
-        "Fanqi Yu",
-        "Ruijun Huang",
-        "Fang Dong",
-        "Xin Zhang",
-        "Jixian Zhou",
-        "Anrui Chen",
-        "Mingzhi Dong",
-        "Yujiang Wang",
-        "Jinlong Hou",
-        "Qin Lv",
-        "Yuan Cheng",
-        "Tun Lu",
-        "Fan Yang",
-        "Li Shang"
-      ],
-      "summary": "Large language models trained on natural language exhibit pronounced anisotropy: a small number of directions concentrate disproportionate energy, while the remaining dimensions form a broad semantic tail. In low-bit training regimes, this geometry becomes numerically unstable. Because blockwise quantization scales are determined by extreme elementwise magnitudes, dominant directions stretch the dynamic range, compressing long-tail semantic variation into narrow numerical bins. We show that this instability is primarily driven by a coherent rank-one mean bias, which constitutes the dominant component of spectral anisotropy in LLM representations. This mean component emerges systematically across layers and training stages and accounts for the majority of extreme activation magnitudes, making it the principal driver of dynamic-range inflation under low precision. Crucially, because the dominant instability is rank-one, it can be eliminated through a simple source-level mean-subtraction operation. This bias-centric conditioning recovers most of the stability benefits of SVD-based spectral methods while requiring only reduction operations and standard quantization kernels. Empirical results on FP4 (W4A4G4) training show that mean removal substantially narrows the loss gap to BF16 and restores downstream performance, providing a hardware-efficient path to stable low-bit LLM training.",
-      "link": "https://huggingface.co/papers/2603.10444",
-      "pdf": "http://arxiv.org/pdf/2603.10444",
-      "upvotes": 0,
-      "comments": 1,
-      "organization": "",
-      "summary_cn": "研究问题：大型语言模型训练中的各向异性；方法：分析低比特训练下的数值稳定性问题；创新点：提出改进的训练方法；结果：提高了低比特训练下的模型性能。"
+      "summary_cn": "研究问题：生成模型在合成数据增强中存在视觉伪影和计算资源消耗问题。方法：提出一种新的生成模型，降低伪影和计算资源消耗。创新点：优化生成过程。结果：实验表明模型性能提升。"
     },
     {
       "id": "2603.10125",
@@ -916,9 +949,28 @@
       "link": "https://huggingface.co/papers/2603.10125",
       "pdf": "http://arxiv.org/pdf/2603.10125",
       "upvotes": 0,
-      "comments": 1,
+      "comments": 2,
       "organization": "",
-      "summary_cn": "研究问题：从单目视频中重建马匹的4D模型；方法：提出新的4D动物重建方法；创新点：无需联合优化运动和外观；结果：提高了重建效率和鲁棒性。"
+      "summary_cn": "研究问题：从单目视频重建马匹的4D模型耗时且对观测不完整敏感。方法：提出一种快速、鲁棒的4D动物重建方法。创新点：优化运动和外观优化过程。结果：实验验证了方法的有效性。"
+    },
+    {
+      "id": "2603.08258",
+      "title": "WaDi: Weight Direction-aware Distillation for One-step Image Synthesis",
+      "authors": [
+        "Lei Wang",
+        "Yang Cheng",
+        "Senmao Li",
+        "Ge Wu",
+        "Yaxing Wang",
+        "Jian Yang"
+      ],
+      "summary": "Despite the impressive performance of diffusion models such as Stable Diffusion (SD) in image generation, their slow inference limits practical deployment. Recent works accelerate inference by distilling multi-step diffusion into one-step generators. To better understand the distillation mechanism, we analyze U-Net/DiT weight changes between one-step students and their multi-step teacher counterparts. Our analysis reveals that changes in weight direction significantly exceed those in weight norm, highlighting it as the key factor during distillation. Motivated by this insight, we propose the Low-rank Rotation of weight Direction (LoRaD), a parameter-efficient adapter tailored to one-step diffusion distillation. LoRaD is designed to model these structured directional changes using learnable low-rank rotation matrices. We further integrate LoRaD into Variational Score Distillation (VSD), resulting in Weight Direction-aware Distillation (WaDi)-a novel one-step distillation framework. WaDi achieves state-of-the-art FID scores on COCO 2014 and COCO 2017 while using only approximately 10% of the trainable parameters of the U-Net/DiT. Furthermore, the distilled one-step model demonstrates strong versatility and scalability, generalizing well to various downstream tasks such as controllable generation, relation inversion, and high-resolution synthesis.",
+      "link": "https://huggingface.co/papers/2603.08258",
+      "pdf": "http://arxiv.org/pdf/2603.08258",
+      "upvotes": 0,
+      "comments": 2,
+      "organization": "",
+      "summary_cn": "研究问题：扩散模型如Stable Diffusion (SD) 在图像生成中推理速度慢。方法：通过蒸馏多步扩散模型加速推理。创新点：深入理解蒸馏机制。结果：实验表明推理速度提升。"
     },
     {
       "id": "2603.07331",
@@ -937,9 +989,9 @@
       "link": "https://huggingface.co/papers/2603.07331",
       "pdf": "http://arxiv.org/pdf/2603.07331",
       "upvotes": 0,
-      "comments": 1,
+      "comments": 2,
       "organization": "ITB",
-      "summary_cn": "研究问题：印度尼西亚镍矿出口禁令对镍加工工业的影响；方法：分析印尼莫罗瓦利工业园区（IMIP）的工业扩张；创新点：评估工业化对环境和社会的影响；结果：揭示了工业化过程中的潜在问题。"
+      "summary_cn": "研究问题：印度尼西亚镍矿出口禁令导致镍加工产能迅速扩张。方法：分析工业扩张对环境和社会的影响。创新点：评估工业扩张的利弊。结果：为政策制定提供参考。"
     }
   ]
 }
