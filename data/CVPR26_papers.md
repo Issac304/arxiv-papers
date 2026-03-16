@@ -3,11 +3,203 @@
 > 来源: arXiv API 搜索
 > 关键词: CVPR 2026, CVPR2026, CVPR 26, cvpr26
 > 已排除 workshop 论文
-> 总计: 472 篇论文
+> 总计: 478 篇论文
 
 ---
 
-## 1. EVATok: Adaptive Length Video Tokenization for Efficient Visual Autoregressive Generation
+## 1. VIRD: View-Invariant Representation through Dual-Axis Transformation for Cross-View Pose Estimation
+
+- **arXiv ID**: 2603.12918v1
+- **作者**: Juhye Park, Wooju Lee, Dasol Hong, Changki Sung, Youngwoo Seo 等 (共7位作者)
+- **发布日期**: 2026-03-13
+- **分类**: cs.CV
+- **论文链接**: [http://arxiv.org/abs/2603.12918v1](http://arxiv.org/abs/2603.12918v1)
+- **PDF**: [http://arxiv.org/pdf/2603.12918v1](http://arxiv.org/pdf/2603.12918v1)
+- **摘要**: Accurate global localization is crucial for autonomous driving and robotics, but GNSS-based approaches often degrade due to occlusion and multipath effects. As an emerging alternative, cross-view pose estimation predicts the 3-DoF camera pose corresponding to a ground-view image with respect to a ge...
+
+---
+
+## 2. Stake the Points: Structure-Faithful Instance Unlearning
+
+- **arXiv ID**: 2603.12915v1
+- **作者**: Kiseong Hong, JungKyoo Shin, Eunwoo Kim
+- **发布日期**: 2026-03-13
+- **分类**: cs.CV, cs.AI
+- **论文链接**: [http://arxiv.org/abs/2603.12915v1](http://arxiv.org/abs/2603.12915v1)
+- **PDF**: [http://arxiv.org/pdf/2603.12915v1](http://arxiv.org/pdf/2603.12915v1)
+- **摘要**: Machine unlearning (MU) addresses privacy risks in pretrained models. The main goal of MU is to remove the influence of designated data while preserving the utility of retained knowledge. Achieving this goal requires preserving semantic relations among retained instances, which existing studies ofte...
+
+---
+
+## 3. Spectral-Geometric Neural Fields for Pose-Free LiDAR View Synthesis
+
+- **arXiv ID**: 2603.12903v1
+- **作者**: Yinuo Jiang, Jun Cheng, Yiran Wang, Cheng Cheng
+- **发布日期**: 2026-03-13
+- **分类**: cs.CV
+- **论文链接**: [http://arxiv.org/abs/2603.12903v1](http://arxiv.org/abs/2603.12903v1)
+- **PDF**: [http://arxiv.org/pdf/2603.12903v1](http://arxiv.org/pdf/2603.12903v1)
+- **摘要**: Neural Radiance Fields (NeRF) have shown remarkable success in image novel view synthesis (NVS), inspiring extensions to LiDAR NVS. However, most methods heavily rely on accurate camera poses for scene reconstruction. The sparsity and textureless nature of LiDAR data also present distinct challenges...
+
+---
+
+## 4. Multimodal Protein Language Models for Enzyme Kinetic Parameters: From Substrate Recognition to Conformational Adaptation
+
+- **arXiv ID**: 2603.12845v1
+- **作者**: Fei Wang, Xinye Zheng, Kun Li, Yanyan Wei, Yuxin Liu 等 (共8位作者)
+- **发布日期**: 2026-03-13
+- **分类**: cs.CV
+- **论文链接**: [http://arxiv.org/abs/2603.12845v1](http://arxiv.org/abs/2603.12845v1)
+- **PDF**: [http://arxiv.org/pdf/2603.12845v1](http://arxiv.org/pdf/2603.12845v1)
+- **摘要**: Predicting enzyme kinetic parameters quantifies how efficiently an enzyme catalyzes a specific substrate under defined biochemical conditions. Canonical parameters such as the turnover number ($k_\text{cat}$), Michaelis constant ($K_\text{m}$), and inhibition constant ($K_\text{i}$) depend jointly o...
+
+---
+
+## 5. coDrawAgents: A Multi-Agent Dialogue Framework for Compositional Image Generation
+
+- **arXiv ID**: 2603.12829v1
+- **作者**: Chunhan Li, Qifeng Wu, Jia-Hui Pan, Ka-Hei Hui, Jingyu Hu 等 (共10位作者)
+- **发布日期**: 2026-03-13
+- **分类**: cs.CV
+- **论文链接**: [http://arxiv.org/abs/2603.12829v1](http://arxiv.org/abs/2603.12829v1)
+- **PDF**: [http://arxiv.org/pdf/2603.12829v1](http://arxiv.org/pdf/2603.12829v1)
+- **摘要**: Text-to-image generation has advanced rapidly, but existing models still struggle with faithfully composing multiple objects and preserving their attributes in complex scenes. We propose coDrawAgents, an interactive multi-agent dialogue framework with four specialized agents: Interpreter, Planner, C...
+
+---
+
+## 6. SAVA-X: Ego-to-Exo Imitation Error Detection via Scene-Adaptive View Alignment and Bidirectional Cross View Fusion
+
+- **arXiv ID**: 2603.12764v1
+- **作者**: Xiang Li, Heqian Qiu, Lanxiao Wang, Benliu Qiu, Fanman Meng 等 (共7位作者)
+- **发布日期**: 2026-03-13
+- **分类**: cs.CV
+- **论文链接**: [http://arxiv.org/abs/2603.12764v1](http://arxiv.org/abs/2603.12764v1)
+- **PDF**: [http://arxiv.org/pdf/2603.12764v1](http://arxiv.org/pdf/2603.12764v1)
+- **摘要**: Error detection is crucial in industrial training, healthcare, and assembly quality control. Most existing work assumes a single-view setting and cannot handle the practical case where a third-person (exo) demonstration is used to assess a first-person (ego) imitation. We formalize Ego$\rightarrow$E...
+
+---
+
+## 7. HIFICL: High-Fidelity In-Context Learning for Multimodal Tasks
+
+- **arXiv ID**: 2603.12760v1
+- **作者**: Xiaoyu Li, Yuhang Liu, Zheng Luo, Xuanshuo Kang, Fangqi Lou 等 (共7位作者)
+- **发布日期**: 2026-03-13
+- **分类**: cs.CV
+- **论文链接**: [http://arxiv.org/abs/2603.12760v1](http://arxiv.org/abs/2603.12760v1)
+- **PDF**: [http://arxiv.org/pdf/2603.12760v1](http://arxiv.org/pdf/2603.12760v1)
+- **摘要**: In-Context Learning (ICL) is a significant paradigm for Large Multimodal Models (LMMs), using a few in-context demonstrations (ICDs) for new task adaptation. However, its performance is sensitive to demonstration configurations and computationally expensive. Mathematically, the influence of these de...
+
+---
+
+## 8. HSEmotion Team at ABAW-10 Competition: Facial Expression Recognition, Valence-Arousal Estimation, Action Unit Detection and Fine-Grained Violence Classification
+
+- **arXiv ID**: 2603.12693v1
+- **作者**: Andrey V. Savchenko, Kseniia Tsypliakova
+- **发布日期**: 2026-03-13
+- **分类**: cs.CV, cs.AI
+- **论文链接**: [http://arxiv.org/abs/2603.12693v1](http://arxiv.org/abs/2603.12693v1)
+- **PDF**: [http://arxiv.org/pdf/2603.12693v1](http://arxiv.org/pdf/2603.12693v1)
+- **摘要**: This article presents our results for the 10th Affective Behavior Analysis in-the-Wild (ABAW) competition. For frame-wise facial emotion understanding tasks (frame-wise facial expression recognition, valence-arousal estimation, action unit detection), we propose a fast approach based on facial embed...
+
+---
+
+## 9. AVION: Aerial Vision-Language Instruction from Offline Teacher to Prompt-Tuned Network
+
+- **arXiv ID**: 2603.12659v1
+- **作者**: Yu Hu, Jianyang Gu, Hao Liu, Yue Cao, Jozsef Hamari 等 (共7位作者)
+- **发布日期**: 2026-03-13
+- **分类**: cs.CV
+- **论文链接**: [http://arxiv.org/abs/2603.12659v1](http://arxiv.org/abs/2603.12659v1)
+- **PDF**: [http://arxiv.org/pdf/2603.12659v1](http://arxiv.org/pdf/2603.12659v1)
+- **摘要**: Adapting vision-language models to remote sensing imagery remains challenging due to two key factors: limited semantic coverage in textual representations and insufficient adaptability of visual features. These issues are particularly significant in aerial scenes, which involve various visual appear...
+
+---
+
+## 10. A2Z-10M+: Geometric Deep Learning with A-to-Z BRep Annotations for AI-Assisted CAD Modeling and Reverse Engineering
+
+- **arXiv ID**: 2603.12605v1
+- **作者**: Pritham Kumar Jena, Bhavika Baburaj, Tushar Anand, Vedant Dutta, Vineeth Ulavala 等 (共6位作者)
+- **发布日期**: 2026-03-13
+- **分类**: cs.CV
+- **论文链接**: [http://arxiv.org/abs/2603.12605v1](http://arxiv.org/abs/2603.12605v1)
+- **PDF**: [http://arxiv.org/pdf/2603.12605v1](http://arxiv.org/pdf/2603.12605v1)
+- **摘要**: Reverse engineering and rapid prototyping of computer-aided design (CAD) models from 3D scans, sketches, or simple text prompts are vital in industrial product design. However, recent advances in geometric deep learning techniques lack a multi-modal understanding of parametric CAD features stored in...
+
+---
+
+## 11. Do You See What I Am Pointing At? Gesture-Based Egocentric Video Question Answering
+
+- **arXiv ID**: 2603.12533v1
+- **作者**: Yura Choi, Roy Miles, Rolandos Alexandros Potamias, Ismail Elezi, Jiankang Deng 等 (共6位作者)
+- **发布日期**: 2026-03-13
+- **分类**: cs.CV
+- **论文链接**: [http://arxiv.org/abs/2603.12533v1](http://arxiv.org/abs/2603.12533v1)
+- **PDF**: [http://arxiv.org/pdf/2603.12533v1](http://arxiv.org/pdf/2603.12533v1)
+- **摘要**: Understanding and answering questions based on a user's pointing gesture is essential for next-generation egocentric AI assistants. However, current Multimodal Large Language Models (MLLMs) struggle with such tasks due to the lack of gesture-rich data and their limited ability to infer fine-grained ...
+
+---
+
+## 12. DecoVLN: Decoupling Observation, Reasoning, and Correction for Vision-and-Language Navigation
+
+- **arXiv ID**: 2603.13133v1
+- **作者**: Zihao Xin, Wentong Li, Yixuan Jiang, Bin Wang, Runming Cong 等 (共7位作者)
+- **发布日期**: 2026-03-13
+- **分类**: cs.RO
+- **论文链接**: [http://arxiv.org/abs/2603.13133v1](http://arxiv.org/abs/2603.13133v1)
+- **PDF**: [http://arxiv.org/pdf/2603.13133v1](http://arxiv.org/pdf/2603.13133v1)
+- **摘要**: Vision-and-Language Navigation (VLN) requires agents to follow long-horizon instructions and navigate complex 3D environments. However, existing approaches face two major challenges: constructing an effective long-term memory bank and overcoming the compounding errors problem. To address these issue...
+
+---
+
+## 13. Deconstructing the Failure of Ideal Noise Correction: A Three-Pillar Diagnosis
+
+- **arXiv ID**: 2603.12997v1
+- **作者**: Chen Feng, Zhuo Zhi, Zhao Huang, Jiawei Ge, Ling Xiao 等 (共8位作者)
+- **发布日期**: 2026-03-13
+- **分类**: cs.LG, cs.CV
+- **论文链接**: [http://arxiv.org/abs/2603.12997v1](http://arxiv.org/abs/2603.12997v1)
+- **PDF**: [http://arxiv.org/pdf/2603.12997v1](http://arxiv.org/pdf/2603.12997v1)
+- **摘要**: Statistically consistent methods based on the noise transition matrix ($T$) offer a theoretically grounded solution to Learning with Noisy Labels (LNL), with guarantees of convergence to the optimal clean-data classifier. In practice, however, these methods are often outperformed by empirical approa...
+
+---
+
+## 14. Language-Grounded Decoupled Action Representation for Robotic Manipulation
+
+- **arXiv ID**: 2603.12967v1
+- **作者**: Wuding Weng, Tongshu Wu, Liucheng Chen, Siyu Xie, Zheng Wang 等 (共8位作者)
+- **发布日期**: 2026-03-13
+- **分类**: cs.RO
+- **论文链接**: [http://arxiv.org/abs/2603.12967v1](http://arxiv.org/abs/2603.12967v1)
+- **PDF**: [http://arxiv.org/pdf/2603.12967v1](http://arxiv.org/pdf/2603.12967v1)
+- **摘要**: The heterogeneity between high-level vision-language understanding and low-level action control remains a fundamental challenge in robotic manipulation. Although recent methods have advanced task-specific action alignment, they often struggle to generate robust and accurate actions for novel or sema...
+
+---
+
+## 15. RAW-Domain Degradation Models for Realistic Smartphone Super-Resolution
+
+- **arXiv ID**: 2603.12493v1
+- **作者**: Ali Mosleh, Faraz Ali, Fengjia Zhang, Stavros Tsogkas, Junyong Lee 等 (共7位作者)
+- **发布日期**: 2026-03-12
+- **分类**: cs.CV
+- **论文链接**: [http://arxiv.org/abs/2603.12493v1](http://arxiv.org/abs/2603.12493v1)
+- **PDF**: [http://arxiv.org/pdf/2603.12493v1](http://arxiv.org/pdf/2603.12493v1)
+- **摘要**: Digital zoom on smartphones relies on learning-based super-resolution (SR) models that operate on RAW sensor images, but obtaining sensor-specific training data is challenging due to the lack of ground-truth images. Synthetic data generation via ``unprocessing'' pipelines offers a potential solution...
+
+---
+
+## 16. SPARROW: Learning Spatial Precision and Temporal Referential Consistency in Pixel-Grounded Video MLLMs
+
+- **arXiv ID**: 2603.12382v1
+- **作者**: Mohamad Alansari, Naufal Suryanto, Divya Velayudhan, Sajid Javed, Naoufel Werghi 等 (共6位作者)
+- **发布日期**: 2026-03-12
+- **分类**: cs.CV, cs.AI
+- **论文链接**: [http://arxiv.org/abs/2603.12382v1](http://arxiv.org/abs/2603.12382v1)
+- **PDF**: [http://arxiv.org/pdf/2603.12382v1](http://arxiv.org/pdf/2603.12382v1)
+- **摘要**: Multimodal large language models (MLLMs) have advanced from image-level reasoning to pixel-level grounding, but extending these capabilities to videos remains challenging as models must achieve spatial precision and temporally consistent reference tracking. Existing video MLLMs often rely on a stati...
+
+---
+
+## 17. EVATok: Adaptive Length Video Tokenization for Efficient Visual Autoregressive Generation
 
 - **arXiv ID**: 2603.12267v1
 - **作者**: Tianwei Xiong, Jun Hao Liew, Zilong Huang, Zhijie Lin, Jiashi Feng 等 (共6位作者)
@@ -19,7 +211,7 @@
 
 ---
 
-## 2. Attend Before Attention: Efficient and Scalable Video Understanding via Autoregressive Gazing
+## 18. Attend Before Attention: Efficient and Scalable Video Understanding via Autoregressive Gazing
 
 - **arXiv ID**: 2603.12254v1
 - **作者**: Baifeng Shi, Stephanie Fu, Long Lian, Hanrong Ye, David Eigen 等 (共13位作者)
@@ -31,7 +223,7 @@
 
 ---
 
-## 3. BiGain: Unified Token Compression for Joint Generation and Classification
+## 19. BiGain: Unified Token Compression for Joint Generation and Classification
 
 - **arXiv ID**: 2603.12240v1
 - **作者**: Jiacheng Liu, Shengkun Tang, Jiacheng Cui, Dongkuan Xu, Zhiqiang Shen
@@ -43,7 +235,7 @@
 
 ---
 
-## 4. Real-World Point Tracking with Verifier-Guided Pseudo-Labeling
+## 20. Real-World Point Tracking with Verifier-Guided Pseudo-Labeling
 
 - **arXiv ID**: 2603.12217v1
 - **作者**: Görkay Aydemir, Fatma Güney, Weidi Xie
@@ -55,7 +247,7 @@
 
 ---
 
-## 5. SaPaVe: Towards Active Perception and Manipulation in Vision-Language-Action Models for Robotics
+## 21. SaPaVe: Towards Active Perception and Manipulation in Vision-Language-Action Models for Robotics
 
 - **arXiv ID**: 2603.12193v1
 - **作者**: Mengzhen Liu, Enshen Zhou, Cheng Chi, Yi Han, Shanyu Rong 等 (共9位作者)
@@ -67,7 +259,7 @@
 
 ---
 
-## 6. HATS: Hardness-Aware Trajectory Synthesis for GUI Agents
+## 22. HATS: Hardness-Aware Trajectory Synthesis for GUI Agents
 
 - **arXiv ID**: 2603.12138v1
 - **作者**: Rui Shao, Ruize Gao, Bin Xie, Yixing Li, Kaiwen Zhou 等 (共8位作者)
@@ -79,7 +271,7 @@
 
 ---
 
-## 7. Towards Universal Computational Aberration Correction in Photographic Cameras: A Comprehensive Benchmark Analysis
+## 23. Towards Universal Computational Aberration Correction in Photographic Cameras: A Comprehensive Benchmark Analysis
 
 - **arXiv ID**: 2603.12083v1
 - **作者**: Xiaolong Qian, Qi Jiang, Yao Gao, Lei Sun, Zhonghua Yi 等 (共8位作者)
@@ -91,19 +283,19 @@
 
 ---
 
-## 8. Node-RF: Learning Generalized Continuous Space-Time Scene Dynamics with Neural ODE-based NeRFs
+## 24. Node-RF: Learning Generalized Continuous Space-Time Scene Dynamics with Neural ODE-based NeRFs
 
-- **arXiv ID**: 2603.12078v1
+- **arXiv ID**: 2603.12078v2
 - **作者**: Hiran Sarkar, Liming Kuang, Yordanka Velikova, Benjamin Busam
 - **发布日期**: 2026-03-12
 - **分类**: cs.CV
-- **论文链接**: [http://arxiv.org/abs/2603.12078v1](http://arxiv.org/abs/2603.12078v1)
-- **PDF**: [http://arxiv.org/pdf/2603.12078v1](http://arxiv.org/pdf/2603.12078v1)
+- **论文链接**: [http://arxiv.org/abs/2603.12078v2](http://arxiv.org/abs/2603.12078v2)
+- **PDF**: [http://arxiv.org/pdf/2603.12078v2](http://arxiv.org/pdf/2603.12078v2)
 - **摘要**: Predicting scene dynamics from visual observations is challenging. Existing methods capture dynamics only within observed boundaries failing to extrapolate far beyond the training sequence. Node-RF (Neural ODE-based NeRF) overcomes this limitation by integrating Neural Ordinary Differential Equation...
 
 ---
 
-## 9. Intrinsic Concept Extraction Based on Compositional Interpretability
+## 25. Intrinsic Concept Extraction Based on Compositional Interpretability
 
 - **arXiv ID**: 2603.11795v1
 - **作者**: Hanyu Shi, Hong Tao, Guoheng Huang, Jianbin Jiang, Xuhang Chen 等 (共8位作者)
@@ -115,7 +307,7 @@
 
 ---
 
-## 10. UCAN: Unified Convolutional Attention Network for Expansive Receptive Fields in Lightweight Super-Resolution
+## 26. UCAN: Unified Convolutional Attention Network for Expansive Receptive Fields in Lightweight Super-Resolution
 
 - **arXiv ID**: 2603.11680v1
 - **作者**: Cao Thien Tan, Phan Thi Thu Trang, Do Nghiem Duc, Ho Ngoc Anh, Hanyang Zhuang 等 (共6位作者)
@@ -127,7 +319,7 @@
 
 ---
 
-## 11. Stable Spike: Dual Consistency Optimization via Bitwise AND Operations for Spiking Neural Networks
+## 27. Stable Spike: Dual Consistency Optimization via Bitwise AND Operations for Spiking Neural Networks
 
 - **arXiv ID**: 2603.11676v1
 - **作者**: Yongqi Ding, Kunshan Yang, Linze Li, Yiyang Zhang, Mengmeng Jing 等 (共6位作者)
@@ -139,7 +331,7 @@
 
 ---
 
-## 12. PROMO: Promptable Outfitting for Efficient High-Fidelity Virtual Try-On
+## 28. PROMO: Promptable Outfitting for Efficient High-Fidelity Virtual Try-On
 
 - **arXiv ID**: 2603.11675v1
 - **作者**: Haohua Chen, Tianze Zhou, Wei Zhu, Runqi Wang, Yandong Guan 等 (共11位作者)
@@ -151,7 +343,7 @@
 
 ---
 
-## 13. Tokenization Allows Multimodal Large Language Models to Understand, Generate and Edit Architectural Floor Plans
+## 29. Tokenization Allows Multimodal Large Language Models to Understand, Generate and Edit Architectural Floor Plans
 
 - **arXiv ID**: 2603.11640v1
 - **作者**: Sizhong Qin, Ramon Elias Weber, Xinzheng Lu
@@ -163,7 +355,7 @@
 
 ---
 
-## 14. Shape-of-You: Fused Gromov-Wasserstein Optimal Transport for Semantic Correspondence in-the-Wild
+## 30. Shape-of-You: Fused Gromov-Wasserstein Optimal Transport for Semantic Correspondence in-the-Wild
 
 - **arXiv ID**: 2603.11618v1
 - **作者**: Jiin Im, Sisung Liu, Je Hyeong Hong
@@ -175,7 +367,7 @@
 
 ---
 
-## 15. LaMoGen: Language to Motion Generation Through LLM-Guided Symbolic Inference
+## 31. LaMoGen: Language to Motion Generation Through LLM-Guided Symbolic Inference
 
 - **arXiv ID**: 2603.11605v1
 - **作者**: Junkun Jiang, Ho Yin Au, Jingyu Xiang, Jie Chen
@@ -187,7 +379,7 @@
 
 ---
 
-## 16. R4Det: 4D Radar-Camera Fusion for High-Performance 3D Object Detection
+## 32. R4Det: 4D Radar-Camera Fusion for High-Performance 3D Object Detection
 
 - **arXiv ID**: 2603.11566v1
 - **作者**: Zhongyu Xia, Yousen Tang, Yongtao Wang, Zhifeng Wang, Weijun Qin
@@ -199,7 +391,7 @@
 
 ---
 
-## 17. EReCu: Pseudo-label Evolution Fusion and Refinement with Multi-Cue Learning for Unsupervised Camouflage Detection
+## 33. EReCu: Pseudo-label Evolution Fusion and Refinement with Multi-Cue Learning for Unsupervised Camouflage Detection
 
 - **arXiv ID**: 2603.11521v1
 - **作者**: Shuo Jiang, Gaojia Zhang, Min Tan, Yufei Yin, Gang Pan
@@ -211,7 +403,7 @@
 
 ---
 
-## 18. SPEGC: Continual Test-Time Adaptation via Semantic-Prompt-Enhanced Graph Clustering for Medical Image Segmentation
+## 34. SPEGC: Continual Test-Time Adaptation via Semantic-Prompt-Enhanced Graph Clustering for Medical Image Segmentation
 
 - **arXiv ID**: 2603.11492v1
 - **作者**: Xiaogang Du, Jiawei Zhang, Tongfei Liu, Tao Lei, Yingbo Wang
@@ -223,19 +415,19 @@
 
 ---
 
-## 19. Follow the Saliency: Supervised Saliency for Retrieval-augmented Dense Video Captioning
+## 35. Follow the Saliency: Supervised Saliency for Retrieval-augmented Dense Video Captioning
 
-- **arXiv ID**: 2603.11460v1
+- **arXiv ID**: 2603.11460v2
 - **作者**: Seung hee Choi, MinJu Jeon, Hyunwoo Oh, Jihwan Lee, Dong-Jin Kim
 - **发布日期**: 2026-03-12
 - **分类**: cs.CV
-- **论文链接**: [http://arxiv.org/abs/2603.11460v1](http://arxiv.org/abs/2603.11460v1)
-- **PDF**: [http://arxiv.org/pdf/2603.11460v1](http://arxiv.org/pdf/2603.11460v1)
+- **论文链接**: [http://arxiv.org/abs/2603.11460v2](http://arxiv.org/abs/2603.11460v2)
+- **PDF**: [http://arxiv.org/pdf/2603.11460v2](http://arxiv.org/pdf/2603.11460v2)
 - **摘要**: Existing retrieval-augmented approaches for Dense Video Captioning (DVC) often fail to achieve accurate temporal segmentation aligned with true event boundaries, as they rely on heuristic strategies that overlook ground truth event boundaries. The proposed framework, \textbf{STaRC}, overcomes this l...
 
 ---
 
-## 20. Stay in your Lane: Role Specific Queries with Overlap Suppression Loss for Dense Video Captioning
+## 36. Stay in your Lane: Role Specific Queries with Overlap Suppression Loss for Dense Video Captioning
 
 - **arXiv ID**: 2603.11439v1
 - **作者**: Seung Hyup Baek, Jimin Lee, Hyeongkeun Lee, Jae Won Cho
@@ -247,7 +439,7 @@
 
 ---
 
-## 21. Linking Perception, Confidence and Accuracy in MLLMs
+## 37. Linking Perception, Confidence and Accuracy in MLLMs
 
 - **arXiv ID**: 2603.12149v1
 - **作者**: Yuetian Du, Yucheng Wang, Rongyu Zhang, Zhijie Xu, Boyu Yang 等 (共8位作者)
@@ -259,7 +451,7 @@
 
 ---
 
-## 22. FlashMotion: Few-Step Controllable Video Generation with Trajectory Guidance
+## 38. FlashMotion: Few-Step Controllable Video Generation with Trajectory Guidance
 
 - **arXiv ID**: 2603.12146v1
 - **作者**: Quanhao Li, Zhen Xing, Rui Wang, Haidong Cao, Qi Dai 等 (共7位作者)
@@ -271,7 +463,7 @@
 
 ---
 
-## 23. Pano360: Perspective to Panoramic Vision with Geometric Consistency
+## 39. Pano360: Perspective to Panoramic Vision with Geometric Consistency
 
 - **arXiv ID**: 2603.12013v1
 - **作者**: Zhengdong Zhu, Weiyi Xue, Zuyuan Yang, Wenlve Zhou, Zhiheng Zhou
@@ -283,7 +475,7 @@
 
 ---
 
-## 24. Learning to Assist: Physics-Grounded Human-Human Control via Multi-Agent Reinforcement Learning
+## 40. Learning to Assist: Physics-Grounded Human-Human Control via Multi-Agent Reinforcement Learning
 
 - **arXiv ID**: 2603.11346v1
 - **作者**: Yuto Shibata, Kashu Yamazaki, Lalit Jayanti, Yoshimitsu Aoki, Mariko Isogawa 等 (共6位作者)
@@ -295,7 +487,7 @@
 
 ---
 
-## 25. GGPT: Geometry Grounded Point Transformer
+## 41. GGPT: Geometry Grounded Point Transformer
 
 - **arXiv ID**: 2603.11174v1
 - **作者**: Yutong Chen, Yiming Wang, Xucong Zhang, Sergey Prokudin, Siyu Tang
@@ -307,7 +499,7 @@
 
 ---
 
-## 26. Lifelong Imitation Learning with Multimodal Latent Replay and Incremental Adjustment
+## 42. Lifelong Imitation Learning with Multimodal Latent Replay and Incremental Adjustment
 
 - **arXiv ID**: 2603.10929v2
 - **作者**: Fanqi Yu, Matteo Tiezzi, Tommaso Apicella, Cigdem Beyan, Vittorio Murino
@@ -319,7 +511,7 @@
 
 ---
 
-## 27. Bilevel Layer-Positioning LoRA for Real Image Dehazing
+## 43. Bilevel Layer-Positioning LoRA for Real Image Dehazing
 
 - **arXiv ID**: 2603.10872v1
 - **作者**: Yan Zhang, Long Ma, Yuxin Feng, Zhe Huang, Fan Zhou 等 (共6位作者)
@@ -331,7 +523,7 @@
 
 ---
 
-## 28. Guiding Diffusion Models with Semantically Degraded Conditions
+## 44. Guiding Diffusion Models with Semantically Degraded Conditions
 
 - **arXiv ID**: 2603.10780v1
 - **作者**: Shilong Han, Yuming Zhang, Hongxia Wang
@@ -343,7 +535,7 @@
 
 ---
 
-## 29. WalkGPT: Grounded Vision-Language Conversation with Depth-Aware Segmentation for Pedestrian Navigation
+## 45. WalkGPT: Grounded Vision-Language Conversation with Depth-Aware Segmentation for Pedestrian Navigation
 
 - **arXiv ID**: 2603.10703v1
 - **作者**: Rafi Ibn Sultan, Hui Zhu, Xiangyu Zhou, Chengyin Li, Prashant Khanduri 等 (共7位作者)
@@ -355,7 +547,7 @@
 
 ---
 
-## 30. RC-NF: Robot-Conditioned Normalizing Flow for Real-Time Anomaly Detection in Robotic Manipulation
+## 46. RC-NF: Robot-Conditioned Normalizing Flow for Real-Time Anomaly Detection in Robotic Manipulation
 
 - **arXiv ID**: 2603.11106v1
 - **作者**: Shijie Zhou, Bin Zhu, Jiarui Yang, Xiangyu Zhao, Jingjing Chen 等 (共6位作者)
@@ -367,7 +559,7 @@
 
 ---
 
-## 31. Recover to Predict: Progressive Retrospective Learning for Variable-Length Trajectory Prediction
+## 47. Recover to Predict: Progressive Retrospective Learning for Variable-Length Trajectory Prediction
 
 - **arXiv ID**: 2603.10597v1
 - **作者**: Hao Zhou, Lu Qi, Jason Li, Jie Zhang, Yi Liu 等 (共8位作者)
@@ -379,7 +571,7 @@
 
 ---
 
-## 32. Attribution as Retrieval: Model-Agnostic AI-Generated Image Attribution
+## 48. Attribution as Retrieval: Model-Agnostic AI-Generated Image Attribution
 
 - **arXiv ID**: 2603.10583v1
 - **作者**: Hongsong Wang, Renxi Cheng, Chaolei Han, Jie Gui
@@ -391,7 +583,7 @@
 
 ---
 
-## 33. DSFlash: Comprehensive Panoptic Scene Graph Generation in Realtime
+## 49. DSFlash: Comprehensive Panoptic Scene Graph Generation in Realtime
 
 - **arXiv ID**: 2603.10538v1
 - **作者**: Julian Lorenz, Vladyslav Kovganko, Elias Kohout, Mrunmai Phatak, Daniel Kienzle 等 (共6位作者)
@@ -403,7 +595,7 @@
 
 ---
 
-## 34. Sparse Task Vector Mixup with Hypernetworks for Efficient Knowledge Transfer in Whole-Slide Image Prognosis
+## 50. Sparse Task Vector Mixup with Hypernetworks for Efficient Knowledge Transfer in Whole-Slide Image Prognosis
 
 - **arXiv ID**: 2603.10526v1
 - **作者**: Pei Liu, Xiangxiang Zeng, Tengfei Ma, Yucheng Xing, Xuanbai Ren 等 (共6位作者)
@@ -415,7 +607,7 @@
 
 ---
 
-## 35. Fighting Hallucinations with Counterfactuals: Diffusion-Guided Perturbations for LVLM Hallucination Suppression
+## 51. Fighting Hallucinations with Counterfactuals: Diffusion-Guided Perturbations for LVLM Hallucination Suppression
 
 - **arXiv ID**: 2603.10470v1
 - **作者**: Hamidreza Dastmalchi, Aijun An, Ali Cheraghian, Hamed Barzamini
@@ -427,7 +619,7 @@
 
 ---
 
-## 36. Too Vivid to Be Real? Benchmarking and Calibrating Generative Color Fidelity
+## 52. Too Vivid to Be Real? Benchmarking and Calibrating Generative Color Fidelity
 
 - **arXiv ID**: 2603.10990v1
 - **作者**: Zhengyao Fang, Zexi Jia, Yijia Zhong, Pengcheng Luo, Jinchao Zhang 等 (共8位作者)
@@ -439,7 +631,7 @@
 
 ---
 
-## 37. CodePercept: Code-Grounded Visual STEM Perception for MLLMs
+## 53. CodePercept: Code-Grounded Visual STEM Perception for MLLMs
 
 - **arXiv ID**: 2603.10757v1
 - **作者**: Tongkun Guan, Zhibo Yang, Jianqiang Wan, Mingkun Yang, Zhengtao Guo 等 (共13位作者)
@@ -451,7 +643,7 @@
 
 ---
 
-## 38. Just-in-Time: Training-Free Spatial Acceleration for Diffusion Transformers
+## 54. Just-in-Time: Training-Free Spatial Acceleration for Diffusion Transformers
 
 - **arXiv ID**: 2603.10744v1
 - **作者**: Wenhao Sun, Ji Li, Zhaoqiang Liu
@@ -463,7 +655,7 @@
 
 ---
 
-## 39. StyleGallery: Training-free and Semantic-aware Personalized Style Transfer from Arbitrary Image References
+## 55. StyleGallery: Training-free and Semantic-aware Personalized Style Transfer from Arbitrary Image References
 
 - **arXiv ID**: 2603.10354v2
 - **作者**: Boyu He, Yunfan Ye, Chang Liu, Weishang Wu, Fang Liu 等 (共6位作者)
@@ -475,7 +667,7 @@
 
 ---
 
-## 40. HG-Lane: High-Fidelity Generation of Lane Scenes under Adverse Weather and Lighting Conditions without Re-annotation
+## 56. HG-Lane: High-Fidelity Generation of Lane Scenes under Adverse Weather and Lighting Conditions without Re-annotation
 
 - **arXiv ID**: 2603.10128v1
 - **作者**: Daichao Zhao, Qiupu Chen, Feng He, Xin Ning, Qiankun Li
@@ -487,7 +679,7 @@
 
 ---
 
-## 41. VLM-Loc: Localization in Point Cloud Maps via Vision-Language Models
+## 57. VLM-Loc: Localization in Point Cloud Maps via Vision-Language Models
 
 - **arXiv ID**: 2603.09826v1
 - **作者**: Shuhao Kang, Youqi Liao, Peijie Wang, Wenlong Liao, Qilin Zhang 等 (共8位作者)
@@ -499,7 +691,7 @@
 
 ---
 
-## 42. Test-time Ego-Exo-centric Adaptation for Action Anticipation via Multi-Label Prototype Growing and Dual-Clue Consistency
+## 58. Test-time Ego-Exo-centric Adaptation for Action Anticipation via Multi-Label Prototype Growing and Dual-Clue Consistency
 
 - **arXiv ID**: 2603.09798v1
 - **作者**: Zhaofeng Shi, Heqian Qiu, Lanxiao Wang, Qingbo Wu, Fanman Meng 等 (共7位作者)
@@ -511,7 +703,7 @@
 
 ---
 
-## 43. Ego: Embedding-Guided Personalization of Vision-Language Models
+## 59. Ego: Embedding-Guided Personalization of Vision-Language Models
 
 - **arXiv ID**: 2603.09771v2
 - **作者**: Soroush Seifi, Simon Gardier, Vaggelis Dorovatas, Daniel Olmeda Reino, Rahaf Aljundi
@@ -523,7 +715,7 @@
 
 ---
 
-## 44. VarSplat: Uncertainty-aware 3D Gaussian Splatting for Robust RGB-D SLAM
+## 60. VarSplat: Uncertainty-aware 3D Gaussian Splatting for Robust RGB-D SLAM
 
 - **arXiv ID**: 2603.09673v1
 - **作者**: Anh Thuan Tran, Jana Kosecka
@@ -535,7 +727,7 @@
 
 ---
 
-## 45. ParTY: Part-Guidance for Expressive Text-to-Motion Synthesis
+## 61. ParTY: Part-Guidance for Expressive Text-to-Motion Synthesis
 
 - **arXiv ID**: 2603.09611v1
 - **作者**: KunHo Heo, SuYeon Kim, Yonghyun Gwon, Youngbin Kim, MyeongAh Cho
@@ -547,7 +739,7 @@
 
 ---
 
-## 46. BinaryAttention: One-Bit QK-Attention for Vision and Diffusion Transformers
+## 62. BinaryAttention: One-Bit QK-Attention for Vision and Diffusion Transformers
 
 - **arXiv ID**: 2603.09582v1
 - **作者**: Chaodong Xiao, Zhengqiang Zhang, Lei Zhang
@@ -559,7 +751,7 @@
 
 ---
 
-## 47. More than the Sum: Panorama-Language Models for Adverse Omni-Scenes
+## 63. More than the Sum: Panorama-Language Models for Adverse Omni-Scenes
 
 - **arXiv ID**: 2603.09573v1
 - **作者**: Weijia Fan, Ruiping Liu, Jiale Wei, Yufan Chen, Junwei Zheng 等 (共10位作者)
@@ -571,7 +763,7 @@
 
 ---
 
-## 48. Context-Nav: Context-Driven Exploration and Viewpoint-Aware 3D Spatial Reasoning for Instance Navigation
+## 64. Context-Nav: Context-Driven Exploration and Viewpoint-Aware 3D Spatial Reasoning for Instance Navigation
 
 - **arXiv ID**: 2603.09506v2
 - **作者**: Won Shik Jang, Ue-Hwan Kim
@@ -583,7 +775,7 @@
 
 ---
 
-## 49. CIGPose: Causal Intervention Graph Neural Network for Whole-Body Pose Estimation
+## 65. CIGPose: Causal Intervention Graph Neural Network for Whole-Body Pose Estimation
 
 - **arXiv ID**: 2603.09418v1
 - **作者**: Bohao Li, Zhicheng Cao, Huixian Li, Yangming Guo
@@ -595,7 +787,7 @@
 
 ---
 
-## 50. Reviving ConvNeXt for Efficient Convolutional Diffusion Models
+## 66. Reviving ConvNeXt for Efficient Convolutional Diffusion Models
 
 - **arXiv ID**: 2603.09408v1
 - **作者**: Taesung Kwon, Lorenzo Bianchi, Lennart Wittke, Felix Watine, Fabio Carrara 等 (共8位作者)
@@ -607,7 +799,7 @@
 
 ---
 
-## 51. OddGridBench: Exposing the Lack of Fine-Grained Visual Discrepancy Sensitivity in Multimodal Large Language Models
+## 67. OddGridBench: Exposing the Lack of Fine-Grained Visual Discrepancy Sensitivity in Multimodal Large Language Models
 
 - **arXiv ID**: 2603.09326v1
 - **作者**: Tengjin Weng, Wenhao Jiang, Jingyi Wang, Ming Li, Lin Ma 等 (共6位作者)
@@ -619,7 +811,7 @@
 
 ---
 
-## 52. Speeding Up the Learning of 3D Gaussians with Much Shorter Gaussian Lists
+## 68. Speeding Up the Learning of 3D Gaussians with Much Shorter Gaussian Lists
 
 - **arXiv ID**: 2603.09277v1
 - **作者**: Jiaqi Liu, Zhizhong Han
@@ -631,7 +823,19 @@
 
 ---
 
-## 53. Training-free Motion Factorization for Compositional Video Generation
+## 69. ForgeDreamer: Industrial Text-to-3D Generation with Multi-Expert LoRA and Cross-View Hypergraph
+
+- **arXiv ID**: 2603.09266v2
+- **作者**: Junhao Cai, Deyu Zeng, Junhao Pang, Lini Li, Zongze Wu 等 (共6位作者)
+- **发布日期**: 2026-03-10
+- **分类**: cs.CV
+- **论文链接**: [http://arxiv.org/abs/2603.09266v2](http://arxiv.org/abs/2603.09266v2)
+- **PDF**: [http://arxiv.org/pdf/2603.09266v2](http://arxiv.org/pdf/2603.09266v2)
+- **摘要**: Current text-to-3D generation methods excel in natural scenes but struggle with industrial applications due to two critical limitations: domain adaptation challenges where conventional LoRA fusion causes knowledge interference across categories, and geometric reasoning deficiencies where pairwise co...
+
+---
+
+## 70. Training-free Motion Factorization for Compositional Video Generation
 
 - **arXiv ID**: 2603.09104v1
 - **作者**: Zixuan Wang, Ziqin Zhou, Feng Chen, Duo Peng, Yixin Hu 等 (共7位作者)
@@ -643,7 +847,7 @@
 
 ---
 
-## 54. Chain of Event-Centric Causal Thought for Physically Plausible Video Generation
+## 71. Chain of Event-Centric Causal Thought for Physically Plausible Video Generation
 
 - **arXiv ID**: 2603.09094v1
 - **作者**: Zixuan Wang, Yixin Hu, Haolan Wang, Feng Chen, Yan Liu 等 (共7位作者)
@@ -655,7 +859,7 @@
 
 ---
 
-## 55. 4DEquine: Disentangling Motion and Appearance for 4D Equine Reconstruction from Monocular Video
+## 72. 4DEquine: Disentangling Motion and Appearance for 4D Equine Reconstruction from Monocular Video
 
 - **arXiv ID**: 2603.10125v1
 - **作者**: Jin Lyu, Liang An, Pujin Cheng, Yebin Liu, Xiaoying Tang
@@ -667,7 +871,7 @@
 
 ---
 
-## 56. MedKCO: Medical Vision-Language Pretraining via Knowledge-Driven Cognitive Orchestration
+## 73. MedKCO: Medical Vision-Language Pretraining via Knowledge-Driven Cognitive Orchestration
 
 - **arXiv ID**: 2603.09101v1
 - **作者**: Chenran Zhang, Ruiqi Wu, Tao Zhou, Yi Zhou
@@ -679,7 +883,7 @@
 
 ---
 
-## 57. WikiCLIP: An Efficient Contrastive Baseline for Open-domain Visual Entity Recognition
+## 74. WikiCLIP: An Efficient Contrastive Baseline for Open-domain Visual Entity Recognition
 
 - **arXiv ID**: 2603.09921v1
 - **作者**: Shan Ning, Longtian Qiu, Jiaxuan Sun, Xuming He
@@ -691,7 +895,7 @@
 
 ---
 
-## 58. Point Cloud as a Foreign Language for Multi-modal Large Language Model
+## 75. Point Cloud as a Foreign Language for Multi-modal Large Language Model
 
 - **arXiv ID**: 2603.09173v1
 - **作者**: Sneha Paul, Zachary Patterson, Nizar Bouguila
@@ -703,7 +907,7 @@
 
 ---
 
-## 59. Vision-Language Models Encode Clinical Guidelines for Concept-Based Medical Reasoning
+## 76. Vision-Language Models Encode Clinical Guidelines for Concept-Based Medical Reasoning
 
 - **arXiv ID**: 2603.08921v1
 - **作者**: Mohamed Harmanani, Bining Long, Zhuoxin Guo, Paul F. R. Wilson, Amirhossein Sabour 等 (共9位作者)
@@ -715,7 +919,7 @@
 
 ---
 
-## 60. Where, What, Why: Toward Explainable 3D-GS Watermarking
+## 77. Where, What, Why: Toward Explainable 3D-GS Watermarking
 
 - **arXiv ID**: 2603.08809v1
 - **作者**: Mingshu Cai, Jiajun Li, Osamu Yoshie, Yuya Ieiri, Yixuan Li
@@ -727,7 +931,7 @@
 
 ---
 
-## 61. Talking Together: Synthesizing Co-Located 3D Conversations from Audio
+## 78. Talking Together: Synthesizing Co-Located 3D Conversations from Audio
 
 - **arXiv ID**: 2603.08674v1
 - **作者**: Mengyi Shan, Shouchieh Chang, Ziqian Bai, Shichen Liu, Yinda Zhang 等 (共9位作者)
@@ -739,7 +943,7 @@
 
 ---
 
-## 62. StreamReady: Learning What to Answer and When in Long Streaming Videos
+## 79. StreamReady: Learning What to Answer and When in Long Streaming Videos
 
 - **arXiv ID**: 2603.08620v1
 - **作者**: Shehreen Azad, Vibhav Vineet, Yogesh Singh Rawat
@@ -751,7 +955,7 @@
 
 ---
 
-## 63. CARE-Edit: Condition-Aware Routing of Experts for Contextual Image Editing
+## 80. CARE-Edit: Condition-Aware Routing of Experts for Contextual Image Editing
 
 - **arXiv ID**: 2603.08589v1
 - **作者**: Yucheng Wang, Zedong Wang, Yuetong Wu, Yue Ma, Dan Xu
@@ -763,7 +967,7 @@
 
 ---
 
-## 64. All Vehicles Can Lie: Efficient Adversarial Defense in Fully Untrusted-Vehicle Collaborative Perception via Pseudo-Random Bayesian Inference
+## 81. All Vehicles Can Lie: Efficient Adversarial Defense in Fully Untrusted-Vehicle Collaborative Perception via Pseudo-Random Bayesian Inference
 
 - **arXiv ID**: 2603.08498v1
 - **作者**: Yi Yu, Libing Wu, Zhuangzhuang Zhang, Jing Qiu, Lijuan Huo 等 (共6位作者)
@@ -775,7 +979,7 @@
 
 ---
 
-## 65. Concept-Guided Fine-Tuning: Steering ViTs away from Spurious Correlations to Improve Robustness
+## 82. Concept-Guided Fine-Tuning: Steering ViTs away from Spurious Correlations to Improve Robustness
 
 - **arXiv ID**: 2603.08309v1
 - **作者**: Yehonatan Elisha, Oren Barkan, Noam Koenigstein
@@ -787,7 +991,7 @@
 
 ---
 
-## 66. Prototype-Guided Concept Erasure in Diffusion Models
+## 83. Prototype-Guided Concept Erasure in Diffusion Models
 
 - **arXiv ID**: 2603.08271v1
 - **作者**: Yuze Cai, Jiahao Lu, Hongxiang Shi, Yichao Zhou, Hong Lu
@@ -799,7 +1003,7 @@
 
 ---
 
-## 67. WaDi: Weight Direction-aware Distillation for One-step Image Synthesis
+## 84. WaDi: Weight Direction-aware Distillation for One-step Image Synthesis
 
 - **arXiv ID**: 2603.08258v1
 - **作者**: Lei Wang, Yang Cheng, Senmao Li, Ge Wu, Yaxing Wang 等 (共6位作者)
@@ -811,7 +1015,7 @@
 
 ---
 
-## 68. TALON: Test-time Adaptive Learning for On-the-Fly Category Discovery
+## 85. TALON: Test-time Adaptive Learning for On-the-Fly Category Discovery
 
 - **arXiv ID**: 2603.08075v1
 - **作者**: Yanan Wu, Yuhan Yan, Tailai Chen, Zhixiang Chi, ZiZhang Wu 等 (共8位作者)
@@ -823,7 +1027,7 @@
 
 ---
 
-## 69. Speed3R: Sparse Feed-forward 3D Reconstruction Models
+## 86. Speed3R: Sparse Feed-forward 3D Reconstruction Models
 
 - **arXiv ID**: 2603.08055v1
 - **作者**: Weining Ren, Xiao Tan, Kai Han
@@ -835,7 +1039,7 @@
 
 ---
 
-## 70. Missing No More: Dictionary-Guided Cross-Modal Image Fusion under Missing Infrared
+## 87. Missing No More: Dictionary-Guided Cross-Modal Image Fusion under Missing Infrared
 
 - **arXiv ID**: 2603.08018v1
 - **作者**: Yafei Zhang, Meng Ma, Huafeng Li, Yu Liu
@@ -847,7 +1051,7 @@
 
 ---
 
-## 71. It's Time to Get It Right: Improving Analog Clock Reading and Clock-Hand Spatial Reasoning in Vision-Language Models
+## 88. It's Time to Get It Right: Improving Analog Clock Reading and Clock-Hand Spatial Reasoning in Vision-Language Models
 
 - **arXiv ID**: 2603.08011v1
 - **作者**: Jaeha Choi, Jin Won Lee, Siwoo You, Jangho Lee
@@ -859,7 +1063,7 @@
 
 ---
 
-## 72. TeamHOI: Learning a Unified Policy for Cooperative Human-Object Interactions with Any Team Size
+## 89. TeamHOI: Learning a Unified Policy for Cooperative Human-Object Interactions with Any Team Size
 
 - **arXiv ID**: 2603.07988v1
 - **作者**: Stefan Lionar, Gim Hee Lee
@@ -871,7 +1075,7 @@
 
 ---
 
-## 73. On the Feasibility and Opportunity of Autoregressive 3D Object Detection
+## 90. On the Feasibility and Opportunity of Autoregressive 3D Object Detection
 
 - **arXiv ID**: 2603.07985v1
 - **作者**: Zanming Huang, Jinsu Yoo, Sooyoung Jeon, Zhenzhen Liu, Mark Campbell 等 (共9位作者)
@@ -883,7 +1087,7 @@
 
 ---
 
-## 74. VisualAD: Language-Free Zero-Shot Anomaly Detection via Vision Transformer
+## 91. VisualAD: Language-Free Zero-Shot Anomaly Detection via Vision Transformer
 
 - **arXiv ID**: 2603.07952v1
 - **作者**: Yanning Hou, Peiyuan Li, Zirui Liu, Yitong Wang, Yanran Ruan 等 (共7位作者)
@@ -895,7 +1099,7 @@
 
 ---
 
-## 75. Beyond Heuristic Prompting: A Concept-Guided Bayesian Framework for Zero-Shot Image Recognition
+## 92. Beyond Heuristic Prompting: A Concept-Guided Bayesian Framework for Zero-Shot Image Recognition
 
 - **arXiv ID**: 2603.07911v1
 - **作者**: Hui Liu, Kecheng Chen, Jialiang Wang, Xianming Liu, Wenya Wang 等 (共6位作者)
@@ -907,7 +1111,7 @@
 
 ---
 
-## 76. Revisiting Unknowns: Towards Effective and Efficient Open-Set Active Learning
+## 93. Revisiting Unknowns: Towards Effective and Efficient Open-Set Active Learning
 
 - **arXiv ID**: 2603.07898v1
 - **作者**: Chen-Chen Zong, Yu-Qi Chi, Xie-Yang Wang, Yan Cui, Sheng-Jun Huang
@@ -919,7 +1123,7 @@
 
 ---
 
-## 77. SAVE: Speech-Aware Video Representation Learning for Video-Text Retrieval
+## 94. SAVE: Speech-Aware Video Representation Learning for Video-Text Retrieval
 
 - **arXiv ID**: 2603.08224v2
 - **作者**: Ruixiang Zhao, Zhihao Xu, Bangxiang Lan, Zijie Xin, Jingyu Liu 等 (共6位作者)
@@ -931,7 +1135,7 @@
 
 ---
 
-## 78. SGI: Structured 2D Gaussians for Efficient and Compact Large Image Representation
+## 95. SGI: Structured 2D Gaussians for Efficient and Compact Large Image Representation
 
 - **arXiv ID**: 2603.07789v2
 - **作者**: Zixuan Pan, Kaiyuan Tang, Jun Xia, Yifan Qin, Lin Gu 等 (共8位作者)
@@ -943,7 +1147,7 @@
 
 ---
 
-## 79. AR2-4FV: Anchored Referring and Re-identification for Long-Term Grounding in Fixed-View Videos
+## 96. AR2-4FV: Anchored Referring and Re-identification for Long-Term Grounding in Fixed-View Videos
 
 - **arXiv ID**: 2603.07758v1
 - **作者**: Teng Yan, Yihan Liu, Jiongxu Chen, Teng Wang, Jiaqi Li 等 (共6位作者)
@@ -955,7 +1159,7 @@
 
 ---
 
-## 80. Compressed-Domain-Aware Online Video Super-Resolution
+## 97. Compressed-Domain-Aware Online Video Super-Resolution
 
 - **arXiv ID**: 2603.07694v1
 - **作者**: Yuhang Wang, Hai Li, Shujuan Hou, Zhetao Dong, Xiaoyao Yang
@@ -967,7 +1171,7 @@
 
 ---
 
-## 81. Scaling Test-Time Robustness of Vision-Language Models via Self-Critical Inference Framework
+## 98. Scaling Test-Time Robustness of Vision-Language Models via Self-Critical Inference Framework
 
 - **arXiv ID**: 2603.07659v1
 - **作者**: Kaihua Tang, Jiaxin Qi, Jinli Ou, Yuhua Zheng, Jianqiang Huang
@@ -979,7 +1183,7 @@
 
 ---
 
-## 82. PureCC: Pure Learning for Text-to-Image Concept Customization
+## 99. PureCC: Pure Learning for Text-to-Image Concept Customization
 
 - **arXiv ID**: 2603.07561v1
 - **作者**: Zhichao Liao, Xiaole Xian, Qingyu Li, Wenyu Qin, Meng Wang 等 (共10位作者)
@@ -991,7 +1195,7 @@
 
 ---
 
-## 83. Active Inference for Micro-Gesture Recognition: EFE-Guided Temporal Sampling and Adaptive Learning
+## 100. Active Inference for Micro-Gesture Recognition: EFE-Guided Temporal Sampling and Adaptive Learning
 
 - **arXiv ID**: 2603.07559v1
 - **作者**: Weijia Feng, Jingyu Yang, Ruojia Zhang, Fengtao Sun, Qian Gao 等 (共10位作者)
@@ -1003,7 +1207,7 @@
 
 ---
 
-## 84. Disentangled Textual Priors for Diffusion-based Image Super-Resolution
+## 101. Disentangled Textual Priors for Diffusion-based Image Super-Resolution
 
 - **arXiv ID**: 2603.07430v1
 - **作者**: Lei Jiang, Xin Liu, Xinze Tong, Zhiliang Li, Jie Liu 等 (共7位作者)
@@ -1015,7 +1219,7 @@
 
 ---
 
-## 85. AtomicVLA: Unlocking the Potential of Atomic Skill Learning in Robots
+## 102. AtomicVLA: Unlocking the Potential of Atomic Skill Learning in Robots
 
 - **arXiv ID**: 2603.07648v1
 - **作者**: Likui Zhang, Tao Tang, Zhihao Zhan, Xiuwei Chen, Zisheng Chen 等 (共12位作者)
@@ -1027,7 +1231,7 @@
 
 ---
 
-## 86. Overthinking Causes Hallucination: Tracing Confounder Propagation in Vision Language Models
+## 103. Overthinking Causes Hallucination: Tracing Confounder Propagation in Vision Language Models
 
 - **arXiv ID**: 2603.07619v1
 - **作者**: Abin Shoby, Ta Duc Huy, Tuan Dung Nguyen, Minh Khoi Ho, Qi Chen 等 (共9位作者)
@@ -1039,7 +1243,7 @@
 
 ---
 
-## 87. EVLF: Early Vision-Language Fusion for Generative Dataset Distillation
+## 104. EVLF: Early Vision-Language Fusion for Generative Dataset Distillation
 
 - **arXiv ID**: 2603.07476v1
 - **作者**: Wenqi Cai, Yawen Zou, Guang Li, Chunzhi Gu, Chao Zhang
@@ -1051,7 +1255,7 @@
 
 ---
 
-## 88. GazeShift: Unsupervised Gaze Estimation and Dataset for VR
+## 105. GazeShift: Unsupervised Gaze Estimation and Dataset for VR
 
 - **arXiv ID**: 2603.07832v1
 - **作者**: Gil Shapira, Ishay Goldin, Evgeny Artyomov, Donghoon Kim, Yosi Keller 等 (共6位作者)
@@ -1063,7 +1267,7 @@
 
 ---
 
-## 89. PDD: Manifold-Prior Diverse Distillation for Medical Anomaly Detection
+## 106. PDD: Manifold-Prior Diverse Distillation for Medical Anomaly Detection
 
 - **arXiv ID**: 2603.07142v1
 - **作者**: Xijun Lu, Hongying Liu, Fanhua Shang, Yanming Hui, Liang Wan
@@ -1075,19 +1279,19 @@
 
 ---
 
-## 90. SODA: Sensitivity-Oriented Dynamic Acceleration for Diffusion Transformer
+## 107. SODA: Sensitivity-Oriented Dynamic Acceleration for Diffusion Transformer
 
-- **arXiv ID**: 2603.07057v2
+- **arXiv ID**: 2603.07057v3
 - **作者**: Tong Shao, Yusen Fu, Guoying Sun, Jingde Kong, Zhuotao Tian 等 (共6位作者)
 - **发布日期**: 2026-03-07
 - **分类**: cs.CV
-- **论文链接**: [http://arxiv.org/abs/2603.07057v2](http://arxiv.org/abs/2603.07057v2)
-- **PDF**: [http://arxiv.org/pdf/2603.07057v2](http://arxiv.org/pdf/2603.07057v2)
+- **论文链接**: [http://arxiv.org/abs/2603.07057v3](http://arxiv.org/abs/2603.07057v3)
+- **PDF**: [http://arxiv.org/pdf/2603.07057v3](http://arxiv.org/pdf/2603.07057v3)
 - **摘要**: Diffusion Transformers have become a dominant paradigm in visual generation, yet their low inference efficiency remains a key bottleneck hindering further advancement. Among common training-free techniques, caching offers high acceleration efficiency but often compromises fidelity, whereas pruning s...
 
 ---
 
-## 91. HIERAMP: Coarse-to-Fine Autoregressive Amplification for Generative Dataset Distillation
+## 108. HIERAMP: Coarse-to-Fine Autoregressive Amplification for Generative Dataset Distillation
 
 - **arXiv ID**: 2603.06932v1
 - **作者**: Lin Zhao, Xinru Jiang, Xi Xiao, Qihui Fan, Lei Lu 等 (共10位作者)
@@ -1099,7 +1303,7 @@
 
 ---
 
-## 92. SCOPE: Scene-Contextualized Incremental Few-Shot 3D Segmentation
+## 109. SCOPE: Scene-Contextualized Incremental Few-Shot 3D Segmentation
 
 - **arXiv ID**: 2603.06572v2
 - **作者**: Vishal Thengane, Zhaochong An, Tianjin Huang, Son Lam Phung, Abdesselam Bouzerdoum 等 (共8位作者)
@@ -1111,7 +1315,7 @@
 
 ---
 
-## 93. Physical Simulator In-the-Loop Video Generation
+## 110. Physical Simulator In-the-Loop Video Generation
 
 - **arXiv ID**: 2603.06408v1
 - **作者**: Lin Geng Foo, Mark He Huang, Alexandros Lattas, Stylianos Moschoglou, Thabo Beeler 等 (共6位作者)
@@ -1123,7 +1327,7 @@
 
 ---
 
-## 94. OralGPT-Plus: Learning to Use Visual Tools via Reinforcement Learning for Panoramic X-ray Analysis
+## 111. OralGPT-Plus: Learning to Use Visual Tools via Reinforcement Learning for Panoramic X-ray Analysis
 
 - **arXiv ID**: 2603.06366v1
 - **作者**: Yuxuan Fan, Jing Hao, Hong Chen, Jiahao Bao, Yihua Shao 等 (共8位作者)
@@ -1135,7 +1339,7 @@
 
 ---
 
-## 95. DC-Merge: Improving Model Merging with Directional Consistency
+## 112. DC-Merge: Improving Model Merging with Directional Consistency
 
 - **arXiv ID**: 2603.06242v1
 - **作者**: Han-Chen Zhang, Zi-Hao Zhou, Mao-Lin Luo, Shimin Di, Min-Ling Zhang 等 (共6位作者)
@@ -1147,7 +1351,7 @@
 
 ---
 
-## 96. Cut to the Chase: Training-free Multimodal Summarization via Chain-of-Events
+## 113. Cut to the Chase: Training-free Multimodal Summarization via Chain-of-Events
 
 - **arXiv ID**: 2603.06213v1
 - **作者**: Xiaoxing You, Qiang Huang, Lingyu Li, Xiaojun Chang, Jun Yu
@@ -1159,7 +1363,7 @@
 
 ---
 
-## 97. Making Training-Free Diffusion Segmentors Scale with the Generative Power
+## 114. Making Training-Free Diffusion Segmentors Scale with the Generative Power
 
 - **arXiv ID**: 2603.06178v2
 - **作者**: Benyuan Meng, Qianqian Xu, Zitai Wang, Xiaochun Cao, Longtao Huang 等 (共6位作者)
@@ -1171,7 +1375,7 @@
 
 ---
 
-## 98. Dynamic Momentum Recalibration in Online Gradient Learning
+## 115. Dynamic Momentum Recalibration in Online Gradient Learning
 
 - **arXiv ID**: 2603.06120v1
 - **作者**: Zhipeng Yao, Rui Yu, Guisong Chang, Ying Li, Yu Zhang 等 (共6位作者)
@@ -1183,7 +1387,7 @@
 
 ---
 
-## 99. Learning to Generate via Understanding: Understanding-Driven Intrinsic Rewarding for Unified Multimodal Models
+## 116. Learning to Generate via Understanding: Understanding-Driven Intrinsic Rewarding for Unified Multimodal Models
 
 - **arXiv ID**: 2603.06043v1
 - **作者**: Jiadong Pan, Liang Li, Yuxin Peng, Yu-Ming Tang, Shuohuan Wang 等 (共9位作者)
@@ -1195,7 +1399,7 @@
 
 ---
 
-## 100. Occlusion-Aware SORT: Observing Occlusion for Robust Multi-Object Tracking
+## 117. Occlusion-Aware SORT: Observing Occlusion for Robust Multi-Object Tracking
 
 - **arXiv ID**: 2603.06034v2
 - **作者**: Chunjiang Li, Jianbo Ma, Li Shen, Yanru Chen, Liangyin Chen
@@ -1207,7 +1411,7 @@
 
 ---
 
-## 101. BlackMirror: Black-Box Backdoor Detection for Text-to-Image Models via Instruction-Response Deviation
+## 118. BlackMirror: Black-Box Backdoor Detection for Text-to-Image Models via Instruction-Response Deviation
 
 - **arXiv ID**: 2603.05921v1
 - **作者**: Feiran Li, Qianqian Xu, Shilong Bao, Zhiyong Yang, Xilin Zhao 等 (共7位作者)
@@ -1219,7 +1423,7 @@
 
 ---
 
-## 102. Pano3DComposer: Feed-Forward Compositional 3D Scene Generation from Single Panoramic Image
+## 119. Pano3DComposer: Feed-Forward Compositional 3D Scene Generation from Single Panoramic Image
 
 - **arXiv ID**: 2603.05908v1
 - **作者**: Zidian Qiu, Ancong Wu
@@ -1231,7 +1435,7 @@
 
 ---
 
-## 103. Beyond Geometry: Artistic Disparity Synthesis for Immersive 2D-to-3D
+## 120. Beyond Geometry: Artistic Disparity Synthesis for Immersive 2D-to-3D
 
 - **arXiv ID**: 2603.05906v1
 - **作者**: Ping Chen, Zezhou Chen, Xingpeng Zhang, Yanlin Qian, Huan Hu 等 (共11位作者)
@@ -1243,7 +1447,7 @@
 
 ---
 
-## 104. PixARMesh: Autoregressive Mesh-Native Single-View Scene Reconstruction
+## 121. PixARMesh: Autoregressive Mesh-Native Single-View Scene Reconstruction
 
 - **arXiv ID**: 2603.05888v1
 - **作者**: Xiang Zhang, Sohyun Yoo, Hongrui Wu, Chuan Li, Jianwen Xie 等 (共6位作者)
@@ -1255,7 +1459,7 @@
 
 ---
 
-## 105. Devil is in Narrow Policy: Unleashing Exploration in Driving VLA Models
+## 122. Devil is in Narrow Policy: Unleashing Exploration in Driving VLA Models
 
 - **arXiv ID**: 2603.06049v1
 - **作者**: Canyu Chen, Yuguang Yang, Zhewen Tan, Yizhi Wang, Ruiyi Zhan 等 (共13位作者)
@@ -1267,7 +1471,7 @@
 
 ---
 
-## 106. Heterogeneous Decentralized Diffusion Models
+## 123. Heterogeneous Decentralized Diffusion Models
 
 - **arXiv ID**: 2603.06741v1
 - **作者**: Zhiying Jiang, Raihan Seraj, Marcos Villagra, Bidhan Roy
@@ -1279,7 +1483,7 @@
 
 ---
 
-## 107. InnoAds-Composer: Efficient Condition Composition for E-Commerce Poster Generation
+## 124. InnoAds-Composer: Efficient Condition Composition for E-Commerce Poster Generation
 
 - **arXiv ID**: 2603.05898v1
 - **作者**: Yuxin Qin, Ke Cao, Haowei Liu, Ao Ma, Fengheng Li 等 (共16位作者)
@@ -1291,7 +1495,7 @@
 
 ---
 
-## 108. Layer-wise Instance Binding for Regional and Occlusion Control in Text-to-Image Diffusion Transformers
+## 125. Layer-wise Instance Binding for Regional and Occlusion Control in Text-to-Image Diffusion Transformers
 
 - **arXiv ID**: 2603.05769v1
 - **作者**: Ruidong Chen, Yancheng Bai, Xuanpu Zhang, Jianhao Zeng, Lanjun Wang 等 (共9位作者)
@@ -1303,7 +1507,7 @@
 
 ---
 
-## 109. Bridging Domains through Subspace-Aware Model Merging
+## 126. Bridging Domains through Subspace-Aware Model Merging
 
 - **arXiv ID**: 2603.05768v2
 - **作者**: Levy Chaves, Chao Zhou, Rebekka Burkholz, Eduardo Valle, Sandra Avila
@@ -1315,7 +1519,7 @@
 
 ---
 
-## 110. Unlocking ImageNet's Multi-Object Nature: Automated Large-Scale Multilabel Annotation
+## 127. Unlocking ImageNet's Multi-Object Nature: Automated Large-Scale Multilabel Annotation
 
 - **arXiv ID**: 2603.05729v1
 - **作者**: Junyu Chen, Md Yousuf Harun, Christopher Kanan
@@ -1327,7 +1531,7 @@
 
 ---
 
-## 111. Rethinking Concept Bottleneck Models: From Pitfalls to Solutions
+## 128. Rethinking Concept Bottleneck Models: From Pitfalls to Solutions
 
 - **arXiv ID**: 2603.05629v1
 - **作者**: Merve Tapli, Quentin Bouniot, Wolfgang Stammer, Zeynep Akata, Emre Akbas
@@ -1339,7 +1543,7 @@
 
 ---
 
-## 112. FaceCam: Portrait Video Camera Control via Scale-Aware Conditioning
+## 129. FaceCam: Portrait Video Camera Control via Scale-Aware Conditioning
 
 - **arXiv ID**: 2603.05506v1
 - **作者**: Weijie Lyu, Ming-Hsuan Yang, Zhixin Shu
@@ -1351,7 +1555,7 @@
 
 ---
 
-## 113. NaiLIA: Multimodal Nail Design Retrieval Based on Dense Intent Descriptions and Palette Queries
+## 130. NaiLIA: Multimodal Nail Design Retrieval Based on Dense Intent Descriptions and Palette Queries
 
 - **arXiv ID**: 2603.05446v1
 - **作者**: Kanon Amemiya, Daichi Yashima, Kei Katsumata, Takumi Komatsu, Ryosuke Korekata 等 (共7位作者)
@@ -1363,7 +1567,7 @@
 
 ---
 
-## 114. Planning in 8 Tokens: A Compact Discrete Tokenizer for Latent World Model
+## 131. Planning in 8 Tokens: A Compact Discrete Tokenizer for Latent World Model
 
 - **arXiv ID**: 2603.05438v1
 - **作者**: Dongwon Kim, Gawon Seo, Jinsung Lee, Minsu Cho, Suha Kwak
@@ -1375,7 +1579,7 @@
 
 ---
 
-## 115. SAIL: Similarity-Aware Guidance and Inter-Caption Augmentation-based Learning for Weakly-Supervised Dense Video Captioning
+## 132. SAIL: Similarity-Aware Guidance and Inter-Caption Augmentation-based Learning for Weakly-Supervised Dense Video Captioning
 
 - **arXiv ID**: 2603.05437v2
 - **作者**: Ye-Chan Kim, SeungJu Cha, Si-Woo Kim, Minju Jeon, Hyungee Kim 等 (共6位作者)
@@ -1387,7 +1591,7 @@
 
 ---
 
-## 116. Dark3R: Learning Structure from Motion in the Dark
+## 133. Dark3R: Learning Structure from Motion in the Dark
 
 - **arXiv ID**: 2603.05330v1
 - **作者**: Andrew Y Guo, Anagh Malik, SaiKiran Tedla, Yutong Dai, Yiqian Qin 等 (共10位作者)
@@ -1399,7 +1603,7 @@
 
 ---
 
-## 117. Reclaiming Lost Text Layers for Source-Free Cross-Domain Few-Shot Learning
+## 134. Reclaiming Lost Text Layers for Source-Free Cross-Domain Few-Shot Learning
 
 - **arXiv ID**: 2603.05235v1
 - **作者**: Zhenyu Zhang, Guangyao Chen, Yixiong Zou, Yuhua Li, Ruixuan Li
@@ -1411,7 +1615,7 @@
 
 ---
 
-## 118. Mario: Multimodal Graph Reasoning with Large Language Models
+## 135. Mario: Multimodal Graph Reasoning with Large Language Models
 
 - **arXiv ID**: 2603.05181v1
 - **作者**: Yuanfu Sun, Kang Li, Pengkang Guo, Jiajin Liu, Qiaoyu Tan
@@ -1423,7 +1627,7 @@
 
 ---
 
-## 119. GEM-TFL: Bridging Weak and Full Supervision for Forgery Localization through EM-Guided Decomposition and Temporal Refinement
+## 136. GEM-TFL: Bridging Weak and Full Supervision for Forgery Localization through EM-Guided Decomposition and Temporal Refinement
 
 - **arXiv ID**: 2603.05095v1
 - **作者**: Xiaodong Zhu, Yuanming Zheng, Suting Wang, Junqi Yang, Yuhong Yang 等 (共7位作者)
@@ -1435,7 +1639,7 @@
 
 ---
 
-## 120. MoRe: Motion-aware Feed-forward 4D Reconstruction Transformer
+## 137. MoRe: Motion-aware Feed-forward 4D Reconstruction Transformer
 
 - **arXiv ID**: 2603.05078v2
 - **作者**: Juntong Fang, Zequn Chen, Weiqi Zhang, Donglin Di, Xuancheng Zhang 等 (共7位作者)
@@ -1447,7 +1651,7 @@
 
 ---
 
-## 121. CoIn3D: Revisiting Configuration-Invariant Multi-Camera 3D Object Detection
+## 138. CoIn3D: Revisiting Configuration-Invariant Multi-Camera 3D Object Detection
 
 - **arXiv ID**: 2603.05042v1
 - **作者**: Zhaonian Kuang, Rui Ding, Haotian Wang, Xinhu Zheng, Meng Yang 等 (共6位作者)
@@ -1459,7 +1663,7 @@
 
 ---
 
-## 122. Tell2Adapt: A Unified Framework for Source Free Unsupervised Domain Adaptation via Vision Foundation Model
+## 139. Tell2Adapt: A Unified Framework for Source Free Unsupervised Domain Adaptation via Vision Foundation Model
 
 - **arXiv ID**: 2603.05012v1
 - **作者**: Yulong Shi, Shijie Li, Ziyi Li, Lin Qi
@@ -1471,7 +1675,7 @@
 
 ---
 
-## 123. FedAFD: Multimodal Federated Learning via Adversarial Fusion and Distillation
+## 140. FedAFD: Multimodal Federated Learning via Adversarial Fusion and Distillation
 
 - **arXiv ID**: 2603.04890v1
 - **作者**: Min Tan, Junchao Ma, Yinfu Feng, Jiajun Ding, Wenwen Pan 等 (共9位作者)
@@ -1483,7 +1687,7 @@
 
 ---
 
-## 124. Diffusion-Based sRGB Real Noise Generation via Prompt-Driven Noise Representation Learning
+## 141. Diffusion-Based sRGB Real Noise Generation via Prompt-Driven Noise Representation Learning
 
 - **arXiv ID**: 2603.04870v1
 - **作者**: Jaekyun Ko, Dongjin Kim, Soomin Lee, Guanghui Wang, Tae Hyun Kim
@@ -1495,7 +1699,7 @@
 
 ---
 
-## 125. Hyperbolic Multiview Pretraining for Robotic Manipulation
+## 142. Hyperbolic Multiview Pretraining for Robotic Manipulation
 
 - **arXiv ID**: 2603.04848v2
 - **作者**: Jin Yang, Ping Wei, Yixin Chen, Nanning Zheng
@@ -1507,7 +1711,7 @@
 
 ---
 
-## 126. MASQuant: Modality-Aware Smoothing Quantization for Multimodal Large Language Models
+## 143. MASQuant: Modality-Aware Smoothing Quantization for Multimodal Large Language Models
 
 - **arXiv ID**: 2603.04800v1
 - **作者**: Lulu Hu, Wenhu Xiao, Xin Chen, Xinhua Xu, Bowen Xu 等 (共7位作者)
@@ -1519,7 +1723,7 @@
 
 ---
 
-## 127. Toward Real-world Infrared Image Super-Resolution: A Unified Autoregressive Framework and Benchmark Dataset
+## 144. Toward Real-world Infrared Image Super-Resolution: A Unified Autoregressive Framework and Benchmark Dataset
 
 - **arXiv ID**: 2603.04745v1
 - **作者**: Yang Zou, Jun Ma, Zhidong Jiao, Xingyuan Li, Zhiying Jiang 等 (共6位作者)
@@ -1531,7 +1735,7 @@
 
 ---
 
-## 128. Multi-Paradigm Collaborative Adversarial Attack Against Multi-Modal Large Language Models
+## 145. Multi-Paradigm Collaborative Adversarial Attack Against Multi-Modal Large Language Models
 
 - **arXiv ID**: 2603.04846v2
 - **作者**: Yuanbo Li, Tianyang Xu, Cong Hu, Tao Zhou, Xiao-Jun Wu 等 (共6位作者)
@@ -1543,7 +1747,7 @@
 
 ---
 
-## 129. Towards Highly Transferable Vision-Language Attack via Semantic-Augmented Dynamic Contrastive Interaction
+## 146. Towards Highly Transferable Vision-Language Attack via Semantic-Augmented Dynamic Contrastive Interaction
 
 - **arXiv ID**: 2603.04839v2
 - **作者**: Yuanbo Li, Tianyang Xu, Cong Hu, Tao Zhou, Xiao-Jun Wu 等 (共6位作者)
@@ -1555,7 +1759,7 @@
 
 ---
 
-## 130. Mitigating Instance Entanglement in Instance-Dependent Partial Label Learning
+## 147. Mitigating Instance Entanglement in Instance-Dependent Partial Label Learning
 
 - **arXiv ID**: 2603.04825v1
 - **作者**: Rui Zhao, Bin Shi, Kai Sun, Bo Dong
@@ -1567,7 +1771,7 @@
 
 ---
 
-## 131. CATNet: Collaborative Alignment and Transformation Network for Cooperative Perception
+## 148. CATNet: Collaborative Alignment and Transformation Network for Cooperative Perception
 
 - **arXiv ID**: 2603.05255v1
 - **作者**: Gong Chen, Chaokun Zhang, Tao Tang, Pengcheng Lv, Feng Li 等 (共6位作者)
@@ -1579,7 +1783,7 @@
 
 ---
 
-## 132. PinPoint: Evaluation of Composed Image Retrieval with Explicit Negatives, Multi-Image Queries, and Paraphrase Testing
+## 149. PinPoint: Evaluation of Composed Image Retrieval with Explicit Negatives, Multi-Image Queries, and Paraphrase Testing
 
 - **arXiv ID**: 2603.04598v1
 - **作者**: Rohan Mahadev, Joyce Yuan, Patrick Poirson, David Xue, Hao-Yu Wu 等 (共6位作者)
@@ -1591,7 +1795,7 @@
 
 ---
 
-## 133. CubeComposer: Spatio-Temporal Autoregressive 4K 360° Video Generation from Perspective Video
+## 150. CubeComposer: Spatio-Temporal Autoregressive 4K 360° Video Generation from Perspective Video
 
 - **arXiv ID**: 2603.04291v1
 - **作者**: Lingen Li, Guangzhi Wang, Xiaoyu Li, Zhaoyang Zhang, Qi Dou 等 (共8位作者)
@@ -1603,7 +1807,7 @@
 
 ---
 
-## 134. ViterbiPlanNet: Injecting Procedural Knowledge via Differentiable Viterbi for Planning in Instructional Videos
+## 151. ViterbiPlanNet: Injecting Procedural Knowledge via Differentiable Viterbi for Planning in Instructional Videos
 
 - **arXiv ID**: 2603.04265v1
 - **作者**: Luigi Seminara, Davide Moltisanti, Antonino Furnari
@@ -1615,7 +1819,7 @@
 
 ---
 
-## 135. EmbodiedSplat: Online Feed-Forward Semantic 3DGS for Open-Vocabulary 3D Scene Understanding
+## 152. EmbodiedSplat: Online Feed-Forward Semantic 3DGS for Open-Vocabulary 3D Scene Understanding
 
 - **arXiv ID**: 2603.04254v1
 - **作者**: Seungjun Lee, Zihan Wang, Yunsong Wang, Gim Hee Lee
@@ -1627,7 +1831,7 @@
 
 ---
 
-## 136. DiverseDiT: Towards Diverse Representation Learning in Diffusion Transformers
+## 153. DiverseDiT: Towards Diverse Representation Learning in Diffusion Transformers
 
 - **arXiv ID**: 2603.04239v1
 - **作者**: Mengping Yang, Zhiyu Tan, Binglei Li, Xiaomeng Yang, Hesen Chen 等 (共6位作者)
@@ -1639,7 +1843,7 @@
 
 ---
 
-## 137. EgoPoseFormer v2: Accurate Egocentric Human Motion Estimation for AR/VR
+## 154. EgoPoseFormer v2: Accurate Egocentric Human Motion Estimation for AR/VR
 
 - **arXiv ID**: 2603.04090v1
 - **作者**: Zhenyu Li, Sai Kumar Dwivedi, Filip Maric, Carlos Chacon, Nadine Bertsch 等 (共14位作者)
@@ -1651,7 +1855,7 @@
 
 ---
 
-## 138. Discriminative Perception via Anchored Description for Reasoning Segmentation
+## 155. Discriminative Perception via Anchored Description for Reasoning Segmentation
 
 - **arXiv ID**: 2603.04002v1
 - **作者**: Tao Yang, Qing Zhou, Yanliang Li, Qi Wang
@@ -1663,7 +1867,7 @@
 
 ---
 
-## 139. UniRain: Unified Image Deraining with RAG-based Dataset Distillation and Multi-objective Reweighted Optimization
+## 156. UniRain: Unified Image Deraining with RAG-based Dataset Distillation and Multi-objective Reweighted Optimization
 
 - **arXiv ID**: 2603.03967v1
 - **作者**: Qianfeng Yang, Qiyuan Guan, Xiang Chen, Jiyu Jin, Guiyue Jin 等 (共6位作者)
@@ -1675,7 +1879,7 @@
 
 ---
 
-## 140. BD-Merging: Bias-Aware Dynamic Model Merging with Evidence-Guided Contrastive Learning
+## 157. BD-Merging: Bias-Aware Dynamic Model Merging with Evidence-Guided Contrastive Learning
 
 - **arXiv ID**: 2603.03920v2
 - **作者**: Yuhan Xie, Chen Lyu
@@ -1687,7 +1891,7 @@
 
 ---
 
-## 141. Fine-grained Image Aesthetic Assessment: Learning Discriminative Scores from Relative Ranks
+## 158. Fine-grained Image Aesthetic Assessment: Learning Discriminative Scores from Relative Ranks
 
 - **arXiv ID**: 2603.03907v1
 - **作者**: Zhichao Yang, Jianjie Wang, Zhixianhe Zhang, Pangu Xie, Xiangfei Sheng 等 (共7位作者)
@@ -1699,7 +1903,7 @@
 
 ---
 
-## 142. DeepScan: A Training-Free Framework for Visually Grounded Reasoning in Large Vision-Language Models
+## 159. DeepScan: A Training-Free Framework for Visually Grounded Reasoning in Large Vision-Language Models
 
 - **arXiv ID**: 2603.03857v1
 - **作者**: Yangfu Li, Hongjian Zhan, Jiawei Chen, Yuning Gong, Qi Liu 等 (共6位作者)
@@ -1711,7 +1915,7 @@
 
 ---
 
-## 143. Evolutionary Multimodal Reasoning via Hierarchical Semantic Representation for Intent Recognition
+## 160. Evolutionary Multimodal Reasoning via Hierarchical Semantic Representation for Intent Recognition
 
 - **arXiv ID**: 2603.03827v1
 - **作者**: Qianrui Zhou, Hua Xu, Yunjin Gu, Yifan Wang, Songze Li 等 (共6位作者)
@@ -1723,7 +1927,7 @@
 
 ---
 
-## 144. TAP: A Token-Adaptive Predictor Framework for Training-Free Diffusion Acceleration
+## 161. TAP: A Token-Adaptive Predictor Framework for Training-Free Diffusion Acceleration
 
 - **arXiv ID**: 2603.03792v1
 - **作者**: Haowei Zhu, Tingxuan Huang, Xing Wang, Tianyu Zhao, Jiexi Wang 等 (共10位作者)
@@ -1735,7 +1939,7 @@
 
 ---
 
-## 145. DAGE: Dual-Stream Architecture for Efficient and Fine-Grained Geometry Estimation
+## 162. DAGE: Dual-Stream Architecture for Efficient and Fine-Grained Geometry Estimation
 
 - **arXiv ID**: 2603.03744v1
 - **作者**: Tuan Duc Ngo, Jiahui Huang, Seoung Wug Oh, Kevin Blackburn-Matzen, Evangelos Kalogerakis 等 (共7位作者)
@@ -1747,7 +1951,7 @@
 
 ---
 
-## 146. QD-PCQA: Quality-Aware Domain Adaptation for Point Cloud Quality Assessment
+## 163. QD-PCQA: Quality-Aware Domain Adaptation for Point Cloud Quality Assessment
 
 - **arXiv ID**: 2603.03726v1
 - **作者**: Guohua Zhang, Jian Jin, Meiqin Liu, Chao Yao, Weisi Lin
@@ -1759,7 +1963,7 @@
 
 ---
 
-## 147. Parallax to Align Them All: An OmniParallax Attention Mechanism for Distributed Multi-View Image Compression
+## 164. Parallax to Align Them All: An OmniParallax Attention Mechanism for Distributed Multi-View Image Compression
 
 - **arXiv ID**: 2603.03615v1
 - **作者**: Haotian Zhang, Feiyue Long, Yixin Yu, Jian Xue, Haocheng Tang 等 (共10位作者)
@@ -1771,7 +1975,7 @@
 
 ---
 
-## 148. Pointer-CAD: Unifying B-Rep and Command Sequences via Pointer-based Edges & Faces Selection
+## 165. Pointer-CAD: Unifying B-Rep and Command Sequences via Pointer-based Edges & Faces Selection
 
 - **arXiv ID**: 2603.04337v1
 - **作者**: Dacheng Qi, Chenyu Wang, Jingwei Xu, Tianzhe Chu, Zibo Zhao 等 (共9位作者)
@@ -1783,7 +1987,19 @@
 
 ---
 
-## 149. RAGTrack: Language-aware RGBT Tracking with Retrieval-Augmented Generation
+## 166. Narrative Weaver: Towards Controllable Long-Range Visual Consistency with Multi-Modal Conditioning
+
+- **arXiv ID**: 2603.06688v2
+- **作者**: Zhengjian Yao, Yongzhi Li, Xinyuan Gao, Quan Chen, Peng Jiang 等 (共6位作者)
+- **发布日期**: 2026-03-04
+- **分类**: cs.CV, cs.AI
+- **论文链接**: [http://arxiv.org/abs/2603.06688v2](http://arxiv.org/abs/2603.06688v2)
+- **PDF**: [http://arxiv.org/pdf/2603.06688v2](http://arxiv.org/pdf/2603.06688v2)
+- **摘要**: We present "Narrative Weaver", a novel framework that addresses a fundamental challenge in generative AI: achieving multi-modal controllable, long-range, and consistent visual content generation. While existing models excel at generating high-fidelity short-form visual content, they struggle to main...
+
+---
+
+## 167. RAGTrack: Language-aware RGBT Tracking with Retrieval-Augmented Generation
 
 - **arXiv ID**: 2603.03617v1
 - **作者**: Hao Li, Yuhao Wang, Wenning Hao, Pingping Zhang, Dong Wang 等 (共6位作者)
@@ -1795,7 +2011,7 @@
 
 ---
 
-## 150. Learning Surgical Robotic Manipulation with 3D Spatial Priors
+## 168. Learning Surgical Robotic Manipulation with 3D Spatial Priors
 
 - **arXiv ID**: 2603.03798v1
 - **作者**: Yu Sheng, Lidian Wang, Xiaomeng Chu, Jiajun Deng, Min Cheng 等 (共9位作者)
@@ -1807,7 +2023,7 @@
 
 ---
 
-## 151. MIBURI: Towards Expressive Interactive Gesture Synthesis
+## 169. MIBURI: Towards Expressive Interactive Gesture Synthesis
 
 - **arXiv ID**: 2603.03282v1
 - **作者**: M. Hamza Mughal, Rishabh Dabral, Vera Demberg, Christian Theobalt
@@ -1819,7 +2035,7 @@
 
 ---
 
-## 152. CFG-Ctrl: Control-Based Classifier-Free Diffusion Guidance
+## 170. CFG-Ctrl: Control-Based Classifier-Free Diffusion Guidance
 
 - **arXiv ID**: 2603.03281v2
 - **作者**: Hanyang Wang, Yiyang Liu, Jiawei Chi, Fangfu Liu, Ran Xue 等 (共6位作者)
@@ -1831,7 +2047,7 @@
 
 ---
 
-## 153. DuoMo: Dual Motion Diffusion for World-Space Human Reconstruction
+## 171. DuoMo: Dual Motion Diffusion for World-Space Human Reconstruction
 
 - **arXiv ID**: 2603.03265v1
 - **作者**: Yufu Wang, Evonne Ng, Soyong Shin, Rawal Khirodkar, Yuan Dong 等 (共11位作者)
@@ -1843,7 +2059,7 @@
 
 ---
 
-## 154. Specificity-aware reinforcement learning for fine-grained open-world classification
+## 172. Specificity-aware reinforcement learning for fine-grained open-world classification
 
 - **arXiv ID**: 2603.03197v2
 - **作者**: Samuele Angheben, Davide Berasi, Alessandro Conti, Elisa Ricci, Yiming Wang
@@ -1855,7 +2071,7 @@
 
 ---
 
-## 155. MoECLIP: Patch-Specialized Experts for Zero-shot Anomaly Detection
+## 173. MoECLIP: Patch-Specialized Experts for Zero-shot Anomaly Detection
 
 - **arXiv ID**: 2603.03101v2
 - **作者**: Jun Yeong Park, JunYoung Seo, Minji Kang, Yu Rang Park
@@ -1867,7 +2083,7 @@
 
 ---
 
-## 156. ACE-Merging: Data-Free Model Merging with Adaptive Covariance Estimation
+## 174. ACE-Merging: Data-Free Model Merging with Adaptive Covariance Estimation
 
 - **arXiv ID**: 2603.02945v1
 - **作者**: Bo Xu, Haotian Wu, Hehai Lin, Weiquan Huang, Beier Zhu 等 (共7位作者)
@@ -1879,7 +2095,7 @@
 
 ---
 
-## 157. TC-Padé: Trajectory-Consistent Padé Approximation for Diffusion Acceleration
+## 175. TC-Padé: Trajectory-Consistent Padé Approximation for Diffusion Acceleration
 
 - **arXiv ID**: 2603.02943v1
 - **作者**: Benlei Cui, Shaoxuan He, Bukun Huang, Zhizeng Ye, Yunyun Sun 等 (共11位作者)
@@ -1891,7 +2107,7 @@
 
 ---
 
-## 158. Interpretable Motion-Attentive Maps: Spatio-Temporally Localizing Concepts in Video Diffusion Transformers
+## 176. Interpretable Motion-Attentive Maps: Spatio-Temporally Localizing Concepts in Video Diffusion Transformers
 
 - **arXiv ID**: 2603.02919v2
 - **作者**: Youngjun Jun, Seil Kang, Woojung Han, Seong Jae Hwang
@@ -1903,7 +2119,7 @@
 
 ---
 
-## 159. NOVA: Sparse Control, Dense Synthesis for Pair-Free Video Editing
+## 177. NOVA: Sparse Control, Dense Synthesis for Pair-Free Video Editing
 
 - **arXiv ID**: 2603.02802v1
 - **作者**: Tianlin Pan, Jiayi Dai, Chenpu Yuan, Zhengyao Lv, Binxin Yang 等 (共10位作者)
@@ -1915,7 +2131,7 @@
 
 ---
 
-## 160. HiLoRA: Hierarchical Low-Rank Adaptation for Personalized Federated Learning
+## 178. HiLoRA: Hierarchical Low-Rank Adaptation for Personalized Federated Learning
 
 - **arXiv ID**: 2603.02785v1
 - **作者**: Zihao Peng, Nan Zou, Jiandian Zeng, Guo Li, Ke Chen 等 (共7位作者)
@@ -1927,7 +2143,7 @@
 
 ---
 
-## 161. FiDeSR: High-Fidelity and Detail-Preserving One-Step Diffusion Super-Resolution
+## 179. FiDeSR: High-Fidelity and Detail-Preserving One-Step Diffusion Super-Resolution
 
 - **arXiv ID**: 2603.02692v1
 - **作者**: Aro Kim, Myeongjin Jang, Chaewon Moon, Youngjin Shin, Jinwoo Jeong 等 (共6位作者)
@@ -1939,7 +2155,7 @@
 
 ---
 
-## 162. Mind the Way You Select Negative Texts: Pursuing the Distance Consistency in OOD Detection with VLMs
+## 180. Mind the Way You Select Negative Texts: Pursuing the Distance Consistency in OOD Detection with VLMs
 
 - **arXiv ID**: 2603.02618v2
 - **作者**: Zhikang Xu, Qianqian Xu, Zitai Wang, Cong Hua, Sicong Li 等 (共7位作者)
@@ -1951,7 +2167,7 @@
 
 ---
 
-## 163. Chain of World: World Model Thinking in Latent Motion
+## 181. Chain of World: World Model Thinking in Latent Motion
 
 - **arXiv ID**: 2603.03195v1
 - **作者**: Fuxiang Yang, Donglin Di, Lulu Tang, Xuancheng Zhang, Lei Fan 等 (共9位作者)
@@ -1963,7 +2179,7 @@
 
 ---
 
-## 164. CAPT: Confusion-Aware Prompt Tuning for Reducing Vision-Language Misalignment
+## 182. CAPT: Confusion-Aware Prompt Tuning for Reducing Vision-Language Misalignment
 
 - **arXiv ID**: 2603.02557v1
 - **作者**: Maoyuan Shao, Yutong Gao, Xinyang Huang, Chuang Zhu, Lijuan Sun 等 (共6位作者)
@@ -1975,7 +2191,7 @@
 
 ---
 
-## 165. Generalizable Knowledge Distillation from Vision Foundation Models for Semantic Segmentation
+## 183. Generalizable Knowledge Distillation from Vision Foundation Models for Semantic Segmentation
 
 - **arXiv ID**: 2603.02554v1
 - **作者**: Chonghua Lv, Dong Zhao, Shuang Wang, Dou Quan, Ning Huyan 等 (共7位作者)
@@ -1987,7 +2203,7 @@
 
 ---
 
-## 166. From Fewer Samples to Fewer Bits: Reframing Dataset Distillation as Joint Optimization of Precision and Compactness
+## 184. From Fewer Samples to Fewer Bits: Reframing Dataset Distillation as Joint Optimization of Precision and Compactness
 
 - **arXiv ID**: 2603.02411v1
 - **作者**: My H. Dinh, Aditya Sant, Akshay Malhotra, Keya Patani, Shahab Hamidi-Rad
@@ -1999,7 +2215,7 @@
 
 ---
 
-## 167. OpenMarcie: Dataset for Multimodal Action Recognition in Industrial Environments
+## 185. OpenMarcie: Dataset for Multimodal Action Recognition in Industrial Environments
 
 - **arXiv ID**: 2603.02390v1
 - **作者**: Hymalai Bello, Lala Ray, Joanna Sorysz, Sungho Suh, Paul Lukowicz
@@ -2011,7 +2227,7 @@
 
 ---
 
-## 168. Beyond Caption-Based Queries for Video Moment Retrieval
+## 186. Beyond Caption-Based Queries for Video Moment Retrieval
 
 - **arXiv ID**: 2603.02363v1
 - **作者**: David Pujol-Perich, Albert Clapés, Dima Damen, Sergio Escalera, Michael Wray
@@ -2023,7 +2239,7 @@
 
 ---
 
-## 169. HAMMER: Harnessing MLLM via Cross-Modal Integration for Intention-Driven 3D Affordance Grounding
+## 187. HAMMER: Harnessing MLLM via Cross-Modal Integration for Intention-Driven 3D Affordance Grounding
 
 - **arXiv ID**: 2603.02329v1
 - **作者**: Lei Yao, Yong Chen, Yuejiao Su, Yi Wang, Moyun Liu 等 (共6位作者)
@@ -2035,7 +2251,7 @@
 
 ---
 
-## 170. HiFi-Inpaint: Towards High-Fidelity Reference-Based Inpainting for Generating Detail-Preserving Human-Product Images
+## 188. HiFi-Inpaint: Towards High-Fidelity Reference-Based Inpainting for Generating Detail-Preserving Human-Product Images
 
 - **arXiv ID**: 2603.02210v2
 - **作者**: Yichen Liu, Donghao Zhou, Jie Wang, Xin Gao, Guisheng Liu 等 (共12位作者)
@@ -2047,7 +2263,7 @@
 
 ---
 
-## 171. Adaptive Confidence Regularization for Multimodal Failure Detection
+## 189. Adaptive Confidence Regularization for Multimodal Failure Detection
 
 - **arXiv ID**: 2603.02200v1
 - **作者**: Moru Liu, Hao Dong, Olga Fink, Mario Trapp
@@ -2059,7 +2275,7 @@
 
 ---
 
-## 172. Sketch2Colab: Sketch-Conditioned Multi-Human Animation via Controllable Flow Distillation
+## 190. Sketch2Colab: Sketch-Conditioned Multi-Human Animation via Controllable Flow Distillation
 
 - **arXiv ID**: 2603.02190v1
 - **作者**: Divyanshu Daiya, Aniket Bera
@@ -2071,7 +2287,7 @@
 
 ---
 
-## 173. OmniLottie: Generating Vector Animations via Parameterized Lottie Tokens
+## 191. OmniLottie: Generating Vector Animations via Parameterized Lottie Tokens
 
 - **arXiv ID**: 2603.02138v1
 - **作者**: Yiying Yang, Wei Cheng, Sijin Chen, Honghao Fu, Xianfang Zeng 等 (共8位作者)
@@ -2083,7 +2299,7 @@
 
 ---
 
-## 174. SimRecon: SimReady Compositional Scene Reconstruction from Real Videos
+## 192. SimRecon: SimReady Compositional Scene Reconstruction from Real Videos
 
 - **arXiv ID**: 2603.02133v2
 - **作者**: Chong Xia, Kai Zhu, Zizhuo Wang, Fangfu Liu, Zhizheng Zhang 等 (共6位作者)
@@ -2095,7 +2311,7 @@
 
 ---
 
-## 175. Recursive Think-Answer Process for LLMs and VLMs
+## 193. Recursive Think-Answer Process for LLMs and VLMs
 
 - **arXiv ID**: 2603.02099v2
 - **作者**: Byung-Kwan Lee, Youngchae Chee, Yong Man Ro
@@ -2107,7 +2323,7 @@
 
 ---
 
-## 176. OmniRet: Efficient and High-Fidelity Omni Modality Retrieval
+## 194. OmniRet: Efficient and High-Fidelity Omni Modality Retrieval
 
 - **arXiv ID**: 2603.02098v1
 - **作者**: Chuong Huynh, Manh Luong, Abhinav Shrivastava
@@ -2119,7 +2335,7 @@
 
 ---
 
-## 177. FluxMem: Adaptive Hierarchical Memory for Streaming Video Understanding
+## 195. FluxMem: Adaptive Hierarchical Memory for Streaming Video Understanding
 
 - **arXiv ID**: 2603.02096v1
 - **作者**: Yiweng Xie, Bo He, Junke Wang, Xiangyu Zheng, Ziyi Ye 等 (共6位作者)
@@ -2131,7 +2347,7 @@
 
 ---
 
-## 178. Beyond Prompt Degradation: Prototype-guided Dual-pool Prompting for Incremental Object Detection
+## 196. Beyond Prompt Degradation: Prototype-guided Dual-pool Prompting for Incremental Object Detection
 
 - **arXiv ID**: 2603.02286v1
 - **作者**: Yaoteng Zhang, Zhou Qing, Junyu Gao, Qi Wang
@@ -2143,7 +2359,7 @@
 
 ---
 
-## 179. Cross-modal Identity Mapping: Minimizing Information Loss in Modality Conversion via Reinforcement Learning
+## 197. Cross-modal Identity Mapping: Minimizing Information Loss in Modality Conversion via Reinforcement Learning
 
 - **arXiv ID**: 2603.01696v1
 - **作者**: Haonan Jia, Shichao Dong, Xin Dong, Zenghui Sun, Jin Wang 等 (共9位作者)
@@ -2155,7 +2371,7 @@
 
 ---
 
-## 180. FastLightGen: Fast and Light Video Generation with Fewer Steps and Parameters
+## 198. FastLightGen: Fast and Light Video Generation with Fewer Steps and Parameters
 
 - **arXiv ID**: 2603.01685v3
 - **作者**: Shitong Shao, Yufei Gu, Zeke Xie
@@ -2167,7 +2383,7 @@
 
 ---
 
-## 181. Adaptive Spectral Feature Forecasting for Diffusion Sampling Acceleration
+## 199. Adaptive Spectral Feature Forecasting for Diffusion Sampling Acceleration
 
 - **arXiv ID**: 2603.01623v1
 - **作者**: Jiaqi Han, Juntong Shi, Puheng Li, Haotian Ye, Qiushan Guo 等 (共6位作者)
@@ -2179,7 +2395,7 @@
 
 ---
 
-## 182. UniTalking: A Unified Audio-Video Framework for Talking Portrait Generation
+## 200. UniTalking: A Unified Audio-Video Framework for Talking Portrait Generation
 
 - **arXiv ID**: 2603.01418v1
 - **作者**: Hebeizi Li, Zihao Liang, Benyuan Sun, Zihao Yin, Xiao Sha 等 (共7位作者)
@@ -2191,7 +2407,7 @@
 
 ---
 
-## 183. Token Reduction via Local and Global Contexts Optimization for Efficient Video Large Language Models
+## 201. Token Reduction via Local and Global Contexts Optimization for Efficient Video Large Language Models
 
 - **arXiv ID**: 2603.01400v1
 - **作者**: Jinlong Li, Liyuan Jiang, Haonan Zhang, Nicu Sebe
@@ -2203,7 +2419,7 @@
 
 ---
 
-## 184. Continuous Exposure-Time Modeling for Realistic Atmospheric Turbulence Synthesis
+## 202. Continuous Exposure-Time Modeling for Realistic Atmospheric Turbulence Synthesis
 
 - **arXiv ID**: 2603.01398v2
 - **作者**: Junwei Zeng, Dong Liang, Sheng-Jun Huang, Kun Zhan, Songcan Chen
@@ -2215,7 +2431,7 @@
 
 ---
 
-## 185. Temporal Imbalance of Positive and Negative Supervision in Class-Incremental Learning
+## 203. Temporal Imbalance of Positive and Negative Supervision in Class-Incremental Learning
 
 - **arXiv ID**: 2603.02280v1
 - **作者**: Jinge Ma, Fengqing Zhu
@@ -2227,7 +2443,7 @@
 
 ---
 
-## 186. MixerCSeg: An Efficient Mixer Architecture for Crack Segmentation via Decoupled Mamba Attention
+## 204. MixerCSeg: An Efficient Mixer Architecture for Crack Segmentation via Decoupled Mamba Attention
 
 - **arXiv ID**: 2603.01361v1
 - **作者**: Zilong Zhao, Zhengming Ding, Pei Niu, Wenhao Sun, Feng Guo
@@ -2239,7 +2455,7 @@
 
 ---
 
-## 187. UETrack: A Unified and Efficient Framework for Single Object Tracking
+## 205. UETrack: A Unified and Efficient Framework for Single Object Tracking
 
 - **arXiv ID**: 2603.01412v2
 - **作者**: Ben Kang, Jie Zhao, Xin Chen, Wanting Geng, Bin Zhang 等 (共8位作者)
@@ -2251,7 +2467,7 @@
 
 ---
 
-## 188. WhisperNet: A Scalable Solution for Bandwidth-Efficient Collaboration
+## 206. WhisperNet: A Scalable Solution for Bandwidth-Efficient Collaboration
 
 - **arXiv ID**: 2603.01708v1
 - **作者**: Gong Chen, Chaokun Zhang, Xinyan Zhao
@@ -2263,7 +2479,7 @@
 
 ---
 
-## 189. CoopDiff: A Diffusion-Guided Approach for Cooperation under Corruptions
+## 207. CoopDiff: A Diffusion-Guided Approach for Cooperation under Corruptions
 
 - **arXiv ID**: 2603.01688v1
 - **作者**: Gong Chen, Chaokun Zhang, Pengcheng Lv
@@ -2275,7 +2491,7 @@
 
 ---
 
-## 190. FoSS: Modeling Long Range Dependencies and Multimodal Uncertainty in Trajectory Prediction via Fourier State Space Integration
+## 208. FoSS: Modeling Long Range Dependencies and Multimodal Uncertainty in Trajectory Prediction via Fourier State Space Integration
 
 - **arXiv ID**: 2603.01284v1
 - **作者**: Yizhou Huang, Gengze Jiang, Yihua Cheng, Kezhi Wang
@@ -2287,7 +2503,7 @@
 
 ---
 
-## 191. RnG: A Unified Transformer for Complete 3D Modeling from Partial Observations
+## 209. RnG: A Unified Transformer for Complete 3D Modeling from Partial Observations
 
 - **arXiv ID**: 2603.01194v1
 - **作者**: Mochu Xiang, Zhelun Shen, Xuesong Li, Jiahui Ren, Jing Zhang 等 (共10位作者)
@@ -2299,7 +2515,7 @@
 
 ---
 
-## 192. BeautyGRPO: Aesthetic Alignment for Face Retouching via Dynamic Path Guidance and Fine-Grained Preference Modeling
+## 210. BeautyGRPO: Aesthetic Alignment for Face Retouching via Dynamic Path Guidance and Fine-Grained Preference Modeling
 
 - **arXiv ID**: 2603.01163v1
 - **作者**: Jiachen Yang, Xianhui Lin, Yi Dong, Zebiao Zheng, Xing Liu 等 (共7位作者)
@@ -2311,7 +2527,7 @@
 
 ---
 
-## 193. DeAR: Fine-Grained VLM Adaptation by Decomposing Attention Head Roles
+## 211. DeAR: Fine-Grained VLM Adaptation by Decomposing Attention Head Roles
 
 - **arXiv ID**: 2603.01111v2
 - **作者**: Yiming Ma, Hongkun Yang, Lionel Z. Wang, Bin Chen, Weizhi Xian 等 (共6位作者)
@@ -2323,7 +2539,7 @@
 
 ---
 
-## 194. Beyond Global Similarity: Towards Fine-Grained, Multi-Condition Multimodal Retrieval
+## 212. Beyond Global Similarity: Towards Fine-Grained, Multi-Condition Multimodal Retrieval
 
 - **arXiv ID**: 2603.01082v1
 - **作者**: Xuan Lu, Kangle Li, Haohang Huang, Rui Meng, Wenjun Zeng 等 (共6位作者)
@@ -2335,7 +2551,7 @@
 
 ---
 
-## 195. Fed-ADE: Adaptive Learning Rate for Federated Post-adaptation under Distribution Shift
+## 213. Fed-ADE: Adaptive Learning Rate for Federated Post-adaptation under Distribution Shift
 
 - **arXiv ID**: 2603.01040v1
 - **作者**: Heewon Park, Mugon Joe, Miru Kim, Kyungjin Im, Minhae Kwon
@@ -2347,7 +2563,7 @@
 
 ---
 
-## 196. Reparameterized Tensor Ring Functional Decomposition for Multi-Dimensional Data Recovery
+## 214. Reparameterized Tensor Ring Functional Decomposition for Multi-Dimensional Data Recovery
 
 - **arXiv ID**: 2603.01034v2
 - **作者**: Yangyang Xu, Junbo Ke, You-Wei Wen, Chao Wang
@@ -2359,7 +2575,7 @@
 
 ---
 
-## 197. GeodesicNVS: Probability Density Geodesic Flow Matching for Novel View Synthesis
+## 215. GeodesicNVS: Probability Density Geodesic Flow Matching for Novel View Synthesis
 
 - **arXiv ID**: 2603.01010v1
 - **作者**: Xuqin Wang, Tao Wu, Yanfeng Zhang, Lu Liu, Mingwei Sun 等 (共8位作者)
@@ -2371,7 +2587,7 @@
 
 ---
 
-## 198. Dr.Occ: Depth- and Region-Guided 3D Occupancy from Surround-View Cameras for Autonomous Driving
+## 216. Dr.Occ: Depth- and Region-Guided 3D Occupancy from Surround-View Cameras for Autonomous Driving
 
 - **arXiv ID**: 2603.01007v3
 - **作者**: Xubo Zhu, Haoyang Zhang, Fei He, Rui Wu, Yanhu Shan 等 (共7位作者)
@@ -2383,19 +2599,31 @@
 
 ---
 
-## 199. Mobile-VTON: High-Fidelity On-Device Virtual Try-On
+## 217. Let Your Image Move with Your Motion! -- Implicit Multi-Object Multi-Motion Transfer
 
-- **arXiv ID**: 2603.00947v3
+- **arXiv ID**: 2603.01000v2
+- **作者**: Yuze Li, Dong Gong, Xiao Cao, Junchao Yuan, Dongsheng Li 等 (共9位作者)
+- **发布日期**: 2026-03-01
+- **分类**: cs.CV
+- **论文链接**: [http://arxiv.org/abs/2603.01000v2](http://arxiv.org/abs/2603.01000v2)
+- **PDF**: [http://arxiv.org/pdf/2603.01000v2](http://arxiv.org/pdf/2603.01000v2)
+- **摘要**: Motion transfer has emerged as a promising direction for controllable video generation, yet existing methods largely focus on single-object scenarios and struggle when multiple objects require distinct motion patterns. In this work, we present FlexiMMT, the first implicit image-to-video (I2V) motion...
+
+---
+
+## 218. Mobile-VTON: High-Fidelity On-Device Virtual Try-On
+
+- **arXiv ID**: 2603.00947v4
 - **作者**: Zhenchen Wan, Ce Chen, Runqi Lin, Jiaxin Huang, Tianxi Chen 等 (共8位作者)
 - **发布日期**: 2026-03-01
 - **分类**: cs.CV
-- **论文链接**: [http://arxiv.org/abs/2603.00947v3](http://arxiv.org/abs/2603.00947v3)
-- **PDF**: [http://arxiv.org/pdf/2603.00947v3](http://arxiv.org/pdf/2603.00947v3)
+- **论文链接**: [http://arxiv.org/abs/2603.00947v4](http://arxiv.org/abs/2603.00947v4)
+- **PDF**: [http://arxiv.org/pdf/2603.00947v4](http://arxiv.org/pdf/2603.00947v4)
 - **摘要**: Virtual try-on (VTON) has recently achieved impressive visual fidelity, but most existing systems require uploading personal photos to cloud-based GPUs, raising privacy concerns and limiting on-device deployment. To address this, we present Mobile-VTON, a high-quality, privacy-preserving framework t...
 
 ---
 
-## 200. Spectral Super-Resolution via Adversarial Unfolding and Data-Driven Spectrum Regularization: From Multispectral Satellite Data to NASA Hyperspectral Image
+## 219. Spectral Super-Resolution via Adversarial Unfolding and Data-Driven Spectrum Regularization: From Multispectral Satellite Data to NASA Hyperspectral Image
 
 - **arXiv ID**: 2603.00920v1
 - **作者**: Si-Sheng Young, Chia-Hsiang Lin
@@ -2407,7 +2635,7 @@
 
 ---
 
-## 201. Improving Text-to-Image Generation with Intrinsic Self-Confidence Rewards
+## 220. Improving Text-to-Image Generation with Intrinsic Self-Confidence Rewards
 
 - **arXiv ID**: 2603.00918v2
 - **作者**: Seungwook Kim, Minsu Cho
@@ -2419,7 +2647,7 @@
 
 ---
 
-## 202. VGGT-Det: Mining VGGT Internal Priors for Sensor-Geometry-Free Multi-View Indoor 3D Object Detection
+## 221. VGGT-Det: Mining VGGT Internal Priors for Sensor-Geometry-Free Multi-View Indoor 3D Object Detection
 
 - **arXiv ID**: 2603.00912v1
 - **作者**: Yang Cao, Feize Wu, Dave Zhenyu Chen, Yingji Zhong, Lanqing Hong 等 (共6位作者)
@@ -2431,7 +2659,7 @@
 
 ---
 
-## 203. ProFocus: Proactive Perception and Focused Reasoning in Vision-and-Language Navigation
+## 222. ProFocus: Proactive Perception and Focused Reasoning in Vision-and-Language Navigation
 
 - **arXiv ID**: 2603.05530v1
 - **作者**: Wei Xue, Mingcheng Li, Xuecheng Wu, Jingqun Tang, Dingkang Yang 等 (共6位作者)
@@ -2443,7 +2671,7 @@
 
 ---
 
-## 204. ShiftLUT: Spatial Shift Enhanced Look-Up Tables for Efficient Image Restoration
+## 223. ShiftLUT: Spatial Shift Enhanced Look-Up Tables for Efficient Image Restoration
 
 - **arXiv ID**: 2603.00906v2
 - **作者**: Xiaolong Zeng, Yitong Yu, Shiyao Xiong, Jinhua Hao, Ming Sun 等 (共7位作者)
@@ -2455,7 +2683,7 @@
 
 ---
 
-## 205. Solving a Nonlinear Blind Inverse Problem for Tagged MRI with Physics and Deep Generative Priors
+## 224. Solving a Nonlinear Blind Inverse Problem for Tagged MRI with Physics and Deep Generative Priors
 
 - **arXiv ID**: 2603.00882v1
 - **作者**: Zhangxing Bian, Shuwen Wei, Samuel W. Remedios, Junyu Chen, Aaron Carass 等 (共7位作者)
@@ -2467,7 +2695,7 @@
 
 ---
 
-## 206. NERFIFY: A Multi-Agent Framework for Turning NeRF Papers into Code
+## 225. NERFIFY: A Multi-Agent Framework for Turning NeRF Papers into Code
 
 - **arXiv ID**: 2603.00805v1
 - **作者**: Seemandhar Jain, Keshav Gupta, Kunal Gupta, Manmohan Chandraker
@@ -2479,7 +2707,7 @@
 
 ---
 
-## 207. Diversity over Uniformity: Rethinking Representation in Generated Image Detection
+## 226. Diversity over Uniformity: Rethinking Representation in Generated Image Detection
 
 - **arXiv ID**: 2603.00717v1
 - **作者**: Qinghui He, Haifeng Zhang, Qiao Qin, Bo Liu, Xiuli Bi 等 (共6位作者)
@@ -2491,7 +2719,7 @@
 
 ---
 
-## 208. Exploring Spatiotemporal Feature Propagation for Video-Level Compressive Spectral Reconstruction: Dataset, Model and Benchmark
+## 227. Exploring Spatiotemporal Feature Propagation for Video-Level Compressive Spectral Reconstruction: Dataset, Model and Benchmark
 
 - **arXiv ID**: 2603.00611v1
 - **作者**: Lijing Cai, Zhan Shi, Chenglong Huang, Jinyao Wu, Qiping Li 等 (共9位作者)
@@ -2503,7 +2731,7 @@
 
 ---
 
-## 209. Linking Modality Isolation in Heterogeneous Collaborative Perception
+## 228. Linking Modality Isolation in Heterogeneous Collaborative Perception
 
 - **arXiv ID**: 2603.00609v1
 - **作者**: Changxing Liu, Zichen Chao, Siheng Chen
@@ -2515,7 +2743,7 @@
 
 ---
 
-## 210. UNICBench: UNIfied Counting Benchmark for MLLM
+## 229. UNICBench: UNIfied Counting Benchmark for MLLM
 
 - **arXiv ID**: 2603.00595v1
 - **作者**: Chenggang Rong, Tao Han, Zhiyuan Zhao, Yaowu Fan, Jia Wan 等 (共8位作者)
@@ -2527,7 +2755,7 @@
 
 ---
 
-## 211. AlignVAR: Towards Globally Consistent Visual Autoregression for Image Super-Resolution
+## 230. AlignVAR: Towards Globally Consistent Visual Autoregression for Image Super-Resolution
 
 - **arXiv ID**: 2603.00589v2
 - **作者**: Cencen Liu, Dongyang Zhang, Wen Yin, Jielei Wang, Tianyu Li 等 (共9位作者)
@@ -2539,7 +2767,7 @@
 
 ---
 
-## 212. Decoupling Stability and Plasticity for Multi-Modal Test-Time Adaptation
+## 231. Decoupling Stability and Plasticity for Multi-Modal Test-Time Adaptation
 
 - **arXiv ID**: 2603.00574v1
 - **作者**: Yongbo He, Zirun Guo, Tao Jin
@@ -2551,7 +2779,7 @@
 
 ---
 
-## 213. Weakly Supervised Video Anomaly Detection with Anomaly-Connected Components and Intention Reasoning
+## 232. Weakly Supervised Video Anomaly Detection with Anomaly-Connected Components and Intention Reasoning
 
 - **arXiv ID**: 2603.00550v1
 - **作者**: Yu Wang, Shengjie Zhao
@@ -2563,7 +2791,7 @@
 
 ---
 
-## 214. Cross-Scale Pansharpening via ScaleFormer and the PanScale Benchmark
+## 233. Cross-Scale Pansharpening via ScaleFormer and the PanScale Benchmark
 
 - **arXiv ID**: 2603.00543v2
 - **作者**: Ke Cao, Xuanhua He, Xueheng Li, Lingting Zhu, Yingying Wang 等 (共10位作者)
@@ -2575,7 +2803,7 @@
 
 ---
 
-## 215. Mesh-Pro: Asynchronous Advantage-guided Ranking Preference Optimization for Artist-style Quadrilateral Mesh Generation
+## 234. Mesh-Pro: Asynchronous Advantage-guided Ranking Preference Optimization for Artist-style Quadrilateral Mesh Generation
 
 - **arXiv ID**: 2603.00526v1
 - **作者**: Zhen Zhou, Jian Liu, Biwen Lei, Jing Xu, Haohan Weng 等 (共13位作者)
@@ -2587,7 +2815,7 @@
 
 ---
 
-## 216. Wavelet-based Frame Selection by Detecting Semantic Boundary for Long Video Understanding
+## 235. Wavelet-based Frame Selection by Detecting Semantic Boundary for Long Video Understanding
 
 - **arXiv ID**: 2603.00512v1
 - **作者**: Wang Chen, Yuhui Zeng, Yongdong Luo, Tianyu Xie, Luojun Lin 等 (共8位作者)
@@ -2599,7 +2827,7 @@
 
 ---
 
-## 217. RAISE: Requirement-Adaptive Evolutionary Refinement for Training-Free Text-to-Image Alignment
+## 236. RAISE: Requirement-Adaptive Evolutionary Refinement for Training-Free Text-to-Image Alignment
 
 - **arXiv ID**: 2603.00483v1
 - **作者**: Liyao Jiang, Ruichen Chen, Chao Gao, Di Niu
@@ -2611,7 +2839,7 @@
 
 ---
 
-## 218. ReMoT: Reinforcement Learning with Motion Contrast Triplets
+## 237. ReMoT: Reinforcement Learning with Motion Contrast Triplets
 
 - **arXiv ID**: 2603.00461v1
 - **作者**: Cong Wan, Zeyu Guo, Jiangyang Li, SongLin Dong, Yifan Bai 等 (共8位作者)
@@ -2623,7 +2851,7 @@
 
 ---
 
-## 219. Taxonomy-Aware Representation Alignment for Hierarchical Visual Recognition with Large Multimodal Models
+## 238. Taxonomy-Aware Representation Alignment for Hierarchical Visual Recognition with Large Multimodal Models
 
 - **arXiv ID**: 2603.00431v1
 - **作者**: Hulingxiao He, Zhi Tan, Yuxin Peng
@@ -2635,7 +2863,7 @@
 
 ---
 
-## 220. PointAlign: Feature-Level Alignment Regularization for 3D Vision-Language Models
+## 239. PointAlign: Feature-Level Alignment Regularization for 3D Vision-Language Models
 
 - **arXiv ID**: 2603.00412v1
 - **作者**: Yuanhao Su, Shaofeng Zhang, Xiaosong Jia, Qi Fan
@@ -2647,7 +2875,7 @@
 
 ---
 
-## 221. Roots Beneath the Cut: Uncovering the Risk of Concept Revival in Pruning-Based Unlearning for Diffusion Models
+## 240. Roots Beneath the Cut: Uncovering the Risk of Concept Revival in Pruning-Based Unlearning for Diffusion Models
 
 - **arXiv ID**: 2603.06640v1
 - **作者**: Ci Zhang, Zhaojun Ding, Chence Yang, Jun Liu, Xiaoming Zhai 等 (共10位作者)
@@ -2659,7 +2887,7 @@
 
 ---
 
-## 222. Random Wins All: Rethinking Grouping Strategies for Vision Tokens
+## 241. Random Wins All: Rethinking Grouping Strategies for Vision Tokens
 
 - **arXiv ID**: 2603.00486v1
 - **作者**: Qihang Fan, Yuang Ai, Huaibo Huang, Ran He
@@ -2671,7 +2899,7 @@
 
 ---
 
-## 223. CoLC: Communication-Efficient Collaborative Perception with LiDAR Completion
+## 242. CoLC: Communication-Efficient Collaborative Perception with LiDAR Completion
 
 - **arXiv ID**: 2603.00682v1
 - **作者**: Yushan Han, Hui Zhang, Qiming Xia, Yi Jin, Yidong Li
@@ -2683,7 +2911,7 @@
 
 ---
 
-## 224. Act Like a Pathologist: Tissue-Aware Whole Slide Image Reasoning
+## 243. Act Like a Pathologist: Tissue-Aware Whole Slide Image Reasoning
 
 - **arXiv ID**: 2603.00667v1
 - **作者**: Wentao Huang, Weimin Lyu, Peiliang Lou, Qingqiao Hu, Xiaoling Hu 等 (共11位作者)
@@ -2695,7 +2923,7 @@
 
 ---
 
-## 225. Proof-of-Perception: Certified Tool-Using Multimodal Reasoning with Compositional Conformal Guarantees
+## 244. Proof-of-Perception: Certified Tool-Using Multimodal Reasoning with Compositional Conformal Guarantees
 
 - **arXiv ID**: 2603.00324v1
 - **作者**: Arya Fayyazi, Haleh Akrami
@@ -2707,7 +2935,7 @@
 
 ---
 
-## 226. Enhancing Spatial Understanding in Image Generation via Reward Modeling
+## 245. Enhancing Spatial Understanding in Image Generation via Reward Modeling
 
 - **arXiv ID**: 2602.24233v1
 - **作者**: Zhenyu Tang, Chaoran Feng, Yufan Deng, Jie Wu, Xiaojie Li 等 (共8位作者)
@@ -2719,7 +2947,7 @@
 
 ---
 
-## 227. MuViT: Multi-Resolution Vision Transformers for Learning Across Scales in Microscopy
+## 246. MuViT: Multi-Resolution Vision Transformers for Learning Across Scales in Microscopy
 
 - **arXiv ID**: 2602.24222v1
 - **作者**: Albert Dominguez Mantes, Gioele La Manno, Martin Weigert
@@ -2731,7 +2959,7 @@
 
 ---
 
-## 228. A Mixed Diet Makes DINO An Omnivorous Vision Encoder
+## 247. A Mixed Diet Makes DINO An Omnivorous Vision Encoder
 
 - **arXiv ID**: 2602.24181v1
 - **作者**: Rishabh Kabra, Maks Ovsjanikov, Drew A. Hudson, Ye Xia, Skanda Koppula 等 (共8位作者)
@@ -2743,7 +2971,7 @@
 
 ---
 
-## 229. HumanOrbit: 3D Human Reconstruction as 360° Orbit Generation
+## 248. HumanOrbit: 3D Human Reconstruction as 360° Orbit Generation
 
 - **arXiv ID**: 2602.24148v1
 - **作者**: Keito Suzuki, Kunyao Chen, Lei Wang, Bang Du, Runfa Blark Li 等 (共8位作者)
@@ -2755,7 +2983,7 @@
 
 ---
 
-## 230. Fixed Anchors Are Not Enough: Dynamic Retrieval and Persistent Homology for Dataset Distillation
+## 249. Fixed Anchors Are Not Enough: Dynamic Retrieval and Persistent Homology for Dataset Distillation
 
 - **arXiv ID**: 2602.24144v1
 - **作者**: Muquan Li, Hang Gou, Yingyi Ma, Rongzheng Wang, Ke Qin 等 (共6位作者)
@@ -2767,19 +2995,19 @@
 
 ---
 
-## 231. FoV-Net: Rotation-Invariant CAD B-rep Learning via Field-of-View Ray Casting
+## 250. FoV-Net: Rotation-Invariant CAD B-rep Learning via Field-of-View Ray Casting
 
-- **arXiv ID**: 2602.24084v1
+- **arXiv ID**: 2602.24084v2
 - **作者**: Matteo Ballegeer, Dries F. Benoit
 - **发布日期**: 2026-02-27
 - **分类**: cs.CV
-- **论文链接**: [http://arxiv.org/abs/2602.24084v1](http://arxiv.org/abs/2602.24084v1)
-- **PDF**: [http://arxiv.org/pdf/2602.24084v1](http://arxiv.org/pdf/2602.24084v1)
+- **论文链接**: [http://arxiv.org/abs/2602.24084v2](http://arxiv.org/abs/2602.24084v2)
+- **PDF**: [http://arxiv.org/pdf/2602.24084v2](http://arxiv.org/pdf/2602.24084v2)
 - **摘要**: Learning directly from boundary representations (B-reps) has significantly advanced 3D CAD analysis. However, state-of-the-art B-rep learning methods rely on absolute coordinates and normals to encode global context, making them highly sensitive to rotations. Our experiments reveal that models achie...
 
 ---
 
-## 232. Quant Experts: Token-aware Adaptive Error Reconstruction with Mixture of Experts for Large Vision-Language Models Quantization
+## 251. Quant Experts: Token-aware Adaptive Error Reconstruction with Mixture of Experts for Large Vision-Language Models Quantization
 
 - **arXiv ID**: 2602.24059v1
 - **作者**: Chenwei Jia, Baoting Li, Xuchong Zhang, Mingzhuo Wei, Bochen Lin 等 (共6位作者)
@@ -2791,7 +3019,7 @@
 
 ---
 
-## 233. SR3R: Rethinking Super-Resolution 3D Reconstruction With Feed-Forward Gaussian Splatting
+## 252. SR3R: Rethinking Super-Resolution 3D Reconstruction With Feed-Forward Gaussian Splatting
 
 - **arXiv ID**: 2602.24020v1
 - **作者**: Xiang Feng, Xiangbo Wang, Tieshi Zhong, Chengkai Wang, Yiting Zhao 等 (共10位作者)
@@ -2803,7 +3031,7 @@
 
 ---
 
-## 234. Interpretable Debiasing of Vision-Language Models for Social Fairness
+## 253. Interpretable Debiasing of Vision-Language Models for Social Fairness
 
 - **arXiv ID**: 2602.24014v1
 - **作者**: Na Min An, Yoonna Jang, Yusuke Hirota, Ryo Hachiuma, Isabelle Augenstein 等 (共6位作者)
@@ -2815,7 +3043,7 @@
 
 ---
 
-## 235. Venus: Benchmarking and Empowering Multimodal Large Language Models for Aesthetic Guidance and Cropping
+## 254. Venus: Benchmarking and Empowering Multimodal Large Language Models for Aesthetic Guidance and Cropping
 
 - **arXiv ID**: 2602.23980v1
 - **作者**: Tianxiang Du, Hulingxiao He, Yuxin Peng
@@ -2827,7 +3055,7 @@
 
 ---
 
-## 236. SwitchCraft: Training-Free Multi-Event Video Generation with Attention Controls
+## 255. SwitchCraft: Training-Free Multi-Event Video Generation with Attention Controls
 
 - **arXiv ID**: 2602.23956v1
 - **作者**: Qianxun Xu, Chenxi Song, Yujun Cai, Chi Zhang
@@ -2839,7 +3067,7 @@
 
 ---
 
-## 237. VisRef: Visual Refocusing while Thinking Improves Test-Time Scaling in Multi-Modal Large Reasoning Models
+## 256. VisRef: Visual Refocusing while Thinking Improves Test-Time Scaling in Multi-Modal Large Reasoning Models
 
 - **arXiv ID**: 2603.00207v1
 - **作者**: Soumya Suvra Ghosal, Youngeun Kim, Zhuowei Li, Ritwick Chaudhry, Linghan Xu 等 (共9位作者)
@@ -2851,7 +3079,7 @@
 
 ---
 
-## 238. Action-Geometry Prediction with 3D Geometric Prior for Bimanual Manipulation
+## 257. Action-Geometry Prediction with 3D Geometric Prior for Bimanual Manipulation
 
 - **arXiv ID**: 2602.23814v1
 - **作者**: Chongyang Xu, Haipeng Li, Shen Cheng, Jingyu Hu, Haoqiang Fan 等 (共7位作者)
@@ -2863,7 +3091,7 @@
 
 ---
 
-## 239. EMO-R3: Reflective Reinforcement Learning for Emotional Reasoning in Multimodal Large Language Models
+## 258. EMO-R3: Reflective Reinforcement Learning for Emotional Reasoning in Multimodal Large Language Models
 
 - **arXiv ID**: 2602.23802v1
 - **作者**: Yiyang Fang, Wenke Huang, Pei Fu, Yihao Yang, Kehua Su 等 (共8位作者)
@@ -2875,7 +3103,7 @@
 
 ---
 
-## 240. FluoCLIP: Stain-Aware Focus Quality Assessment in Fluorescence Microscopy
+## 259. FluoCLIP: Stain-Aware Focus Quality Assessment in Fluorescence Microscopy
 
 - **arXiv ID**: 2602.23791v1
 - **作者**: Hyejin Park, Jiwon Yoon, Sumin Park, Suree Kim, Sinae Jang 等 (共8位作者)
@@ -2887,19 +3115,19 @@
 
 ---
 
-## 241. Fourier Angle Alignment for Oriented Object Detection in Remote Sensing
+## 260. Fourier Angle Alignment for Oriented Object Detection in Remote Sensing
 
-- **arXiv ID**: 2602.23790v1
+- **arXiv ID**: 2602.23790v2
 - **作者**: Changyu Gu, Linwei Chen, Lin Gu, Ying Fu
 - **发布日期**: 2026-02-27
 - **分类**: cs.CV
-- **论文链接**: [http://arxiv.org/abs/2602.23790v1](http://arxiv.org/abs/2602.23790v1)
-- **PDF**: [http://arxiv.org/pdf/2602.23790v1](http://arxiv.org/pdf/2602.23790v1)
+- **论文链接**: [http://arxiv.org/abs/2602.23790v2](http://arxiv.org/abs/2602.23790v2)
+- **PDF**: [http://arxiv.org/pdf/2602.23790v2](http://arxiv.org/pdf/2602.23790v2)
 - **摘要**: In remote sensing rotated object detection, mainstream methods suffer from two bottlenecks, directional incoherence at detector neck and task conflict at detecting head. Ulitising fourier rotation equivariance, we introduce Fourier Angle Alignment, which analyses angle information through frequency ...
 
 ---
 
-## 242. U-Mind: A Unified Framework for Real-Time Multimodal Interaction with Audiovisual Generation
+## 261. U-Mind: A Unified Framework for Real-Time Multimodal Interaction with Audiovisual Generation
 
 - **arXiv ID**: 2602.23739v1
 - **作者**: Xiang Deng, Feng Gao, Yong Zhang, Youxin Pang, Xu Xiaoming 等 (共8位作者)
@@ -2911,7 +3139,7 @@
 
 ---
 
-## 243. UTPTrack: Towards Simple and Unified Token Pruning for Visual Tracking
+## 262. UTPTrack: Towards Simple and Unified Token Pruning for Visual Tracking
 
 - **arXiv ID**: 2602.23734v1
 - **作者**: Hao Wu, Xudong Wang, Jialiang Zhang, Junlong Tong, Xinghao Chen 等 (共8位作者)
@@ -2923,7 +3151,7 @@
 
 ---
 
-## 244. Towards Source-Aware Object Swapping with Initial Noise Perturbation
+## 263. Towards Source-Aware Object Swapping with Initial Noise Perturbation
 
 - **arXiv ID**: 2602.23697v2
 - **作者**: Jiahui Zhan, Xianbing Sun, Xiangnan Zhu, Yikun Ji, Ruitong Liu 等 (共7位作者)
@@ -2935,7 +3163,7 @@
 
 ---
 
-## 245. BuildAnyPoint: 3D Building Structured Abstraction from Diverse Point Clouds
+## 264. BuildAnyPoint: 3D Building Structured Abstraction from Diverse Point Clouds
 
 - **arXiv ID**: 2602.23645v1
 - **作者**: Tongyan Hua, Haoran Gong, Yuan Liu, Di Wang, Ying-Cong Chen 等 (共6位作者)
@@ -2947,7 +3175,7 @@
 
 ---
 
-## 246. CycleBEV: Regularizing View Transformation Networks via View Cycle Consistency for Bird's-Eye-View Semantic Segmentation
+## 265. CycleBEV: Regularizing View Transformation Networks via View Cycle Consistency for Bird's-Eye-View Semantic Segmentation
 
 - **arXiv ID**: 2602.23575v1
 - **作者**: Jeongbin Hong, Dooseop Choi, Taeg-Hyun An, Kyounghwan An, Kyoung-Wook Min
@@ -2959,7 +3187,7 @@
 
 ---
 
-## 247. No Calibration, No Depth, No Problem: Cross-Sensor View Synthesis with 3D Consistency
+## 266. No Calibration, No Depth, No Problem: Cross-Sensor View Synthesis with 3D Consistency
 
 - **arXiv ID**: 2602.23559v1
 - **作者**: Cho-Ying Wu, Zixun Huang, Xinyu Huang, Liu Ren
@@ -2971,7 +3199,7 @@
 
 ---
 
-## 248. Hierarchical Action Learning for Weakly-Supervised Action Segmentation
+## 267. Hierarchical Action Learning for Weakly-Supervised Action Segmentation
 
 - **arXiv ID**: 2602.24275v1
 - **作者**: Junxian Huang, Ruichu Cai, Hao Zhu, Juntao Fang, Boyan Xu 等 (共8位作者)
@@ -2983,7 +3211,7 @@
 
 ---
 
-## 249. Prune Wisely, Reconstruct Sharply: Compact 3D Gaussian Splatting via Adaptive Pruning and Difference-of-Gaussian Primitives
+## 268. Prune Wisely, Reconstruct Sharply: Compact 3D Gaussian Splatting via Adaptive Pruning and Difference-of-Gaussian Primitives
 
 - **arXiv ID**: 2602.24136v1
 - **作者**: Haoran Wang, Guoxi Huang, Fan Zhang, David Bull, Nantheera Anantrasirichai
@@ -2995,7 +3223,7 @@
 
 ---
 
-## 250. SpikeTrack: A Spike-driven Framework for Efficient Visual Tracking
+## 269. SpikeTrack: A Spike-driven Framework for Efficient Visual Tracking
 
 - **arXiv ID**: 2602.23963v1
 - **作者**: Qiuyang Zhang, Jiujun Cheng, Qichao Mao, Cong Liu, Yu Fang 等 (共8位作者)
@@ -3007,7 +3235,7 @@
 
 ---
 
-## 251. CC-VQA: Conflict- and Correlation-Aware Method for Mitigating Knowledge Conflict in Knowledge-Based Visual Question Answering
+## 270. CC-VQA: Conflict- and Correlation-Aware Method for Mitigating Knowledge Conflict in Knowledge-Based Visual Question Answering
 
 - **arXiv ID**: 2602.23952v1
 - **作者**: Yuyang Hong, Jiaqi Gu, Yujin Lou, Lubin Fan, Qi Yang 等 (共10位作者)
@@ -3019,7 +3247,7 @@
 
 ---
 
-## 252. Egocentric Visibility-Aware Human Pose Estimation
+## 271. Egocentric Visibility-Aware Human Pose Estimation
 
 - **arXiv ID**: 2602.23618v1
 - **作者**: Peng Dai, Yu Zhang, Yiqiang Feng, Zhen Fan, Yang Zhang
@@ -3031,7 +3259,7 @@
 
 ---
 
-## 253. All in One: Unifying Deepfake Detection, Tampering Localization, and Source Tracing with a Robust Landmark-Identity Watermark
+## 272. All in One: Unifying Deepfake Detection, Tampering Localization, and Source Tracing with a Robust Landmark-Identity Watermark
 
 - **arXiv ID**: 2602.23523v1
 - **作者**: Junjiang Wu, Liejun Wang, Zhiqing Guo
@@ -3043,7 +3271,7 @@
 
 ---
 
-## 254. VGG-T$^3$: Offline Feed-Forward 3D Reconstruction at Scale
+## 273. VGG-T$^3$: Offline Feed-Forward 3D Reconstruction at Scale
 
 - **arXiv ID**: 2602.23361v1
 - **作者**: Sven Elflein, Ruilong Li, Sérgio Agostinho, Zan Gojcic, Laura Leal-Taixé 等 (共7位作者)
@@ -3055,7 +3283,7 @@
 
 ---
 
-## 255. SeeThrough3D: Occlusion Aware 3D Control in Text-to-Image Generation
+## 274. SeeThrough3D: Occlusion Aware 3D Control in Text-to-Image Generation
 
 - **arXiv ID**: 2602.23359v1
 - **作者**: Vaibhav Agrawal, Rishubh Parihar, Pradhaan Bhat, Ravi Kiran Sarvadevabhatla, R. Venkatesh Babu
@@ -3067,7 +3295,7 @@
 
 ---
 
-## 256. Efficient Encoder-Free Fourier-based 3D Large Multimodal Model
+## 275. Efficient Encoder-Free Fourier-based 3D Large Multimodal Model
 
 - **arXiv ID**: 2602.23153v1
 - **作者**: Guofeng Mei, Wei Lin, Luigi Riz, Yujiao Wu, Yiming Wang 等 (共6位作者)
@@ -3079,7 +3307,7 @@
 
 ---
 
-## 257. TriLite: Efficient Weakly Supervised Object Localization with Universal Visual Features and Tri-Region Disentanglement
+## 276. TriLite: Efficient Weakly Supervised Object Localization with Universal Visual Features and Tri-Region Disentanglement
 
 - **arXiv ID**: 2602.23120v1
 - **作者**: Arian Sabaghi, José Oramas
@@ -3091,7 +3319,7 @@
 
 ---
 
-## 258. GeoWorld: Geometric World Models
+## 277. GeoWorld: Geometric World Models
 
 - **arXiv ID**: 2602.23058v1
 - **作者**: Zeyu Zhang, Danning Li, Ian Reid, Richard Hartley
@@ -3103,7 +3331,7 @@
 
 ---
 
-## 259. PackUV: Packed Gaussian UV Maps for 4D Volumetric Video
+## 278. PackUV: Packed Gaussian UV Maps for 4D Volumetric Video
 
 - **arXiv ID**: 2602.23040v2
 - **作者**: Aashish Rai, Angela Xing, Anushka Agarwal, Xiaoyan Cong, Zekun Li 等 (共8位作者)
@@ -3115,7 +3343,7 @@
 
 ---
 
-## 260. WISER: Wider Search, Deeper Thinking, and Adaptive Fusion for Training-Free Zero-Shot Composed Image Retrieval
+## 279. WISER: Wider Search, Deeper Thinking, and Adaptive Fusion for Training-Free Zero-Shot Composed Image Retrieval
 
 - **arXiv ID**: 2602.23029v3
 - **作者**: Tianyue Wang, Leigang Qu, Tianyu Yang, Xiangzhao Hao, Yifan Xu 等 (共7位作者)
@@ -3127,7 +3355,7 @@
 
 ---
 
-## 261. DMAligner: Enhancing Image Alignment via Diffusion Model Based View Synthesis
+## 280. DMAligner: Enhancing Image Alignment via Diffusion Model Based View Synthesis
 
 - **arXiv ID**: 2602.23022v1
 - **作者**: Xinglong Luo, Ao Luo, Zhengning Wang, Yueqi Yang, Chaoyu Feng 等 (共8位作者)
@@ -3139,7 +3367,7 @@
 
 ---
 
-## 262. SubspaceAD: Training-Free Few-Shot Anomaly Detection via Subspace Modeling
+## 281. SubspaceAD: Training-Free Few-Shot Anomaly Detection via Subspace Modeling
 
 - **arXiv ID**: 2602.23013v1
 - **作者**: Camile Lendering, Erkut Akdag, Egor Bondarev
@@ -3151,7 +3379,7 @@
 
 ---
 
-## 263. OpenFS: Multi-Hand-Capable Fingerspelling Recognition with Implicit Signing-Hand Detection and Frame-Wise Letter-Conditioned Synthesis
+## 282. OpenFS: Multi-Hand-Capable Fingerspelling Recognition with Implicit Signing-Hand Detection and Frame-Wise Letter-Conditioned Synthesis
 
 - **arXiv ID**: 2602.22949v1
 - **作者**: Junuk Cha, Jihyeon Kim, Han-Mu Park
@@ -3163,7 +3391,7 @@
 
 ---
 
-## 264. Towards Multimodal Domain Generalization with Few Labels
+## 283. Towards Multimodal Domain Generalization with Few Labels
 
 - **arXiv ID**: 2602.22917v1
 - **作者**: Hongzhao Li, Hao Dong, Hualei Wan, Shupan Li, Mingliang Xu 等 (共6位作者)
@@ -3175,7 +3403,7 @@
 
 ---
 
-## 265. GraspLDP: Towards Generalizable Grasping Policy via Latent Diffusion
+## 284. GraspLDP: Towards Generalizable Grasping Policy via Latent Diffusion
 
 - **arXiv ID**: 2602.22862v1
 - **作者**: Enda Xiang, Haoxiang Ma, Xinzhu Ma, Zicheng Liu, Di Huang
@@ -3187,7 +3415,7 @@
 
 ---
 
-## 266. Face Time Traveller : Travel Through Ages Without Losing Identity
+## 285. Face Time Traveller : Travel Through Ages Without Losing Identity
 
 - **arXiv ID**: 2602.22819v1
 - **作者**: Purbayan Kar, Ayush Ghadiya, Vishal Chudasama, Pankaj Wasnik, C. V. Jawahar
@@ -3199,7 +3427,7 @@
 
 ---
 
-## 267. TrajTok: Learning Trajectory Tokens enables better Video Understanding
+## 286. TrajTok: Learning Trajectory Tokens enables better Video Understanding
 
 - **arXiv ID**: 2602.22779v1
 - **作者**: Chenhao Zheng, Jieyu Zhang, Jianing Zhang, Weikai Huang, Ashutosh Kumar 等 (共9位作者)
@@ -3211,7 +3439,7 @@
 
 ---
 
-## 268. HulluEdit: Single-Pass Evidence-Consistent Subspace Editing for Mitigating Hallucinations in Large Vision-Language Models
+## 287. HulluEdit: Single-Pass Evidence-Consistent Subspace Editing for Mitigating Hallucinations in Large Vision-Language Models
 
 - **arXiv ID**: 2602.22727v1
 - **作者**: Yangguang Lin, Quan Fang, Yufei Li, Jiachen Sun, Junyu Gao 等 (共6位作者)
@@ -3223,7 +3451,7 @@
 
 ---
 
-## 269. SoPE: Spherical Coordinate-Based Positional Embedding for Enhancing Spatial Perception of 3D LVLMs
+## 288. SoPE: Spherical Coordinate-Based Positional Embedding for Enhancing Spatial Perception of 3D LVLMs
 
 - **arXiv ID**: 2602.22716v1
 - **作者**: Guanting Ye, Qiyan Zhao, Wenhao Yu, Liangyu Yuan, Mingkai Li 等 (共10位作者)
@@ -3235,7 +3463,7 @@
 
 ---
 
-## 270. Denoising as Path Planning: Training-Free Acceleration of Diffusion Models with DPCache
+## 289. Denoising as Path Planning: Training-Free Acceleration of Diffusion Models with DPCache
 
 - **arXiv ID**: 2602.22654v2
 - **作者**: Bowen Cui, Yuanbin Wang, Huajiang Xu, Biaolong Chen, Aixi Zhang 等 (共9位作者)
@@ -3247,7 +3475,7 @@
 
 ---
 
-## 271. QuadSync: Quadrifocal Tensor Synchronization via Tucker Decomposition
+## 290. QuadSync: Quadrifocal Tensor Synchronization via Tucker Decomposition
 
 - **arXiv ID**: 2602.22639v1
 - **作者**: Daniel Miao, Gilad Lerman, Joe Kileel
@@ -3259,7 +3487,7 @@
 
 ---
 
-## 272. DiffBMP: Differentiable Rendering with Bitmap Primitives
+## 291. DiffBMP: Differentiable Rendering with Bitmap Primitives
 
 - **arXiv ID**: 2602.22625v1
 - **作者**: Seongmin Hong, Junghun James Kim, Daehyeop Kim, Insoo Chung, Se Young Chun
@@ -3271,7 +3499,7 @@
 
 ---
 
-## 273. Coded-E2LF: Coded Aperture Light Field Imaging from Events
+## 292. Coded-E2LF: Coded Aperture Light Field Imaging from Events
 
 - **arXiv ID**: 2602.22620v1
 - **作者**: Tomoya Tsuchida, Keita Takahashi, Chihiro Tsutake, Toshiaki Fujii, Hajime Nagahara
@@ -3283,7 +3511,7 @@
 
 ---
 
-## 274. Causal Motion Diffusion Models for Autoregressive Motion Generation
+## 293. Causal Motion Diffusion Models for Autoregressive Motion Generation
 
 - **arXiv ID**: 2602.22594v1
 - **作者**: Qing Yu, Akihisa Watanabe, Kent Fujiwara
@@ -3295,7 +3523,7 @@
 
 ---
 
-## 275. No Labels, No Look-Ahead: Unsupervised Online Video Stabilization with Classical Priors
+## 294. No Labels, No Look-Ahead: Unsupervised Online Video Stabilization with Classical Priors
 
 - **arXiv ID**: 2602.23141v1
 - **作者**: Tao Liu, Gang Wan, Kan Ren, Shibo Wen
@@ -3307,7 +3535,7 @@
 
 ---
 
-## 276. MSJoE: Jointly Evolving MLLM and Sampler for Efficient Long-Form Video Understanding
+## 295. MSJoE: Jointly Evolving MLLM and Sampler for Efficient Long-Form Video Understanding
 
 - **arXiv ID**: 2602.22932v1
 - **作者**: Wenhui Tan, Xiaoyi Yu, Jiaze Li, Yijing Chen, Jianzhong Ju 等 (共8位作者)
@@ -3319,7 +3547,7 @@
 
 ---
 
-## 277. Monocular Open Vocabulary Occupancy Prediction for Indoor Scenes
+## 296. Monocular Open Vocabulary Occupancy Prediction for Indoor Scenes
 
 - **arXiv ID**: 2602.22667v1
 - **作者**: Changqing Zhou, Yueru Luo, Han Zhang, Zeyu Jiang, Changhao Chen
@@ -3331,7 +3559,7 @@
 
 ---
 
-## 278. $φ$-DPO: Fairness Direct Preference Optimization Approach to Continual Learning in Large Multimodal Models
+## 297. $φ$-DPO: Fairness Direct Preference Optimization Approach to Continual Learning in Large Multimodal Models
 
 - **arXiv ID**: 2602.22601v1
 - **作者**: Thanh-Dat Truong, Huu-Thien Tran, Jackson Cothren, Bhiksha Raj, Khoa Luu
@@ -3343,7 +3571,7 @@
 
 ---
 
-## 279. GFRRN: Explore the Gaps in Single Image Reflection Removal
+## 298. GFRRN: Explore the Gaps in Single Image Reflection Removal
 
 - **arXiv ID**: 2602.22695v2
 - **作者**: Yu Chen, Zewei He, Xingyu Liu, Zixuan Chen, Zheming Lu
@@ -3355,7 +3583,7 @@
 
 ---
 
-## 280. CLIP Is Shortsighted: Paying Attention Beyond the First Sentence
+## 299. CLIP Is Shortsighted: Paying Attention Beyond the First Sentence
 
 - **arXiv ID**: 2602.22419v1
 - **作者**: Marc-Antoine Lavoie, Anas Mahmoud, Aldo Zaimi, Arsene Fansi Tchango, Steven L. Waslander
@@ -3367,7 +3595,7 @@
 
 ---
 
-## 281. Vision Transformers Need More Than Registers
+## 300. Vision Transformers Need More Than Registers
 
 - **arXiv ID**: 2602.22394v1
 - **作者**: Cheng Shi, Yizhou Yu, Sibei Yang
@@ -3379,7 +3607,7 @@
 
 ---
 
-## 282. AeroDGS: Physically Consistent Dynamic Gaussian Splatting for Single-Sequence Aerial 4D Reconstruction
+## 301. AeroDGS: Physically Consistent Dynamic Gaussian Splatting for Single-Sequence Aerial 4D Reconstruction
 
 - **arXiv ID**: 2602.22376v1
 - **作者**: Hanyang Liu, Rongjun Qin
@@ -3391,7 +3619,7 @@
 
 ---
 
-## 283. Neu-PiG: Neural Preconditioned Grids for Fast Dynamic Surface Reconstruction on Long Sequences
+## 302. Neu-PiG: Neural Preconditioned Grids for Fast Dynamic Surface Reconstruction on Long Sequences
 
 - **arXiv ID**: 2602.22212v1
 - **作者**: Julian Kaltheuner, Hannah Dröge, Markus Plack, Patrick Stotko, Reinhard Klein
@@ -3403,7 +3631,7 @@
 
 ---
 
-## 284. WeaveTime: Stream from Earlier Frames into Emergent Memory in VideoLLMs
+## 303. WeaveTime: Stream from Earlier Frames into Emergent Memory in VideoLLMs
 
 - **arXiv ID**: 2602.22142v1
 - **作者**: Yulin Zhang, Cheng Shi, Sibei Yang
@@ -3415,7 +3643,7 @@
 
 ---
 
-## 285. Lumosaic: Hyperspectral Video via Active Illumination and Coded-Exposure Pixels
+## 304. Lumosaic: Hyperspectral Video via Active Illumination and Coded-Exposure Pixels
 
 - **arXiv ID**: 2602.22140v1
 - **作者**: Dhruv Verma, Andrew Qiu, Roberto Rangel, Ayandev Barman, Hao Yang 等 (共11位作者)
@@ -3427,7 +3655,7 @@
 
 ---
 
-## 286. Learning to Drive is a Free Gift: Large-Scale Label-Free Autonomy Pretraining from Unposed In-The-Wild Videos
+## 305. Learning to Drive is a Free Gift: Large-Scale Label-Free Autonomy Pretraining from Unposed In-The-Wild Videos
 
 - **arXiv ID**: 2602.22091v2
 - **作者**: Matthew Strong, Wei-Jer Chang, Quentin Herau, Jiezhi Yang, Yihan Hu 等 (共7位作者)
@@ -3439,7 +3667,7 @@
 
 ---
 
-## 287. NESTOR: A Nested MOE-based Neural Operator for Large-Scale PDE Pre-Training
+## 306. NESTOR: A Nested MOE-based Neural Operator for Large-Scale PDE Pre-Training
 
 - **arXiv ID**: 2602.22059v1
 - **作者**: Dengdi Sun, Xiaoya Zhou, Xiao Wang, Hao Si, Wanli Lyu 等 (共7位作者)
@@ -3451,7 +3679,7 @@
 
 ---
 
-## 288. Global-Aware Edge Prioritization for Pose Graph Initialization
+## 307. Global-Aware Edge Prioritization for Pose Graph Initialization
 
 - **arXiv ID**: 2602.21963v1
 - **作者**: Tong Wei, Giorgos Tolias, Jiri Matas, Daniel Barath
@@ -3463,7 +3691,7 @@
 
 ---
 
-## 289. Geometry-as-context: Modulating Explicit 3D in Scene-consistent Video Generation to Geometry Context
+## 308. Geometry-as-context: Modulating Explicit 3D in Scene-consistent Video Generation to Geometry Context
 
 - **arXiv ID**: 2602.21929v1
 - **作者**: JiaKui Hu, Jialun Liu, Liying Yang, Xinliang Zhang, Kaiwen Li 等 (共10位作者)
@@ -3475,7 +3703,7 @@
 
 ---
 
-## 290. How to Take a Memorable Picture? Empowering Users with Actionable Feedback
+## 309. How to Take a Memorable Picture? Empowering Users with Actionable Feedback
 
 - **arXiv ID**: 2602.21877v1
 - **作者**: Francesco Laiti, Davide Talon, Jacopo Staiano, Elisa Ricci
@@ -3487,7 +3715,7 @@
 
 ---
 
-## 291. DynamicGTR: Leveraging Graph Topology Representation Preferences to Boost VLM Capabilities on Graph QAs
+## 310. DynamicGTR: Leveraging Graph Topology Representation Preferences to Boost VLM Capabilities on Graph QAs
 
 - **arXiv ID**: 2602.21864v1
 - **作者**: Yanbin Wei, Jiangyue Yan, Chun Kang, Yang Chen, Hua Liu 等 (共7位作者)
@@ -3499,7 +3727,7 @@
 
 ---
 
-## 292. Beyond Static Artifacts: A Forensic Benchmark for Video Deepfake Reasoning in Vision Language Models
+## 311. Beyond Static Artifacts: A Forensic Benchmark for Video Deepfake Reasoning in Vision Language Models
 
 - **arXiv ID**: 2602.21779v1
 - **作者**: Zheyuan Gu, Qingsong Zhao, Yusong Wang, Zhaohong Huang, Xinqi Li 等 (共9位作者)
@@ -3511,7 +3739,7 @@
 
 ---
 
-## 293. LiREC-Net: A Target-Free and Learning-Based Network for LiDAR, RGB, and Event Calibration
+## 312. LiREC-Net: A Target-Free and Learning-Based Network for LiDAR, RGB, and Event Calibration
 
 - **arXiv ID**: 2602.21754v1
 - **作者**: Aditya Ranjan Dash, Ramy Battrawy, René Schuster, Didier Stricker
@@ -3523,7 +3751,7 @@
 
 ---
 
-## 294. E-comIQ-ZH: A Human-Aligned Dataset and Benchmark for Fine-Grained Evaluation of E-commerce Posters with Chain-of-Thought
+## 313. E-comIQ-ZH: A Human-Aligned Dataset and Benchmark for Fine-Grained Evaluation of E-commerce Posters with Chain-of-Thought
 
 - **arXiv ID**: 2602.21698v1
 - **作者**: Meiqi Sun, Mingyu Li, Junxiong Zhu
@@ -3535,7 +3763,7 @@
 
 ---
 
-## 295. CCCaption: Dual-Reward Reinforcement Learning for Complete and Correct Image Captioning
+## 314. CCCaption: Dual-Reward Reinforcement Learning for Complete and Correct Image Captioning
 
 - **arXiv ID**: 2602.21655v1
 - **作者**: Zhijiang Tang, Linhua Wang, Jiaxin Qi, Weihao Jiang, Peng Hou 等 (共7位作者)
@@ -3547,7 +3775,7 @@
 
 ---
 
-## 296. CARE: A Molecular-Guided Foundation Model with Adaptive Region Modeling for Whole Slide Image Analysis
+## 315. CARE: A Molecular-Guided Foundation Model with Adaptive Region Modeling for Whole Slide Image Analysis
 
 - **arXiv ID**: 2602.21637v2
 - **作者**: Di Zhang, Zhangpeng Gong, Xiaobo Pang, Jiashuai Liu, Junbo Lu 等 (共17位作者)
@@ -3559,7 +3787,7 @@
 
 ---
 
-## 297. Physics-Consistent Diffusion for Efficient Fluid Super-Resolution via Multiscale Residual Correction
+## 316. Physics-Consistent Diffusion for Efficient Fluid Super-Resolution via Multiscale Residual Correction
 
 - **arXiv ID**: 2603.00149v1
 - **作者**: Zhihao Li, Shengwei Dong, Chuang Yi, Junxuan Gao, Zhilu Lai 等 (共8位作者)
@@ -3571,7 +3799,7 @@
 
 ---
 
-## 298. Easy3E: Feed-Forward 3D Asset Editing via Rectified Voxel Flow
+## 317. Easy3E: Feed-Forward 3D Asset Editing via Rectified Voxel Flow
 
 - **arXiv ID**: 2602.21499v1
 - **作者**: Shimin Hu, Yuanyi Wei, Fei Zha, Yudong Guo, Juyong Zhang
@@ -3583,7 +3811,7 @@
 
 ---
 
-## 299. CoLoGen: Progressive Learning of Concept-Localization Duality for Unified Image Generation
+## 318. CoLoGen: Progressive Learning of Concept-Localization Duality for Unified Image Generation
 
 - **arXiv ID**: 2602.22150v2
 - **作者**: YuXin Song, Yu Lu, Haoyuan Sun, Huanjin Yao, Fanglong Liu 等 (共9位作者)
@@ -3595,7 +3823,7 @@
 
 ---
 
-## 300. RobustVisRAG: Causality-Aware Vision-Based Retrieval-Augmented Generation under Visual Degradations
+## 319. RobustVisRAG: Causality-Aware Vision-Based Retrieval-Augmented Generation under Visual Degradations
 
 - **arXiv ID**: 2602.22013v3
 - **作者**: I-Hsiang Chen, Yu-Wei Liu, Tse-Yu Wu, Yu-Chien Chiang, Jen-Chien Yang 等 (共6位作者)
@@ -3607,7 +3835,7 @@
 
 ---
 
-## 301. MindDriver: Introducing Progressive Multimodal Reasoning for Autonomous Driving
+## 320. MindDriver: Introducing Progressive Multimodal Reasoning for Autonomous Driving
 
 - **arXiv ID**: 2602.21952v1
 - **作者**: Lingjun Zhang, Yujian Yuan, Changjie Wu, Xinyuan Chang, Xin Cai 等 (共10位作者)
@@ -3619,7 +3847,7 @@
 
 ---
 
-## 302. OmniZip: Learning a Unified and Lightweight Lossless Compressor for Multi-Modal Data
+## 321. OmniZip: Learning a Unified and Lightweight Lossless Compressor for Multi-Modal Data
 
 - **arXiv ID**: 2602.22286v2
 - **作者**: Yan Zhao, Zhengxue Cheng, Junxuan Zhang, Dajiang Zhou, Qunshan Gu 等 (共7位作者)
@@ -3631,7 +3859,7 @@
 
 ---
 
-## 303. Joint-Aligned Latent Action: Towards Scalable VLA Pretraining in the Wild
+## 322. Joint-Aligned Latent Action: Towards Scalable VLA Pretraining in the Wild
 
 - **arXiv ID**: 2602.21736v1
 - **作者**: Hao Luo, Ye Wang, Wanpeng Zhang, Haoqi Yuan, Yicheng Feng 等 (共8位作者)
@@ -3643,7 +3871,7 @@
 
 ---
 
-## 304. Generalizing Visual Geometry Priors to Sparse Gaussian Occupancy Prediction
+## 323. Generalizing Visual Geometry Priors to Sparse Gaussian Occupancy Prediction
 
 - **arXiv ID**: 2602.21552v1
 - **作者**: Changqing Zhou, Yueru Luo, Changhao Chen
@@ -3655,7 +3883,7 @@
 
 ---
 
-## 305. See It, Say It, Sorted: An Iterative Training-Free Framework for Visually-Grounded Multimodal Reasoning in LVLMs
+## 324. See It, Say It, Sorted: An Iterative Training-Free Framework for Visually-Grounded Multimodal Reasoning in LVLMs
 
 - **arXiv ID**: 2602.21497v2
 - **作者**: Yongchang Zhang, Oliver Ma, Tianyi Liu, Guangquan Zhou, Yang Chen
@@ -3667,7 +3895,7 @@
 
 ---
 
-## 306. VecGlypher: Unified Vector Glyph Generation with Language Models
+## 325. VecGlypher: Unified Vector Glyph Generation with Language Models
 
 - **arXiv ID**: 2602.21461v1
 - **作者**: Xiaoke Huang, Bhavul Gauri, Kam Woh Ng, Tony Ng, Mengmeng Xu 等 (共15位作者)
@@ -3679,7 +3907,7 @@
 
 ---
 
-## 307. Scan Clusters, Not Pixels: A Cluster-Centric Paradigm for Efficient Ultra-high-definition Image Restoration
+## 326. Scan Clusters, Not Pixels: A Cluster-Centric Paradigm for Efficient Ultra-high-definition Image Restoration
 
 - **arXiv ID**: 2602.21917v1
 - **作者**: Chen Wu, Ling Wang, Zhuoran Zheng, Yuning Cui, Zhixiong Yang 等 (共9位作者)
@@ -3691,7 +3919,7 @@
 
 ---
 
-## 308. FedVG: Gradient-Guided Aggregation for Enhanced Federated Learning
+## 327. FedVG: Gradient-Guided Aggregation for Enhanced Federated Learning
 
 - **arXiv ID**: 2602.21399v2
 - **作者**: Alina Devkota, Jacob Thrasher, Donald Adjeroh, Binod Bhattarai, Prashnna K. Gyawali
@@ -3703,7 +3931,7 @@
 
 ---
 
-## 309. Momentum Memory for Knowledge Distillation in Computational Pathology
+## 328. Momentum Memory for Knowledge Distillation in Computational Pathology
 
 - **arXiv ID**: 2602.21395v2
 - **作者**: Yongxin Guo, Hao Lu, Onur C. Koyun, Zhengjie Zhu, Muhammet Fatih Demir 等 (共6位作者)
@@ -3715,7 +3943,7 @@
 
 ---
 
-## 310. NoRD: A Data-Efficient Vision-Language-Action Model that Drives without Reasoning
+## 329. NoRD: A Data-Efficient Vision-Language-Action Model that Drives without Reasoning
 
 - **arXiv ID**: 2602.21172v2
 - **作者**: Ishaan Rawal, Shubh Gupta, Yihan Hu, Wei Zhan
@@ -3727,7 +3955,7 @@
 
 ---
 
-## 311. BrepGaussian: CAD reconstruction from Multi-View Images with Gaussian Splatting
+## 330. BrepGaussian: CAD reconstruction from Multi-View Images with Gaussian Splatting
 
 - **arXiv ID**: 2602.21105v1
 - **作者**: Jiaxing Yu, Dongyang Ren, Hangyu Xu, Zhouyuxiao Yang, Yuanqi Li 等 (共8位作者)
@@ -3739,7 +3967,7 @@
 
 ---
 
-## 312. ProxyFL: A Proxy-Guided Framework for Federated Semi-Supervised Learning
+## 331. ProxyFL: A Proxy-Guided Framework for Federated Semi-Supervised Learning
 
 - **arXiv ID**: 2602.21078v1
 - **作者**: Duowen Chen, Yan Wang
@@ -3751,7 +3979,7 @@
 
 ---
 
-## 313. Olbedo: An Albedo and Shading Aerial Dataset for Large-Scale Outdoor Environments
+## 332. Olbedo: An Albedo and Shading Aerial Dataset for Large-Scale Outdoor Environments
 
 - **arXiv ID**: 2602.22025v1
 - **作者**: Shuang Song, Debao Huang, Deyan Deng, Haolin Xiong, Yang Tang 等 (共7位作者)
@@ -3763,7 +3991,7 @@
 
 ---
 
-## 314. Cycle-Consistent Tuning for Layered Image Decomposition
+## 333. Cycle-Consistent Tuning for Layered Image Decomposition
 
 - **arXiv ID**: 2602.20989v3
 - **作者**: Zheng Gu, Min Lu, Zhida Sun, Dani Lischinski, Daniel Cohen-Or 等 (共6位作者)
@@ -3775,7 +4003,7 @@
 
 ---
 
-## 315. EW-DETR: Evolving World Object Detection via Incremental Low-Rank DEtection TRansformer
+## 334. EW-DETR: Evolving World Object Detection via Incremental Low-Rank DEtection TRansformer
 
 - **arXiv ID**: 2602.20985v1
 - **作者**: Munish Monga, Vishal Chudasama, Pankaj Wasnik, C. V. Jawahar
@@ -3787,7 +4015,7 @@
 
 ---
 
-## 316. Echoes Over Time: Unlocking Length Generalization in Video-to-Audio Generation Models
+## 335. Echoes Over Time: Unlocking Length Generalization in Video-to-Audio Generation Models
 
 - **arXiv ID**: 2602.20981v2
 - **作者**: Christian Simon, Masato Ishii, Wei-Yao Wang, Koichi Saito, Akio Hayakawa 等 (共11位作者)
@@ -3799,7 +4027,7 @@
 
 ---
 
-## 317. Dropping Anchor and Spherical Harmonics for Sparse-view Gaussian Splatting
+## 336. Dropping Anchor and Spherical Harmonics for Sparse-view Gaussian Splatting
 
 - **arXiv ID**: 2602.20933v1
 - **作者**: Shuangkang Fang, I-Chao Shen, Xuanyang Zhang, Zesheng Wang, Yufeng Wang 等 (共8位作者)
@@ -3811,7 +4039,7 @@
 
 ---
 
-## 318. LongVideo-R1: Smart Navigation for Low-cost Long Video Understanding
+## 337. LongVideo-R1: Smart Navigation for Low-cost Long Video Understanding
 
 - **arXiv ID**: 2602.20913v1
 - **作者**: Jihao Qiu, Lingxi Xie, Xinyue Huo, Qi Tian, Qixiang Ye
@@ -3823,7 +4051,7 @@
 
 ---
 
-## 319. TextPecker: Rewarding Structural Anomaly Quantification for Enhancing Visual Text Rendering
+## 338. TextPecker: Rewarding Structural Anomaly Quantification for Enhancing Visual Text Rendering
 
 - **arXiv ID**: 2602.20903v3
 - **作者**: Hanshen Zhu, Yuliang Liu, Xuecheng Wu, An-Lan Wang, Hao Feng 等 (共10位作者)
@@ -3835,7 +4063,7 @@
 
 ---
 
-## 320. SpatiaLQA: A Benchmark for Evaluating Spatial Logical Reasoning in Vision-Language Models
+## 339. SpatiaLQA: A Benchmark for Evaluating Spatial Logical Reasoning in Vision-Language Models
 
 - **arXiv ID**: 2602.20901v1
 - **作者**: Yuechen Xie, Xiaoyan Zhang, Yicheng Shan, Hao Zhu, Rui Tang 等 (共9位作者)
@@ -3847,7 +4075,7 @@
 
 ---
 
-## 321. When Safety Collides: Resolving Multi-Category Harmful Conflicts in Text-to-Image Diffusion via Adaptive Safety Guidance
+## 340. When Safety Collides: Resolving Multi-Category Harmful Conflicts in Text-to-Image Diffusion via Adaptive Safety Guidance
 
 - **arXiv ID**: 2602.20880v3
 - **作者**: Yongli Xiang, Ziming Hong, Zhaoqing Wang, Xiangyu Zhao, Bo Han 等 (共6位作者)
@@ -3859,7 +4087,7 @@
 
 ---
 
-## 322. MUSE: Harnessing Precise and Diverse Semantics for Few-Shot Whole Slide Image Classification
+## 341. MUSE: Harnessing Precise and Diverse Semantics for Few-Shot Whole Slide Image Classification
 
 - **arXiv ID**: 2602.20873v1
 - **作者**: Jiahao Xu, Sheng Huang, Xin Zhang, Zhixiong Nan, Jiajun Dong 等 (共6位作者)
@@ -3871,7 +4099,7 @@
 
 ---
 
-## 323. GeCo-SRT: Geometry-aware Continual Adaptation for Robotic Cross-Task Sim-to-Real Transfer
+## 342. GeCo-SRT: Geometry-aware Continual Adaptation for Robotic Cross-Task Sim-to-Real Transfer
 
 - **arXiv ID**: 2602.20871v2
 - **作者**: Wenbo Yu, Wenke Xia, Weitao Zhang, Di Hu
@@ -3883,7 +4111,7 @@
 
 ---
 
-## 324. VGGDrive: Empowering Vision-Language Models with Cross-View Geometric Grounding for Autonomous Driving
+## 343. VGGDrive: Empowering Vision-Language Models with Cross-View Geometric Grounding for Autonomous Driving
 
 - **arXiv ID**: 2602.20794v1
 - **作者**: Jie Wang, Guang Li, Zhijian Huang, Chenxu Dang, Hangjun Ye 等 (共7位作者)
@@ -3895,7 +4123,7 @@
 
 ---
 
-## 325. From Scale to Speed: Adaptive Test-Time Scaling for Image Editing
+## 344. From Scale to Speed: Adaptive Test-Time Scaling for Image Editing
 
 - **arXiv ID**: 2603.00141v1
 - **作者**: Xiangyan Qu, Zhenlong Yuan, Jing Tang, Rui Chen, Datao Tang 等 (共12位作者)
@@ -3907,7 +4135,7 @@
 
 ---
 
-## 326. MatchED: Crisp Edge Detection Using End-to-End, Matching-based Supervision
+## 345. MatchED: Crisp Edge Detection Using End-to-End, Matching-based Supervision
 
 - **arXiv ID**: 2602.20689v1
 - **作者**: Bedrettin Cetinkaya, Sinan Kalkan, Emre Akbas
@@ -3919,7 +4147,7 @@
 
 ---
 
-## 327. RAYNOVA: Scale-Temporal Autoregressive World Modeling in Ray Space
+## 346. RAYNOVA: Scale-Temporal Autoregressive World Modeling in Ray Space
 
 - **arXiv ID**: 2602.20685v2
 - **作者**: Yichen Xie, Chensheng Peng, Mazen Abdelfattah, Yihan Hu, Jiezhi Yang 等 (共9位作者)
@@ -3931,7 +4159,7 @@
 
 ---
 
-## 328. From Pairs to Sequences: Track-Aware Policy Gradients for Keypoint Detection
+## 347. From Pairs to Sequences: Track-Aware Policy Gradients for Keypoint Detection
 
 - **arXiv ID**: 2602.20630v3
 - **作者**: Yepeng Liu, Hao Li, Liwen Yang, Fangzhen Li, Xudi Ge 等 (共11位作者)
@@ -3943,7 +4171,7 @@
 
 ---
 
-## 329. RecoverMark: Robust Watermarking for Localization and Recovery of Manipulated Faces
+## 348. RecoverMark: Robust Watermarking for Localization and Recovery of Manipulated Faces
 
 - **arXiv ID**: 2602.20618v1
 - **作者**: Haonan An, Xiaohui Ye, Guang Hua, Yihang Tao, Hangcheng Cao 等 (共7位作者)
@@ -3955,7 +4183,7 @@
 
 ---
 
-## 330. PFGNet: A Fully Convolutional Frequency-Guided Peripheral Gating Network for Efficient Spatiotemporal Predictive Learning
+## 349. PFGNet: A Fully Convolutional Frequency-Guided Peripheral Gating Network for Efficient Spatiotemporal Predictive Learning
 
 - **arXiv ID**: 2602.20537v1
 - **作者**: Xinyong Cai, Changbin Sun, Yong Wang, Hongyu Yang, Yuankai Wu
@@ -3967,7 +4195,7 @@
 
 ---
 
-## 331. Probing and Bridging Geometry-Interaction Cues for Affordance Reasoning in Vision Foundation Models
+## 350. Probing and Bridging Geometry-Interaction Cues for Affordance Reasoning in Vision Foundation Models
 
 - **arXiv ID**: 2602.20501v2
 - **作者**: Qing Zhang, Xuesong Li, Jing Zhang
@@ -3979,7 +4207,7 @@
 
 ---
 
-## 332. Pip-Stereo: Progressive Iterations Pruner for Iterative Optimization based Stereo Matching
+## 351. Pip-Stereo: Progressive Iterations Pruner for Iterative Optimization based Stereo Matching
 
 - **arXiv ID**: 2602.20496v1
 - **作者**: Jintu Zheng, Qizhe Liu, HuangXin Xu, Zhuojie Chen
@@ -3991,7 +4219,7 @@
 
 ---
 
-## 333. StoryTailor:A Zero-Shot Pipeline for Action-Rich Multi-Subject Visual Narratives
+## 352. StoryTailor:A Zero-Shot Pipeline for Action-Rich Multi-Subject Visual Narratives
 
 - **arXiv ID**: 2602.21273v2
 - **作者**: Jinghao Hu, Yuhe Zhang, GuoHua Geng, Kang Li, Han Zhang
@@ -4003,7 +4231,7 @@
 
 ---
 
-## 334. MedCLIPSeg: Probabilistic Vision-Language Adaptation for Data-Efficient and Generalizable Medical Image Segmentation
+## 353. MedCLIPSeg: Probabilistic Vision-Language Adaptation for Data-Efficient and Generalizable Medical Image Segmentation
 
 - **arXiv ID**: 2602.20423v1
 - **作者**: Taha Koleilat, Hojat Asgariandehkordi, Omid Nejati Manzari, Berardino Barile, Yiming Xiao 等 (共6位作者)
@@ -4015,7 +4243,7 @@
 
 ---
 
-## 335. gQIR: Generative Quanta Image Reconstruction
+## 354. gQIR: Generative Quanta Image Reconstruction
 
 - **arXiv ID**: 2602.20417v1
 - **作者**: Aryan Garg, Sizhuo Ma, Mohit Gupta
@@ -4027,7 +4255,7 @@
 
 ---
 
-## 336. SimLBR: Learning to Detect Fake Images by Learning to Detect Real Images
+## 355. SimLBR: Learning to Detect Fake Images by Learning to Detect Real Images
 
 - **arXiv ID**: 2602.20412v1
 - **作者**: Aayush Dhakal, Subash Khanal, Srikumar Sastry, Jacob Arndt, Philipe Ambrozio Dias 等 (共7位作者)
@@ -4039,7 +4267,7 @@
 
 ---
 
-## 337. CLIPoint3D: Language-Grounded Few-Shot Unsupervised 3D Point Cloud Domain Adaptation
+## 356. CLIPoint3D: Language-Grounded Few-Shot Unsupervised 3D Point Cloud Domain Adaptation
 
 - **arXiv ID**: 2602.20409v1
 - **作者**: Mainak Singha, Sarthak Mehrotra, Paolo Casari, Subhasis Chaudhuri, Elisa Ricci 等 (共6位作者)
@@ -4051,7 +4279,7 @@
 
 ---
 
-## 338. Circuit Tracing in Vision-Language Models: Understanding the Internal Mechanisms of Multimodal Thinking
+## 357. Circuit Tracing in Vision-Language Models: Understanding the Internal Mechanisms of Multimodal Thinking
 
 - **arXiv ID**: 2602.20330v1
 - **作者**: Jingcheng Yang, Tianhu Xiong, Shengyi Qian, Klara Nahrstedt, Mingyuan Wu
@@ -4063,7 +4291,7 @@
 
 ---
 
-## 339. tttLRM: Test-Time Training for Long Context and Autoregressive 3D Reconstruction
+## 358. tttLRM: Test-Time Training for Long Context and Autoregressive 3D Reconstruction
 
 - **arXiv ID**: 2602.20160v2
 - **作者**: Chen Wang, Hao Tan, Wang Yifan, Zhiqin Chen, Yuheng Liu 等 (共9位作者)
@@ -4075,7 +4303,7 @@
 
 ---
 
-## 340. Flow3r: Factored Flow Prediction for Scalable Visual Geometry Learning
+## 359. Flow3r: Factored Flow Prediction for Scalable Visual Geometry Learning
 
 - **arXiv ID**: 2602.20157v1
 - **作者**: Zhongxiao Cong, Qitao Zhao, Minsik Jeon, Shubham Tulsiani
@@ -4087,7 +4315,7 @@
 
 ---
 
-## 341. StructXLIP: Enhancing Vision-language Models with Multimodal Structural Cues
+## 360. StructXLIP: Enhancing Vision-language Models with Multimodal Structural Cues
 
 - **arXiv ID**: 2602.20089v3
 - **作者**: Zanxi Ruan, Songqun Gao, Qiuyu Kong, Yiming Wang, Marco Cristani
@@ -4099,7 +4327,7 @@
 
 ---
 
-## 342. Decoupling Defense Strategies for Robust Image Watermarking
+## 361. Decoupling Defense Strategies for Robust Image Watermarking
 
 - **arXiv ID**: 2602.20053v1
 - **作者**: Jiahui Chen, Zehang Deng, Zeyu Zhang, Chaoyang Li, Lianchen Jia 等 (共6位作者)
@@ -4111,7 +4339,7 @@
 
 ---
 
-## 343. Discover, Segment, and Select: A Progressive Mechanism for Zero-shot Camouflaged Object Segmentation
+## 362. Discover, Segment, and Select: A Progressive Mechanism for Zero-shot Camouflaged Object Segmentation
 
 - **arXiv ID**: 2602.19944v1
 - **作者**: Yilong Yang, Jianxin Tian, Shengchuan Zhang, Liujuan Cao
@@ -4123,7 +4351,7 @@
 
 ---
 
-## 344. Multi-Modal Representation Learning via Semi-Supervised Rate Reduction for Generalized Category Discovery
+## 363. Multi-Modal Representation Learning via Semi-Supervised Rate Reduction for Generalized Category Discovery
 
 - **arXiv ID**: 2602.19910v1
 - **作者**: Wei He, Xianghan Meng, Zhiyuan Huang, Xianbiao Qi, Rong Xiao 等 (共6位作者)
@@ -4135,7 +4363,7 @@
 
 ---
 
-## 345. ExpPortrait: Expressive Portrait Generation via Personalized Representation
+## 364. ExpPortrait: Expressive Portrait Generation via Personalized Representation
 
 - **arXiv ID**: 2602.19900v1
 - **作者**: Junyi Wang, Yudong Guo, Boyang Guo, Shengming Yang, Juyong Zhang
@@ -4147,7 +4375,7 @@
 
 ---
 
-## 346. Brewing Stronger Features: Dual-Teacher Distillation for Multispectral Earth Observation
+## 365. Brewing Stronger Features: Dual-Teacher Distillation for Multispectral Earth Observation
 
 - **arXiv ID**: 2602.19863v2
 - **作者**: Filip Wolf, Blaž Rolih, Luka Čehovin Zajc
@@ -4159,7 +4387,7 @@
 
 ---
 
-## 347. MultiModalPFN: Extending Prior-Data Fitted Networks for Multimodal Tabular Learning
+## 366. MultiModalPFN: Extending Prior-Data Fitted Networks for Multimodal Tabular Learning
 
 - **arXiv ID**: 2602.20223v2
 - **作者**: Wall Kim, Chaeyoung Song, Hanul Kim
@@ -4171,7 +4399,7 @@
 
 ---
 
-## 348. RAP: Fast Feedforward Rendering-Free Attribute-Guided Primitive Importance Score Prediction for Efficient 3D Gaussian Splatting Processing
+## 367. RAP: Fast Feedforward Rendering-Free Attribute-Guided Primitive Importance Score Prediction for Efficient 3D Gaussian Splatting Processing
 
 - **arXiv ID**: 2602.19753v1
 - **作者**: Kaifa Yang, Qi Yang, Yiling Xu, Zhu Li
@@ -4183,7 +4411,7 @@
 
 ---
 
-## 349. Pixels Don't Lie (But Your Detector Might): Bootstrapping MLLM-as-a-Judge for Trustworthy Deepfake Detection and Reasoning Supervision
+## 368. Pixels Don't Lie (But Your Detector Might): Bootstrapping MLLM-as-a-Judge for Trustworthy Deepfake Detection and Reasoning Supervision
 
 - **arXiv ID**: 2602.19715v1
 - **作者**: Kartik Kuckreja, Parul Gupta, Muhammad Haris Khan, Abhinav Dhall
@@ -4195,7 +4423,7 @@
 
 ---
 
-## 350. TeHOR: Text-Guided 3D Human and Object Reconstruction with Textures
+## 369. TeHOR: Text-Guided 3D Human and Object Reconstruction with Textures
 
 - **arXiv ID**: 2602.19679v1
 - **作者**: Hyeongjin Nam, Daniel Sungho Jung, Kyoung Mu Lee
@@ -4207,7 +4435,7 @@
 
 ---
 
-## 351. Seeing Clearly, Reasoning Confidently: Plug-and-Play Remedies for Vision Language Model Blindness
+## 370. Seeing Clearly, Reasoning Confidently: Plug-and-Play Remedies for Vision Language Model Blindness
 
 - **arXiv ID**: 2602.19615v1
 - **作者**: Xin Hu, Haomiao Ni, Yunbei Zhang, Jihun Hamm, Zechen Li 等 (共6位作者)
@@ -4219,7 +4447,7 @@
 
 ---
 
-## 352. RAID: Retrieval-Augmented Anomaly Detection
+## 371. RAID: Retrieval-Augmented Anomaly Detection
 
 - **arXiv ID**: 2602.19611v1
 - **作者**: Mingxiu Cai, Zhe Zhang, Gaochang Wu, Tianyou Chai, Xiatian Zhu
@@ -4231,7 +4459,7 @@
 
 ---
 
-## 353. CLCR: Cross-Level Semantic Collaborative Representation for Multimodal Learning
+## 372. CLCR: Cross-Level Semantic Collaborative Representation for Multimodal Learning
 
 - **arXiv ID**: 2602.19605v1
 - **作者**: Chunlei Meng, Guanhong Huang, Rong Fu, Runmin Jian, Zhongxue Gan 等 (共6位作者)
@@ -4243,7 +4471,7 @@
 
 ---
 
-## 354. Tri-Subspaces Disentanglement for Multimodal Sentiment Analysis
+## 373. Tri-Subspaces Disentanglement for Multimodal Sentiment Analysis
 
 - **arXiv ID**: 2602.19585v1
 - **作者**: Chunlei Meng, Jiabin Luo, Zhenglin Yan, Zhenyu Yu, Rong Fu 等 (共7位作者)
@@ -4255,7 +4483,7 @@
 
 ---
 
-## 355. ConceptPrism: Concept Disentanglement in Personalized Diffusion Models via Residual Token Optimization
+## 374. ConceptPrism: Concept Disentanglement in Personalized Diffusion Models via Residual Token Optimization
 
 - **arXiv ID**: 2602.19575v1
 - **作者**: Minseo Kim, Minchan Kwon, Dongyeun Lee, Yunho Jeon, Junmo Kim
@@ -4267,7 +4495,7 @@
 
 ---
 
-## 356. Vinedresser3D: Agentic Text-guided 3D Editing
+## 375. Vinedresser3D: Agentic Text-guided 3D Editing
 
 - **arXiv ID**: 2602.19542v1
 - **作者**: Yankuan Chi, Xiang Li, Zixuan Huang, James M. Rehg
@@ -4279,7 +4507,7 @@
 
 ---
 
-## 357. Model Merging in the Essential Subspace
+## 376. Model Merging in the Essential Subspace
 
 - **arXiv ID**: 2602.20208v1
 - **作者**: Longhua Li, Lei Qi, Qi Tian, Xin Geng
@@ -4291,7 +4519,7 @@
 
 ---
 
-## 358. QuantVLA: Scale-Calibrated Post-Training Quantization for Vision-Language-Action Models
+## 377. QuantVLA: Scale-Calibrated Post-Training Quantization for Vision-Language-Action Models
 
 - **arXiv ID**: 2602.20309v3
 - **作者**: Jingxuan Zhang, Yunta Hsieh, Zhongwei Wan, Haokun Lin, Xin Wang 等 (共8位作者)
@@ -4303,7 +4531,7 @@
 
 ---
 
-## 359. ApET: Approximation-Error Guided Token Compression for Efficient VLMs
+## 378. ApET: Approximation-Error Guided Token Compression for Efficient VLMs
 
 - **arXiv ID**: 2602.19870v1
 - **作者**: Qiankun Ma, Ziyao Zhang, Haofei Wang, Jie Chen, Zhen Song 等 (共6位作者)
@@ -4315,7 +4543,7 @@
 
 ---
 
-## 360. Pixel2Phys: Distilling Governing Laws from Visual Dynamics
+## 379. Pixel2Phys: Distilling Governing Laws from Visual Dynamics
 
 - **arXiv ID**: 2602.19516v1
 - **作者**: Ruikun Li, Jun Yao, Yingfan Hua, Shixiang Tang, Biqing Qi 等 (共8位作者)
@@ -4327,7 +4555,7 @@
 
 ---
 
-## 361. MICON-Bench: Benchmarking and Enhancing Multi-Image Context Image Generation in Unified Multimodal Models
+## 380. MICON-Bench: Benchmarking and Enhancing Multi-Image Context Image Generation in Unified Multimodal Models
 
 - **arXiv ID**: 2602.19497v1
 - **作者**: Mingrui Wu, Hang Liu, Jiayi Ji, Xiaoshuai Sun, Rongrong Ji
@@ -4339,7 +4567,7 @@
 
 ---
 
-## 362. Decoupling Vision and Language: Codebook Anchored Visual Adaptation
+## 381. Decoupling Vision and Language: Codebook Anchored Visual Adaptation
 
 - **arXiv ID**: 2602.19449v1
 - **作者**: Jason Wu, Tianchen Zhao, Chang Liu, Jiarui Cai, Zheng Zhang 等 (共10位作者)
@@ -4351,7 +4579,7 @@
 
 ---
 
-## 363. Learning Mutual View Information Graph for Adaptive Adversarial Collaborative Perception
+## 382. Learning Mutual View Information Graph for Adaptive Adversarial Collaborative Perception
 
 - **arXiv ID**: 2602.19596v1
 - **作者**: Yihang Tao, Senkang Hu, Haonan An, Zhengru Fang, Hangcheng Cao 等 (共6位作者)
@@ -4363,7 +4591,7 @@
 
 ---
 
-## 364. GSNR: Graph Smooth Null-Space Representation for Inverse Problems
+## 383. GSNR: Graph Smooth Null-Space Representation for Inverse Problems
 
 - **arXiv ID**: 2602.20328v1
 - **作者**: Romario Gualdrón-Hurtado, Roman Jacome, Rafael S. Suarez, Henry Arguello
@@ -4375,7 +4603,7 @@
 
 ---
 
-## 365. MRI Contrast Enhancement Kinetics World Model
+## 384. MRI Contrast Enhancement Kinetics World Model
 
 - **arXiv ID**: 2602.19285v1
 - **作者**: Jindi Kong, Yuting He, Cong Xia, Rongjun Ge, Shuo Li
@@ -4387,7 +4615,7 @@
 
 ---
 
-## 366. No Need For Real Anomaly: MLLM Empowered Zero-Shot Video Anomaly Detection
+## 385. No Need For Real Anomaly: MLLM Empowered Zero-Shot Video Anomaly Detection
 
 - **arXiv ID**: 2602.19248v2
 - **作者**: Zunkai Dai, Ke Li, Jiajia Liu, Jie Yang, Yuanyuan Qiao
@@ -4399,7 +4627,7 @@
 
 ---
 
-## 367. GS-CLIP: Zero-shot 3D Anomaly Detection by Geometry-Aware Prompt and Synergistic View Representation Learning
+## 386. GS-CLIP: Zero-shot 3D Anomaly Detection by Geometry-Aware Prompt and Synergistic View Representation Learning
 
 - **arXiv ID**: 2602.19206v2
 - **作者**: Zehao Deng, An Liu, Yan Wang
@@ -4411,7 +4639,7 @@
 
 ---
 
-## 368. VLM-Guided Group Preference Alignment for Diffusion-based Human Mesh Recovery
+## 387. VLM-Guided Group Preference Alignment for Diffusion-based Human Mesh Recovery
 
 - **arXiv ID**: 2602.19180v1
 - **作者**: Wenhao Shen, Hao Wang, Wanqi Yin, Fayao Liu, Xulei Yang 等 (共8位作者)
@@ -4423,7 +4651,7 @@
 
 ---
 
-## 369. BriMA: Bridged Modality Adaptation for Multi-Modal Continual Action Quality Assessment
+## 388. BriMA: Bridged Modality Adaptation for Multi-Modal Continual Action Quality Assessment
 
 - **arXiv ID**: 2602.19170v1
 - **作者**: Kanglei Zhou, Chang Li, Qingyi Pan, Liyuan Wang
@@ -4435,7 +4663,7 @@
 
 ---
 
-## 370. CaReFlow: Cyclic Adaptive Rectified Flow for Multimodal Fusion
+## 389. CaReFlow: Cyclic Adaptive Rectified Flow for Multimodal Fusion
 
 - **arXiv ID**: 2602.19140v1
 - **作者**: Sijie Mai, Shiqin Han
@@ -4447,7 +4675,7 @@
 
 ---
 
-## 371. Universal 3D Shape Matching via Coarse-to-Fine Language Guidance
+## 390. Universal 3D Shape Matching via Coarse-to-Fine Language Guidance
 
 - **arXiv ID**: 2602.19112v3
 - **作者**: Qinfeng Xiao, Guofeng Mei, Bo Yang, Liying Zhang, Jian Zhang 等 (共6位作者)
@@ -4459,7 +4687,7 @@
 
 ---
 
-## 372. The Power of Decaying Steps: Enhancing Attack Stability and Transferability for Sign-based Optimizers
+## 391. The Power of Decaying Steps: Enhancing Attack Stability and Transferability for Sign-based Optimizers
 
 - **arXiv ID**: 2602.19096v2
 - **作者**: Wei Tao, Yang Dai, Jincai Huang, Qing Tao
@@ -4471,7 +4699,7 @@
 
 ---
 
-## 373. Ani3DHuman: Photorealistic 3D Human Animation with Self-guided Stochastic Sampling
+## 392. Ani3DHuman: Photorealistic 3D Human Animation with Self-guided Stochastic Sampling
 
 - **arXiv ID**: 2602.19089v1
 - **作者**: Qi Sun, Can Wang, Jiaxiang Shang, Yingchun Liu, Jing Liao
@@ -4483,7 +4711,7 @@
 
 ---
 
-## 374. ChordEdit: One-Step Low-Energy Transport for Image Editing
+## 393. ChordEdit: One-Step Low-Energy Transport for Image Editing
 
 - **arXiv ID**: 2602.19083v1
 - **作者**: Liangsi Lu, Xuhang Chen, Minzhe Guo, Shichu Li, Jingchao Wang 等 (共6位作者)
@@ -4495,7 +4723,7 @@
 
 ---
 
-## 375. L3DR: 3D-aware LiDAR Diffusion and Rectification
+## 394. L3DR: 3D-aware LiDAR Diffusion and Rectification
 
 - **arXiv ID**: 2602.19064v1
 - **作者**: Quan Liu, Xiaoqin Zhang, Ling Shao, Shijian Lu
@@ -4507,7 +4735,7 @@
 
 ---
 
-## 376. Direction-aware 3D Large Multimodal Models
+## 395. Direction-aware 3D Large Multimodal Models
 
 - **arXiv ID**: 2602.19063v1
 - **作者**: Quan Liu, Weihao Xuan, Junjue Wang, Naoto Yokoya, Ling Shao 等 (共6位作者)
@@ -4519,7 +4747,7 @@
 
 ---
 
-## 377. TeFlow: Enabling Multi-frame Supervision for Self-Supervised Feed-forward Scene Flow Estimation
+## 396. TeFlow: Enabling Multi-frame Supervision for Self-Supervised Feed-forward Scene Flow Estimation
 
 - **arXiv ID**: 2602.19053v1
 - **作者**: Qingwen Zhang, Chenhan Jiang, Xiaomeng Zhu, Yunqi Miao, Yushan Zhang 等 (共7位作者)
@@ -4531,7 +4759,7 @@
 
 ---
 
-## 378. OpenVO: Open-World Visual Odometry with Temporal Dynamics Awareness
+## 397. OpenVO: Open-World Visual Odometry with Temporal Dynamics Awareness
 
 - **arXiv ID**: 2602.19035v1
 - **作者**: Phuc D. A. Nguyen, Anh N. Nhu, Ming C. Lin
@@ -4543,7 +4771,7 @@
 
 ---
 
-## 379. Towards Calibrating Prompt Tuning of Vision-Language Models
+## 398. Towards Calibrating Prompt Tuning of Vision-Language Models
 
 - **arXiv ID**: 2602.19024v1
 - **作者**: Ashshak Sharifdeen, Fahad Shamshad, Muhammad Akhtar Munir, Abhishek Basu, Mohamed Insaf Ismithdeen 等 (共9位作者)
@@ -4555,7 +4783,7 @@
 
 ---
 
-## 380. Learning Cross-View Object Correspondence via Cycle-Consistent Mask Prediction
+## 399. Learning Cross-View Object Correspondence via Cycle-Consistent Mask Prediction
 
 - **arXiv ID**: 2602.18996v1
 - **作者**: Shannan Yan, Leqi Zheng, Keyu Lv, Jingchen Ni, Hongyang Wei 等 (共10位作者)
@@ -4567,7 +4795,7 @@
 
 ---
 
-## 381. SeaCache: Spectral-Evolution-Aware Cache for Accelerating Diffusion Models
+## 400. SeaCache: Spectral-Evolution-Aware Cache for Accelerating Diffusion Models
 
 - **arXiv ID**: 2602.18993v1
 - **作者**: Jiwoo Chung, Sangeek Hyun, MinKyu Lee, Byeongju Han, Geonho Cha 等 (共8位作者)
@@ -4579,7 +4807,7 @@
 
 ---
 
-## 382. OTPrune: Distribution-Aligned Visual Token Pruning via Optimal Transport
+## 401. OTPrune: Distribution-Aligned Visual Token Pruning via Optimal Transport
 
 - **arXiv ID**: 2602.20205v2
 - **作者**: Xiwen Chen, Wenhui Zhu, Gen Li, Xuanzhao Dong, Yujian Xiong 等 (共12位作者)
@@ -4591,7 +4819,7 @@
 
 ---
 
-## 383. MoBind: Motion Binding for Fine-Grained IMU-Video Pose Alignment
+## 402. MoBind: Motion Binding for Fine-Grained IMU-Video Pose Alignment
 
 - **arXiv ID**: 2602.19004v1
 - **作者**: Duc Duy Nguyen, Tat-Jun Chin, Minh Hoai
@@ -4603,7 +4831,7 @@
 
 ---
 
-## 384. Frame2Freq: Spectral Adapters for Fine-Grained Video Understanding
+## 403. Frame2Freq: Spectral Adapters for Fine-Grained Video Understanding
 
 - **arXiv ID**: 2602.18977v1
 - **作者**: Thinesh Thiyakesan Ponbagavathi, Constantin Seibold, Alina Roitberg
@@ -4615,7 +4843,7 @@
 
 ---
 
-## 385. SafeDrive: Fine-Grained Safety Reasoning for End-to-End Driving in a Sparse World
+## 404. SafeDrive: Fine-Grained Safety Reasoning for End-to-End Driving in a Sparse World
 
 - **arXiv ID**: 2602.18887v1
 - **作者**: Jungho Kim, Jiyong Oh, Seunghoon Yu, Hongjae Shin, Donghyuk Kwak 等 (共6位作者)
@@ -4627,7 +4855,7 @@
 
 ---
 
-## 386. BiMotion: B-spline Motion for Text-guided Dynamic 3D Character Generation
+## 405. BiMotion: B-spline Motion for Text-guided Dynamic 3D Character Generation
 
 - **arXiv ID**: 2602.18873v2
 - **作者**: Miaowei Wang, Qingxuan Yan, Zhi Cao, Yayuan Li, Oisin Mac Aodha 等 (共7位作者)
@@ -4639,7 +4867,7 @@
 
 ---
 
-## 387. Similarity-as-Evidence: Calibrating Overconfident VLMs for Interpretable and Label-Efficient Medical Active Learning
+## 406. Similarity-as-Evidence: Calibrating Overconfident VLMs for Interpretable and Label-Efficient Medical Active Learning
 
 - **arXiv ID**: 2602.18867v2
 - **作者**: Zhuofan Xie, Zishan Lin, Jinliang Lin, Jie Qi, Shaohua Hong 等 (共6位作者)
@@ -4651,7 +4879,7 @@
 
 ---
 
-## 388. TIACam: Text-Anchored Invariant Feature Learning with Auto-Augmentation for Camera-Robust Zero-Watermarking
+## 407. TIACam: Text-Anchored Invariant Feature Learning with Auto-Augmentation for Camera-Robust Zero-Watermarking
 
 - **arXiv ID**: 2602.18863v1
 - **作者**: Abdullah All Tanvir, Agnibh Dasgupta, Xin Zhong
@@ -4663,7 +4891,7 @@
 
 ---
 
-## 389. Hyperbolic Busemann Neural Networks
+## 408. Hyperbolic Busemann Neural Networks
 
 - **arXiv ID**: 2602.18858v2
 - **作者**: Ziheng Chen, Bernhard Schölkopf, Nicu Sebe
@@ -4675,7 +4903,7 @@
 
 ---
 
-## 390. DUET-VLM: Dual stage Unified Efficient Token reduction for VLM Training and Inference
+## 409. DUET-VLM: Dual stage Unified Efficient Token reduction for VLM Training and Inference
 
 - **arXiv ID**: 2602.18846v1
 - **作者**: Aditya Kumar Singh, Hitesh Kandala, Pratik Prabhanjan Brahma, Zicheng Liu, Emad Barsoum
@@ -4687,7 +4915,7 @@
 
 ---
 
-## 391. Echoes of Ownership: Adversarial-Guided Dual Injection for Copyright Protection in MLLMs
+## 410. Echoes of Ownership: Adversarial-Guided Dual Injection for Copyright Protection in MLLMs
 
 - **arXiv ID**: 2602.18845v1
 - **作者**: Chengwei Xia, Fan Ma, Ruijie Quan, Yunqiu Xu, Kun Zhan 等 (共6位作者)
@@ -4699,7 +4927,7 @@
 
 ---
 
-## 392. Detecting AI-Generated Forgeries via Iterative Manifold Deviation Amplification
+## 411. Detecting AI-Generated Forgeries via Iterative Manifold Deviation Amplification
 
 - **arXiv ID**: 2602.18842v1
 - **作者**: Jiangling Zhang, Shuxuan Gao, Bofan Liu, Siqiang Feng, Jirui Huang 等 (共7位作者)
@@ -4711,7 +4939,7 @@
 
 ---
 
-## 393. IDperturb: Enhancing Variation in Synthetic Face Generation via Angular Perturbation
+## 412. IDperturb: Enhancing Variation in Synthetic Face Generation via Angular Perturbation
 
 - **arXiv ID**: 2602.18831v1
 - **作者**: Fadi Boutros, Eduarda Caldeira, Tahar Chettaoui, Naser Damer
@@ -4723,7 +4951,7 @@
 
 ---
 
-## 394. Learning Multi-Modal Prototypes for Cross-Domain Few-Shot Object Detection
+## 413. Learning Multi-Modal Prototypes for Cross-Domain Few-Shot Object Detection
 
 - **arXiv ID**: 2602.18811v1
 - **作者**: Wanqi Wang, Jingcai Guo, Yuxiang Cai, Zhi Chen
@@ -4735,7 +4963,7 @@
 
 ---
 
-## 395. Open-Vocabulary Domain Generalization in Urban-Scene Segmentation
+## 414. Open-Vocabulary Domain Generalization in Urban-Scene Segmentation
 
 - **arXiv ID**: 2602.18853v2
 - **作者**: Dong Zhao, Qi Zang, Nan Pu, Wenjing Li, Nicu Sebe 等 (共6位作者)
@@ -4747,7 +4975,7 @@
 
 ---
 
-## 396. MaskDiME: Adaptive Masked Diffusion for Precise and Efficient Visual Counterfactual Explanations
+## 415. MaskDiME: Adaptive Masked Diffusion for Precise and Efficient Visual Counterfactual Explanations
 
 - **arXiv ID**: 2602.18792v1
 - **作者**: Changlu Guo, Anders Nymark Christensen, Anders Bjorholm Dahl, Morten Rieger Hannemose
@@ -4759,7 +4987,7 @@
 
 ---
 
-## 397. LaS-Comp: Zero-shot 3D Completion with Latent-Spatial Consistency
+## 416. LaS-Comp: Zero-shot 3D Completion with Latent-Spatial Consistency
 
 - **arXiv ID**: 2602.18735v1
 - **作者**: Weilong Yan, Haipeng Li, Hao Xu, Nianjin Ye, Yihao Ai 等 (共7位作者)
@@ -4771,7 +4999,7 @@
 
 ---
 
-## 398. VidEoMT: Your ViT is Secretly Also a Video Segmentation Model
+## 417. VidEoMT: Your ViT is Secretly Also a Video Segmentation Model
 
 - **arXiv ID**: 2602.17807v3
 - **作者**: Narges Norouzi, Idil Esen Zulfikar, Niccolò Cavagnero, Tommie Kerssies, Bastian Leibe 等 (共7位作者)
@@ -4783,7 +5011,7 @@
 
 ---
 
-## 399. ReMoRa: Multimodal Large Language Model based on Refined Motion Representation for Long-Video Understanding
+## 418. ReMoRa: Multimodal Large Language Model based on Refined Motion Representation for Long-Video Understanding
 
 - **arXiv ID**: 2602.16412v2
 - **作者**: Daichi Yashima, Shuhei Kurita, Yusuke Oda, Komei Sugiura
@@ -4795,7 +5023,7 @@
 
 ---
 
-## 400. PixelRush: Ultra-Fast, Training-Free High-Resolution Image Generation via One-step Diffusion
+## 419. PixelRush: Ultra-Fast, Training-Free High-Resolution Image Generation via One-step Diffusion
 
 - **arXiv ID**: 2602.12769v2
 - **作者**: Hong-Phuc Lai, Phong Nguyen, Anh Tran
@@ -4807,7 +5035,31 @@
 
 ---
 
-## 401. RFDM: Residual Flow Diffusion Model for Efficient Causal Video Editing
+## 420. LongStream: Long-Sequence Streaming Autoregressive Visual Geometry
+
+- **arXiv ID**: 2602.13172v2
+- **作者**: Chong Cheng, Xianda Chen, Tao Xie, Wei Yin, Weiqiang Ren 等 (共8位作者)
+- **发布日期**: 2026-02-13
+- **分类**: cs.CV
+- **论文链接**: [http://arxiv.org/abs/2602.13172v2](http://arxiv.org/abs/2602.13172v2)
+- **PDF**: [http://arxiv.org/pdf/2602.13172v2](http://arxiv.org/pdf/2602.13172v2)
+- **摘要**: Long-sequence streaming 3D reconstruction remains a significant open challenge. Existing autoregressive models often fail when processing long sequences because they anchor poses to the first frame, leading to attention decay, scale drift, and extrapolation errors. We introduce LongStream, a novel g...
+
+---
+
+## 421. Hierarchical Concept Embedding & Pursuit for Interpretable Image Classification
+
+- **arXiv ID**: 2602.11448v2
+- **作者**: Nghia Nguyen, Tianjiao Ding, René Vidal
+- **发布日期**: 2026-02-11
+- **分类**: cs.LG, cs.CV
+- **论文链接**: [http://arxiv.org/abs/2602.11448v2](http://arxiv.org/abs/2602.11448v2)
+- **PDF**: [http://arxiv.org/pdf/2602.11448v2](http://arxiv.org/pdf/2602.11448v2)
+- **摘要**: Interpretable-by-design models are gaining traction in computer vision because they provide faithful explanations for their predictions. In image classification, these models typically recover human-interpretable concepts from an image and use them for classification. Sparse concept recovery methods...
+
+---
+
+## 422. RFDM: Residual Flow Diffusion Model for Efficient Causal Video Editing
 
 - **arXiv ID**: 2602.06871v2
 - **作者**: Mohammadreza Salehi, Mehdi Noroozi, Luca Morreale, Ruchika Chavhan, Malcolm Chadwick 等 (共7位作者)
@@ -4819,7 +5071,7 @@
 
 ---
 
-## 402. DisCa: Accelerating Video Diffusion Transformers with Distillation-Compatible Learnable Feature Caching
+## 423. DisCa: Accelerating Video Diffusion Transformers with Distillation-Compatible Learnable Feature Caching
 
 - **arXiv ID**: 2602.05449v2
 - **作者**: Chang Zou, Changlin Li, Yang Li, Patrol Li, Jianbing Wu 等 (共10位作者)
@@ -4831,7 +5083,7 @@
 
 ---
 
-## 403. KVSmooth: Mitigating Hallucination in Multi-modal Large Language Models through Key-Value Smoothing
+## 424. KVSmooth: Mitigating Hallucination in Multi-modal Large Language Models through Key-Value Smoothing
 
 - **arXiv ID**: 2602.04268v2
 - **作者**: Siyu Jiang, Feiyang Chen, Xiaojin Zhang, Kun He
@@ -4843,7 +5095,7 @@
 
 ---
 
-## 404. REL-SF4PASS: Panoramic Semantic Segmentation with REL Depth Representation and Spherical Fusion
+## 425. REL-SF4PASS: Panoramic Semantic Segmentation with REL Depth Representation and Spherical Fusion
 
 - **arXiv ID**: 2601.16788v1
 - **作者**: Xuewei Li, Xinghan Bao, Zhimin Chen, Xi Li
@@ -4855,7 +5107,7 @@
 
 ---
 
-## 405. ReWeaver: Towards Simulation-Ready and Topology-Accurate Garment Reconstruction
+## 426. ReWeaver: Towards Simulation-Ready and Topology-Accurate Garment Reconstruction
 
 - **arXiv ID**: 2601.16672v1
 - **作者**: Ming Li, Hui Shan, Kai Zheng, Chentao Shen, Siyu Liu 等 (共8位作者)
@@ -4867,7 +5119,19 @@
 
 ---
 
-## 406. Reasoning with Pixel-level Precision: QVLM Architecture and SQuID Dataset for Quantitative Geospatial Analytics
+## 427. Seeing through Light and Darkness: Sensor-Physics Grounded Deblurring HDR NeRF from Single-Exposure Images and Events
+
+- **arXiv ID**: 2601.15475v3
+- **作者**: Yunshan Qi, Lin Zhu, Nan Bao, Yifan Zhao, Jia Li
+- **发布日期**: 2026-01-21
+- **分类**: cs.CV
+- **论文链接**: [http://arxiv.org/abs/2601.15475v3](http://arxiv.org/abs/2601.15475v3)
+- **PDF**: [http://arxiv.org/pdf/2601.15475v3](http://arxiv.org/pdf/2601.15475v3)
+- **摘要**: Novel view synthesis from low dynamic range (LDR) blurry images, which are common in the wild, struggles to recover high dynamic range (HDR) and sharp 3D representations in extreme lighting conditions. Although existing methods employ event data to address this issue, they ignore the sensor-physics ...
+
+---
+
+## 428. Reasoning with Pixel-level Precision: QVLM Architecture and SQuID Dataset for Quantitative Geospatial Analytics
 
 - **arXiv ID**: 2601.13401v1
 - **作者**: Peter A. Massih, Eric Cosatto
@@ -4879,7 +5143,7 @@
 
 ---
 
-## 407. NanoSD: Edge Efficient Foundation Model for Real Time Image Restoration
+## 429. NanoSD: Edge Efficient Foundation Model for Real Time Image Restoration
 
 - **arXiv ID**: 2601.09823v2
 - **作者**: Subhajit Sanyal, Srinivas Soumitri Miriyala, Akshay Janardan Bankar, Manjunath Arveti, Sowmya Vajrala 等 (共10位作者)
@@ -4891,7 +5155,7 @@
 
 ---
 
-## 408. Fast-ThinkAct: Efficient Vision-Language-Action Reasoning via Verbalizable Latent Planning
+## 430. Fast-ThinkAct: Efficient Vision-Language-Action Reasoning via Verbalizable Latent Planning
 
 - **arXiv ID**: 2601.09708v2
 - **作者**: Chi-Pin Huang, Yunze Man, Zhiding Yu, Min-Hung Chen, Jan Kautz 等 (共7位作者)
@@ -4903,7 +5167,7 @@
 
 ---
 
-## 409. Object-WIPER : Training-Free Object and Associated Effect Removal in Videos
+## 431. Object-WIPER : Training-Free Object and Associated Effect Removal in Videos
 
 - **arXiv ID**: 2601.06391v2
 - **作者**: Saksham Singh Kushwaha, Sayan Nag, Yapeng Tian, Kuldeep Kulkarni
@@ -4915,7 +5179,7 @@
 
 ---
 
-## 410. Learnability-Driven Submodular Optimization for Active Roadside 3D Detection
+## 432. Learnability-Driven Submodular Optimization for Active Roadside 3D Detection
 
 - **arXiv ID**: 2601.01695v1
 - **作者**: Ruiyu Mao, Baoming Zhang, Nicholas Ruozzi, Yunhui Guo
@@ -4927,7 +5191,7 @@
 
 ---
 
-## 411. UnrealPose: Leveraging Game Engine Kinematics for Large-Scale Synthetic Human Pose Data
+## 433. UnrealPose: Leveraging Game Engine Kinematics for Large-Scale Synthetic Human Pose Data
 
 - **arXiv ID**: 2601.00991v1
 - **作者**: Joshua Kawaguchi, Saad Manzur, Emily Gao Wang, Maitreyi Sinha, Bryan Vela 等 (共8位作者)
@@ -4939,7 +5203,7 @@
 
 ---
 
-## 412. MorphAny3D: Unleashing the Power of Structured Latent in 3D Morphing
+## 434. MorphAny3D: Unleashing the Power of Structured Latent in 3D Morphing
 
 - **arXiv ID**: 2601.00204v3
 - **作者**: Xiaokun Sun, Zeyu Cai, Hao Tang, Ying Tai, Jian Yang 等 (共6位作者)
@@ -4951,7 +5215,7 @@
 
 ---
 
-## 413. Taming Preference Mode Collapse via Directional Decoupling Alignment in Diffusion Reinforcement Learning
+## 435. Taming Preference Mode Collapse via Directional Decoupling Alignment in Diffusion Reinforcement Learning
 
 - **arXiv ID**: 2512.24146v2
 - **作者**: Chubin Chen, Sujie Hu, Jiashu Zhu, Meiqi Wu, Jintao Chen 等 (共11位作者)
@@ -4963,7 +5227,7 @@
 
 ---
 
-## 414. ColaVLA: Leveraging Cognitive Latent Reasoning for Hierarchical Parallel Trajectory Planning in Autonomous Driving
+## 436. ColaVLA: Leveraging Cognitive Latent Reasoning for Hierarchical Parallel Trajectory Planning in Autonomous Driving
 
 - **arXiv ID**: 2512.22939v3
 - **作者**: Qihang Peng, Xuesong Chen, Chenye Yang, Shaoshuai Shi, Hongsheng Li
@@ -4975,7 +5239,7 @@
 
 ---
 
-## 415. Beyond Pixel Simulation: Pathology Image Generation via Diagnostic Semantic Tokens and Prototype Control
+## 437. Beyond Pixel Simulation: Pathology Image Generation via Diagnostic Semantic Tokens and Prototype Control
 
 - **arXiv ID**: 2512.21058v2
 - **作者**: Minghao Han, Yichen Liu, Yizhou Liu, Zizhi Chen, Jingqun Tang 等 (共8位作者)
@@ -4987,7 +5251,7 @@
 
 ---
 
-## 416. OccuFly: A 3D Vision Benchmark for Semantic Scene Completion from the Aerial Perspective
+## 438. OccuFly: A 3D Vision Benchmark for Semantic Scene Completion from the Aerial Perspective
 
 - **arXiv ID**: 2512.20770v1
 - **作者**: Markus Gross, Sai B. Matha, Aya Fahmy, Rui Song, Daniel Cremers 等 (共6位作者)
@@ -4999,7 +5263,7 @@
 
 ---
 
-## 417. The devil is in the details: Enhancing Video Virtual Try-On via Keyframe-Driven Details Injection
+## 439. The devil is in the details: Enhancing Video Virtual Try-On via Keyframe-Driven Details Injection
 
 - **arXiv ID**: 2512.20340v2
 - **作者**: Qingdong He, Xueqin Chen, Yanjie Pan, Peng Tang, Pengcheng Xu 等 (共10位作者)
@@ -5011,7 +5275,7 @@
 
 ---
 
-## 418. KnowVal: A Knowledge-Augmented and Value-Guided Autonomous Driving System
+## 440. KnowVal: A Knowledge-Augmented and Value-Guided Autonomous Driving System
 
 - **arXiv ID**: 2512.20299v2
 - **作者**: Zhongyu Xia, Wenhao Chen, Yongtao Wang, Ming-Hsuan Yang
@@ -5023,7 +5287,7 @@
 
 ---
 
-## 419. ReDepth Anything: Test-Time Depth Refinement via Self-Supervised Re-lighting
+## 441. ReDepth Anything: Test-Time Depth Refinement via Self-Supervised Re-lighting
 
 - **arXiv ID**: 2512.17908v2
 - **作者**: Ananta R. Bhattarai, Helge Rhodin
@@ -5035,7 +5299,7 @@
 
 ---
 
-## 420. Foundation Model Priors Enhance Object Focus in Feature Space for Source-Free Object Detection
+## 442. Foundation Model Priors Enhance Object Focus in Feature Space for Source-Free Object Detection
 
 - **arXiv ID**: 2512.17514v3
 - **作者**: Sairam VCR, Rishabh Lalla, Aveen Dayal, Tejal Kulkarni, Anuj Lalla 等 (共7位作者)
@@ -5047,7 +5311,7 @@
 
 ---
 
-## 421. Using Gaussian Splats to Create High-Fidelity Facial Geometry and Texture
+## 443. Using Gaussian Splats to Create High-Fidelity Facial Geometry and Texture
 
 - **arXiv ID**: 2512.16397v1
 - **作者**: Haodi He, Jihun Yu, Ronald Fedkiw
@@ -5059,7 +5323,7 @@
 
 ---
 
-## 422. ViRC: Enhancing Visual Interleaved Mathematical CoT with Reason Chunking
+## 444. ViRC: Enhancing Visual Interleaved Mathematical CoT with Reason Chunking
 
 - **arXiv ID**: 2512.14654v3
 - **作者**: Lihong Wang, Liangqi Li, Weiwei Feng, Jiamin Wu, Changtao Miao 等 (共9位作者)
@@ -5071,7 +5335,7 @@
 
 ---
 
-## 423. DriverGaze360: OmniDirectional Driver Attention with Object-Level Guidance
+## 445. DriverGaze360: OmniDirectional Driver Attention with Object-Level Guidance
 
 - **arXiv ID**: 2512.14266v3
 - **作者**: Shreedhar Govil, Didier Stricker, Jason Rambach
@@ -5083,7 +5347,7 @@
 
 ---
 
-## 424. GTR-Turbo: Merged Checkpoint is Secretly a Free Teacher for Agentic VLM Training
+## 446. GTR-Turbo: Merged Checkpoint is Secretly a Free Teacher for Agentic VLM Training
 
 - **arXiv ID**: 2512.13043v2
 - **作者**: Tong Wei, Yijun Yang, Changhao Zhang, Junliang Xing, Yuanchun Shi 等 (共7位作者)
@@ -5095,7 +5359,7 @@
 
 ---
 
-## 425. Ultra-Low Bitrate Perceptual Image Compression with Shallow Encoder
+## 447. Ultra-Low Bitrate Perceptual Image Compression with Shallow Encoder
 
 - **arXiv ID**: 2512.12229v2
 - **作者**: Tianyu Zhang, Dong Liu, Chang Wen Chen
@@ -5107,7 +5371,19 @@
 
 ---
 
-## 426. Generative Neural Video Compression via Video Diffusion Prior
+## 448. EMGauss: Continuous Slice-to-3D Reconstruction via Dynamic Gaussian Modeling in Volume Electron Microscopy
+
+- **arXiv ID**: 2512.06684v2
+- **作者**: Yumeng He, Zanwei Zhou, Yekun Zheng, Chen Liang, Yunbo Wang 等 (共6位作者)
+- **发布日期**: 2025-12-07
+- **分类**: cs.CV
+- **论文链接**: [http://arxiv.org/abs/2512.06684v2](http://arxiv.org/abs/2512.06684v2)
+- **PDF**: [http://arxiv.org/pdf/2512.06684v2](http://arxiv.org/pdf/2512.06684v2)
+- **摘要**: Volume electron microscopy (vEM) enables nanoscale 3D imaging of biological structures but remains constrained by acquisition trade-offs, leading to anisotropic volumes with limited axial resolution. Existing deep learning methods seek to restore isotropy by leveraging lateral priors, yet their assu...
+
+---
+
+## 449. Generative Neural Video Compression via Video Diffusion Prior
 
 - **arXiv ID**: 2512.05016v2
 - **作者**: Qi Mao, Hao Cheng, Tinghan Yang, Libiao Jin, Siwei Ma
@@ -5119,7 +5395,7 @@
 
 ---
 
-## 427. UTrice: Unifying Primitives in Differentiable Ray Tracing and Rasterization via Triangles for Particle-Based 3D Scenes
+## 450. UTrice: Unifying Primitives in Differentiable Ray Tracing and Rasterization via Triangles for Particle-Based 3D Scenes
 
 - **arXiv ID**: 2512.04421v1
 - **作者**: Changhe Liu, Ehsan Javanmardi, Naren Bao, Alex Orsholits, Manabu Tsukada
@@ -5131,7 +5407,7 @@
 
 ---
 
-## 428. Text-Only Training for Image Captioning with Retrieval Augmentation and Modality Gap Correction
+## 451. Text-Only Training for Image Captioning with Retrieval Augmentation and Modality Gap Correction
 
 - **arXiv ID**: 2512.04309v1
 - **作者**: Rui Fonseca, Bruno Martins, Gil Rocha
@@ -5143,7 +5419,7 @@
 
 ---
 
-## 429. AdaptVision: Efficient Vision-Language Models via Adaptive Visual Acquisition
+## 452. AdaptVision: Efficient Vision-Language Models via Adaptive Visual Acquisition
 
 - **arXiv ID**: 2512.03794v2
 - **作者**: Zichuan Lin, Yicheng Liu, Yang Yang, Lvfang Tao, Deheng Ye
@@ -5155,7 +5431,7 @@
 
 ---
 
-## 430. VLM-Pruner: Buffering for Spatial Sparsity in an Efficient VLM Centrifugal Token Pruning Paradigm
+## 453. VLM-Pruner: Buffering for Spatial Sparsity in an Efficient VLM Centrifugal Token Pruning Paradigm
 
 - **arXiv ID**: 2512.02700v4
 - **作者**: Zhenkai Wu, Xiaowen Ma, Zhenliang Ni, Dengming Zhang, Han Shu 等 (共7位作者)
@@ -5167,7 +5443,7 @@
 
 ---
 
-## 431. ClimaOoD: Improving Anomaly Segmentation via Physically Realistic Synthetic Data
+## 454. ClimaOoD: Improving Anomaly Segmentation via Physically Realistic Synthetic Data
 
 - **arXiv ID**: 2512.02686v2
 - **作者**: Yuxing Liu, Zheng Li, Huanhuan Liang, Ji Zhang, Zeyu Sun 等 (共6位作者)
@@ -5179,7 +5455,7 @@
 
 ---
 
-## 432. SplatSuRe: Selective Super-Resolution for Multi-view Consistent 3D Gaussian Splatting
+## 455. SplatSuRe: Selective Super-Resolution for Multi-view Consistent 3D Gaussian Splatting
 
 - **arXiv ID**: 2512.02172v1
 - **作者**: Pranav Asthana, Alex Hanson, Allen Tu, Tom Goldstein, Matthias Zwicker 等 (共6位作者)
@@ -5191,7 +5467,7 @@
 
 ---
 
-## 433. Weight Space Representation Learning via Neural Field Adaptation
+## 456. Weight Space Representation Learning via Neural Field Adaptation
 
 - **arXiv ID**: 2512.01759v2
 - **作者**: Zhuoqian Yang, Mathieu Salzmann, Sabine Süsstrunk
@@ -5203,7 +5479,7 @@
 
 ---
 
-## 434. S2AM3D: Scale-controllable Part Segmentation of 3D Point Cloud
+## 457. S2AM3D: Scale-controllable Part Segmentation of 3D Point Cloud
 
 - **arXiv ID**: 2512.00995v2
 - **作者**: Han Su, Tianyu Huang, Zichen Wan, Xiaohe Wu, Wangmeng Zuo
@@ -5215,7 +5491,7 @@
 
 ---
 
-## 435. Thinking with Drafts: Speculative Temporal Reasoning for Efficient Long Video Understanding
+## 458. Thinking with Drafts: Speculative Temporal Reasoning for Efficient Long Video Understanding
 
 - **arXiv ID**: 2512.00805v2
 - **作者**: Pengfei Hu, Meng Cao, Yingyao Wang, Yi Wang, Jiahua Dong 等 (共9位作者)
@@ -5227,7 +5503,7 @@
 
 ---
 
-## 436. Markovian Scale Prediction: A New Era of Visual Autoregressive Generation
+## 459. Markovian Scale Prediction: A New Era of Visual Autoregressive Generation
 
 - **arXiv ID**: 2511.23334v3
 - **作者**: Yu Zhang, Jingyi Liu, Yiwei Shi, Qi Zhang, Duoqian Miao 等 (共7位作者)
@@ -5239,7 +5515,7 @@
 
 ---
 
-## 437. MindPower: Enabling Theory-of-Mind Reasoning in VLM-based Embodied Agents
+## 460. MindPower: Enabling Theory-of-Mind Reasoning in VLM-based Embodied Agents
 
 - **arXiv ID**: 2511.23055v2
 - **作者**: Ruoxuan Zhang, Qiyun Zheng, Zhiyu Zhou, Ziqi Liao, Siyu Wu 等 (共10位作者)
@@ -5251,7 +5527,7 @@
 
 ---
 
-## 438. MARVO: Marine-Adaptive Radiance-aware Visual Odometry
+## 461. MARVO: Marine-Adaptive Radiance-aware Visual Odometry
 
 - **arXiv ID**: 2511.22860v1
 - **作者**: Sacchin Sundar, Atman Kikani, Aaliya Alam, Sumukh Shrote, A. Nayeemulla Khan 等 (共6位作者)
@@ -5263,7 +5539,7 @@
 
 ---
 
-## 439. Training High-Level Schedulers with Execution-Feedback Reinforcement Learning for Long-Horizon GUI Automation
+## 462. Training High-Level Schedulers with Execution-Feedback Reinforcement Learning for Long-Horizon GUI Automation
 
 - **arXiv ID**: 2511.22235v2
 - **作者**: Zehao Deng, Tianjie Ju, Zheng Wu, Zhuosheng Zhang, Gongshen Liu
@@ -5275,7 +5551,19 @@
 
 ---
 
-## 440. When Robots Obey the Patch: Universal Transferable Patch Attacks on Vision-Language-Action Models
+## 463. Multi-Crit: Benchmarking Multimodal Judges on Pluralistic Criteria-Following
+
+- **arXiv ID**: 2511.21662v2
+- **作者**: Tianyi Xiong, Yi Ge, Ming Li, Zuolong Zhang, Pranav Kulkarni 等 (共16位作者)
+- **发布日期**: 2025-11-26
+- **分类**: cs.CV
+- **论文链接**: [http://arxiv.org/abs/2511.21662v2](http://arxiv.org/abs/2511.21662v2)
+- **PDF**: [http://arxiv.org/pdf/2511.21662v2](http://arxiv.org/pdf/2511.21662v2)
+- **摘要**: Large multimodal models (LMMs) are increasingly adopted as judges in multimodal evaluation systems due to their strong instruction following and consistency with human preferences. However, their ability to follow diverse, fine-grained evaluation criteria remains underexplored. We develop Multi-Crit...
+
+---
+
+## 464. When Robots Obey the Patch: Universal Transferable Patch Attacks on Vision-Language-Action Models
 
 - **arXiv ID**: 2511.21192v3
 - **作者**: Hui Lu, Yi Yu, Yiming Yang, Chenyu Yi, Qixin Zhang 等 (共8位作者)
@@ -5287,7 +5575,7 @@
 
 ---
 
-## 441. TEAR: Temporal-aware Automated Red-teaming for Text-to-Video Models
+## 465. TEAR: Temporal-aware Automated Red-teaming for Text-to-Video Models
 
 - **arXiv ID**: 2511.21145v2
 - **作者**: Jiaming He, Guanyu Hou, Hongwei Li, Zhicong Huang, Kangjie Chen 等 (共9位作者)
@@ -5299,163 +5587,7 @@
 
 ---
 
-## 442. MapReduce LoRA: Advancing the Pareto Front in Multi-Preference Optimization for Generative Models
-
-- **arXiv ID**: 2511.20629v4
-- **作者**: Chieh-Yun Chen, Zhonghao Wang, Qi Chen, Zhifan Ye, Min Shi 等 (共13位作者)
-- **发布日期**: 2025-11-25
-- **分类**: cs.CV, cs.AI, cs.LG
-- **论文链接**: [http://arxiv.org/abs/2511.20629v4](http://arxiv.org/abs/2511.20629v4)
-- **PDF**: [http://arxiv.org/pdf/2511.20629v4](http://arxiv.org/pdf/2511.20629v4)
-- **摘要**: Reinforcement learning from human feedback (RLHF) with reward models has advanced alignment of generative models to human aesthetic and perceptual preferences. However, jointly optimizing multiple rewards often incurs an alignment tax, improving one dimension while degrading others. To address this,...
-
----
-
-## 443. V-Attack: Targeting Disentangled Value Features for Controllable Adversarial Attacks on LVLMs
-
-- **arXiv ID**: 2511.20223v2
-- **作者**: Sen Nie, Jie Zhang, Jianxin Yan, Shiguang Shan, Xilin Chen
-- **发布日期**: 2025-11-25
-- **分类**: cs.CV
-- **论文链接**: [http://arxiv.org/abs/2511.20223v2](http://arxiv.org/abs/2511.20223v2)
-- **PDF**: [http://arxiv.org/pdf/2511.20223v2](http://arxiv.org/pdf/2511.20223v2)
-- **摘要**: Adversarial attacks have evolved from simply disrupting predictions on conventional task-specific models to the more complex goal of manipulating image semantics on Large Vision-Language Models (LVLMs). However, existing methods struggle with controllability and fail to precisely manipulate the sema...
-
----
-
-## 444. STAvatar: Soft Binding and Temporal Density Control for Monocular 3D Head Avatars Reconstruction
-
-- **arXiv ID**: 2511.19854v3
-- **作者**: Jiankuo Zhao, Xiangyu Zhu, Zidu Wang, Zhen Lei
-- **发布日期**: 2025-11-25
-- **分类**: cs.CV
-- **论文链接**: [http://arxiv.org/abs/2511.19854v3](http://arxiv.org/abs/2511.19854v3)
-- **PDF**: [http://arxiv.org/pdf/2511.19854v3](http://arxiv.org/pdf/2511.19854v3)
-- **摘要**: Reconstructing high-fidelity and animatable 3D head avatars from monocular videos remains a challenging yet essential task. Existing methods based on 3D Gaussian Splatting typically bind Gaussians to mesh triangles and model deformations solely via Linear Blend Skinning, which results in rigid motio...
-
----
-
-## 445. Bootstrap Dynamic-Aware 3D Visual Representation for Scalable Robot Learning
-
-- **arXiv ID**: 2512.00074v3
-- **作者**: Qiwei Liang, Boyang Cai, Minghao Lai, Sitong Zhuang, Tao Lin 等 (共9位作者)
-- **发布日期**: 2025-11-25
-- **分类**: cs.RO, cs.CV
-- **论文链接**: [http://arxiv.org/abs/2512.00074v3](http://arxiv.org/abs/2512.00074v3)
-- **PDF**: [http://arxiv.org/pdf/2512.00074v3](http://arxiv.org/pdf/2512.00074v3)
-- **摘要**: Despite strong results on recognition and segmentation, current 3D visual pre-training methods often underperform on robotic manipulation. We attribute this gap to two factors: the lack of state-action-state dynamics modeling and the unnecessary redundancy of explicit geometric reconstruction. We in...
-
----
-
-## 446. VeCoR -- Velocity Contrastive Regularization for Flow Matching
-
-- **arXiv ID**: 2511.18942v2
-- **作者**: Zong-Wei Hong, Jing-lun Li, Lin-Ze Li, Shen Zhang, Yao Tang
-- **发布日期**: 2025-11-24
-- **分类**: cs.CV
-- **论文链接**: [http://arxiv.org/abs/2511.18942v2](http://arxiv.org/abs/2511.18942v2)
-- **PDF**: [http://arxiv.org/pdf/2511.18942v2](http://arxiv.org/pdf/2511.18942v2)
-- **摘要**: Flow Matching (FM) has recently emerged as a principled and efficient alternative to diffusion models. Standard FM encourages the learned velocity field to follow a target direction; however, it may accumulate errors along the trajectory and drive samples off the data manifold, leading to perceptual...
-
----
-
-## 447. VideoChat-M1: Collaborative Policy Planning for Video Understanding via Multi-Agent Reinforcement Learning
-
-- **arXiv ID**: 2511.19524v2
-- **作者**: Boyu Chen, Zikang Wang, Zhengrong Yue, Kainan Yan, Chenyun Yu 等 (共12位作者)
-- **发布日期**: 2025-11-24
-- **分类**: cs.CV, cs.MA
-- **论文链接**: [http://arxiv.org/abs/2511.19524v2](http://arxiv.org/abs/2511.19524v2)
-- **PDF**: [http://arxiv.org/pdf/2511.19524v2](http://arxiv.org/pdf/2511.19524v2)
-- **摘要**: By leveraging tool-augmented Multimodal Large Language Models (MLLMs), multi-agent frameworks are driving progress in video understanding. However, most of them adopt static and non-learnable tool invocation mechanisms, which limit the discovery of diverse clues essential for robust perception and r...
-
----
-
-## 448. MergeVLA: Cross-Skill Model Merging Toward a Generalist Vision-Language-Action Agent
-
-- **arXiv ID**: 2511.18810v2
-- **作者**: Yuxia Fu, Zhizhen Zhang, Yuqi Zhang, Zijian Wang, Zi Huang 等 (共6位作者)
-- **发布日期**: 2025-11-24
-- **分类**: cs.RO
-- **论文链接**: [http://arxiv.org/abs/2511.18810v2](http://arxiv.org/abs/2511.18810v2)
-- **PDF**: [http://arxiv.org/pdf/2511.18810v2](http://arxiv.org/pdf/2511.18810v2)
-- **摘要**: Recent Vision-Language-Action (VLA) models reformulate vision-language models by tuning them with millions of robotic demonstrations. While they perform well when fine-tuned for a single embodiment or task family, extending them to multi-skill settings remains challenging: directly merging VLA exper...
-
----
-
-## 449. Yo'City: Personalized and Boundless 3D Realistic City Scene Generation via Self-Critic Expansion
-
-- **arXiv ID**: 2511.18734v3
-- **作者**: Keyang Lu, Sifan Zhou, Hongbin Xu, Gang Xu, Zhifei Yang 等 (共9位作者)
-- **发布日期**: 2025-11-24
-- **分类**: cs.CV, cs.AI
-- **论文链接**: [http://arxiv.org/abs/2511.18734v3](http://arxiv.org/abs/2511.18734v3)
-- **PDF**: [http://arxiv.org/pdf/2511.18734v3](http://arxiv.org/pdf/2511.18734v3)
-- **摘要**: Realistic 3D city generation is fundamental to a wide range of applications, including virtual reality and digital twins. However, most existing methods rely on training a single diffusion model, which limits their ability to generate personalized and boundless city-scale scenes. In this paper, we p...
-
----
-
-## 450. PhysGS: Bayesian-Inferred Gaussian Splatting for Physical Property Estimation
-
-- **arXiv ID**: 2511.18570v1
-- **作者**: Samarth Chopra, Jing Liang, Gershom Seneviratne, Dinesh Manocha
-- **发布日期**: 2025-11-23
-- **分类**: cs.CV, cs.RO
-- **论文链接**: [http://arxiv.org/abs/2511.18570v1](http://arxiv.org/abs/2511.18570v1)
-- **PDF**: [http://arxiv.org/pdf/2511.18570v1](http://arxiv.org/pdf/2511.18570v1)
-- **摘要**: Understanding physical properties such as friction, stiffness, hardness, and material composition is essential for enabling robots to interact safely and effectively with their surroundings. However, existing 3D reconstruction methods focus on geometry and appearance and cannot infer these underlyin...
-
----
-
-## 451. Multimodal Continual Learning with MLLMs from Multi-scenario Perspectives
-
-- **arXiv ID**: 2511.18507v2
-- **作者**: Kai Jiang, Siqi Huang, Xiangyu Chen, Jiawei Shao, Hongyuan Zhang 等 (共6位作者)
-- **发布日期**: 2025-11-23
-- **分类**: cs.CV, cs.AI
-- **论文链接**: [http://arxiv.org/abs/2511.18507v2](http://arxiv.org/abs/2511.18507v2)
-- **PDF**: [http://arxiv.org/pdf/2511.18507v2](http://arxiv.org/pdf/2511.18507v2)
-- **摘要**: Continual learning in visual understanding aims to deal with catastrophic forgetting in Multimodal Large Language Models (MLLMs). MLLMs deployed on devices have to continuously adapt to dynamic scenarios in downstream tasks, such as variations in background and perspective, to effectively perform co...
-
----
-
-## 452. Uni-DAD: Unified Distillation and Adaptation of Diffusion Models for Few-step Few-shot Image Generation
-
-- **arXiv ID**: 2511.18281v1
-- **作者**: Yara Bahram, Melodie Desbos, Mohammadhadi Shateri, Eric Granger
-- **发布日期**: 2025-11-23
-- **分类**: cs.CV, cs.AI
-- **论文链接**: [http://arxiv.org/abs/2511.18281v1](http://arxiv.org/abs/2511.18281v1)
-- **PDF**: [http://arxiv.org/pdf/2511.18281v1](http://arxiv.org/pdf/2511.18281v1)
-- **摘要**: Diffusion models (DMs) produce high-quality images, yet their sampling remains costly when adapted to new domains. Distilled DMs are faster but typically remain confined within their teacher's domain. Thus, fast and high-quality generation for novel domains relies on two-stage training pipelines: Ad...
-
----
-
-## 453. Learning Latent Transmission and Glare Maps for Lens Veiling Glare Removal
-
-- **arXiv ID**: 2511.17353v2
-- **作者**: Xiaolong Qian, Qi Jiang, Lei Sun, Zongxi Yu, Kailun Yang 等 (共11位作者)
-- **发布日期**: 2025-11-21
-- **分类**: eess.IV, cs.CV, physics.optics
-- **论文链接**: [http://arxiv.org/abs/2511.17353v2](http://arxiv.org/abs/2511.17353v2)
-- **PDF**: [http://arxiv.org/pdf/2511.17353v2](http://arxiv.org/pdf/2511.17353v2)
-- **摘要**: Beyond the commonly recognized optical aberrations, the imaging performance of simplified optical systems--including single-lens and metalens designs--is often further degraded by veiling glare caused by stray-light scattering from non-ideal optical surfaces and coatings, particularly in complex rea...
-
----
-
-## 454. Pluggable Pruning with Contiguous Layer Distillation for Diffusion Transformers
-
-- **arXiv ID**: 2511.16156v2
-- **作者**: Jian Ma, Qirong Peng, Xujie Zhu, Peixing Xie, Chen Chen 等 (共6位作者)
-- **发布日期**: 2025-11-20
-- **分类**: cs.CV
-- **论文链接**: [http://arxiv.org/abs/2511.16156v2](http://arxiv.org/abs/2511.16156v2)
-- **PDF**: [http://arxiv.org/pdf/2511.16156v2](http://arxiv.org/pdf/2511.16156v2)
-- **摘要**: Diffusion Transformers (DiTs) have shown exceptional performance in image generation, yet their large parameter counts incur high computational costs, impeding deployment in resource-constrained settings. To address this, we propose Pluggable Pruning with Contiguous Layer Distillation (PPCL), a flex...
-
----
-
-## 455. Revisiting Multimodal KV Cache Compression: A Frequency-Domain-Guided Outlier-KV-Aware Approach
+## 466. Revisiting Multimodal KV Cache Compression: A Frequency-Domain-Guided Outlier-KV-Aware Approach
 
 - **arXiv ID**: 2511.16786v2
 - **作者**: Yaoxin Yang, Peng Ye, Xudong Tan, Chongjun Tu, Maosen Zhao 等 (共7位作者)
@@ -5467,79 +5599,7 @@
 
 ---
 
-## 456. NTK-Guided Implicit Neural Teaching
-
-- **arXiv ID**: 2511.15487v2
-- **作者**: Chen Zhang, Wei Zuo, Bingyang Cheng, Yikun Wang, Wei-Bin Kou 等 (共7位作者)
-- **发布日期**: 2025-11-19
-- **分类**: cs.LG, cs.CV
-- **论文链接**: [http://arxiv.org/abs/2511.15487v2](http://arxiv.org/abs/2511.15487v2)
-- **PDF**: [http://arxiv.org/pdf/2511.15487v2](http://arxiv.org/pdf/2511.15487v2)
-- **摘要**: Implicit Neural Representations (INRs) parameterize continuous signals via multilayer perceptrons (MLPs), enabling compact, resolution-independent modeling for tasks like image, audio, and 3D reconstruction. However, fitting high-resolution signals demands optimizing over millions of coordinates, in...
-
----
-
-## 457. X-WIN: Building Chest Radiograph World Model via Predictive Sensing
-
-- **arXiv ID**: 2511.14918v2
-- **作者**: Zefan Yang, Ge Wang, James Hendler, Mannudeep K. Kalra, Pingkun Yan
-- **发布日期**: 2025-11-18
-- **分类**: cs.CV
-- **论文链接**: [http://arxiv.org/abs/2511.14918v2](http://arxiv.org/abs/2511.14918v2)
-- **PDF**: [http://arxiv.org/pdf/2511.14918v2](http://arxiv.org/pdf/2511.14918v2)
-- **摘要**: Chest X-ray radiography (CXR) is an essential medical imaging technique for disease diagnosis. However, as 2D projectional images, CXRs are limited by structural superposition and hence fail to capture 3D anatomies. This limitation makes representation learning and disease diagnosis challenging. To ...
-
----
-
-## 458. MedGEN-Bench: Contextually entangled benchmark for open-ended multimodal medical generation
-
-- **arXiv ID**: 2511.13135v2
-- **作者**: Junjie Yang, Yuhao Yan, Gang Wu, Yuxuan Wang, Ruoyu Liang 等 (共11位作者)
-- **发布日期**: 2025-11-17
-- **分类**: cs.CV
-- **论文链接**: [http://arxiv.org/abs/2511.13135v2](http://arxiv.org/abs/2511.13135v2)
-- **PDF**: [http://arxiv.org/pdf/2511.13135v2](http://arxiv.org/pdf/2511.13135v2)
-- **摘要**: As Vision-Language Models (VLMs) increasingly gain traction in medical applications, clinicians are progressively expecting AI systems not only to generate textual diagnoses but also to produce corresponding medical images that integrate seamlessly into authentic clinical workflows. Despite the grow...
-
----
-
-## 459. EmoVerse: A MLLMs-Driven Emotion Representation Dataset for Interpretable Visual Emotion Analysis
-
-- **arXiv ID**: 2511.12554v1
-- **作者**: Yijie Guo, Dexiang Hong, Weidong Chen, Zihan She, Cheng Ye 等 (共7位作者)
-- **发布日期**: 2025-11-16
-- **分类**: cs.CV
-- **论文链接**: [http://arxiv.org/abs/2511.12554v1](http://arxiv.org/abs/2511.12554v1)
-- **PDF**: [http://arxiv.org/pdf/2511.12554v1](http://arxiv.org/pdf/2511.12554v1)
-- **摘要**: Visual Emotion Analysis (VEA) aims to bridge the affective gap between visual content and human emotional responses. Despite its promise, progress in this field remains limited by the lack of open-source and interpretable datasets. Most existing studies assign a single discrete emotion label to an e...
-
----
-
-## 460. Changes in Real Time: Online Scene Change Detection with Multi-View Fusion
-
-- **arXiv ID**: 2511.12370v3
-- **作者**: Chamuditha Jayanga Galappaththige, Jason Lai, Lloyd Windrim, Donald Dansereau, Niko Sünderhauf 等 (共6位作者)
-- **发布日期**: 2025-11-15
-- **分类**: cs.CV
-- **论文链接**: [http://arxiv.org/abs/2511.12370v3](http://arxiv.org/abs/2511.12370v3)
-- **PDF**: [http://arxiv.org/pdf/2511.12370v3](http://arxiv.org/pdf/2511.12370v3)
-- **摘要**: Online Scene Change Detection (SCD) is an extremely challenging problem that requires an agent to detect relevant changes on the fly while observing the scene from unconstrained viewpoints. Existing online SCD methods are significantly less accurate than offline approaches. We present the first onli...
-
----
-
-## 461. Defending Unauthorized Model Merging via Dual-Stage Weight Protection
-
-- **arXiv ID**: 2511.11851v3
-- **作者**: Wei-Jia Chen, Min-Yen Tsai, Cheng-Yi Lee, Chia-Mu Yu
-- **发布日期**: 2025-11-14
-- **分类**: cs.CV, cs.CR
-- **论文链接**: [http://arxiv.org/abs/2511.11851v3](http://arxiv.org/abs/2511.11851v3)
-- **PDF**: [http://arxiv.org/pdf/2511.11851v3](http://arxiv.org/pdf/2511.11851v3)
-- **摘要**: The rapid proliferation of pretrained models and open repositories has made model merging a convenient yet risky practice, allowing free-riders to combine fine-tuned models into a new multi-capability model without authorization. Such unauthorized model merging not only violates intellectual propert...
-
----
-
-## 462. RehearseVLA: Simulated Post-Training for VLAs with Physically-Consistent World Model
+## 467. RehearseVLA: Simulated Post-Training for VLAs with Physically-Consistent World Model
 
 - **arXiv ID**: 2509.24948v4
 - **作者**: Junjin Xiao, Yandan Yang, Xinyuan Chang, Ronghan Chen, Feng Xiong 等 (共8位作者)
@@ -5551,7 +5611,7 @@
 
 ---
 
-## 463. PHASE-Net: Physics-Grounded Harmonic Attention System for Efficient Remote Photoplethysmography Measurement
+## 468. PHASE-Net: Physics-Grounded Harmonic Attention System for Efficient Remote Photoplethysmography Measurement
 
 - **arXiv ID**: 2509.24850v3
 - **作者**: Bo Zhao, Dan Guo, Junzhe Cao, Yong Xu, Bochao Zou 等 (共8位作者)
@@ -5563,7 +5623,19 @@
 
 ---
 
-## 464. Association and Consolidation: Evolutionary Memory-Enhanced Incremental Multi-View Clustering
+## 469. Neurodynamics-Driven Coupled Neural P Systems for Multi-Focus Image Fusion
+
+- **arXiv ID**: 2509.17704v3
+- **作者**: Bo Li, Yunkuo Lei, Tingting Bao, Hang Yan, Yaxian Wang 等 (共8位作者)
+- **发布日期**: 2025-09-22
+- **分类**: cs.CV
+- **论文链接**: [http://arxiv.org/abs/2509.17704v3](http://arxiv.org/abs/2509.17704v3)
+- **PDF**: [http://arxiv.org/pdf/2509.17704v3](http://arxiv.org/pdf/2509.17704v3)
+- **摘要**: Multi-focus image fusion (MFIF) is a crucial technique in image processing, with a key challenge being the generation of decision maps with precise boundaries. However, traditional methods based on heuristic rules and deep learning methods with black-box mechanisms are difficult to generate high-qua...
+
+---
+
+## 470. Association and Consolidation: Evolutionary Memory-Enhanced Incremental Multi-View Clustering
 
 - **arXiv ID**: 2509.14544v2
 - **作者**: Zisen Kong, Bo Zhong, Pengyuan Li, Dongxia Chang, Yiming Wang 等 (共6位作者)
@@ -5575,7 +5647,7 @@
 
 ---
 
-## 465. Towards Generalizable AI-Generated Image Detection via Image-Adaptive Prompt Learning
+## 471. Towards Generalizable AI-Generated Image Detection via Image-Adaptive Prompt Learning
 
 - **arXiv ID**: 2508.01603v4
 - **作者**: Yiheng Li, Zichang Tan, Guoqing Xu, Zhen Lei, Xu Zhou 等 (共6位作者)
@@ -5587,7 +5659,7 @@
 
 ---
 
-## 466. Harnessing Chain-of-Thought Reasoning in Multimodal Large Language Models for Face Anti-Spoofing
+## 472. Harnessing Chain-of-Thought Reasoning in Multimodal Large Language Models for Face Anti-Spoofing
 
 - **arXiv ID**: 2506.01783v3
 - **作者**: Honglu Zhang, Zhiqin Fang, Ningning Zhao, Saihui Hou, Long Ma 等 (共7位作者)
@@ -5599,7 +5671,7 @@
 
 ---
 
-## 467. Your Classifier Can Do More: Towards Balancing the Gaps in Classification, Robustness, and Generation
+## 473. Your Classifier Can Do More: Towards Balancing the Gaps in Classification, Robustness, and Generation
 
 - **arXiv ID**: 2505.19459v3
 - **作者**: Kaichao Jiang, He Wang, Xiaoshuai Hao, Xiulong Yang, Ajian Liu 等 (共8位作者)
@@ -5611,7 +5683,7 @@
 
 ---
 
-## 468. Refining Few-Step Text-to-Multiview Diffusion via Reinforcement Learning
+## 474. Refining Few-Step Text-to-Multiview Diffusion via Reinforcement Learning
 
 - **arXiv ID**: 2505.20107v1
 - **作者**: Ziyi Zhang, Li Shen, Deheng Ye, Yong Luo, Huangxuan Zhao 等 (共6位作者)
@@ -5623,7 +5695,7 @@
 
 ---
 
-## 469. RaPA: Enhancing Transferable Targeted Attacks via Random Parameter Pruning
+## 475. RaPA: Enhancing Transferable Targeted Attacks via Random Parameter Pruning
 
 - **arXiv ID**: 2504.18594v2
 - **作者**: Tongrui Su, Qingbin Li, Shengyu Zhu, Wei Chen, Xueqi Cheng
@@ -5635,7 +5707,7 @@
 
 ---
 
-## 470. Differentially Private 2D Human Pose Estimation
+## 476. Differentially Private 2D Human Pose Estimation
 
 - **arXiv ID**: 2504.10190v4
 - **作者**: Kaushik Bhargav Sivangi, Paul Henderson, Fani Deligianni
@@ -5647,7 +5719,7 @@
 
 ---
 
-## 471. InvAD: Inversion-based Reconstruction-Free Anomaly Detection with Diffusion Models
+## 477. InvAD: Inversion-based Reconstruction-Free Anomaly Detection with Diffusion Models
 
 - **arXiv ID**: 2504.05662v5
 - **作者**: Shunsuke Sakai, Xiangteng He, Chunzhi Gu, Leonid Sigal, Tatsuhito Hasegawa
@@ -5659,7 +5731,7 @@
 
 ---
 
-## 472. SphOR: A Representation Learning Perspective on Open-set Recognition for Identifying Unknown Classes in Deep Learning Models
+## 478. SphOR: A Representation Learning Perspective on Open-set Recognition for Identifying Unknown Classes in Deep Learning Models
 
 - **arXiv ID**: 2503.08049v3
 - **作者**: Nadarasar Bahavan, Sachith Seneviratne, Saman Halgamuge
