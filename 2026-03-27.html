@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="theme-color" content="#0a0e1a"><meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="manifest" href="manifest.json"><link rel="apple-touch-icon" href="icon-192.png">
+<title>2026-03-27 - arXiv Papers</title><style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+:root{--bg:#070a13;--surface:rgba(255,255,255,0.03);--surface-hover:rgba(255,255,255,0.06);--border:rgba(255,255,255,0.08);--border-hover:rgba(255,255,255,0.15);--t:#f1f4f9;--t2:#9ba1b0;--t3:#656a7a;--ac:#6382ff;--ac-hover:#829aff;--ac2:#38d9c9;--hf:#ff9d00}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Inter','Segoe UI',Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--t);min-height:100vh;line-height:1.5;background-image:url('bg.png');background-size:cover;background-position:center;background-attachment:fixed;background-repeat:no-repeat}
+body::before{content:"";position:fixed;inset:0;background:rgba(7,10,19,0.85);pointer-events:none;z-index:0}
+.c{max-width:1040px;margin:0 auto;padding:60px 20px;position:relative;z-index:1}
+a{color:var(--ac);text-decoration:none;transition:color .2s}a:hover{color:var(--ac-hover)}
+h1{font-size:3rem;font-weight:800;letter-spacing:-0.03em;background:linear-gradient(135deg,#fff 30%,#a5b4fc 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;text-align:center;margin-bottom:16px}
+.sub{text-align:center;color:var(--t2);margin-bottom:12px;font-size:1.1rem;font-weight:400;letter-spacing:0.01em}
+.pills{display:flex;justify-content:center;gap:8px;margin-bottom:60px;flex-wrap:wrap}
+.pill{font-size:.75rem;font-weight:500;padding:4px 14px;border-radius:20px;background:var(--surface);border:1px solid var(--border);color:var(--t2);backdrop-filter:blur(8px);transition:all .2s}
+.pill:hover{background:var(--surface-hover);border-color:var(--border-hover);color:var(--t)}
+.section{margin-bottom:50px}
+.label{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--t3);margin-bottom:20px;display:flex;align-items:center;gap:12px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
+.dcard{display:flex;align-items:center;justify-content:space-between;background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:20px 24px;color:var(--t);backdrop-filter:blur(12px);transition:all .3s cubic-bezier(0.25, 0.8, 0.25, 1);position:relative;overflow:hidden}
+.dcard::before{content:"";position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(180deg,rgba(255,255,255,0.03) 0%,transparent 100%);opacity:0;transition:opacity .3s}
+.dcard:hover{border-color:var(--border-hover);transform:translateY(-2px);box-shadow:0 12px 30px rgba(0,0,0,0.3);background:var(--surface-hover)}
+.dcard:hover::before{opacity:1}
+.dcard .dt{font-weight:700;font-size:1.1rem;letter-spacing:-0.01em;position:relative;z-index:1}
+.src-links{display:flex;flex-direction:column;gap:6px;position:relative;z-index:1;min-width:100px;align-items:flex-end}
+.src-btn{font-size:.75rem;font-weight:600;padding:6px 14px;border-radius:10px;display:inline-flex;align-items:center;gap:6px;transition:all .2s;text-decoration:none;width:110px;justify-content:center}
+.src-btn span{font-weight:800;opacity:0.9}
+.src-btn.hf{background:rgba(255,157,0,0.08);border:1px solid rgba(255,157,0,0.2);color:#ffb840}
+.src-btn.hf:hover{background:rgba(255,157,0,0.15);border-color:rgba(255,157,0,0.3);color:#ffc860;transform:translateY(-1px)}
+.src-btn.ax{background:rgba(99,130,255,0.08);border:1px solid rgba(99,130,255,0.2);color:#9db4ff}
+.src-btn.ax:hover{background:rgba(99,130,255,0.15);border-color:rgba(99,130,255,0.3);color:#b0c4ff;transform:translateY(-1px)}
+.dcard-refresh{position:absolute;top:10px;right:38px;width:24px;height:24px;border:none;border-radius:8px;background:transparent;color:var(--t3);font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;transition:all .2s;z-index:2}
+.dcard:hover .dcard-refresh{opacity:1}
+.dcard-refresh:hover{color:var(--ac);background:rgba(99,130,255,0.15)}
+@keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+.dcard-del{position:absolute;top:10px;right:10px;width:24px;height:24px;border:none;border-radius:8px;background:transparent;color:var(--t3);font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;transition:all .2s;z-index:2}
+.dcard:hover .dcard-del{opacity:1}
+.dcard-del:hover{color:#ff6b6b;background:rgba(255,107,107,0.15)}
+.topbar{position:sticky;top:0;z-index:100;background:rgba(7,10,19,0.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:14px 20px}
+.topbar-in{max-width:1100px;margin:0 auto;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.back{color:var(--t2);font-size:.9rem;font-weight:500;display:flex;align-items:center;gap:6px;transition:color .2s}
+.back:hover{color:var(--t)}
+.topbar h2{font-size:1.1rem;font-weight:700;letter-spacing:-0.01em;color:var(--t)}
+.spacer{flex:1}
+.search{position:relative;width:300px}
+.search input{width:100%;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:10px 14px 10px 40px;color:var(--t);font-size:.9rem;font-family:inherit;outline:0;transition:all .2s;backdrop-filter:blur(8px)}
+.search input:focus{border-color:var(--ac);background:var(--surface-hover);box-shadow:0 0 0 3px rgba(99,130,255,0.15)}
+.search input::placeholder{color:var(--t3)}
+.search svg{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--t2)}
+.cnt{font-size:.85rem;color:var(--t3);font-weight:500;white-space:nowrap}
+.filters{max-width:1100px;margin:0 auto;padding:20px 20px 0;display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.fbtn{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:8px 16px;color:var(--t2);font-size:.85rem;font-weight:500;cursor:pointer;font-family:inherit;white-space:nowrap;display:inline-flex;align-items:center;gap:6px;transition:all .2s;backdrop-filter:blur(8px)}
+.fbtn:hover{border-color:var(--border-hover);color:var(--t);background:var(--surface-hover);transform:translateY(-1px)}
+.fbtn.on{background:var(--ac);border-color:var(--ac);color:#fff;box-shadow:0 4px 12px rgba(99,130,255,0.2)}
+.fbtn.on-hf{background:var(--hf);border-color:var(--hf);color:#fff;box-shadow:0 4px 12px rgba(255,157,0,0.2)}
+.fc{opacity:.8;font-size:.75rem;font-weight:600}
+.cdot{width:8px;height:8px;border-radius:50%;display:inline-block}
+.fsep{width:1px;height:24px;background:var(--border);margin:0 4px}
+.list{max-width:1100px;margin:0 auto;padding:20px 20px 80px}
+.sec-block{margin-bottom:40px}
+.sec-head{display:flex;align-items:center;gap:12px;padding:0 0 16px;border-bottom:1px solid var(--border);margin-bottom:20px}
+.sec-icon{width:32px;height:32px;border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:.8rem;font-weight:800;box-shadow:0 4px 12px rgba(0,0,0,0.2)}
+.sec-title{font-size:1.2rem;font-weight:700;letter-spacing:-0.01em}
+.sec-cnt{font-size:.85rem;font-weight:500;color:var(--t3);margin-left:auto}
+.arxiv-filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:24px 28px;margin-bottom:16px;transition:all .3s cubic-bezier(0.25, 0.8, 0.25, 1);backdrop-filter:blur(12px)}
+.card:hover{border-color:var(--border-hover);background:var(--surface-hover);transform:translateY(-2px);box-shadow:0 12px 30px rgba(0,0,0,0.2)}
+.ch{display:flex;align-items:flex-start;gap:16px}
+.ci{font-size:.8rem;color:var(--t3);min-width:30px;padding-top:4px;font-weight:700;font-variant-numeric:tabular-nums}
+.cb{flex:1;min-width:0}
+.ct{font-size:1.15rem;font-weight:700;line-height:1.4;margin-bottom:6px;letter-spacing:-0.01em}
+.ct a{color:var(--t)}.ct a:hover{color:var(--ac)}
+.sum-cn{font-size:.9rem;font-weight:500;color:var(--ac2);margin-top:4px;margin-bottom:8px;line-height:1.5}
+.ca{font-size:.9rem;color:var(--t2);margin-bottom:12px;line-height:1.5}
+.tags{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.tag{font-size:.75rem;font-weight:600;padding:4px 10px;border-radius:6px;background:rgba(255,255,255,0.04);border:1px solid var(--border);color:var(--t2)}
+.actions{display:flex;gap:6px;flex-shrink:0;align-items:flex-start;margin-left:8px}
+.abtn{width:36px;height:36px;border:1px solid var(--border);border-radius:10px;background:var(--surface);color:var(--t2);font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;font-family:inherit}
+.abtn:hover{background:var(--surface-hover);border-color:var(--border-hover);color:var(--t);transform:translateY(-1px)}
+.chk-btn:hover,.chk-btn.on{color:#38d9c9;border-color:rgba(56,217,201,0.3);background:rgba(56,217,201,0.08);box-shadow:0 4px 12px rgba(56,217,201,0.15)}
+.card.checked{border-color:rgba(56,217,201,0.25);background:rgba(56,217,201,0.03)}
+.fav-btn:hover,.fav-btn.on{color:#ff4d6a;border-color:rgba(255,77,106,0.3);background:rgba(255,77,106,0.08);box-shadow:0 4px 12px rgba(255,77,106,0.15)}
+.fav-btn.on{font-size:1rem}
+.del-btn:hover{color:#ff6b6b;border-color:rgba(255,107,107,0.3);background:rgba(255,107,107,0.08)}
+.card.deleted{opacity:0;transform:scale(0.95);pointer-events:none;max-height:0;padding:0;margin:0;border:0;overflow:hidden;transition:all .3s cubic-bezier(0.25, 0.8, 0.25, 1)}
+.links{display:flex;gap:6px;flex-shrink:0;align-items:flex-start;margin-left:8px}
+.links a{font-size:.8rem;font-weight:600;color:var(--ac);padding:8px 14px;border:1px solid rgba(99,130,255,0.2);border-radius:10px;background:rgba(99,130,255,0.05);transition:all .2s}
+.links a:hover{background:rgba(99,130,255,0.15);border-color:rgba(99,130,255,0.3);transform:translateY(-1px)}
+.abs{margin-top:16px;margin-left:46px;font-size:.95rem;line-height:1.7;color:var(--t2);background:rgba(0,0,0,0.2);padding:16px 20px;border-radius:12px;border:1px solid var(--border)}
+.toggle{margin-top:12px;margin-left:46px;font-size:.85rem;font-weight:600;color:var(--ac);cursor:pointer;user-select:none;padding:6px 12px;display:inline-flex;align-items:center;gap:6px;border-radius:8px;background:var(--surface);border:1px solid var(--border);transition:all .2s}
+.toggle:hover{background:var(--surface-hover);border-color:var(--ac);color:var(--ac-hover);transform:translateY(-1px)}
+.nr{text-align:center;padding:80px 20px;color:var(--t3);font-size:1rem}
+.stop{position:fixed;bottom:30px;right:30px;width:48px;height:48px;background:var(--ac);border:1px solid rgba(255,255,255,0.1);border-radius:14px;color:#fff;font-size:1.3rem;cursor:pointer;opacity:0;transition:all .3s cubic-bezier(0.25, 0.8, 0.25, 1);z-index:99;box-shadow:0 8px 24px rgba(99,130,255,0.25);transform:translateY(20px)}
+.stop.v{opacity:1;transform:translateY(0)}
+.stop:hover{background:var(--ac-hover);transform:translateY(-3px);box-shadow:0 12px 30px rgba(99,130,255,0.35)}
+.fetch-panel{display:flex;align-items:center;gap:12px;margin-bottom:20px;flex-wrap:wrap;background:var(--surface);padding:16px 20px;border-radius:16px;border:1px solid var(--border);backdrop-filter:blur(12px)}
+.fetch-date{background:rgba(0,0,0,0.2);border:1px solid var(--border);border-radius:10px;padding:8px 14px;color:var(--t);font-size:.9rem;font-weight:500;font-family:inherit;outline:0;color-scheme:dark;transition:all .2s}
+.fetch-date:focus{border-color:var(--ac);box-shadow:0 0 0 3px rgba(99,130,255,0.15)}
+.rbtn{font-size:.85rem;font-weight:600;padding:8px 18px;border-radius:10px;background:var(--ac);color:#fff;text-transform:none;letter-spacing:0;text-decoration:none;transition:all .2s;display:inline-flex;align-items:center;gap:6px;border:1px solid rgba(255,255,255,0.1);cursor:pointer;font-family:inherit;box-shadow:0 4px 12px rgba(99,130,255,0.2)}
+.rbtn:hover{background:var(--ac-hover);color:#fff;transform:translateY(-1px);box-shadow:0 6px 16px rgba(99,130,255,0.3)}
+.stop-btn{background:var(--surface);color:var(--t2);border:1px solid var(--border);box-shadow:none}.stop-btn:hover{background:var(--surface-hover);color:var(--t);border-color:var(--border-hover)}
+.fetch-status{font-size:.85rem;color:var(--t2);font-weight:500;margin-left:4px}
+footer{text-align:center;padding:40px 0;color:var(--t3);font-size:.85rem;margin-top:40px;border-top:1px solid var(--border)}
+.chat-btn{position:fixed;bottom:30px;left:30px;width:52px;height:52px;background:var(--ac);border:1px solid rgba(255,255,255,0.1);border-radius:50%;color:#fff;font-size:1.5rem;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:200;box-shadow:0 8px 24px rgba(99,130,255,0.3);transition:all .3s}
+.chat-btn:hover{transform:scale(1.1);box-shadow:0 12px 30px rgba(99,130,255,0.4)}
+.chat-box{position:fixed;bottom:90px;left:20px;width:380px;max-width:calc(100vw - 40px);height:500px;max-height:calc(100vh - 120px);background:rgba(7,10,19,0.95);border:1px solid var(--border);border-radius:20px;z-index:200;display:none;flex-direction:column;backdrop-filter:blur(20px);box-shadow:0 20px 60px rgba(0,0,0,0.5)}
+.chat-box.open{display:flex}
+.chat-header{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
+.chat-header span{font-weight:700;font-size:1rem}
+.chat-close{background:none;border:none;color:var(--t3);font-size:1.3rem;cursor:pointer;padding:4px}
+.chat-close:hover{color:var(--t)}
+.chat-msgs{flex:1;overflow-y:auto;padding:16px 20px;display:flex;flex-direction:column;gap:12px}
+.chat-msg{max-width:85%;padding:12px 16px;border-radius:14px;font-size:.9rem;line-height:1.6;word-break:break-word}
+.chat-msg.user{align-self:flex-end;background:var(--ac);color:#fff;border-bottom-right-radius:4px}
+.chat-msg.bot{align-self:flex-start;background:var(--surface-hover);color:var(--t);border:1px solid var(--border);border-bottom-left-radius:4px}
+.chat-msg.loading{color:var(--t3);font-style:italic}
+.chat-input{display:flex;gap:8px;padding:12px 16px;border-top:1px solid var(--border);flex-shrink:0}
+.chat-input input{flex:1;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:10px 14px;color:var(--t);font-size:.9rem;font-family:inherit;outline:0}
+.chat-input input:focus{border-color:var(--ac)}
+.chat-input button{background:var(--ac);border:none;border-radius:12px;color:#fff;padding:10px 16px;cursor:pointer;font-family:inherit;font-weight:600;font-size:.9rem;transition:all .2s}
+.chat-input button:hover{background:var(--ac-hover)}
+.fav-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:20px 24px;margin-bottom:12px;display:flex;align-items:center;gap:20px;transition:all .3s cubic-bezier(0.25, 0.8, 0.25, 1);backdrop-filter:blur(12px)}
+.fav-card:hover{border-color:var(--border-hover);background:var(--surface-hover);transform:translateY(-2px);box-shadow:0 12px 30px rgba(0,0,0,0.2)}
+.fav-heart{color:#ff4d6a;font-size:1.4rem;flex-shrink:0;text-shadow:0 0 12px rgba(255,77,106,0.3)}
+.fav-info{flex:1;min-width:0}
+.fav-title{font-size:1.1rem;font-weight:700;line-height:1.4;margin-bottom:6px;letter-spacing:-0.01em}
+.fav-title a{color:var(--t)}.fav-title a:hover{color:var(--ac)}
+.fav-links{display:flex;gap:8px;flex-shrink:0}
+.fav-links a{font-size:.8rem;font-weight:600;color:var(--ac);padding:6px 14px;border:1px solid rgba(99,130,255,0.2);border-radius:10px;background:rgba(99,130,255,0.05);transition:all .2s}
+.fav-links a:hover{background:rgba(99,130,255,0.15);border-color:rgba(99,130,255,0.3);transform:translateY(-1px)}
+.rm-btn{width:36px;height:36px;border:1px solid var(--border);border-radius:10px;background:var(--surface);color:var(--t3);font-size:1.2rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;flex-shrink:0}
+.rm-btn:hover{color:#ff6b6b;border-color:rgba(255,107,107,0.3);background:rgba(255,107,107,0.08);transform:translateY(-1px)}
+.clear-btn{font-size:.85rem;font-weight:600;padding:8px 16px;border-radius:10px;background:rgba(255,107,107,0.1);border:1px solid rgba(255,107,107,0.2);color:#ff6b6b;cursor:pointer;font-family:inherit;transition:all .2s}
+.clear-btn:hover{background:rgba(255,107,107,0.2);border-color:rgba(255,107,107,0.4);transform:translateY(-1px)}
+@media(max-width:768px){
+  h1{font-size:2rem}
+  .c{padding:30px 16px}
+  .search{width:100%;order:10}
+  .links{display:none}
+  .ci{display:none}
+  .abs{margin-left:0;padding:12px 16px}
+  .toggle{margin-left:0}
+  .ch{gap:12px;flex-direction:column}
+  .actions{margin-left:0;margin-top:12px;width:100%;justify-content:flex-start}
+  .card{padding:20px}
+  .fav-card{flex-direction:column;align-items:flex-start;gap:12px;padding:16px}
+  .fav-links{width:100%}
+  .rm-btn{position:absolute;top:16px;right:16px}
+}
+
+.sec-block{margin-bottom:28px}
+.sec-head{display:flex;align-items:center;gap:10px;padding:14px 0 10px;border-bottom:1px solid var(--gb);margin-bottom:12px}
+.sec-icon{width:28px;height:28px;border-radius:7px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:.7rem;font-weight:800}
+.sec-title{font-size:1.1rem;font-weight:700}
+.sec-cnt{font-size:.8rem;color:var(--t3);margin-left:auto}
+.arxiv-filters{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:10px}
+</style></head><body>
+<div class="topbar"><div class="topbar-in">
+<a class="back" href="index.html">&#8592; 首页</a>
+<h2>2026-03-27</h2><span class="spacer"></span>
+<div class="search"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>
+<input id="si" type="text" placeholder="搜索标题、作者..." oninput="filter()"></div>
+<span class="cnt" id="cnt"></span></div></div>
+<div class="list">
+<div class="sec-block" id="hf">
+<div class="sec-head"><span class="sec-icon" style="background:var(--hf)">HF</span><span class="sec-title">HuggingFace 热门</span><span class="sec-cnt">28 篇</span></div>
+<div id="hf-list"><div class="card" data-pid="2603.25728"><div class="ch">
+<span class="ci">1</span><div class="cb">
+<div class="ct"><a href="http://arxiv.org/abs/2603.25728" target="_blank">PixelSmile: Toward Fine-Grained Facial Expression Editing</a></div>
+<div class="sum-cn">研究问题：细粒度面部表情编辑受语义重叠限制。方法：构建Flex面部表情（FFE）数据集，建立FFE-Bench评估结构混淆、编辑精度和线性可控性。创新点：解决语义重叠问题，提高编辑精度。实验结果：FFE数据集和FFE-Bench有效评估了面部表情编辑。</div></div>
+<div class="actions">
+<button class="abtn chk-btn" onclick="toggleCheck(this,'2603.25728')" title="已读">&#10003;</button>
+<button class="abtn fav-btn" onclick="toggleFav(this,'2603.25728','PixelSmile: Toward Fine-Grained Facial Expression Editing','http://arxiv.org/abs/2603.25728','http://arxiv.org/pdf/2603.25728')" title="收藏">&#9825;</button>
+<button class="abtn del-btn" onclick="delPaper(this,'2603.25728')" title="删除">&times;</button>
+</div>
+<div class="links"><a href="https://huggingface.co/papers/2603.25728" target="_blank">HF</a><a href="http://arxiv.org/abs/2603.25728" target="_blank">arXiv</a><a href="http://arxiv.org/pdf/2603.25728" target="_blank">PDF</a></div>
+</div></div><div class="card" data-pid="2603.25040"><div class="ch">
+<span class="ci">2</span><div class="cb">
+<div class="ct"><a href="http://arxiv.org/abs/2603.25040" target="_blank">Intern-S1-Pro: Scientific Multimodal Foundation Model at Trillion Scale</a></div>
+<div class="sum-cn">研究问题：大规模科学多模态基础模型。方法：引入Intern-S1-Pro，实现前所未有的规模。创新点：增强推理和图像-文本理解能力。实验结果：模型在通用和科学领域均取得全面提升。</div></div>
+<div class="actions">
+<button class="abtn chk-btn" onclick="toggleCheck(this,'2603.25040')" title="已读">&#10003;</button>
+<button class="abtn fav-btn" onclick="toggleFav(this,'2603.25040','Intern-S1-Pro: Scientific Multimodal Foundation Model at Trillion Scale','http://arxiv.org/abs/2603.25040','http://arxiv.org/pdf/2603.25040')" title="收藏">&#9825;</button>
+<button class="abtn del-btn" onclick="delPaper(this,'2603.25040')" title="删除">&times;</button>
+</div>
+<div class="links"><a href="https://huggingface.co/papers/2603.25040" target="_blank">HF</a><a href="http://arxiv.org/abs/2603.25040" target="_blank">arXiv</a><a href="http://arxiv.org/pdf/2603.25040" target="_blank">PDF</a></div>
+</div></div><div class="card" data-pid="2603.25502"><div class="ch">
+<span class="ci">3</span><div class="cb">
+<div class="ct"><a href="http://arxiv.org/abs/2603.25502" target="_blank">RealRestorer: Towards Generalizable Real-World Image Restoration with Large-Scale Image Editing Models</a></div>
+<div class="sum-cn">研究问题：真实退化图像修复。方法：针对训练数据规模和分布限制，提出新模型。创新点：提高模型泛化能力。实验结果：模型在真实场景中表现良好。</div></div>
+<div class="actions">
+<button class="abtn chk-btn" onclick="toggleCheck(this,'2603.25502')" title="已读">&#10003;</button>
+<button class="abtn fav-btn" onclick="toggleFav(this,'2603.25502','RealRestorer: Towards Generalizable Real-World Image Restoration with Large-Scale Image Editing Models','http://arxiv.org/abs/2603.25502','http://arxiv.org/pdf/2603.25502')" title="收藏">&#9825;</button>
+<button class="abtn del-btn" onclick="delPaper(this,'2603.25502')" title="删除">&times;</button>
+</div>
+<div class="links"><a href="https://huggingface.co/papers/2603.25502" target="_blank">HF</a><a href="http://arxiv.org/abs/2603.25502" target="_blank">arXiv</a><a href="http://arxiv.org/pdf/2603.25502" target="_blank">PDF</a></div>
+</div></div><div class="card" data-pid="2603.24800"><div class="ch">
+<span class="ci">4</span><div class="cb">
+<div class="ct"><a href="http://arxiv.org/abs/2603.24800" target="_blank">Calibri: Enhancing Diffusion Transformers via Parameter-Efficient Calibration</a></div>
+<div class="sum-cn">研究问题：Diffusion Transformers（DiTs）在生成任务中的应用。方法：分析去噪过程，引入学习缩放参数。创新点：显著提高DiT块性能。实验结果：DiT块性能得到显著提升。</div></div>
+<div class="actions">
+<button class="abtn chk-btn" onclick="toggleCheck(this,'2603.24800')" title="已读">&#10003;</button>
+<button class="abtn fav-btn" onclick="toggleFav(this,'2603.24800','Calibri: Enhancing Diffusion Transformers via Parameter-Efficient Calibration','http://arxiv.org/abs/2603.24800','http://arxiv.org/pdf/2603.24800')" title="收藏">&#9825;</button>
+<button class="abtn del-btn" onclick="delPaper(this,'2603.24800')" title="删除">&times;</button>
+</div>
+<div class="links"><a href="https://huggingface.co/papers/2603.24800" target="_blank">HF</a><a href="http://arxiv.org/abs/2603.24800" target="_blank">arXiv</a><a href="http://arxiv.org/pdf/2603.24800" target="_blank">PDF</a></div>
+</div></div><div class="card" data-pid="2603.25319"><div class="ch">
+<span class="ci">5</span><div class="cb">
+<div class="ct"><a href="http://arxiv.org/abs/2603.25319" target="_blank">MACRO: Advancing Multi-Reference Image Generation with Structured Long-Context Data</a></div>
+<div class="sum-cn">研究问题：基于多视觉参考的图像生成。方法：针对输入参考数量增长导致的性能下降问题，提出新模型。创新点：提高模型性能。实验结果：模型在多参考场景中表现良好。</div></div>
+<div class="actions">
+<button class="abtn chk-btn" onclick="toggleCheck(this,'2603.25319')" title="已读">&#10003;</button>
+<button class="abtn fav-btn" onclick="toggleFav(this,'2603.25319','MACRO: Advancing Multi-Reference Image Generation with Structured Long-Context Data','http://arxiv.org/abs/2603.25319','http://arxiv.org/pdf/2603.25319')" title="收藏">&#9825;</button>
+<button class="abtn del-btn" onclick="delPaper(this,'2603.25319')" title="删除">&times;</button>
+</div>
+<div class="links"><a href="https://huggingface.co/papers/2603.25319" target="_blank">HF</a><a href="http://arxiv.org/abs/2603.25319" target="_blank">arXiv</a><a href="http://arxiv.org/pdf/2603.25319" target="_blank">PDF</a></div>
+</div></div><div class="card" data-pid="2603.25551"><div class="ch">
+<span class="ci">6</span><div class="cb">
+<div class="ct"><a href="http://arxiv.org/abs/2603.25551" target="_blank">Voxtral TTS</a></div>
+<div class="sum-cn">研究问题：多语言文本到语音转换。方法：引入Voxtral TTS，结合自回归生成和flow-matching。创新点：从短音频生成自然语音。实验结果：Voxtral TTS生成自然语音效果良好。</div></div>
+<div class="actions">
+<button class="abtn chk-btn" onclick="toggleCheck(this,'2603.25551')" title="已读">&#10003;</button>
+<button class="abtn fav-btn" onclick="toggleFav(this,'2603.25551','Voxtral TTS','http://arxiv.org/abs/2603.25551','http://arxiv.org/pdf/2603.25551')" title="收藏">&#9825;</button>
+<button class="abtn del-btn" onclick="delPaper(this,'2603.25551')" title="删除">&times;</button>
+</div>
+<div class="links"><a href="https://huggingface.co/papers/2603.25551" target="_blank">HF</a><a href="http://arxiv.org/abs/2603.25551" target="_blank">arXiv</a><a href="http://arxiv.org/pdf/2603.25551" target="_blank">PDF</a></div>
+</div></div><div class="card" data-pid="2603.24755"><div class="ch">
+<span class="ci">7</span><div class="cb">
+<div class="ct"><a href="http://arxiv.org/abs/2603.24755" target="_blank">SlopCodeBench: Benchmarking How Coding Agents Degrade Over Long-Horizon Iterative Tasks</a></div>
+<div class="sum-cn">研究问题：迭代编码基准测试。方法：提出迭代基准测试，解决单次解决方案与完整规范之间的差距。创新点：提高代码可扩展性。实验结果：基准测试有效评估了迭代编码能力。</div></div>
+<div class="actions">
+<button class="abtn chk-btn" onclick="toggleCheck(this,'2603.24755')" title="已读">&#10003;</button>
+<button class="abtn fav-btn" onclick="toggleFav(this,'2603.24755','SlopCodeBench: Benchmarking How Coding Agents Degrade Over Long-Horizon Iterative Tasks','http://arxiv.org/abs/2603.24755','http://arxiv.org/pdf/2603.24755')" title="收藏">&#9825;</button>
+<button class="abtn del-btn" onclick="delPaper(this,'2603.24755')" title="删除">&times;</button>
+</div>
+<div class="links"><a href="https://huggingface.co/papers/2603.24755" target="_blank">HF</a><a href="http://arxiv.org/abs/2603.24755" target="_blank">arXiv</a><a href="http://arxiv.org/pdf/2603.24755" target="_blank">PDF</a></div>
+</div></div><div class="card" data-pid="2603.23516"><div class="ch">
+<span class="ci">8</span><div class="cb">
+<div class="ct"><a href="http://arxiv.org/abs/2603.23516" target="_blank">MSA: Memory Sparse Attention for Efficient End-to-End Memory Model Scaling to 100M Tokens</a></div>
+<div class="sum-cn">研究问题：长期记忆在AI中的应用。方法：针对全注意力架构限制，提出新模型。创新点：提高大语言模型（LLMs）的有效上下文长度。实验结果：模型在处理长期信息方面表现良好。</div></div>
+<div class="actions">
+<button class="abtn chk-btn" onclick="toggleCheck(this,'2603.23516')" title="已读">&#10003;</button>
+<button class="abtn fav-btn" onclick="toggleFav(this,'2603.23516','MSA: Memory Sparse Attention for Efficient End-to-End Memory Model Scaling to 100M Tokens','http://arxiv.org/abs/2603.23516','http://arxiv.org/pdf/2603.23516')" title="收藏">&#9825;</button>
+<button class="abtn del-btn" onclick="delPaper(this,'2603.23516')" title="删除">&times;</button>
+</div>
+<div class="links"><a href="https://huggingface.co/papers/2603.23516" target="_blank">HF</a><a href="http://arxiv.org/abs/2603.23516" target="_blank">arXiv</a><a href="http://arxiv.org/pdf/2603.23516" target="_blank">PDF</a></div>
+</div></div><div class="card" data-pid="2603.24793"><div class="ch">
+<span class="ci">9</span><div class="cb">
+<div class="ct"><a href="http://arxiv.org/abs/2603.24793" target="_blank">AVControl: Efficient Framework for Training Audio-Visual Controls</a></div>
+<div class="sum-cn">研究问题：视频和音频生成控制。方法：提出多模态控制方法，降低模型复杂度。创新点：实现多样化模态控制。实验结果：模型在视频和音频生成中表现良好。</div></div>
+<div class="actions">
+<button class="abtn chk-btn" onclick="toggleCheck(this,'2603.24793')" title="已读">&#10003;</button>
+<button class="abtn fav-btn" onclick="toggleFav(this,'2603.24793','AVControl: Efficient Framework for Training Audio-Visual Controls','http://arxiv.org/abs/2603.24793','http://arxiv.org/pdf/2603.24793')" title="收藏">&#9825;</button>
+<button class="abtn del-btn" onclick="delPaper(this,'2603.24793')" title="删除">&times;</button>
+</div>
+<div class="links"><a href="https://huggingface.co/papers/2603.24793" target="_blank">HF</a><a href="http://arxiv.org/abs/2603.24793" target="_blank">arXiv</a><a href="http://arxiv.org/pdf/2603.24793" target="_blank">PDF</a></div>
+</div></div><div class="card" data-pid="2603.25745"><div class="ch">
+<span class="ci">10</span><div class="cb">
+<div class="ct"><a href="http://arxiv.org/abs/2603.25745" target="_blank">Less Gaussians, Texture More: 4K Feed-Forward Textured Splatting</a></div>
+<div class="sum-cn">研究问题：3D高斯Splatting方法。方法：引入LGTM（Less Gaussians, Textures, and Memory），降低模型复杂度。创新点：提高模型可扩展性。实验结果：LGTM在4K分辨率合成中表现良好。</div></div>
+<div class="actions">
+<button class="abtn chk-btn" onclick="toggleCheck(this,'2603.25745')" title="已读">&#10003;</button>
+<button class="abtn fav-btn" onclick="toggleFav(this,'2603.25745','Less Gaussians, Texture More: 4K Feed-Forward Textured Splatting','http://arxiv.org/abs/2603.25745','http://arxiv.org/pdf/2603.25745')" title="收藏">&#9825;</button>
+<button class="abtn del-btn" onclick="delPaper(this,'2603.25745')" title="删除">&times;</button>
+</div>
+<div class="links"><a href="https://huggingface.co/papers/2603.25745" target="_blank">HF</a><a href="http://arxiv.org/abs/2603.25745" target="_blank">arXiv</a><a href="http://arxiv.org/pdf/2603.25745" target="_blank">PDF</a></div>
+</div></div><div class="card" data-pid="2603.14366"><div class="ch">
+<span class="ci">11</span><div class="cb">
+<div class="ct"><a href="http://arxiv.org/abs/2603.14366" target="_blank">Representation Alignment for Just Image Transformers is not Easier than You Think</a></div>
+<div class="sum-cn">研究问题：如何加速Diffusion Transformers在潜在空间的训练。方法：提出Representation Alignment (REPA)方法。创新点：通过在潜在空间中实现表示对齐来加速训练。结果：显著提高了训练效率。</div></div>
+<div class="actions">
+<button class="abtn chk-btn" onclick="toggleCheck(this,'2603.14366')" title="已读">&#10003;</button>
+<button class="abtn fav-btn" onclick="toggleFav(this,'2603.14366','Representation Alignment for Just Image Transformers is not Easier than You Think','http://arxiv.org/abs/2603.14366','http://arxiv.org/pdf/2603.14366')" title="收藏">&#9825;</button>
+<button class="abtn del-btn" onclick="delPaper(this,'2603.14366')" title="删除">&times;</button>
+</div>
+<div class="links"><a href="https://huggingface.co/papers/2603.14366" target="_blank">HF</a><a href="http://arxiv.org/abs/2603.14366" target="_blank">arXiv</a><a href="http://arxiv.org/pdf/2603.14366" target="_blank">PDF</a></div>
+</div></div><div class="card" data-pid="2603.25744"><div class="ch">
+<span class="ci">12</span><div class="cb">
+<div class="ct"><a href="http://arxiv.org/abs/2603.25744" target="_blank">MuRF: Unlocking the Multi-Scale Potential of Vision Foundation Models</a></div>
+<div class="sum-cn">研究问题：如何使Vision Foundation Models (VFMs)在推理时能够处理不同大小的输入。方法：提出一种新的推理方法。创新点：允许模型在推理时适应不同的输入大小。结果：提高了模型的灵活性和鲁棒性。</div></div>
+<div class="actions">
+<button class="abtn chk-btn" onclick="toggleCheck(this,'2603.25744')" title="已读">&#10003;</button>
+<button class="abtn fav-btn" onclick="toggleFav(this,'2603.25744','MuRF: Unlocking the Multi-Scale Potential of Vision Foundation Models','http://arxiv.org/abs/2603.25744','http://arxiv.org/pdf/2603.25744')" title="收藏">&#9825;</button>
+<button class="abtn del-btn" onclick="delPaper(this,'2603.25744')" title="删除">&times;</button>
+</div>
+<div class="links"><a href="https://huggingface.co/papers/2603.25744" target="_blank">HF</a><a href="http://arxiv.org/abs/2603.25744" target="_blank">arXiv</a><a href="http://arxiv.org/pdf/2603.25744" target="_blank">PDF</a></div>
+</div></div><div class="card" data-pid="2603.25702"><div class="ch">
+<span class="ci">13</span><div class="cb">
+<div class="ct"><a href="http://arxiv.org/abs/2603.25702" target="_blank">S2D2: Fast Decoding for Diffusion LLMs via Training-Free Self-Speculation</a></div>
+<div class="sum-cn">研究问题：如何提高Block-diffusion语言模型的生成速度。方法：结合块状自回归解码和块内并行去噪。创新点：在少量步骤中实现加速。结果：提高了生成速度。</div></div>
+<div class="actions">
+<button class="abtn chk-btn" onclick="toggleCheck(this,'2603.25702')" title="已读">&#10003;</button>
+<button class="abtn fav-btn" onclick="toggleFav(this,'2603.25702','S2D2: Fast Decoding for Diffusion LLMs via Training-Free Self-Speculation','http://arxiv.org/abs/2603.25702','http://arxiv.org/pdf/2603.25702')" title="收藏">&#9825;</button>
+<button class="abtn del-btn" onclick="delPaper(this,'2603.25702')" title="删除">&times;</button>
+</div>
+<div class="links"><a href="https://huggingface.co/papers/2603.25702" target="_blank">HF</a><a href="http://arxiv.org/abs/2603.25702" target="_blank">arXiv</a><a href="http://arxiv.org/pdf/2603.25702" target="_blank">PDF</a></div>
+</div></div><div class="card" data-pid="2603.24943"><div class="ch">
+<span class="ci">14</span><div class="cb">
+<div class="ct"><a href="http://arxiv.org/abs/2603.24943" target="_blank">FinMCP-Bench: Benchmarking LLM Agents for Real-World Financial Tool Use under the Model Context Protocol</a></div>
+<div class="sum-cn">研究问题：如何评估大型语言模型在解决实际金融问题中的表现。方法：提出FinMCP-Bench基准。创新点：包含多种金融场景和子场景。结果：为LLMs在金融领域的应用提供了评估标准。</div></div>
+<div class="actions">
+<button class="abtn chk-btn" onclick="toggleCheck(this,'2603.24943')" title="已读">&#10003;</button>
+<button class="abtn fav-btn" onclick="toggleFav(this,'2603.24943','FinMCP-Bench: Benchmarking LLM Agents for Real-World Financial Tool Use under the Model Context Protocol','http://arxiv.org/abs/2603.24943','http://arxiv.org/pdf/2603.24943')" title="收藏">&#9825;</button>
+<button class="abtn del-btn" onclick="delPaper(this,'2603.24943')" title="删除">&times;</button>
+</div>
+<div class="links"><a href="https://huggingface.co/papers/2603.24943" target="_blank">HF</a><a href="http://arxiv.org/abs/2603.24943" target="_blank">arXiv</a><a href="http://arxiv.org/pdf/2603.24943" target="_blank">PDF</a></div>
+</div></div><div class="card" data-pid="2603.23883"><div class="ch">
+<span class="ci">15</span><div class="cb">
+<div class="ct"><a href="http://arxiv.org/abs/2603.23883" target="_blank">BioVITA: Biological Dataset, Model, and Benchmark for Visual-Textual-Acoustic Alignment</a></div>
+<div class="sum-cn">研究问题：如何从多模态数据中理解动物物种。方法：结合计算机视觉和生态学方法。创新点：利用BioCLIP模型实现图像和文本信息的强对齐。结果：提高了物种识别的准确性。</div></div>
+<div class="actions">
+<button class="abtn chk-btn" onclick="toggleCheck(this,'2603.23883')" title="已读">&#10003;</button>
+<button class="abtn fav-btn" onclick="toggleFav(this,'2603.23883','BioVITA: Biological Dataset, Model, and Benchmark for Visual-Textual-Acoustic Alignment','http://arxiv.org/abs/2603.23883','http://arxiv.org/pdf/2603.23883')" title="收藏">&#9825;</button>
+<button class="abtn del-btn" onclick="delPaper(this,'2603.23883')" title="删除">&times;</button>
+</div>
+<div class="links"><a href="https://huggingface.co/papers/2603.23883" target="_blank">HF</a><a href="http://arxiv.org/abs/2603.23883" target="_blank">arXiv</a><a href="http://arxiv.org/pdf/2603.23883" target="_blank">PDF</a></div>
+</div></div><div class="card" data-pid="2603.25562"><div class="ch">
+<span class="ci">16</span><div class="cb">
+<div class="ct"><a href="http://arxiv.org/abs/2603.25562" target="_blank">Revisiting On-Policy Distillation: Empirical Failure Modes and Simple Fixes</a></div>
+<div class="sum-cn">研究问题：如何提高On-policy distillation在长时域设置中的稳定性。方法：提出一种新的采样方法。创新点：减少分布匹配的降低。结果：提高了模型的稳定性。</div></div>
+<div class="actions">
+<button class="abtn chk-btn" onclick="toggleCheck(this,'2603.25562')" title="已读">&#10003;</button>
+<button class="abtn fav-btn" onclick="toggleFav(this,'2603.25562','Revisiting On-Policy Distillation: Empirical Failure Modes and Simple Fixes','http://arxiv.org/abs/2603.25562','http://arxiv.org/pdf/2603.25562')" title="收藏">&#9825;</button>
+<button class="abtn del-btn" onclick="delPaper(this,'2603.25562')" title="删除">&times;</button>
+</div>
+<div class="links"><a href="https://huggingface.co/papers/2603.25562" target="_blank">HF</a><a href="http://arxiv.org/abs/2603.25562" target="_blank">arXiv</a><a href="http://arxiv.org/pdf/2603.25562" target="_blank">PDF</a></div>
+</div></div><div class="card" data-pid="2603.25398"><div class="ch">
+<span class="ci">17</span><div class="cb">
+<div class="ct"><a href="http://arxiv.org/abs/2603.25398" target="_blank">PMT: Plain Mask Transformer for Image and Video Segmentation with Frozen Vision Encoders</a></div>
+<div class="sum-cn">研究问题：如何提高Vision Foundation Models (VFMs)在图像和视频分割任务中的性能。方法：提出基于VFMs的编码器模型。创新点：实现高精度和低延迟。结果：提高了分割任务的性能。</div></div>
+<div class="actions">
+<button class="abtn chk-btn" onclick="toggleCheck(this,'2603.25398')" title="已读">&#10003;</button>
+<button class="abtn fav-btn" onclick="toggleFav(this,'2603.25398','PMT: Plain Mask Transformer for Image and Video Segmentation with Frozen Vision Encoders','http://arxiv.org/abs/2603.25398','http://arxiv.org/pdf/2603.25398')" title="收藏">&#9825;</button>
+<button class="abtn del-btn" onclick="delPaper(this,'2603.25398')" title="删除">&times;</button>
+</div>
+<div class="links"><a href="https://huggingface.co/papers/2603.25398" target="_blank">HF</a><a href="http://arxiv.org/abs/2603.25398" target="_blank">arXiv</a><a href="http://arxiv.org/pdf/2603.25398" target="_blank">PDF</a></div>
+</div></div><div class="card" data-pid="2603.24961"><div class="ch">
+<span class="ci">18</span><div class="cb">
+<div class="ct"><a href="http://arxiv.org/abs/2603.24961" target="_blank">Can MLLMs Read Students&#x27; Minds? Unpacking Multimodal Error Analysis in Handwritten Math</a></div>
+<div class="sum-cn">研究问题：如何评估学生手写作业。方法：提出一种新的评估方法。创新点：考虑手写、布局和问题解决方法的复杂性。结果：为个性化教育反馈提供了更全面的评估。</div></div>
+<div class="actions">
+<button class="abtn chk-btn" onclick="toggleCheck(this,'2603.24961')" title="已读">&#10003;</button>
+<button class="abtn fav-btn" onclick="toggleFav(this,'2603.24961','Can MLLMs Read Students&#x27; Minds? Unpacking Multimodal Error Analysis in Handwritten Math','http://arxiv.org/abs/2603.24961','http://arxiv.org/pdf/2603.24961')" title="收藏">&#9825;</button>
+<button class="abtn del-btn" onclick="delPaper(this,'2603.24961')" title="删除">&times;</button>
+</div>
+<div class="links"><a href="https://huggingface.co/papers/2603.24961" target="_blank">HF</a><a href="http://arxiv.org/abs/2603.24961" target="_blank">arXiv</a><a href="http://arxiv.org/pdf/2603.24961" target="_blank">PDF</a></div>
+</div></div><div class="card" data-pid="2603.18718"><div class="ch">
+<span class="ci">19</span><div class="cb">
+<div class="ct"><a href="http://arxiv.org/abs/2603.18718" target="_blank">MemMA: Coordinating the Memory Cycle through Multi-Agent Reasoning and In-Situ Self-Evolution</a></div>
+<div class="sum-cn">研究问题：如何提高Memory-augmented LLM agents的长期交互能力。方法：提出一种新的记忆循环方法。创新点：解决战略盲点问题。结果：提高了模型的长期交互能力。</div></div>
+<div class="actions">
+<button class="abtn chk-btn" onclick="toggleCheck(this,'2603.18718')" title="已读">&#10003;</button>
+<button class="abtn fav-btn" onclick="toggleFav(this,'2603.18718','MemMA: Coordinating the Memory Cycle through Multi-Agent Reasoning and In-Situ Self-Evolution','http://arxiv.org/abs/2603.18718','http://arxiv.org/pdf/2603.18718')" title="收藏">&#9825;</button>
+<button class="abtn del-btn" onclick="delPaper(this,'2603.18718')" title="删除">&times;</button>
+</div>
+<div class="links"><a href="https://huggingface.co/papers/2603.18718" target="_blank">HF</a><a href="http://arxiv.org/abs/2603.18718" target="_blank">arXiv</a><a href="http://arxiv.org/pdf/2603.18718" target="_blank">PDF</a></div>
+</div></div><div class="card" data-pid="2603.13904"><div class="ch">
+<span class="ci">20</span><div class="cb">
+<div class="ct"><a href="http://arxiv.org/abs/2603.13904" target="_blank">Pixel-level Scene Understanding in One Token: Visual States Need What-is-Where Composition</a></div>
+<div class="sum-cn">研究问题：如何使机器人从视频观察中学习视觉状态表示。方法：提出一种新的自监督学习方法。创新点：解决视觉任务中的迁移性问题。结果：提高了机器人决策的准确性。</div></div>
+<div class="actions">
+<button class="abtn chk-btn" onclick="toggleCheck(this,'2603.13904')" title="已读">&#10003;</button>
+<button class="abtn fav-btn" onclick="toggleFav(this,'2603.13904','Pixel-level Scene Understanding in One Token: Visual States Need What-is-Where Composition','http://arxiv.org/abs/2603.13904','http://arxiv.org/pdf/2603.13904')" title="收藏">&#9825;</button>
+<button class="abtn del-btn" onclick="delPaper(this,'2603.13904')" title="删除">&times;</button>
+</div>
+<div class="links"><a href="https://huggingface.co/papers/2603.13904" target="_blank">HF</a><a href="http://arxiv.org/abs/2603.13904" target="_blank">arXiv</a><a href="http://arxiv.org/pdf/2603.13904" target="_blank">PDF</a></div>
+</div></div><div class="card" data-pid="2603.25741"><div class="ch">
+<span class="ci">21</span><div class="cb">
+<div class="ct"><a href="http://arxiv.org/abs/2603.25741" target="_blank">Vega: Learning to Drive with Natural Language Instructions</a></div>
+<div class="sum-cn">研究问题：现有视觉-语言-动作模型在自动驾驶中缺乏对多样化用户指令的灵活性。方法：提出结合语言模态的指令跟随方法。创新点：引入指令跟随机制，增强模型对多样化指令的适应性。结果：模型在多种指令场景下表现优异。</div></div>
+<div class="actions">
+<button class="abtn chk-btn" onclick="toggleCheck(this,'2603.25741')" title="已读">&#10003;</button>
+<button class="abtn fav-btn" onclick="toggleFav(this,'2603.25741','Vega: Learning to Drive with Natural Language Instructions','http://arxiv.org/abs/2603.25741','http://arxiv.org/pdf/2603.25741')" title="收藏">&#9825;</button>
+<button class="abtn del-btn" onclick="delPaper(this,'2603.25741')" title="删除">&times;</button>
+</div>
+<div class="links"><a href="https://huggingface.co/papers/2603.25741" target="_blank">HF</a><a href="http://arxiv.org/abs/2603.25741" target="_blank">arXiv</a><a href="http://arxiv.org/pdf/2603.25741" target="_blank">PDF</a></div>
+</div></div><div class="card" data-pid="2603.25718"><div class="ch">
+<span class="ci">22</span><div class="cb">
+<div class="ct"><a href="http://arxiv.org/abs/2603.25718" target="_blank">Electrostatic Photoluminescence Tuning in All-Solid-State Perovskite Transistors</a></div>
+<div class="sum-cn">研究问题：如何实现可逆控制钙钛矿光致发光。方法：基于外延单晶金属卤化物钙钛矿的固态半导体器件。创新点：提出光致发光场效应晶体管。结果：实现光致发光的可逆控制。</div></div>
+<div class="actions">
+<button class="abtn chk-btn" onclick="toggleCheck(this,'2603.25718')" title="已读">&#10003;</button>
+<button class="abtn fav-btn" onclick="toggleFav(this,'2603.25718','Electrostatic Photoluminescence Tuning in All-Solid-State Perovskite Transistors','http://arxiv.org/abs/2603.25718','http://arxiv.org/pdf/2603.25718')" title="收藏">&#9825;</button>
+<button class="abtn del-btn" onclick="delPaper(this,'2603.25718')" title="删除">&times;</button>
+</div>
+<div class="links"><a href="https://huggingface.co/papers/2603.25718" target="_blank">HF</a><a href="http://arxiv.org/abs/2603.25718" target="_blank">arXiv</a><a href="http://arxiv.org/pdf/2603.25718" target="_blank">PDF</a></div>
+</div></div><div class="card" data-pid="2603.24844"><div class="ch">
+<span class="ci">23</span><div class="cb">
+<div class="ct"><a href="http://arxiv.org/abs/2603.24844" target="_blank">Reaching Beyond the Mode: RL for Distributional Reasoning in Language Models</a></div>
+<div class="sum-cn">研究问题：语言模型在训练后如何保持答案分布。方法：提出后训练方法，防止答案分布坍缩。创新点：引入多模态答案表示。结果：模型在多答案场景下表现更优。</div></div>
+<div class="actions">
+<button class="abtn chk-btn" onclick="toggleCheck(this,'2603.24844')" title="已读">&#10003;</button>
+<button class="abtn fav-btn" onclick="toggleFav(this,'2603.24844','Reaching Beyond the Mode: RL for Distributional Reasoning in Language Models','http://arxiv.org/abs/2603.24844','http://arxiv.org/pdf/2603.24844')" title="收藏">&#9825;</button>
+<button class="abtn del-btn" onclick="delPaper(this,'2603.24844')" title="删除">&times;</button>
+</div>
+<div class="links"><a href="https://huggingface.co/papers/2603.24844" target="_blank">HF</a><a href="http://arxiv.org/abs/2603.24844" target="_blank">arXiv</a><a href="http://arxiv.org/pdf/2603.24844" target="_blank">PDF</a></div>
+</div></div><div class="card" data-pid="2603.24575"><div class="ch">
+<span class="ci">24</span><div class="cb">
+<div class="ct"><a href="http://arxiv.org/abs/2603.24575" target="_blank">VFIG: Vectorizing Complex Figures in SVG with Vision-Language Models</a></div>
+<div class="sum-cn">研究问题：如何恢复丢失的SVG原始文件。方法：提出基于深度学习的SVG恢复方法。创新点：利用图像和文本信息重建SVG结构。结果：恢复的SVG文件与原始文件高度相似。</div></div>
+<div class="actions">
+<button class="abtn chk-btn" onclick="toggleCheck(this,'2603.24575')" title="已读">&#10003;</button>
+<button class="abtn fav-btn" onclick="toggleFav(this,'2603.24575','VFIG: Vectorizing Complex Figures in SVG with Vision-Language Models','http://arxiv.org/abs/2603.24575','http://arxiv.org/pdf/2603.24575')" title="收藏">&#9825;</button>
+<button class="abtn del-btn" onclick="delPaper(this,'2603.24575')" title="删除">&times;</button>
+</div>
+<div class="links"><a href="https://huggingface.co/papers/2603.24575" target="_blank">HF</a><a href="http://arxiv.org/abs/2603.24575" target="_blank">arXiv</a><a href="http://arxiv.org/pdf/2603.24575" target="_blank">PDF</a></div>
+</div></div><div class="card" data-pid="2603.24517"><div class="ch">
+<span class="ci">25</span><div class="cb">
+<div class="ct"><a href="http://arxiv.org/abs/2603.24517" target="_blank">AVO: Agentic Variation Operators for Autonomous Evolutionary Search</a></div>
+<div class="sum-cn">研究问题：如何提高进化搜索的效率。方法：提出基于自主编码代理的进化变异算子。创新点：引入代理变异算子，实现自主编码。结果：模型在进化搜索中表现更优。</div></div>
+<div class="actions">
+<button class="abtn chk-btn" onclick="toggleCheck(this,'2603.24517')" title="已读">&#10003;</button>
+<button class="abtn fav-btn" onclick="toggleFav(this,'2603.24517','AVO: Agentic Variation Operators for Autonomous Evolutionary Search','http://arxiv.org/abs/2603.24517','http://arxiv.org/pdf/2603.24517')" title="收藏">&#9825;</button>
+<button class="abtn del-btn" onclick="delPaper(this,'2603.24517')" title="删除">&times;</button>
+</div>
+<div class="links"><a href="https://huggingface.co/papers/2603.24517" target="_blank">HF</a><a href="http://arxiv.org/abs/2603.24517" target="_blank">arXiv</a><a href="http://arxiv.org/pdf/2603.24517" target="_blank">PDF</a></div>
+</div></div><div class="card" data-pid="2603.21768"><div class="ch">
+<span class="ci">26</span><div class="cb">
+<div class="ct"><a href="http://arxiv.org/abs/2603.21768" target="_blank">Extending Precipitation Nowcasting Horizons via Spectral Fusion of Radar Observations and Foundation Model Priors</a></div>
+<div class="sum-cn">研究问题：如何提高雷达-only模型在长时预报中的性能。方法：结合气象预报变量。创新点：引入气象预报变量，丰富大气背景信息。结果：模型在长时预报中性能显著提升。</div></div>
+<div class="actions">
+<button class="abtn chk-btn" onclick="toggleCheck(this,'2603.21768')" title="已读">&#10003;</button>
+<button class="abtn fav-btn" onclick="toggleFav(this,'2603.21768','Extending Precipitation Nowcasting Horizons via Spectral Fusion of Radar Observations and Foundation Model Priors','http://arxiv.org/abs/2603.21768','http://arxiv.org/pdf/2603.21768')" title="收藏">&#9825;</button>
+<button class="abtn del-btn" onclick="delPaper(this,'2603.21768')" title="删除">&times;</button>
+</div>
+<div class="links"><a href="https://huggingface.co/papers/2603.21768" target="_blank">HF</a><a href="http://arxiv.org/abs/2603.21768" target="_blank">arXiv</a><a href="http://arxiv.org/pdf/2603.21768" target="_blank">PDF</a></div>
+</div></div><div class="card" data-pid="2603.16733"><div class="ch">
+<span class="ci">27</span><div class="cb">
+<div class="ct"><a href="http://arxiv.org/abs/2603.16733" target="_blank">IQuest-Coder-V1 Technical Report</a></div>
+<div class="sum-cn">研究问题：如何提高代码大语言模型在软件逻辑演化中的表现。方法：提出代码流多阶段训练范式。创新点：捕捉软件逻辑的动态演化。结果：模型在代码生成和优化方面表现更优。</div></div>
+<div class="actions">
+<button class="abtn chk-btn" onclick="toggleCheck(this,'2603.16733')" title="已读">&#10003;</button>
+<button class="abtn fav-btn" onclick="toggleFav(this,'2603.16733','IQuest-Coder-V1 Technical Report','http://arxiv.org/abs/2603.16733','http://arxiv.org/pdf/2603.16733')" title="收藏">&#9825;</button>
+<button class="abtn del-btn" onclick="delPaper(this,'2603.16733')" title="删除">&times;</button>
+</div>
+<div class="links"><a href="https://huggingface.co/papers/2603.16733" target="_blank">HF</a><a href="http://arxiv.org/abs/2603.16733" target="_blank">arXiv</a><a href="http://arxiv.org/pdf/2603.16733" target="_blank">PDF</a></div>
+</div></div><div class="card" data-pid="2603.14636"><div class="ch">
+<span class="ci">28</span><div class="cb">
+<div class="ct"><a href="http://arxiv.org/abs/2603.14636" target="_blank">Nudging Hidden States: Training-Free Model Steering for Chain-of-Thought Reasoning in Large Audio-Language Models</a></div>
+<div class="sum-cn">研究问题：如何提高大型音频-语言模型推理的有效性。方法：提出推理时模型引导方法。创新点：引入三种策略，增强推理效果。结果：模型在推理任务中表现更优。</div></div>
+<div class="actions">
+<button class="abtn chk-btn" onclick="toggleCheck(this,'2603.14636')" title="已读">&#10003;</button>
+<button class="abtn fav-btn" onclick="toggleFav(this,'2603.14636','Nudging Hidden States: Training-Free Model Steering for Chain-of-Thought Reasoning in Large Audio-Language Models','http://arxiv.org/abs/2603.14636','http://arxiv.org/pdf/2603.14636')" title="收藏">&#9825;</button>
+<button class="abtn del-btn" onclick="delPaper(this,'2603.14636')" title="删除">&times;</button>
+</div>
+<div class="links"><a href="https://huggingface.co/papers/2603.14636" target="_blank">HF</a><a href="http://arxiv.org/abs/2603.14636" target="_blank">arXiv</a><a href="http://arxiv.org/pdf/2603.14636" target="_blank">PDF</a></div>
+</div></div></div></div>
+
+</div>
+<button class="stop" id="st" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#8593;</button>
+<script>
+const AX={"all":``};
+const HF=`<div class="card" data-pid="2603.25728"><div class="ch">
+<span class="ci">1</span><div class="cb">
+<div class="ct"><a href="http://arxiv.org/abs/2603.25728" target="_blank">PixelSmile: Toward Fine-Grained Facial Expression Editing</a></div>
+<div class="sum-cn">研究问题：细粒度面部表情编辑受语义重叠限制。方法：构建Flex面部表情（FFE）数据集，建立FFE-Bench评估结构混淆、编辑精度和线性可控性。创新点：解决语义重叠问题，提高编辑精度。实验结果：FFE数据集和FFE-Bench有效评估了面部表情编辑。</div></div>
+<div class="actions">
+<button class="abtn chk-btn" onclick="toggleCheck(this,'2603.25728')" title="已读">&#10003;</button>
+<button class="abtn fav-btn" onclick="toggleFav(this,'2603.25728','PixelSmile: Toward Fine-Grained Facial Expression Editing','http://arxiv.org/abs/2603.25728','http://arxiv.org/pdf/2603.25728')" title="收藏">&#9825;</button>
+<button class="abtn del-btn" onclick="delPaper(this,'2603.25728')" title="删除">&times;</button>
+</div>
+<div class="links"><a href="https://huggingface.co/papers/2603.25728" target="_blank">HF</a><a href="http://arxiv.org/abs/2603.25728" target="_blank">arXiv</a><a href="http://arxiv.org/pdf/2603.25728" target="_blank">PDF</a></div>
+</div></div><div class="card" data-pid="2603.25040"><div class="ch">
+<span class="ci">2</span><div class="cb">
+<div class="ct"><a href="http://arxiv.org/abs/2603.25040" target="_blank">Intern-S1-Pro: Scientific Multimodal Foundation Model at Trillion Scale</a></div>
+<div class="sum-cn">研究问题：大规模科学多模态基础模型。方法：引入Intern-S1-Pro，实现前所未有的规模。创新点：增强推理和图像-文本理解能力。实验结果：模型在通用和科学领域均取得全面提升。</div></div>
+<div class="actions">
+<button class="abtn chk-btn" onclick="toggleCheck(this,'2603.25040')" title="已读">&#10003;</button>
+<button class="abtn fav-btn" onclick="toggleFav(this,'2603.25040','Intern-S1-Pro: Scientific Multimodal Foundation Model at Trillion Scale','http://arxiv.org/abs/2603.25040','http://arxiv.org/pdf/2603.25040')" title="收藏">&#9825;</button>
+<button class="abtn del-btn" onclick="delPaper(this,'2603.25040')" title="删除">&times;</button>
+</div>
+<div class="links"><a href="https://huggingface.co/papers/2603.25040" target="_blank">HF</a><a href="http://arxiv.org/abs/2603.25040" target="_blank">arXiv</a><a href="http://arxiv.org/pdf/2603.25040" target="_blank">PDF</a></div>
+</div></div><div class="card" data-pid="2603.25502"><div class="ch">
+<span class="ci">3</span><div class="cb">
+<div class="ct"><a href="http://arxiv.org/abs/2603.25502" target="_blank">RealRestorer: Towards Generalizable Real-World Image Restoration with Large-Scale Image Editing Models</a></div>
+<div class="sum-cn">研究问题：真实退化图像修复。方法：针对训练数据规模和分布限制，提出新模型。创新点：提高模型泛化能力。实验结果：模型在真实场景中表现良好。</div></div>
+<div class="actions">
+<button class="abtn chk-btn" onclick="toggleCheck(this,'2603.25502')" title="已读">&#10003;</button>
+<button class="abtn fav-btn" onclick="toggleFav(this,'2603.25502','RealRestorer: Towards Generalizable Real-World Image Restoration with Large-Scale Image Editing Models','http://arxiv.org/abs/2603.25502','http://arxiv.org/pdf/2603.25502')" title="收藏">&#9825;</button>
+<button class="abtn del-btn" onclick="delPaper(this,'2603.25502')" title="删除">&times;</button>
+</div>
+<div class="links"><a href="https://huggingface.co/papers/2603.25502" target="_blank">HF</a><a href="http://arxiv.org/abs/2603.25502" target="_blank">arXiv</a><a href="http://arxiv.org/pdf/2603.25502" target="_blank">PDF</a></div>
+</div></div><div class="card" data-pid="2603.24800"><div class="ch">
+<span class="ci">4</span><div class="cb">
+<div class="ct"><a href="http://arxiv.org/abs/2603.24800" target="_blank">Calibri: Enhancing Diffusion Transformers via Parameter-Efficient Calibration</a></div>
+<div class="sum-cn">研究问题：Diffusion Transformers（DiTs）在生成任务中的应用。方法：分析去噪过程，引入学习缩放参数。创新点：显著提高DiT块性能。实验结果：DiT块性能得到显著提升。</div></div>
+<div class="actions">
+<button class="abtn chk-btn" onclick="toggleCheck(this,'2603.24800')" title="已读">&#10003;</button>
+<button class="abtn fav-btn" onclick="toggleFav(this,'2603.24800','Calibri: Enhancing Diffusion Transformers via Parameter-Efficient Calibration','http://arxiv.org/abs/2603.24800','http://arxiv.org/pdf/2603.24800')" title="收藏">&#9825;</button>
+<button class="abtn del-btn" onclick="delPaper(this,'2603.24800')" title="删除">&times;</button>
+</div>
+<div class="links"><a href="https://huggingface.co/papers/2603.24800" target="_blank">HF</a><a href="http://arxiv.org/abs/2603.24800" target="_blank">arXiv</a><a href="http://arxiv.org/pdf/2603.24800" target="_blank">PDF</a></div>
+</div></div><div class="card" data-pid="2603.25319"><div class="ch">
+<span class="ci">5</span><div class="cb">
+<div class="ct"><a href="http://arxiv.org/abs/2603.25319" target="_blank">MACRO: Advancing Multi-Reference Image Generation with Structured Long-Context Data</a></div>
+<div class="sum-cn">研究问题：基于多视觉参考的图像生成。方法：针对输入参考数量增长导致的性能下降问题，提出新模型。创新点：提高模型性能。实验结果：模型在多参考场景中表现良好。</div></div>
+<div class="actions">
+<button class="abtn chk-btn" onclick="toggleCheck(this,'2603.25319')" title="已读">&#10003;</button>
+<button class="abtn fav-btn" onclick="toggleFav(this,'2603.25319','MACRO: Advancing Multi-Reference Image Generation with Structured Long-Context Data','http://arxiv.org/abs/2603.25319','http://arxiv.org/pdf/2603.25319')" title="收藏">&#9825;</button>
+<button class="abtn del-btn" onclick="delPaper(this,'2603.25319')" title="删除">&times;</button>
+</div>
+<div class="links"><a href="https://huggingface.co/papers/2603.25319" target="_blank">HF</a><a href="http://arxiv.org/abs/2603.25319" target="_blank">arXiv</a><a href="http://arxiv.org/pdf/2603.25319" target="_blank">PDF</a></div>
+</div></div><div class="card" data-pid="2603.25551"><div class="ch">
+<span class="ci">6</span><div class="cb">
+<div class="ct"><a href="http://arxiv.org/abs/2603.25551" target="_blank">Voxtral TTS</a></div>
+<div class="sum-cn">研究问题：多语言文本到语音转换。方法：引入Voxtral TTS，结合自回归生成和flow-matching。创新点：从短音频生成自然语音。实验结果：Voxtral TTS生成自然语音效果良好。</div></div>
+<div class="actions">
+<button class="abtn chk-btn" onclick="toggleCheck(this,'2603.25551')" title="已读">&#10003;</button>
+<button class="abtn fav-btn" onclick="toggleFav(this,'2603.25551','Voxtral TTS','http://arxiv.org/abs/2603.25551','http://arxiv.org/pdf/2603.25551')" title="收藏">&#9825;</button>
+<button class="abtn del-btn" onclick="delPaper(this,'2603.25551')" title="删除">&times;</button>
+</div>
+<div class="links"><a href="https://huggingface.co/papers/2603.25551" target="_blank">HF</a><a href="http://arxiv.org/abs/2603.25551" target="_blank">arXiv</a><a href="http://arxiv.org/pdf/2603.25551" target="_blank">PDF</a></div>
+</div></div><div class="card" data-pid="2603.24755"><div class="ch">
+<span class="ci">7</span><div class="cb">
+<div class="ct"><a href="http://arxiv.org/abs/2603.24755" target="_blank">SlopCodeBench: Benchmarking How Coding Agents Degrade Over Long-Horizon Iterative Tasks</a></div>
+<div class="sum-cn">研究问题：迭代编码基准测试。方法：提出迭代基准测试，解决单次解决方案与完整规范之间的差距。创新点：提高代码可扩展性。实验结果：基准测试有效评估了迭代编码能力。</div></div>
+<div class="actions">
+<button class="abtn chk-btn" onclick="toggleCheck(this,'2603.24755')" title="已读">&#10003;</button>
+<button class="abtn fav-btn" onclick="toggleFav(this,'2603.24755','SlopCodeBench: Benchmarking How Coding Agents Degrade Over Long-Horizon Iterative Tasks','http://arxiv.org/abs/2603.24755','http://arxiv.org/pdf/2603.24755')" title="收藏">&#9825;</button>
+<button class="abtn del-btn" onclick="delPaper(this,'2603.24755')" title="删除">&times;</button>
+</div>
+<div class="links"><a href="https://huggingface.co/papers/2603.24755" target="_blank">HF</a><a href="http://arxiv.org/abs/2603.24755" target="_blank">arXiv</a><a href="http://arxiv.org/pdf/2603.24755" target="_blank">PDF</a></div>
+</div></div><div class="card" data-pid="2603.23516"><div class="ch">
+<span class="ci">8</span><div class="cb">
+<div class="ct"><a href="http://arxiv.org/abs/2603.23516" target="_blank">MSA: Memory Sparse Attention for Efficient End-to-End Memory Model Scaling to 100M Tokens</a></div>
+<div class="sum-cn">研究问题：长期记忆在AI中的应用。方法：针对全注意力架构限制，提出新模型。创新点：提高大语言模型（LLMs）的有效上下文长度。实验结果：模型在处理长期信息方面表现良好。</div></div>
+<div class="actions">
+<button class="abtn chk-btn" onclick="toggleCheck(this,'2603.23516')" title="已读">&#10003;</button>
+<button class="abtn fav-btn" onclick="toggleFav(this,'2603.23516','MSA: Memory Sparse Attention for Efficient End-to-End Memory Model Scaling to 100M Tokens','http://arxiv.org/abs/2603.23516','http://arxiv.org/pdf/2603.23516')" title="收藏">&#9825;</button>
+<button class="abtn del-btn" onclick="delPaper(this,'2603.23516')" title="删除">&times;</button>
+</div>
+<div class="links"><a href="https://huggingface.co/papers/2603.23516" target="_blank">HF</a><a href="http://arxiv.org/abs/2603.23516" target="_blank">arXiv</a><a href="http://arxiv.org/pdf/2603.23516" target="_blank">PDF</a></div>
+</div></div><div class="card" data-pid="2603.24793"><div class="ch">
+<span class="ci">9</span><div class="cb">
+<div class="ct"><a href="http://arxiv.org/abs/2603.24793" target="_blank">AVControl: Efficient Framework for Training Audio-Visual Controls</a></div>
+<div class="sum-cn">研究问题：视频和音频生成控制。方法：提出多模态控制方法，降低模型复杂度。创新点：实现多样化模态控制。实验结果：模型在视频和音频生成中表现良好。</div></div>
+<div class="actions">
+<button class="abtn chk-btn" onclick="toggleCheck(this,'2603.24793')" title="已读">&#10003;</button>
+<button class="abtn fav-btn" onclick="toggleFav(this,'2603.24793','AVControl: Efficient Framework for Training Audio-Visual Controls','http://arxiv.org/abs/2603.24793','http://arxiv.org/pdf/2603.24793')" title="收藏">&#9825;</button>
+<button class="abtn del-btn" onclick="delPaper(this,'2603.24793')" title="删除">&times;</button>
+</div>
+<div class="links"><a href="https://huggingface.co/papers/2603.24793" target="_blank">HF</a><a href="http://arxiv.org/abs/2603.24793" target="_blank">arXiv</a><a href="http://arxiv.org/pdf/2603.24793" target="_blank">PDF</a></div>
+</div></div><div class="card" data-pid="2603.25745"><div class="ch">
+<span class="ci">10</span><div class="cb">
+<div class="ct"><a href="http://arxiv.org/abs/2603.25745" target="_blank">Less Gaussians, Texture More: 4K Feed-Forward Textured Splatting</a></div>
+<div class="sum-cn">研究问题：3D高斯Splatting方法。方法：引入LGTM（Less Gaussians, Textures, and Memory），降低模型复杂度。创新点：提高模型可扩展性。实验结果：LGTM在4K分辨率合成中表现良好。</div></div>
+<div class="actions">
+<button class="abtn chk-btn" onclick="toggleCheck(this,'2603.25745')" title="已读">&#10003;</button>
+<button class="abtn fav-btn" onclick="toggleFav(this,'2603.25745','Less Gaussians, Texture More: 4K Feed-Forward Textured Splatting','http://arxiv.org/abs/2603.25745','http://arxiv.org/pdf/2603.25745')" title="收藏">&#9825;</button>
+<button class="abtn del-btn" onclick="delPaper(this,'2603.25745')" title="删除">&times;</button>
+</div>
+<div class="links"><a href="https://huggingface.co/papers/2603.25745" target="_blank">HF</a><a href="http://arxiv.org/abs/2603.25745" target="_blank">arXiv</a><a href="http://arxiv.org/pdf/2603.25745" target="_blank">PDF</a></div>
+</div></div><div class="card" data-pid="2603.14366"><div class="ch">
+<span class="ci">11</span><div class="cb">
+<div class="ct"><a href="http://arxiv.org/abs/2603.14366" target="_blank">Representation Alignment for Just Image Transformers is not Easier than You Think</a></div>
+<div class="sum-cn">研究问题：如何加速Diffusion Transformers在潜在空间的训练。方法：提出Representation Alignment (REPA)方法。创新点：通过在潜在空间中实现表示对齐来加速训练。结果：显著提高了训练效率。</div></div>
+<div class="actions">
+<button class="abtn chk-btn" onclick="toggleCheck(this,'2603.14366')" title="已读">&#10003;</button>
+<button class="abtn fav-btn" onclick="toggleFav(this,'2603.14366','Representation Alignment for Just Image Transformers is not Easier than You Think','http://arxiv.org/abs/2603.14366','http://arxiv.org/pdf/2603.14366')" title="收藏">&#9825;</button>
+<button class="abtn del-btn" onclick="delPaper(this,'2603.14366')" title="删除">&times;</button>
+</div>
+<div class="links"><a href="https://huggingface.co/papers/2603.14366" target="_blank">HF</a><a href="http://arxiv.org/abs/2603.14366" target="_blank">arXiv</a><a href="http://arxiv.org/pdf/2603.14366" target="_blank">PDF</a></div>
+</div></div><div class="card" data-pid="2603.25744"><div class="ch">
+<span class="ci">12</span><div class="cb">
+<div class="ct"><a href="http://arxiv.org/abs/2603.25744" target="_blank">MuRF: Unlocking the Multi-Scale Potential of Vision Foundation Models</a></div>
+<div class="sum-cn">研究问题：如何使Vision Foundation Models (VFMs)在推理时能够处理不同大小的输入。方法：提出一种新的推理方法。创新点：允许模型在推理时适应不同的输入大小。结果：提高了模型的灵活性和鲁棒性。</div></div>
+<div class="actions">
+<button class="abtn chk-btn" onclick="toggleCheck(this,'2603.25744')" title="已读">&#10003;</button>
+<button class="abtn fav-btn" onclick="toggleFav(this,'2603.25744','MuRF: Unlocking the Multi-Scale Potential of Vision Foundation Models','http://arxiv.org/abs/2603.25744','http://arxiv.org/pdf/2603.25744')" title="收藏">&#9825;</button>
+<button class="abtn del-btn" onclick="delPaper(this,'2603.25744')" title="删除">&times;</button>
+</div>
+<div class="links"><a href="https://huggingface.co/papers/2603.25744" target="_blank">HF</a><a href="http://arxiv.org/abs/2603.25744" target="_blank">arXiv</a><a href="http://arxiv.org/pdf/2603.25744" target="_blank">PDF</a></div>
+</div></div><div class="card" data-pid="2603.25702"><div class="ch">
+<span class="ci">13</span><div class="cb">
+<div class="ct"><a href="http://arxiv.org/abs/2603.25702" target="_blank">S2D2: Fast Decoding for Diffusion LLMs via Training-Free Self-Speculation</a></div>
+<div class="sum-cn">研究问题：如何提高Block-diffusion语言模型的生成速度。方法：结合块状自回归解码和块内并行去噪。创新点：在少量步骤中实现加速。结果：提高了生成速度。</div></div>
+<div class="actions">
+<button class="abtn chk-btn" onclick="toggleCheck(this,'2603.25702')" title="已读">&#10003;</button>
+<button class="abtn fav-btn" onclick="toggleFav(this,'2603.25702','S2D2: Fast Decoding for Diffusion LLMs via Training-Free Self-Speculation','http://arxiv.org/abs/2603.25702','http://arxiv.org/pdf/2603.25702')" title="收藏">&#9825;</button>
+<button class="abtn del-btn" onclick="delPaper(this,'2603.25702')" title="删除">&times;</button>
+</div>
+<div class="links"><a href="https://huggingface.co/papers/2603.25702" target="_blank">HF</a><a href="http://arxiv.org/abs/2603.25702" target="_blank">arXiv</a><a href="http://arxiv.org/pdf/2603.25702" target="_blank">PDF</a></div>
+</div></div><div class="card" data-pid="2603.24943"><div class="ch">
+<span class="ci">14</span><div class="cb">
+<div class="ct"><a href="http://arxiv.org/abs/2603.24943" target="_blank">FinMCP-Bench: Benchmarking LLM Agents for Real-World Financial Tool Use under the Model Context Protocol</a></div>
+<div class="sum-cn">研究问题：如何评估大型语言模型在解决实际金融问题中的表现。方法：提出FinMCP-Bench基准。创新点：包含多种金融场景和子场景。结果：为LLMs在金融领域的应用提供了评估标准。</div></div>
+<div class="actions">
+<button class="abtn chk-btn" onclick="toggleCheck(this,'2603.24943')" title="已读">&#10003;</button>
+<button class="abtn fav-btn" onclick="toggleFav(this,'2603.24943','FinMCP-Bench: Benchmarking LLM Agents for Real-World Financial Tool Use under the Model Context Protocol','http://arxiv.org/abs/2603.24943','http://arxiv.org/pdf/2603.24943')" title="收藏">&#9825;</button>
+<button class="abtn del-btn" onclick="delPaper(this,'2603.24943')" title="删除">&times;</button>
+</div>
+<div class="links"><a href="https://huggingface.co/papers/2603.24943" target="_blank">HF</a><a href="http://arxiv.org/abs/2603.24943" target="_blank">arXiv</a><a href="http://arxiv.org/pdf/2603.24943" target="_blank">PDF</a></div>
+</div></div><div class="card" data-pid="2603.23883"><div class="ch">
+<span class="ci">15</span><div class="cb">
+<div class="ct"><a href="http://arxiv.org/abs/2603.23883" target="_blank">BioVITA: Biological Dataset, Model, and Benchmark for Visual-Textual-Acoustic Alignment</a></div>
+<div class="sum-cn">研究问题：如何从多模态数据中理解动物物种。方法：结合计算机视觉和生态学方法。创新点：利用BioCLIP模型实现图像和文本信息的强对齐。结果：提高了物种识别的准确性。</div></div>
+<div class="actions">
+<button class="abtn chk-btn" onclick="toggleCheck(this,'2603.23883')" title="已读">&#10003;</button>
+<button class="abtn fav-btn" onclick="toggleFav(this,'2603.23883','BioVITA: Biological Dataset, Model, and Benchmark for Visual-Textual-Acoustic Alignment','http://arxiv.org/abs/2603.23883','http://arxiv.org/pdf/2603.23883')" title="收藏">&#9825;</button>
+<button class="abtn del-btn" onclick="delPaper(this,'2603.23883')" title="删除">&times;</button>
+</div>
+<div class="links"><a href="https://huggingface.co/papers/2603.23883" target="_blank">HF</a><a href="http://arxiv.org/abs/2603.23883" target="_blank">arXiv</a><a href="http://arxiv.org/pdf/2603.23883" target="_blank">PDF</a></div>
+</div></div><div class="card" data-pid="2603.25562"><div class="ch">
+<span class="ci">16</span><div class="cb">
+<div class="ct"><a href="http://arxiv.org/abs/2603.25562" target="_blank">Revisiting On-Policy Distillation: Empirical Failure Modes and Simple Fixes</a></div>
+<div class="sum-cn">研究问题：如何提高On-policy distillation在长时域设置中的稳定性。方法：提出一种新的采样方法。创新点：减少分布匹配的降低。结果：提高了模型的稳定性。</div></div>
+<div class="actions">
+<button class="abtn chk-btn" onclick="toggleCheck(this,'2603.25562')" title="已读">&#10003;</button>
+<button class="abtn fav-btn" onclick="toggleFav(this,'2603.25562','Revisiting On-Policy Distillation: Empirical Failure Modes and Simple Fixes','http://arxiv.org/abs/2603.25562','http://arxiv.org/pdf/2603.25562')" title="收藏">&#9825;</button>
+<button class="abtn del-btn" onclick="delPaper(this,'2603.25562')" title="删除">&times;</button>
+</div>
+<div class="links"><a href="https://huggingface.co/papers/2603.25562" target="_blank">HF</a><a href="http://arxiv.org/abs/2603.25562" target="_blank">arXiv</a><a href="http://arxiv.org/pdf/2603.25562" target="_blank">PDF</a></div>
+</div></div><div class="card" data-pid="2603.25398"><div class="ch">
+<span class="ci">17</span><div class="cb">
+<div class="ct"><a href="http://arxiv.org/abs/2603.25398" target="_blank">PMT: Plain Mask Transformer for Image and Video Segmentation with Frozen Vision Encoders</a></div>
+<div class="sum-cn">研究问题：如何提高Vision Foundation Models (VFMs)在图像和视频分割任务中的性能。方法：提出基于VFMs的编码器模型。创新点：实现高精度和低延迟。结果：提高了分割任务的性能。</div></div>
+<div class="actions">
+<button class="abtn chk-btn" onclick="toggleCheck(this,'2603.25398')" title="已读">&#10003;</button>
+<button class="abtn fav-btn" onclick="toggleFav(this,'2603.25398','PMT: Plain Mask Transformer for Image and Video Segmentation with Frozen Vision Encoders','http://arxiv.org/abs/2603.25398','http://arxiv.org/pdf/2603.25398')" title="收藏">&#9825;</button>
+<button class="abtn del-btn" onclick="delPaper(this,'2603.25398')" title="删除">&times;</button>
+</div>
+<div class="links"><a href="https://huggingface.co/papers/2603.25398" target="_blank">HF</a><a href="http://arxiv.org/abs/2603.25398" target="_blank">arXiv</a><a href="http://arxiv.org/pdf/2603.25398" target="_blank">PDF</a></div>
+</div></div><div class="card" data-pid="2603.24961"><div class="ch">
+<span class="ci">18</span><div class="cb">
+<div class="ct"><a href="http://arxiv.org/abs/2603.24961" target="_blank">Can MLLMs Read Students&#x27; Minds? Unpacking Multimodal Error Analysis in Handwritten Math</a></div>
+<div class="sum-cn">研究问题：如何评估学生手写作业。方法：提出一种新的评估方法。创新点：考虑手写、布局和问题解决方法的复杂性。结果：为个性化教育反馈提供了更全面的评估。</div></div>
+<div class="actions">
+<button class="abtn chk-btn" onclick="toggleCheck(this,'2603.24961')" title="已读">&#10003;</button>
+<button class="abtn fav-btn" onclick="toggleFav(this,'2603.24961','Can MLLMs Read Students&#x27; Minds? Unpacking Multimodal Error Analysis in Handwritten Math','http://arxiv.org/abs/2603.24961','http://arxiv.org/pdf/2603.24961')" title="收藏">&#9825;</button>
+<button class="abtn del-btn" onclick="delPaper(this,'2603.24961')" title="删除">&times;</button>
+</div>
+<div class="links"><a href="https://huggingface.co/papers/2603.24961" target="_blank">HF</a><a href="http://arxiv.org/abs/2603.24961" target="_blank">arXiv</a><a href="http://arxiv.org/pdf/2603.24961" target="_blank">PDF</a></div>
+</div></div><div class="card" data-pid="2603.18718"><div class="ch">
+<span class="ci">19</span><div class="cb">
+<div class="ct"><a href="http://arxiv.org/abs/2603.18718" target="_blank">MemMA: Coordinating the Memory Cycle through Multi-Agent Reasoning and In-Situ Self-Evolution</a></div>
+<div class="sum-cn">研究问题：如何提高Memory-augmented LLM agents的长期交互能力。方法：提出一种新的记忆循环方法。创新点：解决战略盲点问题。结果：提高了模型的长期交互能力。</div></div>
+<div class="actions">
+<button class="abtn chk-btn" onclick="toggleCheck(this,'2603.18718')" title="已读">&#10003;</button>
+<button class="abtn fav-btn" onclick="toggleFav(this,'2603.18718','MemMA: Coordinating the Memory Cycle through Multi-Agent Reasoning and In-Situ Self-Evolution','http://arxiv.org/abs/2603.18718','http://arxiv.org/pdf/2603.18718')" title="收藏">&#9825;</button>
+<button class="abtn del-btn" onclick="delPaper(this,'2603.18718')" title="删除">&times;</button>
+</div>
+<div class="links"><a href="https://huggingface.co/papers/2603.18718" target="_blank">HF</a><a href="http://arxiv.org/abs/2603.18718" target="_blank">arXiv</a><a href="http://arxiv.org/pdf/2603.18718" target="_blank">PDF</a></div>
+</div></div><div class="card" data-pid="2603.13904"><div class="ch">
+<span class="ci">20</span><div class="cb">
+<div class="ct"><a href="http://arxiv.org/abs/2603.13904" target="_blank">Pixel-level Scene Understanding in One Token: Visual States Need What-is-Where Composition</a></div>
+<div class="sum-cn">研究问题：如何使机器人从视频观察中学习视觉状态表示。方法：提出一种新的自监督学习方法。创新点：解决视觉任务中的迁移性问题。结果：提高了机器人决策的准确性。</div></div>
+<div class="actions">
+<button class="abtn chk-btn" onclick="toggleCheck(this,'2603.13904')" title="已读">&#10003;</button>
+<button class="abtn fav-btn" onclick="toggleFav(this,'2603.13904','Pixel-level Scene Understanding in One Token: Visual States Need What-is-Where Composition','http://arxiv.org/abs/2603.13904','http://arxiv.org/pdf/2603.13904')" title="收藏">&#9825;</button>
+<button class="abtn del-btn" onclick="delPaper(this,'2603.13904')" title="删除">&times;</button>
+</div>
+<div class="links"><a href="https://huggingface.co/papers/2603.13904" target="_blank">HF</a><a href="http://arxiv.org/abs/2603.13904" target="_blank">arXiv</a><a href="http://arxiv.org/pdf/2603.13904" target="_blank">PDF</a></div>
+</div></div><div class="card" data-pid="2603.25741"><div class="ch">
+<span class="ci">21</span><div class="cb">
+<div class="ct"><a href="http://arxiv.org/abs/2603.25741" target="_blank">Vega: Learning to Drive with Natural Language Instructions</a></div>
+<div class="sum-cn">研究问题：现有视觉-语言-动作模型在自动驾驶中缺乏对多样化用户指令的灵活性。方法：提出结合语言模态的指令跟随方法。创新点：引入指令跟随机制，增强模型对多样化指令的适应性。结果：模型在多种指令场景下表现优异。</div></div>
+<div class="actions">
+<button class="abtn chk-btn" onclick="toggleCheck(this,'2603.25741')" title="已读">&#10003;</button>
+<button class="abtn fav-btn" onclick="toggleFav(this,'2603.25741','Vega: Learning to Drive with Natural Language Instructions','http://arxiv.org/abs/2603.25741','http://arxiv.org/pdf/2603.25741')" title="收藏">&#9825;</button>
+<button class="abtn del-btn" onclick="delPaper(this,'2603.25741')" title="删除">&times;</button>
+</div>
+<div class="links"><a href="https://huggingface.co/papers/2603.25741" target="_blank">HF</a><a href="http://arxiv.org/abs/2603.25741" target="_blank">arXiv</a><a href="http://arxiv.org/pdf/2603.25741" target="_blank">PDF</a></div>
+</div></div><div class="card" data-pid="2603.25718"><div class="ch">
+<span class="ci">22</span><div class="cb">
+<div class="ct"><a href="http://arxiv.org/abs/2603.25718" target="_blank">Electrostatic Photoluminescence Tuning in All-Solid-State Perovskite Transistors</a></div>
+<div class="sum-cn">研究问题：如何实现可逆控制钙钛矿光致发光。方法：基于外延单晶金属卤化物钙钛矿的固态半导体器件。创新点：提出光致发光场效应晶体管。结果：实现光致发光的可逆控制。</div></div>
+<div class="actions">
+<button class="abtn chk-btn" onclick="toggleCheck(this,'2603.25718')" title="已读">&#10003;</button>
+<button class="abtn fav-btn" onclick="toggleFav(this,'2603.25718','Electrostatic Photoluminescence Tuning in All-Solid-State Perovskite Transistors','http://arxiv.org/abs/2603.25718','http://arxiv.org/pdf/2603.25718')" title="收藏">&#9825;</button>
+<button class="abtn del-btn" onclick="delPaper(this,'2603.25718')" title="删除">&times;</button>
+</div>
+<div class="links"><a href="https://huggingface.co/papers/2603.25718" target="_blank">HF</a><a href="http://arxiv.org/abs/2603.25718" target="_blank">arXiv</a><a href="http://arxiv.org/pdf/2603.25718" target="_blank">PDF</a></div>
+</div></div><div class="card" data-pid="2603.24844"><div class="ch">
+<span class="ci">23</span><div class="cb">
+<div class="ct"><a href="http://arxiv.org/abs/2603.24844" target="_blank">Reaching Beyond the Mode: RL for Distributional Reasoning in Language Models</a></div>
+<div class="sum-cn">研究问题：语言模型在训练后如何保持答案分布。方法：提出后训练方法，防止答案分布坍缩。创新点：引入多模态答案表示。结果：模型在多答案场景下表现更优。</div></div>
+<div class="actions">
+<button class="abtn chk-btn" onclick="toggleCheck(this,'2603.24844')" title="已读">&#10003;</button>
+<button class="abtn fav-btn" onclick="toggleFav(this,'2603.24844','Reaching Beyond the Mode: RL for Distributional Reasoning in Language Models','http://arxiv.org/abs/2603.24844','http://arxiv.org/pdf/2603.24844')" title="收藏">&#9825;</button>
+<button class="abtn del-btn" onclick="delPaper(this,'2603.24844')" title="删除">&times;</button>
+</div>
+<div class="links"><a href="https://huggingface.co/papers/2603.24844" target="_blank">HF</a><a href="http://arxiv.org/abs/2603.24844" target="_blank">arXiv</a><a href="http://arxiv.org/pdf/2603.24844" target="_blank">PDF</a></div>
+</div></div><div class="card" data-pid="2603.24575"><div class="ch">
+<span class="ci">24</span><div class="cb">
+<div class="ct"><a href="http://arxiv.org/abs/2603.24575" target="_blank">VFIG: Vectorizing Complex Figures in SVG with Vision-Language Models</a></div>
+<div class="sum-cn">研究问题：如何恢复丢失的SVG原始文件。方法：提出基于深度学习的SVG恢复方法。创新点：利用图像和文本信息重建SVG结构。结果：恢复的SVG文件与原始文件高度相似。</div></div>
+<div class="actions">
+<button class="abtn chk-btn" onclick="toggleCheck(this,'2603.24575')" title="已读">&#10003;</button>
+<button class="abtn fav-btn" onclick="toggleFav(this,'2603.24575','VFIG: Vectorizing Complex Figures in SVG with Vision-Language Models','http://arxiv.org/abs/2603.24575','http://arxiv.org/pdf/2603.24575')" title="收藏">&#9825;</button>
+<button class="abtn del-btn" onclick="delPaper(this,'2603.24575')" title="删除">&times;</button>
+</div>
+<div class="links"><a href="https://huggingface.co/papers/2603.24575" target="_blank">HF</a><a href="http://arxiv.org/abs/2603.24575" target="_blank">arXiv</a><a href="http://arxiv.org/pdf/2603.24575" target="_blank">PDF</a></div>
+</div></div><div class="card" data-pid="2603.24517"><div class="ch">
+<span class="ci">25</span><div class="cb">
+<div class="ct"><a href="http://arxiv.org/abs/2603.24517" target="_blank">AVO: Agentic Variation Operators for Autonomous Evolutionary Search</a></div>
+<div class="sum-cn">研究问题：如何提高进化搜索的效率。方法：提出基于自主编码代理的进化变异算子。创新点：引入代理变异算子，实现自主编码。结果：模型在进化搜索中表现更优。</div></div>
+<div class="actions">
+<button class="abtn chk-btn" onclick="toggleCheck(this,'2603.24517')" title="已读">&#10003;</button>
+<button class="abtn fav-btn" onclick="toggleFav(this,'2603.24517','AVO: Agentic Variation Operators for Autonomous Evolutionary Search','http://arxiv.org/abs/2603.24517','http://arxiv.org/pdf/2603.24517')" title="收藏">&#9825;</button>
+<button class="abtn del-btn" onclick="delPaper(this,'2603.24517')" title="删除">&times;</button>
+</div>
+<div class="links"><a href="https://huggingface.co/papers/2603.24517" target="_blank">HF</a><a href="http://arxiv.org/abs/2603.24517" target="_blank">arXiv</a><a href="http://arxiv.org/pdf/2603.24517" target="_blank">PDF</a></div>
+</div></div><div class="card" data-pid="2603.21768"><div class="ch">
+<span class="ci">26</span><div class="cb">
+<div class="ct"><a href="http://arxiv.org/abs/2603.21768" target="_blank">Extending Precipitation Nowcasting Horizons via Spectral Fusion of Radar Observations and Foundation Model Priors</a></div>
+<div class="sum-cn">研究问题：如何提高雷达-only模型在长时预报中的性能。方法：结合气象预报变量。创新点：引入气象预报变量，丰富大气背景信息。结果：模型在长时预报中性能显著提升。</div></div>
+<div class="actions">
+<button class="abtn chk-btn" onclick="toggleCheck(this,'2603.21768')" title="已读">&#10003;</button>
+<button class="abtn fav-btn" onclick="toggleFav(this,'2603.21768','Extending Precipitation Nowcasting Horizons via Spectral Fusion of Radar Observations and Foundation Model Priors','http://arxiv.org/abs/2603.21768','http://arxiv.org/pdf/2603.21768')" title="收藏">&#9825;</button>
+<button class="abtn del-btn" onclick="delPaper(this,'2603.21768')" title="删除">&times;</button>
+</div>
+<div class="links"><a href="https://huggingface.co/papers/2603.21768" target="_blank">HF</a><a href="http://arxiv.org/abs/2603.21768" target="_blank">arXiv</a><a href="http://arxiv.org/pdf/2603.21768" target="_blank">PDF</a></div>
+</div></div><div class="card" data-pid="2603.16733"><div class="ch">
+<span class="ci">27</span><div class="cb">
+<div class="ct"><a href="http://arxiv.org/abs/2603.16733" target="_blank">IQuest-Coder-V1 Technical Report</a></div>
+<div class="sum-cn">研究问题：如何提高代码大语言模型在软件逻辑演化中的表现。方法：提出代码流多阶段训练范式。创新点：捕捉软件逻辑的动态演化。结果：模型在代码生成和优化方面表现更优。</div></div>
+<div class="actions">
+<button class="abtn chk-btn" onclick="toggleCheck(this,'2603.16733')" title="已读">&#10003;</button>
+<button class="abtn fav-btn" onclick="toggleFav(this,'2603.16733','IQuest-Coder-V1 Technical Report','http://arxiv.org/abs/2603.16733','http://arxiv.org/pdf/2603.16733')" title="收藏">&#9825;</button>
+<button class="abtn del-btn" onclick="delPaper(this,'2603.16733')" title="删除">&times;</button>
+</div>
+<div class="links"><a href="https://huggingface.co/papers/2603.16733" target="_blank">HF</a><a href="http://arxiv.org/abs/2603.16733" target="_blank">arXiv</a><a href="http://arxiv.org/pdf/2603.16733" target="_blank">PDF</a></div>
+</div></div><div class="card" data-pid="2603.14636"><div class="ch">
+<span class="ci">28</span><div class="cb">
+<div class="ct"><a href="http://arxiv.org/abs/2603.14636" target="_blank">Nudging Hidden States: Training-Free Model Steering for Chain-of-Thought Reasoning in Large Audio-Language Models</a></div>
+<div class="sum-cn">研究问题：如何提高大型音频-语言模型推理的有效性。方法：提出推理时模型引导方法。创新点：引入三种策略，增强推理效果。结果：模型在推理任务中表现更优。</div></div>
+<div class="actions">
+<button class="abtn chk-btn" onclick="toggleCheck(this,'2603.14636')" title="已读">&#10003;</button>
+<button class="abtn fav-btn" onclick="toggleFav(this,'2603.14636','Nudging Hidden States: Training-Free Model Steering for Chain-of-Thought Reasoning in Large Audio-Language Models','http://arxiv.org/abs/2603.14636','http://arxiv.org/pdf/2603.14636')" title="收藏">&#9825;</button>
+<button class="abtn del-btn" onclick="delPaper(this,'2603.14636')" title="删除">&times;</button>
+</div>
+<div class="links"><a href="https://huggingface.co/papers/2603.14636" target="_blank">HF</a><a href="http://arxiv.org/abs/2603.14636" target="_blank">arXiv</a><a href="http://arxiv.org/pdf/2603.14636" target="_blank">PDF</a></div>
+</div></div>`;
+let curCat="all";
+function showCat(b){document.querySelectorAll('.arxiv-filters .fbtn').forEach(x=>x.classList.remove('on'));b.classList.add('on');curCat=b.dataset.cat;filter()}
+function filter(){
+const q=document.getElementById('si').value.toLowerCase();
+let total=0;
+const ae=document.getElementById('arxiv-list');
+if(ae){const d=document.createElement('div');d.innerHTML=AX[curCat]||AX['all'];const cards=[...d.querySelectorAll('.card')];let h='';cards.forEach(c=>{const t=c.textContent.toLowerCase();if(!q||q.split(/\s+/).every(w=>t.includes(w))){h+=c.outerHTML;total++}});ae.innerHTML=h||'<div class="nr">没有匹配的论文</div>'}
+const he=document.getElementById('hf-list');
+if(he){const d=document.createElement('div');d.innerHTML=HF;const cards=[...d.querySelectorAll('.card')];let h='';cards.forEach(c=>{const t=c.textContent.toLowerCase();if(!q||q.split(/\s+/).every(w=>t.includes(w))){h+=c.outerHTML;total++}});he.innerHTML=h||'<div class="nr">没有匹配的论文</div>'}
+document.getElementById('cnt').textContent=total+' 篇';
+initCards();
+}
+window.addEventListener('scroll',()=>document.getElementById('st').classList.toggle('v',window.scrollY>400));
+
+function getDeleted(){try{return JSON.parse(localStorage.getItem('del_papers')||'[]')}catch{return[]}}
+function getFavs(){try{return JSON.parse(localStorage.getItem('fav_papers')||'{}')}catch{return{}}}
+function getChecked(){try{return JSON.parse(localStorage.getItem('chk_papers')||'[]')}catch{return[]}}
+function toggleCheck(btn,pid){const chks=getChecked();const card=btn.closest('.card');if(chks.includes(pid)){chks.splice(chks.indexOf(pid),1);btn.classList.remove('on');if(card)card.classList.remove('checked')}else{chks.push(pid);btn.classList.add('on');if(card)card.classList.add('checked')}localStorage.setItem('chk_papers',JSON.stringify(chks))}
+function renum(){document.querySelectorAll('.card').forEach((c,i)=>{const ci=c.querySelector('.ci');if(ci)ci.textContent=i+1})}
+function delPaper(btn,pid){const dels=getDeleted();if(!dels.includes(pid))dels.push(pid);localStorage.setItem('del_papers',JSON.stringify(dels));const card=btn.closest('.card');if(card){card.style.transition='all .3s';card.style.opacity='0';card.style.transform='scale(.97)';setTimeout(()=>{card.remove();renum()},300)}}
+function toggleFav(btn,pid,title,link,pdf){const favs=getFavs();if(favs[pid]){delete favs[pid];btn.innerHTML='&#9825;';btn.classList.remove('on')}else{favs[pid]={title,link,pdf,t:Date.now()};btn.innerHTML='&#9829;';btn.classList.add('on')}localStorage.setItem('fav_papers',JSON.stringify(favs))}
+function initCards(){const dels=getDeleted();const favs=getFavs();const chks=getChecked();document.querySelectorAll('.card[data-pid]').forEach(c=>{const pid=c.dataset.pid;if(dels.includes(pid)){c.remove();return}const fb=c.querySelector('.fav-btn');if(fb&&favs[pid]){fb.innerHTML='&#9829;';fb.classList.add('on')}const cb=c.querySelector('.chk-btn');if(cb&&chks.includes(pid)){cb.classList.add('on');c.classList.add('checked')}});renum()};
+filter();
+</script>
+<button class="chat-btn" onclick="document.getElementById('chatbox').classList.toggle('open')" title="AI 助手">&#128172;</button>
+<div class="chat-box" id="chatbox">
+<div class="chat-header"><span>Frontier AI</span><button class="chat-close" onclick="document.getElementById('chatbox').classList.remove('open')">&times;</button></div>
+<div class="chat-msgs" id="chatmsgs"><div class="chat-msg bot">你好！我是 AI 助手，可以帮你解读论文、回答 AI 相关问题。</div></div>
+<div class="chat-input"><input id="chatin" placeholder="输入问题..." onkeydown="if(event.key==='Enter')sendChat()"><button onclick="sendChat()">发送</button></div>
+</div>
+<script>
+function getZhipuKey(){let k=localStorage.getItem('zhipu_key');if(!k){k=prompt('输入智谱 API Key（GLM-4-Flash 免费）');if(k)localStorage.setItem('zhipu_key',k)}return k}
+async function sendChat(){
+const input=document.getElementById('chatin');const msg=input.value.trim();if(!msg)return;
+const key=getZhipuKey();if(!key)return;
+const msgs=document.getElementById('chatmsgs');
+msgs.innerHTML+=`<div class="chat-msg user">${msg.replace(/</g,'&lt;')}</div>`;
+msgs.innerHTML+=`<div class="chat-msg bot loading" id="botloading">思考中...</div>`;
+msgs.scrollTop=msgs.scrollHeight;input.value='';
+try{
+const r=await fetch('https://open.bigmodel.cn/api/paas/v4/chat/completions',{
+method:'POST',headers:{'Authorization':'Bearer '+key,'Content-Type':'application/json'},
+body:JSON.stringify({model:'glm-4-flash',messages:[{role:'system',content:'你是一个AI论文助手，帮助用户理解论文、解释概念、回答AI相关问题。用中文回答，简洁专业。'},{role:'user',content:msg}],temperature:0.7,max_tokens:1000})
+});
+const d=await r.json();const reply=d.choices[0].message.content;
+document.getElementById('botloading').outerHTML=`<div class="chat-msg bot">${reply.replace(/</g,'&lt;').replace(/\n/g,'<br>')}</div>`;
+}catch(e){document.getElementById('botloading').outerHTML=`<div class="chat-msg bot" style="color:#ff6b6b">请求失败: ${e.message}</div>`}
+msgs.scrollTop=msgs.scrollHeight;
+}
+</script>
+</body></html>
